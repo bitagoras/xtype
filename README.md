@@ -53,21 +53,22 @@ Grammar (beta1)
 
 The graphical representation of the grammar rules below should enable a programmer to write valid UBN files. All red round boxes represent data to be written. Single black characters inside the round boxes are stored directly as ascii character. Green boxes represent nested grammer rules.
 
-![Image](UBN_file.png)
+<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_file.png?raw=true"></p>
 
-![Image](UBN_element.png)
+<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_element.png?raw=true"></p>
 
-![Image](UBN_metainfo.png)
 
-![Image](UBN_list.png)
+<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_metainfo.png?raw=true"></p>
 
-![Image](UBN_dict.png)
+<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_list.png?raw=true"></p>
 
-![Image](UBN_value.png)
+<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_dict.png?raw=true"></p>
 
-![Image](UBN_type.png)
+<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_value.png?raw=true"></p>
 
-![Image](UBN_count.png)
+<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_type.png?raw=true"></p>
+
+<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_count.png?raw=true"></p>
 
 In comparison to text files for some binary elements no stop symbol can be defined since the whole value range is occupied for the binary data. Therefor the size of the data must be calculated and stored in front of the data. The size of the basic types are given in the type table. In case of arrays this value has to be multiplied accordingly.
 
