@@ -57,7 +57,6 @@ The graphical representation of the grammar rules below should enable a programm
 
 <p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_element.png?raw=true"></p>
 
-
 <p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_metainfo.png?raw=true"></p>
 
 <p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_list.png?raw=true"></p>
@@ -70,12 +69,12 @@ The graphical representation of the grammar rules below should enable a programm
 
 <p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_count.png?raw=true"></p>
 
-In comparison to text files for some binary elements no stop symbol can be defined since the whole value range is occupied for the binary data. Therefor the size of the data must be calculated and stored in front of the data. The size of the basic types are given in the type table. In case of arrays this value has to be multiplied accordingly.
+In comparison to text files for some binary elements no stop symbol can be defined since the whole value range is occupied for the binary data. Therefore the size of the data must be calculated and stored in front of the data. The size of the basic types are given in the type table of the grammar. In case of arrays the number of bytes has to be multiplied accordingly.
 
 Examples
 --------
 
-In the examples below symbols in brackets [ ] denote ascii characters that are stored directly in the binary data. Parenthesis ( ) shows the human readable representation of the corresponding binary data. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
+In the examples below symbols in brackets ```[ ]``` denote ascii characters that are stored directly in the binary data. Parenthesis ```( )``` shows a human readable representation of the corresponding binary data. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
 
 * **String**:
 
@@ -148,7 +147,7 @@ UBN:
 
 Version: 0.1
 
-The metainfo gives information about how to read or pre-process the data, before it is passed to the application. This is normally for optimizing the performance of large files. It can also contain application-specific information of how to apply the data. The metainfo consists of objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for ```x``` or ```y```, or if matrices or vectors have to be transposed or concatenated when loaded to memory. The metainfo object contains pairs of keywords and values. Every keyword represents a feature that extents the UBN grammar. Two examples of meta information is given below. More will follow.
+The metainfo gives information about how to read or pre-process the data, before it is passed to the application. This is mostly used for optimizing the storage efficiency or speed for large files. It can also contain application-specific information of how to apply the data. The metainfo consists of objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for ```x```, or instructions to transpose or concatenate matrices or vectors when loaded to memory. The metainfo object contains pairs of keywords and values. Every keyword represents a feature that extents the UBN grammar. Two examples of meta information are given below. More will follow.
 
 ### Length of list or dict
 
