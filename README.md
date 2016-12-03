@@ -110,7 +110,7 @@ UBN:
 
 ```
 UBN:
-[N] (uint16: 800) [N] (uint16: 600) (uint8: 3) (... data ...)
+[N] (uint16: 800) [N] (uint16: 600) (uint8: 3) [i] (... data ...)
 ```
 
 * **Object:**
