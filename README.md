@@ -22,7 +22,7 @@ Core Idea
 
 To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The basic grammar describes a very simple but hierarchical data structure. Advanced features such as random access are hidden in a special grammar rule for meta information. When ignoring the meta information, the file still can be parsed with the basic grammar and most of the binary data types can be decoded and interpreted. It is assumed that more than 90% of the UBN files will not make use of the additional meta information.
 
-## Features of the grammar
+### Features of the grammar
 
 1. Basic boolean, integer, floating point data types and strings
 2. Arrays, multi-dimensional arrays
@@ -31,7 +31,7 @@ To unify the contradicting requirements of simplicity and advanced features, the
 5. Arbitrary hierarchy levels
 6. Files are syntactically valid even if not all elements are written yet
 
-## Possible features by making use of the optional meta information
+### Possible features by making use of the optional meta information
 
 1. Table of contents
 2. Fast random access to single elements even in big files
@@ -81,7 +81,8 @@ In the examples below symbols in brackets [ ] denote ascii characters that are s
 ```
 "hello world"
 
-==> (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
+UBN:
+(uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
 ```
 
 * **3d vector of type uint8:**
@@ -89,7 +90,8 @@ In the examples below symbols in brackets [ ] denote ascii characters that are s
 ```
 [10, 200, 255]
 
-==> (uint8: 3) [I] (uint8: 10) (uint8: 200) (uint8: 255)
+UBN:
+(uint8: 3) [I] (uint8: 10) (uint8: 200) (uint8: 255)
 ```
 
 * **3 x 3 matrix of double:**
@@ -99,14 +101,16 @@ In the examples below symbols in brackets [ ] denote ascii characters that are s
   [2.2, 4.4, 6.6],
   [3.3, 5.5, 7.7] ]
   
-==> (uint8: 3) (uint8: 3) [d] (float64: 1.1) (3.3)
-    (5.5) (2.2) (4.4) (6.6) (3.3) (5.5) (7.7)
+UBN:  
+(uint8: 3) (uint8: 3) [d] (float64: 1.1) (3.3)
+(5.5) (2.2) (4.4) (6.6) (3.3) (5.5) (7.7)
 ```
 
 * **800 x 600 x 3 RGB Image:**
 
 ```
-==> [N] (uint16: 800) [N] (uint16: 600) (uint8: 3) (... data ...)
+UBN:
+[N] (uint16: 800) [N] (uint16: 600) (uint8: 3) (... data ...)
 ```
 
 * **Object:**
@@ -118,8 +122,9 @@ In the examples below symbols in brackets [ ] denote ascii characters that are s
   "habitable": True
 }
 
-==> [{] (6) [s] ("planet") (9) [s] ("Proxima b") (4) [s] ("mass")
-    [d] (float64: 1.27) (9) [s] ("habitable") [T] [}]
+UBN:
+[{] (6) [s] ("planet") (9) [s] ("Proxima b") (4) [s] ("mass")
+[d] (float64: 1.27) (9) [s] ("habitable") [T] [}]
 ```
 
 * **3 x 3 table of doubles with named colums "lon", "lat", "alt":**
@@ -131,10 +136,11 @@ In the examples below symbols in brackets [ ] denote ascii characters that are s
   [3.3,    5.5,    7.7],
   [4.4,    6.6,    8.8] ]
 
-==> [[] (int8: 3) (int8: 3) [s] [l] [o] [n] [l] [a] [t] [a] [l] [t]
-    (uint8: 3) [d] (1.1) (3.3) (5.5) (uint8: 3) [d] (2.2) (4.4)
-    (6.6) (uint8: 3) [d] (3.3) (5.5) (7.7) (uint8: 3) [d] (4.4)
-    (6.6) (8.8) []]
+UBN:
+[[] (int8: 3) (int8: 3) [s] [l] [o] [n] [l] [a] [t] [a] [l] [t]
+(uint8: 3) [d] (1.1) (3.3) (5.5) (uint8: 3) [d] (2.2) (4.4)
+(6.6) (uint8: 3) [d] (3.3) (5.5) (7.7) (uint8: 3) [d] (4.4)
+(6.6) (8.8) []]
 ```
 
 # Meta Language
