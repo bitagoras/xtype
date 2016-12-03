@@ -149,7 +149,7 @@ Version: 0.1
 
 The metainfo gives information about how to read or pre-process the data, before it is passed to the application. This is mostly used for optimizing the storage efficiency or speed for large files. It can also contain application-specific information of how to apply the data. The metainfo consists of objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for ```x```, or instructions to transpose or concatenate matrices or vectors when loaded to memory. The metainfo object contains pairs of keywords and values. Every keyword represents a feature that extents the UBN grammar. Two examples of meta information are given below. More will follow.
 
-### Length of list or dict
+### Size of element
 
 **Keyword:** ```size```
 
