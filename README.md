@@ -22,7 +22,7 @@ Core Idea
 
 To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The basic grammar describes a very simple but hierarchical data structure. Advanced features such as random access are hidden in a special grammar rule for meta information. When ignoring the meta information, the file still can be parsed with the basic grammar and most of the binary data types can be decoded and interpreted. It is assumed that more than 90% of the UBN files will not make use of the additional meta information.
 
-** Features of the grammar **
+## Features of the grammar
 
 1. Basic boolean, integer, floating point data types and strings
 2. Arrays, multi-dimensional arrays
@@ -31,7 +31,7 @@ To unify the contradicting requirements of simplicity and advanced features, the
 5. Arbitrary hierarchy levels
 6. Files are syntactically valid even if not all elements are written yet
 
-** Possible features by making use of the optional meta information **
+## Possible features by making use of the optional meta information
 
 1. Table of contents
 2. Fast random access to single elements even in big files
@@ -54,12 +54,19 @@ Grammar (beta1)
 The graphical representation of the grammar rules below should enable a programmer to write valid UBN files. All red round boxes represent data to be written. Single black characters inside the round boxes are stored directly as ascii character. Green boxes represent nested grammer rules.
 
 ![Image](UBN_file.png)
+
 ![Image](UBN_element.png)
+
 ![Image](UBN_metainfo.png)
+
 ![Image](UBN_list.png)
+
 ![Image](UBN_dict.png)
+
 ![Image](UBN_value.png)
+
 ![Image](UBN_type.png)
+
 ![Image](UBN_count.png)
 
 In comparison to text files for some binary elements no stop symbol can be defined since the whole value range is occupied for the binary data. Therefor the size of the data must be calculated and stored in front of the data. The size of the basic types are given in the type table. In case of arrays this value has to be multiplied accordingly.
@@ -71,7 +78,7 @@ In the examples below symbols in brackets [ ] denote ascii characters that are s
 
 * **String**:
 
-```json
+```
 "hello world"
 
 ==> (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
@@ -79,7 +86,7 @@ In the examples below symbols in brackets [ ] denote ascii characters that are s
 
 * **3d vector of type uint8:**
 
-```json
+```
 [10, 200, 255]
 
 ==> (uint8: 3) [I] (uint8: 10) (uint8: 200) (uint8: 255)
@@ -87,7 +94,7 @@ In the examples below symbols in brackets [ ] denote ascii characters that are s
 
 * **3 x 3 matrix of double:**
 
-```json
+```
 [ [1.1, 3.3, 5.5],
   [2.2, 4.4, 6.6],
   [3.3, 5.5, 7.7] ]
@@ -98,13 +105,13 @@ In the examples below symbols in brackets [ ] denote ascii characters that are s
 
 * **800 x 600 x 3 RGB Image:**
 
-```json
+```
 ==> [N] (uint16: 800) [N] (uint16: 600) (uint8: 3) (... data ...)
 ```
 
 * **Object:**
 
-```json
+```
 {
   "planet": "Proxima b",
   "mass": 1.27,
@@ -117,7 +124,7 @@ In the examples below symbols in brackets [ ] denote ascii characters that are s
 
 * **3 x 3 table of doubles with named colums "lon", "lat", "alt":**
 
-```json
+```
 [ ["lon", "lat", "alt"],
   [1.1,    3.3,    5.5],
   [2.2,    4.4,    6.6],
