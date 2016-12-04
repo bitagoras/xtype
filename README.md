@@ -163,7 +163,7 @@ UBN:
 
 Version: 0.1
 
-The content of the ```metainfo``` object gives information about how to read or pre-process the data, before it is passed to the application. This is mostly used for optimizing the storage efficiency or speed for large files. It can also contain application-specific information of how to apply the data. The metainfo consists of objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for ```x```, or instructions to transpose or concatenate matrices or vectors when loaded into memory. The metainfo object contains pairs of keywords and values. Each pair represents an extended features that is not contained in the UBN core grammar. Some first examples of such meta features are listed below. More will follow.
+The content of the ```metainfo``` object gives information about how to read or pre-process the data, before it is passed to the application. This is mostly used for optimizing the storage efficiency or speed for large files. It can also contain application-specific information of how to apply the data. The metainfo consists of objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for ```x```, or instructions to transpose or concatenate matrices or vectors when loaded into memory. The metainfo object contains pairs of keywords and values. Each pair represents an extended feature that is not contained in the UBN core grammar. Some first examples of meta features are listed below. More will follow.
 
 ### Size of element
 
