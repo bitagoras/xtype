@@ -74,7 +74,7 @@ In comparison to text files no stop symbol can be defined for binary elements si
 Examples
 --------
 
-In the examples below characters in brackets ```[ ]``` symbolize bytes stored directly as ascii values in the binary data. Parentheses ```( )``` contain readable representations of the corresponding binary data. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
+In the examples below characters in brackets ```[ ]``` symbolize bytes stored directly as ascii values. Parentheses ```( )``` contain readable representations of the corresponding binary data. If no type is noted for integers in parantheses the type is uint8. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
 
 * **String**:
 
@@ -147,15 +147,15 @@ UBN:
 
 UBN:
 [[]
-    (int8: 3)
-        (int8: 3) [s]
+    (3)
+        (3) [s]
             [l] [o] [n]
             [l] [a] [t]
             [a] [l] [t]
-    (uint8: 3) [d] (1.1) (3.3) (5.5)
-    (uint8: 3) [d] (2.2) (4.4) (6.6)
-    (uint8: 3) [d] (3.3) (5.5) (7.7)
-    (uint8: 3) [d] (4.4) (6.6) (8.8)
+    (3) [d] (1.1) (3.3) (5.5)
+    (3) [d] (2.2) (4.4) (6.6)
+    (3) [d] (3.3) (5.5) (7.7)
+    (3) [d] (4.4) (6.6) (8.8)
 []]
 ```
 
@@ -210,7 +210,7 @@ In the following example an element with 10000 bytes is taged as deleted. The in
 [<] (7) [d] [e] [l] [e] [t] [e] [d]
     [T]
 [>]
-[N] (9985) [x]
+[N] (unit16: 9985) [x]
 ```
 
 ### Structured types
