@@ -171,7 +171,7 @@ This meta information gives the number of bytes of an element. The size also inc
 Let's assume the element, including the meta information, is 1200 kByte. The meta information would be:
 
 ```
-[<] (5) [s] [i] [z] [e]
+[<] (4) [s] [i] [z] [e]
     [N] (1200) [x]
 [>]
 ```
