@@ -74,7 +74,7 @@ In comparison to text files no stop symbol can be defined for binary elements si
 Examples
 --------
 
-In the examples below characters in brackets ```[ ]``` symbolize bytes stored directly as ascii value in the binary data. Parentheses ```( )``` contain readable representations of the corresponding binary data. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
+In the examples below characters in brackets ```[ ]``` symbolize bytes stored directly as ascii values in the binary data. Parentheses ```( )``` contain readable representations of the corresponding binary data. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
 
 * **String**:
 
