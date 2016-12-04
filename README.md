@@ -234,7 +234,7 @@ In the following example an element with 10000 bytes is taged as deleted. The in
 
 The value of the meta feature keyword ```struct``` is of type ```dict```. The dict contains one or multiple struct definitions. Each key of the dict is e.g. the ```x```-type including a certain length (```v1```) and the value of the dict contains the type definition of the struct (```v2```). A key could be for example ```v1 = (12) [x]```. This means that all arrays of type ```x``` that have the exact length of 12 will be interpreted as the struct defined by ```v2```. A struct definition that consist of an int32 and a float64 would be ```v2 = [k] [d]```. Both ```v1``` and ```v2``` are of type ```x```.
 
-In case were many structs of the same size must be defined, ```v1``` can also contain one or two data bytes (type uint8 or uint16) to distinguish the different structs. The same data must then be present at the beginning of every data of the ```x``` or ```y``` array containing the structured data. The struct definition will refer only to the part of the ```x``` or ```y``` array with the structured data, excluding the struct enumeration bytes.
+In case were many structs of the same size must be defined, ```v1``` can also contain one or two data bytes (type uint8 or uint16) as identifiers to distinguish the different structs. The same ID must then be present at the beginning of every data of the ```x``` or ```y``` array containing the structured data. The struct definition will refer only to the part of the ```x``` or ```y``` array with the structured data, excluding the struct ID bytes.
 
 The struct definition is only valid for the related element and all sub-elements. Nested elements can overwrite outer struct definitions temporarily inside the own scope.
 
@@ -263,31 +263,31 @@ When the interpreter finds a type that matches ```(2) [x]```, the bytes are inte
 
 **Example 2:**
 
-Let's assume we want to define a struct int8 + float32 and another one int16 + int16 + int8, both of size 5 bytes. The metainfo will be:
+Let's assume we want to define a struct int8 + float32 and another one int16 + int16 + int8, both of same size (5 bytes). The two types ```y``` and ```x``` could be used to distinguish in this case two structs. When many more structs have to be defined of same length, the following metainfo can be used:
 
 ```
 [<] (6) [s] [t] [r] [u] [c] [t]
     [{]
-        (2) [x] (55)
-            (5) [x]
+        (3) [x]
+            (6) [x] (55)
         (2) [x]
             [i] [f]
-        (2) [x] (77)
-            (5) [x]
+        (3) [x]
+            (6) [x] (77)
         (3) [x]
             [j] [j] [i]
     [}]
 [>]
 ```
-The values (55) and (77) are arbitrary bytes to distinguish the two structs. ```y``` instead of ```x``` could also be used to distinguish two structs of same length.
+The values (55) and (77) are arbitrary IDs to distinguish the two structs. 
 
-An element of struct 1 with the numbers 120 and 2.25 would be:
+An element of the first struct (ID 55) with the data 120 and 2.25 would be:
 
 ```
 (6) [x] (55) (int8: 123) (float32: 2.25)
 ```
 
-An element of struct 2 with the numbers 1234, 2345 and 11 would be:
+An element of the second struct (ID 77) with the data 1234, 2345 and 11 would be:
 
 ```
 (6) [x] (77) (int16: 1234) (int16: 2345) (int8: 11)
