@@ -27,8 +27,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="180.32709"
-     inkscape:cy="748.21263"
+     inkscape:cx="334.99079"
+     inkscape:cy="818.07112"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -440,7 +440,7 @@
     <path
        id="path4803"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 230.78678,213.40852 h -3.22891 c -4.56314,0 -6.8037,-3.77913 -6.8037,-7.87196 v -4.91552 c 0,-4.67697 1.87307,-8.58145 6.90703,-8.58145 h 104.37591 c 5.03397,0 6.90704,3.90448 6.90704,8.58145 v 4.91552 c 0,4.27747 -2.22372,7.87196 -6.8037,7.87196 h -2.15747"
+       d="m 235.87606,213.40852 h -3.22891 c -4.56314,0 -6.8037,3.77913 -6.8037,7.87196 v 4.91552 c 0,4.67697 1.87307,8.58145 6.90703,8.58145 h 93.12591 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58145 v -4.91552 c 0,-4.27747 -2.22372,-7.87196 -6.8037,-7.87196 h -2.15747"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csssccsssc"
        inkscape:export-xdpi="96"
@@ -1934,7 +1934,7 @@
        y="0"
        xlink:href="#path6605"
        id="use5272"
-       transform="translate(-2.2170757e-6,79.423831)"
+       transform="translate(-3.7500022,79.423831)"
        width="100%"
        height="100%"
        inkscape:export-xdpi="96"
@@ -1943,7 +1943,7 @@
     <text
        id="text4835"
        y="296.86975"
-       x="171.02821"
+       x="167.27821"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.62500095px;line-height:100%;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:export-xdpi="96"
@@ -1951,7 +1951,7 @@
        inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png"><tspan
          style="stroke-width:1px"
          y="296.86975"
-         x="171.02821"
+         x="167.27821"
          id="tspan4833"
          sodipodi:role="line">{</tspan></text>
     <use
@@ -1959,7 +1959,7 @@
        y="0"
        xlink:href="#path6605"
        id="use5260"
-       transform="translate(229.46152,79.423831)"
+       transform="translate(236.96152,79.423831)"
        width="100%"
        height="100%"
        inkscape:export-xdpi="96"
@@ -1968,7 +1968,7 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.62500095px;line-height:100%;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="400.54315"
+       x="408.04315"
        y="296.86975"
        id="text4841"
        inkscape:export-xdpi="96"
@@ -1977,11 +1977,11 @@
          style="stroke-width:1px"
          sodipodi:role="line"
          id="tspan4839"
-         x="400.54315"
+         x="408.04315"
          y="296.86975">}</tspan></text>
     <g
        id="g4829"
-       transform="translate(26.695994,222.38376)"
+       transform="translate(34.195994,222.38376)"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"
        inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png">
@@ -2017,89 +2017,93 @@
              y="102.67437">eof</tspan></text>
       </g>
     </g>
-    <path
-       sodipodi:nodetypes="csssccsssc"
-       inkscape:connector-curvature="0"
-       d="m 204.62325,292.83235 h -3.22891 c -4.56314,0 -6.8037,-3.77913 -6.8037,-7.87196 v -4.91552 c 0,-4.67697 1.87307,-8.58145 6.90703,-8.58145 h 160.45297 c 5.03397,0 6.90704,3.90448 6.90704,8.58145 v 4.91552 c 0,4.27747 -2.22372,7.87196 -6.8037,7.87196 h -2.15747"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path4843"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png" />
-    <rect
-       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4815"
-       width="74.204262"
-       height="19.428198"
-       x="279.57504"
-       y="283.11823"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="284.84003"
-       y="297.9584"
-       id="text4819"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png"><tspan
-         sodipodi:role="line"
-         id="tspan4817"
-         x="284.84003"
-         y="297.9584">element</tspan></text>
-    <rect
-       y="283.11823"
-       x="209.66902"
-       height="19.428198"
-       width="57.631443"
-       id="rect4847"
-       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png" />
-    <text
-       id="text4851"
-       y="297.9584"
-       x="217.65497"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png"><tspan
+    <g
+       id="g4881"
+       transform="translate(-2.41072)">
+      <path
+         inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png"
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         id="path4843"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 212.12325,292.83236 h -3.22891 c -4.56314,0 -6.8037,3.77913 -6.8037,7.87196 v 14.29052 c 0,4.67697 1.87307,8.58145 6.90703,8.58145 h 149.20297 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58145 v -14.29052 c 0,-4.27747 -2.22372,-7.87196 -6.8037,-7.87196 h -2.15747"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="csssccsssc" />
+      <rect
+         inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png"
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         y="283.11823"
+         x="280.27817"
+         height="19.428198"
+         width="72.798012"
+         id="rect4815"
+         style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png"
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         id="text4819"
          y="297.9584"
-         x="217.65497"
-         id="tspan4849"
-         sodipodi:role="line">value</tspan></text>
-    <text
-       id="text5011"
-       y="318.70111"
-       x="225.87946"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-         y="318.70111"
+         x="284.84003"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="297.9584"
+           x="284.84003"
+           id="tspan4817"
+           sodipodi:role="line">element</tspan></text>
+      <rect
+         inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png"
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect4847"
+         width="50.365818"
+         height="19.428198"
+         x="214.12215"
+         y="283.11823" />
+      <text
+         inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png"
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="218.47528"
+         y="297.9584"
+         id="text4851"><tspan
+           sodipodi:role="line"
+           id="tspan4849"
+           x="218.47528"
+           y="297.9584">value</tspan></text>
+      <text
+         inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png"
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="225.87946"
-         id="tspan5009"
-         sodipodi:role="line">key</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="297.7038"
-       y="318.70111"
-       id="text5015"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png"><tspan
-         sodipodi:role="line"
-         id="tspan5013"
+         y="317.48901"
+         id="text5011"><tspan
+           sodipodi:role="line"
+           id="tspan5009"
+           x="225.87946"
+           y="317.48901"
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">key</tspan></text>
+      <text
+         inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_dict.png"
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         id="text5015"
+         y="317.48901"
          x="297.7038"
-         y="318.70111"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">value</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
+           y="317.48901"
+           x="297.7038"
+           id="tspan5013"
+           sodipodi:role="line">value</tspan></text>
+    </g>
     <use
        x="0"
        y="0"
@@ -2279,7 +2283,7 @@
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        y="203.69441"
-       x="242.74702"
+       x="242.2113"
        height="19.428198"
        width="74.204262"
        id="rect6079"
@@ -2290,12 +2294,12 @@
        inkscape:export-xdpi="96"
        id="text6083"
        y="218.53458"
-       x="248.01201"
+       x="247.47627"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_list.png"><tspan
          y="218.53458"
-         x="248.01201"
+         x="247.47627"
          id="tspan6081"
          sodipodi:role="line">element</tspan></text>
     <rect
@@ -3011,5 +3015,23 @@
          x="353.66415"
          id="tspan4721"
          sodipodi:role="line">dict</tspan></text>
+    <path
+       inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_list.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       sodipodi:nodetypes="csssccsssc"
+       inkscape:connector-curvature="0"
+       d="m 208.84656,213.40852 h 3.22891 c 1.71864,0 6.8037,-3.77913 6.8037,-7.87196 v -4.91552 c 0,-4.67697 1.87307,-8.58145 6.90703,-8.58145 h 108.12591 c 5.03397,0 6.90704,3.90448 6.90704,8.58145 v 4.91552 c 0,4.27747 2.22372,7.87196 6.8037,7.87196 h 2.15747"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4866" />
+    <path
+       id="path4868"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 184.47156,292.83236 h 3.22891 c 1.71864,0 6.8037,-3.77913 6.8037,-7.87196 v -4.91552 c 0,-4.67697 1.87307,-8.58145 6.90703,-8.58145 h 158.75091 c 5.03397,0 6.90704,3.90448 6.90704,8.58145 v 4.91552 c 0,4.27747 2.22372,7.87196 6.8037,7.87196 h 2.15747"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssccsssc"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="F:\Programmierprojekte\UniversakBinaryNotation\Universal-Binary-Notation\trunk\UBN_list.png" />
   </g>
 </svg>
