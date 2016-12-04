@@ -163,7 +163,7 @@ UBN:
 
 Version: 0.1
 
-The metainfo gives information about how to read or pre-process the data, before it is passed to the application. This is mostly used for optimizing the storage efficiency or speed for large files. It can also contain application-specific information of how to apply the data. The metainfo consists of objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for ```x```, or instructions to transpose or concatenate matrices or vectors when loaded to memory. The metainfo object contains pairs of keywords and values. Each keyword represents a feature that extents features that are not contained in the UBN core grammar. Two examples of meta information are given below. More will follow.
+The content of the ```metainfo``` object gives information about how to read or pre-process the data, before it is passed to the application. This is mostly used for optimizing the storage efficiency or speed for large files. It can also contain application-specific information of how to apply the data. The metainfo consists of objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for ```x```, or instructions to transpose or concatenate matrices or vectors when loaded into memory. The metainfo object contains pairs of keywords and values. Each pair represents an extended features that is not contained in the UBN core grammar. Some first examples of such meta features are listed below. More will follow.
 
 ### Size of element
 
@@ -180,7 +180,7 @@ The metainfo gives information about how to read or pre-process the data, before
 
 **Explanation:**
 
-This meta information gives the number of bytes of an element. The size also includes the metainfo itself, as well as white-spaces after the metainfo. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files.
+This meta feature tells the number of bytes of an element. The size also includes the metainfo itself, as well as white-spaces after the metainfo. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements.
 
 **Example:**
 
@@ -190,6 +190,27 @@ Let's assume the element, including the meta information, is 1200 byte. The meta
 [<] (4) [s] [i] [z] [e]
     [N] (1200) [x]
 [>]
+```
+
+### Deleted element
+
+**Keyword:** ```deleted```
+
+**Value:** ```T``` (true) or ```F``` (false)
+
+**Explanation:**
+
+This meta feature tags an element as deleted, wthen the value is set to true. This is usefull for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an ```x``` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. Next time the entire file is rebuit, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later.
+
+**Example:**
+
+In the following example an element with 10000 bytes is taged as deleted. The included metainfo and the ```x``` array type definition are together 15 bytes long. The remaining bytes of the 10000 bytes are covered by the 99985 long ```x``` array. So, only 15 bytes had to be written to remove the element, instead of writing 10000 spaces or rebuiding the whole remaining part of the file.
+
+```
+[<] (7) [d] [e] [l] [e] [t] [e] [d]
+    [T]
+[>]
+[N] (9985) [x]
 ```
 
 ### Structured types
@@ -211,7 +232,7 @@ Let's assume the element, including the meta information, is 1200 byte. The meta
 ```
 **Explanation:**
 
-The value of the meta info keyword ```struct``` is of type ```dict```. The dict contains one or multiple struct definitions. Each key of the dict is e.g. the ```x```-type including a certain length (```v1```) and the value of the dict contains the type definition of the struct (```v2```). A key could be for example ```v1 = (12) [x]```. This means that all arrays of type ```x``` that have the exact length of 12 will be interpreted as the struct defined by ```v2```. A struct definition that consist of an int32 and a float64 would be ```v2 = [k] [d]```. Both ```v1``` and ```v2``` are of type ```x```.
+The value of the meta feature keyword ```struct``` is of type ```dict```. The dict contains one or multiple struct definitions. Each key of the dict is e.g. the ```x```-type including a certain length (```v1```) and the value of the dict contains the type definition of the struct (```v2```). A key could be for example ```v1 = (12) [x]```. This means that all arrays of type ```x``` that have the exact length of 12 will be interpreted as the struct defined by ```v2```. A struct definition that consist of an int32 and a float64 would be ```v2 = [k] [d]```. Both ```v1``` and ```v2``` are of type ```x```.
 
 In case many structs of the same size must be defined, ```v1``` can also contains one or two data bytes (type uint8 or uint16) to distinguish the different structs. The same data must then be present at the beginning of every data of the structured type. The struct definition will then refers only to the residuel part of the data, excluding the struct enumeration bytes.
 
