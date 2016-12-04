@@ -284,11 +284,11 @@ The values (55) and (77) are arbitrary bytes to distinguish the two structs. ```
 An element of struct 1 with the numbers 120 and 2.25 would be:
 
 ```
-(7) [x] (55) (int8: 123) (float32: 2.25)
+(6) [x] (55) (int8: 123) (float32: 2.25)
 ```
 
 An element of struct 2 with the numbers 1234, 2345 and 11 would be:
 
 ```
-(7) [x] (77) (int16: 1234) (int16: 2345) (int8: 11)
+(6) [x] (77) (int16: 1234) (int16: 2345) (int8: 11)
 ```
