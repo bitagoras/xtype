@@ -204,7 +204,7 @@ This meta feature tags an element as deleted, wthen the value is set to true. Th
 
 **Example:**
 
-In the following example an element with 10000 bytes is taged as deleted. The included metainfo and the ```x``` array type definition are together 15 bytes long. The remaining bytes of the 10000 bytes are covered by the 99985 long ```x``` array. So, only 15 bytes had to be written to remove the element, instead of writing 10000 spaces or rebuiding the whole remaining part of the file.
+In the following example an element with 10000 bytes is taged as deleted. The included metainfo and the ```x``` array type definition are together 15 bytes long. The remaining bytes of the 10000 bytes are covered by the 99985 long ```x``` array. So, only 15 bytes had to be written to remove the element, instead of writing 10000 spaces or rebuiding the whole file.
 
 ```
 [<] (7) [d] [e] [l] [e] [t] [e] [d]
