@@ -234,7 +234,7 @@ In the following example an element with 10000 bytes is taged as deleted. The in
 
 The value of the meta feature keyword ```struct``` is of type ```dict```. The dict contains one or multiple struct definitions. Each key of the dict is e.g. the ```x```-type including a certain length (```v1```) and the value of the dict contains the type definition of the struct (```v2```). A key could be for example ```v1 = (12) [x]```. This means that all arrays of type ```x``` that have the exact length of 12 will be interpreted as the struct defined by ```v2```. A struct definition that consist of an int32 and a float64 would be ```v2 = [k] [d]```. Both ```v1``` and ```v2``` are of type ```x```.
 
-In case many structs of the same size must be defined, ```v1``` can also contains one or two data bytes (type uint8 or uint16) to distinguish the different structs. The same data must then be present at the beginning of every data of the structured type. The struct definition will then refers only to the residuel part of the data, excluding the struct enumeration bytes.
+In case were many structs of the same size must be defined, ```v1``` can also contain one or two data bytes (type uint8 or uint16) to distinguish the different structs. The same data must then be present at the beginning of every data of the ```x``` or ```y``` array containing the structured data. The struct definition will refer only to the part of the ```x``` or ```y``` array with the structured data, excluding the struct enumeration bytes.
 
 The struct definition is only valid for the related element and all sub-elements. Nested elements can overwrite outer struct definitions temporarily inside the own scope.
 
