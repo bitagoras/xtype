@@ -74,7 +74,7 @@ In comparison to text files no stop symbol can be defined for binary elements si
 Examples
 --------
 
-In the examples below symbols in brackets ```[ ]``` denote ascii characters that are stored directly in the binary data. Parentheses ```( )``` show some human readable representation of the corresponding binary data. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
+In the examples below characters in brackets ```[ ]``` symbolize bytes stored directly as ascii value in the binary data. Parentheses ```( )``` contain readable representations of the corresponding binary data. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
 
 * **String**:
 
@@ -204,7 +204,7 @@ This meta feature tags an element as deleted, wthen the value is set to true. Th
 
 **Example:**
 
-In the following example an element with 10000 bytes is taged as deleted. The included metainfo and the ```x``` array type definition are together 15 bytes long. The remaining bytes of the 10000 bytes are covered by the 9985 long ```x``` array. So, only 15 bytes had to be written to remove the element, instead of writing 10000 spaces or rebuiding the whole file.
+In the following example an element with 10000 bytes is taged as deleted. The included metainfo and the ```x``` array type definition are together 15 bytes long. The remaining bytes of the 10000 bytes are covered by the 9985 long ```x``` array. So, only 15 bytes had to be written to remove the element, instead of writing 10000 spaces or rebuilding the whole file.
 
 ```
 [<] (7) [d] [e] [l] [e] [t] [e] [d]
