@@ -263,7 +263,7 @@ When the interpreter finds a type that matches ```(2) [x]```, the bytes are inte
 
 **Example 2:**
 
-Let's assume we want to define a struct int8 + float32 and another one int16 + int16 + int8, both of size 5 The metainfo would be
+Let's assume we want to define a struct int8 + float32 and another one int16 + int16 + int8, both of size 5 bytes. The metainfo will be:
 
 ```
 [<] (6) [s] [t] [r] [u] [c] [t]
@@ -284,11 +284,11 @@ The values (55) and (77) are arbitrary bytes to distinguish the two structs. ```
 An element of struct 1 with the numbers 120 and 2.25 would be:
 
 ```
-(3) [x] (55) (int8: 123) (float32: 2.25)
+(7) [x] (55) (int8: 123) (float32: 2.25)
 ```
 
-An element of struct 2 with the numbers 1234, 2345 and 7 would be:
+An element of struct 2 with the numbers 1234, 2345 and 11 would be:
 
 ```
-(3) [x] (77) (int16: 1234) (int16: 2345) (int8: 7)
+(7) [x] (77) (int16: 1234) (int16: 2345) (int8: 11)
 ```
