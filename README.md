@@ -15,7 +15,7 @@ For text files universal formats exist, like [XML](https://www.w3.org/XML/), [JS
 
 Here comes the vision of a Universal Binary Notation (UBN) that is as easy to use and provides all desirable properties of binary formats. One single editor should be able to view and edit the content of any binary file format that is based on UBN. This would allow binary files to gain the popularity of text files that can all be opened by one text-editor. Due to it's binary structure sub-elements can be accessed directly and handled like files in directories of a file system.
 
-But why a new format? Does no common binary formats exist for general purposes? There are some examples, however they suffer from too high complexity or limited versatility. Examples are HDF5 (Hierarchical Data Format) and UBJSON (Universal Binary Java Script Object Notation). The former is feature-rich and suitable for huge scientific data sets but has a quite complicated grammar while the latter is very simple, but is not optimized for big databases. UBN is supposed to bridging the gap.
+But why a new format? Does no common binary formats exist for general purposes? There are some examples, however they suffer from too high complexity or limited versatility. Examples are HDF5 (Hierarchical Data Format) and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation). The former is feature-rich and suitable for huge scientific data sets but has a quite complicated grammar while the latter is very simple, but is not optimized for big databases. UBN is supposed to bridging the gap.
 
 Core Idea
 ---------
