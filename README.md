@@ -116,7 +116,7 @@ UBN:
 [N] (uint16: 800)
     [N] (uint16: 600)
         (uint8: 3) [I]
-             (... data ...)
+             (... 800*600*3 bytes of data ...)
 ```
 
 * **Object:**
