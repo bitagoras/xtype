@@ -217,18 +217,15 @@ In the following example an element with 10000 bytes is taged as deleted. The in
 
 **Keyword:** ```struct```
 
-**Value:** ```{ (ax: v1): (ax: v2), ...}```
+**Value:** ```{ A: B, ...}```
 
 **With:**
 
 ```
-   ax: array of type x or y
-   
-   v1: (array of type x or y definition)
-       Bytes that match a type x or y array definition
+   A: (array of type x: search bytes with typedefinition of array of type x or y)
        
-   v2: (type) (type) ... 
-       List of types that form the struct
+   B: (array of type x: (type) (type) ... )
+       List of types that define the struct
 ```
 **Explanation:**
 
@@ -256,7 +253,7 @@ Let's assume we want to define a struct int8 + float32. The metainfo would be
 An element of the struct with e.g. the numbers 120 and 2.25:
 
 ```
-(2) [x] (int8: 123) (float32: 2.25)
+(5) [x] (int8: 123) (float32: 2.25)
 ```
 
 When the interpreter finds a type that matches ```(2) [x]```, the bytes are interpreted as the defined struct.
