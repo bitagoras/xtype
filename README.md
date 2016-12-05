@@ -53,21 +53,21 @@ Grammar (beta1)
 
 The graphical representation of the grammar rules below should enable a programmer to write valid UBN files. All red round boxes represent data to be written. Single black characters inside the round boxes are stored directly as ascii characters. Green boxes represent nested grammer rules.
 
-<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_file.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_file.png"></p>
 
-<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_element.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_element.png"></p>
 
-<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_metainfo.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_metainfo.png"></p>
 
-<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_list.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_list.png"></p>
 
-<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_dict.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_dict.png"></p>
 
-<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_value.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_value.png"></p>
 
-<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_type.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_type.png"></p>
 
-<p align="center"><img src="https://github.com/bitagoras/Universal-Binary-Notation/blob/master/UBN_count.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_count.png"></p>
 
 In comparison to text files no stop symbol can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be calculated and stored in front of the data. The sizes of the basic types are given in the type table of the grammar. In case of arrays the number of bytes have to be multiplied accordingly.
 
@@ -91,7 +91,7 @@ UBN:
 [10, 200, 255]
 
 UBN:
-(uint8: 3) [I] (uint8: 10) (uint8: 200) (uint8: 255)
+(uint8: 3) [i] (uint8: 10) (uint8: 200) (uint8: 255)
 ```
 
 * **3 x 3 matrix of double:**
@@ -113,9 +113,9 @@ UBN:
 
 ```
 UBN:
-[N] (uint16: 800)
-    [N] (uint16: 600)
-        (uint8: 3) [I]
+[n] (uint16: 800)
+    [n] (uint16: 600)
+        (uint8: 3) [i]
              (... 800*600*3 bytes of data ...)
 ```
 
@@ -210,7 +210,7 @@ In the following example an element with 10000 bytes is taged as deleted. The in
 [<] (7) [d] [e] [l] [e] [t] [e] [d]
     [T]
 [>]
-[N] (unit16: 9985) [x]
+[n] (unit16: 9985) [x]
 ```
 
 ### Structured types
@@ -245,7 +245,7 @@ Let's assume we want to define a struct int8 + float32. The metainfo would be
         (2) [x]
             (5) [x]
         (2) [x]
-            [i] [f]
+            [I] [f]
     [}]
 [>]
 ```
@@ -268,11 +268,11 @@ Let's assume we want to define a struct int8 + float32 and another one int16 + i
         (3) [x]
             (6) [x] (55)
         (2) [x]
-            [i] [f]
+            [I] [f]
         (3) [x]
             (6) [x] (77)
         (3) [x]
-            [j] [j] [i]
+            [J] [J] [I]
     [}]
 [>]
 ```
