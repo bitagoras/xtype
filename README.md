@@ -75,20 +75,20 @@ In comparison to text files no stop symbol can be defined for binary elements si
 
 | Type    | Name      | Bytes | Description                    | Comment                                       |
 |:-------:|-----------|:-----:|--------------------------------|-----------------------------------------------|
-| ```i``` | uint8     | 1     | unsigned integer 8-bit         | unsigned char                                 |
-| ```j``` | uint16    | 2     | unsigned integer 16-bit        | unsigned short int                            |
-| ```k``` | uint32    | 4     | unsigned integer 32-bit        | unsigned int                                  |
-| ```l``` | uint32    | 8     | unsigned integer 64-bit        | unsigned long int                             |
-| ```I``` | uint8     | 1     | signed integer 8-bit           | char                                          |
-| ```J``` | uint16    | 2     | signed integer 16-bit          | short int                                     |
-| ```K``` | uint32    | 4     | signed integer 32-bit          | int                                           |
-| ```L``` | uint32    | 8     | signed integer 64-bit          | long int                                      |
+| ```i``` | uint8     | 1     | unsigned integer 8-bit         | c: unsigned char                              |
+| ```j``` | uint16    | 2     | unsigned integer 16-bit        | c: unsigned short int                         |
+| ```k``` | uint32    | 4     | unsigned integer 32-bit        | c: unsigned int                               |
+| ```l``` | uint32    | 8     | unsigned integer 64-bit        | c: unsigned long int                          |
+| ```I``` | uint8     | 1     | signed integer 8-bit           | c: char                                       |
+| ```J``` | uint16    | 2     | signed integer 16-bit          | c: short int                                  |
+| ```K``` | uint32    | 4     | signed integer 32-bit          | c: int                                        |
+| ```L``` | uint32    | 8     | signed integer 64-bit          | c: long int                                   |
 | ```b``` | boolean   | 1     | boolean type                   | values: 0x00 = false or 0xFF = true           |
 | ```h``` | float16   | 2     | half precission float 16-bit   | IEEE 754-2008 half-precission float           |
 | ```f``` | float32   | 4     | float 32-bit                   | IEEE 754 single-precision float               |
 | ```d``` | float64   | 8     | double precission float 64-bit | IEEE 754 double-precision float               |
 | ```s``` | str/utf-8 | 1     | ascii / utf-8 string           | no other coding than utf-8 is specified       |
-| ```u``` | uft-16    | 2     | unicode string in utf-16       | unicode utf-16                                |
+| ```u``` | uft-16    | 2     | unicode string in utf-16       |                                               |
 | ```x``` | other     | 1     | user defined type 1            | struct, compressed data etc.                  |
 | ```y``` | other     | 1     | user defined type 2            | struct, compressed data etc.                  |
 
