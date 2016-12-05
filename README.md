@@ -69,7 +69,7 @@ The graphical representation of the grammar rules below should enable a programm
 
 <p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_count.png"></p>
 
-In comparison to text files no stop symbol can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be calculated and stored in front of the data. The sizes of the basic types are given in the type table. In case of arrays the number of bytes have to be multiplied accordingly.
+In contrast to text files no stop symbol can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be calculated and stored in front of the data. The sizes of the basic types are given in the type table. In case of arrays the number of bytes have to be multiplied accordingly.
 
 ## Types
 
