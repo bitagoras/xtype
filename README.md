@@ -69,12 +69,12 @@ The graphical representation of the grammar rules below should enable a programm
 
 <p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_count.png"></p>
 
-In comparison to text files no stop symbol can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be calculated and stored in front of the data. The sizes of the basic types are given in the type table of the grammar. In case of arrays the number of bytes have to be multiplied accordingly.
+In comparison to text files no stop symbol can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be calculated and stored in front of the data. The sizes of the basic types are given in the type table. In case of arrays the number of bytes have to be multiplied accordingly.
 
 Examples
 --------
 
-In the examples below characters in brackets ```[ ]``` symbolize bytes stored directly as ascii values. Parentheses ```( )``` contain readable representations of the corresponding binary data. If no type is noted for integers in parantheses the type is uint8. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
+In the examples below characters in brackets ```[ ]``` symbolize bytes stored directly as ascii values. Parentheses ```( )``` show readable representations of the corresponding binary data. If no type is noted for integers in parantheses the type is uint8. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
 
 * **String**:
 
@@ -162,6 +162,27 @@ UBN:
     (3) [d] (4.4) (6.6) (8.8)
 []]
 ```
+
+# Types
+
+| Type    | Name      | Bytes | Description                    | Comment                                       |
+|:-------:|-----------|:-----:|--------------------------------|-----------------------------------------------|
+| ```i``` | uint8     | 1     | unsigned integer 8-bit         | unsigned char                                 |
+| ```j``` | uint16    | 2     | unsigned integer 16-bit        | unsigned short int                            |
+| ```k``` | uint32    | 4     | unsigned integer 32-bit        | unsigned int                                  |
+| ```l``` | uint32    | 8     | unsigned integer 64-bit        | unsigned long int                             |
+| ```I``` | uint8     | 1     | signed integer 8-bit           | char                                          |
+| ```J``` | uint16    | 2     | signed integer 16-bit          | short int                                     |
+| ```K``` | uint32    | 4     | signed integer 32-bit          | int                                           |
+| ```L``` | uint32    | 8     | signed integer 64-bit          | long int                                      |
+| ```b``` | boolean   | 1     | boolean type                   | values: 0x00 = false or 0xFF = true           |
+| ```h``` | float16   | 2     | half precission float 16-bit   | IEEE 754-2008 half-precission float           |
+| ```f``` | float32   | 4     | float 32-bit                   | IEEE 754 single-precision float               |
+| ```d``` | float64   | 8     | double precission float 64-bit | IEEE 754 double-precision float               |
+| ```s``` | str/utf-8 | 1     | ascii / utf-8 string           | no other coding than utf-8 is specified       |
+| ```u``` | uft-16    | 2     | unicode string in utf-16       | unicode utf-16                                |
+| ```x``` | other     | 1     | user defined type 1            | struct, compressed data etc.                  |
+| ```y``` | other     | 1     | user defined type 2            | struct, compressed data etc.                  |
 
 # Meta Language
 
