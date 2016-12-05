@@ -282,7 +282,7 @@ An element of the struct with e.g. the numbers 120 and 2.25:
 (5) [x] (int8: 123) (float32: 2.25)
 ```
 
-When the interpreter finds a type that matches ```(2) [x]```, the bytes are interpreted as the defined struct.
+So the interpreter compares all other-types with the bytes ```(5) [x]```. In case of a match the data is interpreted as the corresponding struct.
 
 **Example 2:**
 
