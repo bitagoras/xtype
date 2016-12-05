@@ -83,6 +83,8 @@ In the examples below characters in brackets ```[ ]``` symbolize bytes stored di
 
 UBN:
 (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
+
+hex:    0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 
 * **3d vector of type uint8:**
@@ -92,6 +94,8 @@ UBN:
 
 UBN:
 (uint8: 3) [i] (uint8: 10) (uint8: 200) (uint8: 255)
+
+hex:   03  69          0A           C8           FF   
 ```
 
 * **3 x 3 matrix of double:**
@@ -171,11 +175,10 @@ The content of the ```metainfo``` object gives information about how to read or 
 
 **Value:** ```n```
 
-**With:**
-
 ```
-   n: unsigned integer
-      Number of bytes of element
+   n: 
+      type:    unsigned integer (i,j,k,l)
+      content: number of bytes of the element
 ```
 
 **Explanation:**
@@ -219,13 +222,15 @@ In the following example an element with 10000 bytes is taged as deleted. The in
 
 **Value:** ```{ A: B, ...}```
 
-**With:**
-
 ```
-   A: (array of type x: search bytes with typedefinition of array of type x or y)
+   A:
+      type:    array of type x
+      content: type definition for an array of type x or y that should be recognized as struct)
        
-   B: (array of type x: (type) (type) ... )
-       List of types that define the struct
+   B: 
+      type:    array of type x
+      content: type1 type2 ...
+               sequence of types that define the struct
 ```
 **Explanation:**
 
