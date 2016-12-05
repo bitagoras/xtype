@@ -246,7 +246,7 @@ In the following example an element with 10000 bytes is taged as deleted. The in
 ```
    A:
       type:    array of type x
-      content: type definition for an array of type x or y that should be recognized as struct)
+      content: type definition for an array of type x or y that should be recognized as struct
        
    B: 
       type:    array of type x
