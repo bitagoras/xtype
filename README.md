@@ -29,12 +29,12 @@ To unify the contradicting requirements of simplicity and advanced features, the
 3. Lists of mixed arbitrary elements
 4. Objects or dictionaries with key/value pairs for arbitrary elements
 5. Arbitrary hierarchy levels
-6. Files are syntactically valid even if not all elements are written yet
+6. Unfinished files are syntactically valid as long as values are complete
 
 ### Possible features by making use of the optional meta information
 
 1. Table of contents
-2. Fast random access to single elements even in big files
+2. Fast random access to certain sub-elements in big files
 3. Structured types
 4. Fast deletion and addition of elements in big files
 5. Chunk data mode for efficient writing and reading of big files
