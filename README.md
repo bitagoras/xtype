@@ -20,7 +20,7 @@ But why again a new format? Does no common binary formats exist for general purp
 Core Idea
 ---------
 
-To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The core grammar describes a very simple but hierarchical data structure. Advanced features such as random access are hidden in a special grammar rule for meta information. When ignoring the meta information, the file still can be parsed with the core grammar and most of the binary data types can be understood. It is assumed that more than 90% of the UBN files will not make use of the additional meta information.
+To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The core grammar describes a very simple but hierarchical data structure. Advanced features such as random access are hidden in a special grammar rule for meta information. When ignoring the meta information, the file still can be parsed with the core grammar and most of the binary data types can be understood. It is assumed that most UBN files of typical usage will not contain any meta information.
 
 ### Features of the grammar
 
@@ -30,6 +30,7 @@ To unify the contradicting requirements of simplicity and advanced features, the
 4. Objects or dictionaries with key/value pairs for arbitrary elements
 5. Arbitrary hierarchy levels
 6. Unfinished files are syntactically valid as long as values are complete
+7. Parsing can be very fast and no stack is required
 
 ### Possible features by making use of the optional meta information
 
@@ -42,16 +43,19 @@ To unify the contradicting requirements of simplicity and advanced features, the
 7. Included checksum
 8. Datetime definition
 
+### Advantag of the subdivision
+
+The grammar is constructed in a way that the parsing efficiency is maximized. A parser for the UBN grammar has linear complexity and needs no memory stack or recursive calls. No stack overflow can happen, regardless of the hierarchical complexity of the data. UBN is more or less already parsed and resembles a syntax tree. The calculation of the size of a high dimensional array can be easily done by sequential multiplications with one CPU register. All tasks of the parser fits in the CPU cache. These requirements to the grammar justify the split point between the grammar and the meta language.
 
 Status
 ------
 
-UBN is under development. The grammar will be finalized at some point when it is consollidated that nothing important is missing. There will be no different versions for the core grammar. At the moment a flag for a beta status is set. The meta language, in contrast, will grow from time to time and new features will be added. A version number will show it's status.
+UBN is under development. The grammar will be finalized soon at some point when it is consollidated that nothing important is missing. There will be no different versions for the core grammar. At the moment a flag for a beta status is set. The meta language, in contrast, will grow from time to time and new features will be added. A version number will indicate it's status.
 
 Grammar (beta1)
 --------------
 
-The graphical representation of the grammar rules below should contain all information to enable programmers writing valid UBN files. All red round boxes represent data to be written. Single black characters inside are stored directly as ascii characters. Green boxes require nested grammer rules.
+The graphical representation of the grammar rules below should contain all information to enable a programmer writing valid UBN files. The red round boxes represent data to be written. Single black characters inside are stored directly as ascii characters. Green boxes require nested grammer rules.
 
 <p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_file.png"></p>
 
@@ -78,11 +82,11 @@ In contrast to text files no stop symbol can be defined for binary elements sinc
 | ```i``` | uint8     | 1     | unsigned integer 8-bit         | C type: unsigned char                         |
 | ```j``` | uint16    | 2     | unsigned integer 16-bit        | C type: unsigned short int                    |
 | ```k``` | uint32    | 4     | unsigned integer 32-bit        | C type: unsigned int                          |
-| ```l``` | uint32    | 8     | unsigned integer 64-bit        | C type: unsigned long int                     |
-| ```I``` | uint8     | 1     | signed integer 8-bit           | C type: char                                  |
-| ```J``` | uint16    | 2     | signed integer 16-bit          | C type: short int                             |
-| ```K``` | uint32    | 4     | signed integer 32-bit          | C type: int                                   |
-| ```L``` | uint32    | 8     | signed integer 64-bit          | C type: long int                              |
+| ```l``` | uint64    | 8     | unsigned integer 64-bit        | C type: unsigned long int                     |
+| ```I``` | int8      | 1     | signed integer 8-bit           | C type: char                                  |
+| ```J``` | int16     | 2     | signed integer 16-bit          | C type: short int                             |
+| ```K``` | int32     | 4     | signed integer 32-bit          | C type: int                                   |
+| ```L``` | int64     | 8     | signed integer 64-bit          | C type: long int                              |
 | ```b``` | boolean   | 1     | boolean type                   | values: 0x00 = false or 0xFF = true           |
 | ```h``` | float16   | 2     | half precision float 16-bit    | IEEE 754-2008 half precission                 |
 | ```f``` | float32   | 4     | float 32-bit                   | IEEE 754 single precision, C type: float      |
