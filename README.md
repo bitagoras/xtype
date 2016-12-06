@@ -51,7 +51,7 @@ UBN is under development. The grammar will be finalized at some point when it is
 Grammar (beta1)
 --------------
 
-The graphical representation of the grammar rules below should enable a programmer to write valid UBN files. All red round boxes represent data to be written. Single black characters inside the round boxes are stored directly as ascii characters. Green boxes represent nested grammer rules.
+The graphical representation of the grammar rules below should contain all information to enable programmers writing valid UBN files. All red round boxes represent data to be written. Single black characters inside the round boxes are stored directly as ascii characters. Green boxes require nested grammer rules.
 
 <p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_file.png"></p>
 
