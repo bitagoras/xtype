@@ -172,10 +172,10 @@ UBN:
 [}]
 ```
 
-* **3 x 3 table of doubles with named colums "lon", "lat", "alt":**
+* **3 x 3 table of doubles with named colums "lon", "lat", "h":**
 
 ```
-[ ["lon", "lat", "alt"],
+[ ["lon", "lat",   "h"],
   [1.1,    3.3,    5.5],
   [2.2,    4.4,    6.6],
   [3.3,    5.5,    7.7],
@@ -183,11 +183,11 @@ UBN:
 
 UBN:
 [[]
-    (3)
-        (3) [s]
-            [l] [o] [n]
-            [l] [a] [t]
-            [a] [l] [t]
+    [[]
+        (3) [s] [l] [o] [n]
+        (3) [s] [l] [a] [t]
+        [s] [h]
+    []]
     (3) [d] (1.1) (3.3) (5.5)
     (3) [d] (2.2) (4.4) (6.6)
     (3) [d] (3.3) (5.5) (7.7)
