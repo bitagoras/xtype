@@ -108,6 +108,17 @@ UBN:
 hex:    0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 
+* **Integer:**
+
+```
+1025
+
+UBN:
+[j] (uint16: 1025)
+
+hex: 6A 01 04
+```
+
 * **3d vector of type uint8:**
 
 ```
@@ -194,10 +205,10 @@ The content of the ```metainfo``` object gives information about how to read or 
 
 **Keyword:** ```size```
 
-**Value:** ```n```
+**Value:** ```N```
 
 ```
-   n: 
+   N: 
       type:    unsigned integer (i,j,k,l)
       content: number of bytes of the element
 ```
