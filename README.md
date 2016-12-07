@@ -29,8 +29,9 @@ To unify the contradicting requirements of simplicity and advanced features, the
 3. Lists of mixed arbitrary elements
 4. Objects or dictionaries with key/value pairs for arbitrary elements
 5. Arbitrary hierarchy levels
-6. Unfinished files are syntactically valid as long as values are complete
-7. Parsing can be very fast and no stack is required
+6. Unfinished files are syntactically valid as long as the last element is complete
+7. Self-similarity: Inner elements can be extracted as complete and valid files
+8. Parsing is very fast and needs almost no memory
 
 ### Possible features by making use of the optional meta information
 
@@ -43,7 +44,7 @@ To unify the contradicting requirements of simplicity and advanced features, the
 7. Included checksum
 8. Datetime definition
 
-### Advantag of the subdivision
+### Advantage of the subdivision
 
 The grammar is constructed in a way that the parsing efficiency is maximized. A parser for the UBN grammar has linear complexity and needs no memory stack or recursive calls. No stack overflow can happen, regardless of the hierarchical complexity of the data. UBN is more or less already parsed and resembles a syntax tree. The calculation of the size of a high dimensional array can be easily done by sequential multiplications with one CPU register. All tasks of the parser fits in the CPU cache. These requirements to the grammar justify the split point between the grammar and the meta language.
 
@@ -239,7 +240,7 @@ Let's assume the element, including the meta information, is 1200 byte. The meta
 
 **Explanation:**
 
-This meta feature tags an element as deleted, wthen the value is set to true. This is usefull for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an ```x``` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. Next time the entire file is rebuit, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later.
+This meta feature tags an element as deleted, wthen the value is set to true. This is usefull for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an ```x``` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. Next time the entire file is rebuilt, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later.
 
 **Example:**
 
