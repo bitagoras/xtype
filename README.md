@@ -46,12 +46,12 @@ To unify the contradicting requirements of simplicity and advanced features, the
 
 ### Advantage of the subdivision
 
-The grammar is constructed in a way that the parsing efficiency is maximized. A parser for the UBN grammar has linear complexity and needs no memory stack or recursive calls. No stack overflow can happen, regardless of the hierarchical complexity of the data. UBN is more or less already parsed and resembles a syntax tree. The calculation of the size of a high dimensional array can be easily done by sequential multiplications with one CPU register. All tasks of the parser fits in the CPU cache. These requirements to the grammar justify the split point between the grammar and the meta language.
+The grammar is constructed in a way that the parsing efficiency is maximized. A parser for the UBN grammar has linear complexity and needs no memory stack or recursive calls. No stack overflow can occur, regardless of the hierarchical complexity of the data. UBN is more or less already parsed and resembles a linear syntax tree. The calculation of the size of a high dimensional array can be easily done by sequential multiplications with one CPU register. All tasks of the parser fits in the CPU cache. These advantages justifies the split between grammar and the meta language. The grammar creates a solid basis for all kinf of binary files like ascii code does for text files.
 
 Status
 ------
 
-UBN is under development. The grammar will be finalized soon at some point when it is consollidated that nothing important is missing. There will be no different versions for the core grammar. At the moment a flag for a beta status is set. The meta language, in contrast, will grow from time to time and new features will be added. A version number will indicate it's status.
+UBN is under development. The grammar will be finalized soon at some point when it is consollidated that nothing important is missing. There will be no different versions for the core grammar. At the moment a flag for a beta status is set. The meta language, in contrast, will grow from time to time and new features will be added. A version number will indicate the compatibility of the releases.
 
 Grammar (beta1)
 --------------
