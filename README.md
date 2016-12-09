@@ -31,7 +31,6 @@ To unify the contradicting requirements of simplicity and advanced features, the
 5. Arbitrary hierarchy levels
 6. Unfinished files are syntactically valid as long as the last element is complete
 7. Self-similarity: Inner elements can be extracted as complete and valid files
-8. Parsing is very fast and needs almost no memory
 
 ### Possible features by making use of the optional meta information
 
@@ -43,10 +42,6 @@ To unify the contradicting requirements of simplicity and advanced features, the
 6. Compression of data
 7. Included checksum
 8. Datetime definition
-
-### Advantage of the subdivision
-
-The grammar is constructed in a way that the parsing efficiency is maximized. A parser for the UBN grammar has linear complexity and needs no memory stack or recursive calls. No stack overflow can occur, regardless of the hierarchical complexity of the data. UBN is more or less already parsed and resembles a linear syntax tree. The calculation of the size of a high dimensional array can be easily done by sequential multiplications with one CPU register. All tasks of the parser fits in the CPU cache. These advantages justifies the split between grammar and the meta language. The grammar creates a solid basis for all kinf of binary files like ascii code does for text files.
 
 Status
 ------
