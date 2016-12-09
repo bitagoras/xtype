@@ -130,6 +130,15 @@ UBN:
 hex:   03  69          0A           C8           FF   
 ```
 
+* **List with integer, string and float:**
+
+```
+[7, "seven", 7.77]
+
+UBN:
+[[] [i] (uint8: 7) (uint8: 5) [s] [s] [e] [v] [e] [n] [f] (float32: 7.77) []]
+```
+
 * **3 x 3 matrix of double:**
 
 ```
