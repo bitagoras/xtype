@@ -9,13 +9,13 @@ Universal Binary Notation (UBN) is a general purpose self-explained binary file 
 The Vision
 ----------
 
-The success of the Digital Revolution is based on the common notation of all kind of information by binary series of zeros and ones. It is therefore all the more astonishing that the idea of unification did not find it's way to the syntax of binary data structures. Many thousands binary file formats exist in the world that need custom-built programs or libraries to decode the data. The leak of a unified data structure format counteracts the full advantage of digitalization.
+The success of the Digital Revolution is based on the common notation of all kind of information by binary series of zeros and ones. It is therefore all the more astonishing that the idea of unification did not find its way to the syntax of binary data structures. Many thousands binary file formats exist in the world that need custom-built programs or libraries to decode the data. The leak of a unified data structure format counteracts the full advantage of digitalization.
 
-For text files universal formats exist, like [XML](https://www.w3.org/XML/), [JSON](http://www.json.org/), [CSV](https://en.wikipedia.org/wiki/Comma-separated_values). As a drawback text formats have limited speed and storage efficiency since numerical values have to be translated into its decimal text representations and included elements cannot be read without parsing the whole text file. 
+For text files universal formats exist, like [XML](https://www.w3.org/XML/), [JSON](http://www.json.org/), [CSV](https://en.wikipedia.org/wiki/Comma-separated_values). As a drawback text formats have limited speed and storage efficiency since numerical values have to be translated into their decimal text representations and included elements cannot be read without parsing the whole text file. 
 
-Here comes the vision of a Universal Binary Notation (UBN) that is easy to use and provides all desirable properties of binary formats. One single editor should be able to view and edit the content of any binary file format that is based on UBN. This would allow binary files to gain the popularity of text files, which can all be opened by one text-editor. Due to it's binary structure certain sub-elements can be accessed very efficiently. This would make binary files even more flexible than text-files and enable users to handle elements as intuitive as files in a directory tree of a file system.
+Here comes the vision of a Universal Binary Notation (UBN) that is easy to use and provides all desirable properties of binary formats. One single editor should be able to view and edit the content of any binary file format that is based on UBN. This would allow binary files to gain the popularity of text files, which can all be opened by one text-editor. Due to it's binary structure certain sub-elements can be accessed very efficiently. This would make binary files even more flexible than text-files and enable users to handle elements as intuitively as files in a directory tree of a file system.
 
-But why again a new format? Does no common binary formats exist for general purposes? There are some examples, however they suffer from too high complexity or limited versatility. Examples are [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format) and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation). The former is feature-rich and suitable for huge scientific data sets but has a quite complicated grammar while the latter is very simple, but is not optimized for big databases. UBN is supposed to bridging the gap.
+But why again a new format? Does no common binary format exist for general purposes? There are some examples, however they suffer from too high complexity or limited versatility. Examples are [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format) and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation). The former is feature-rich and suitable for huge scientific data sets but has a quite complicated grammar while the latter is very simple, but is not optimized for big databases. UBN is supposed to bridge the gap.
 
 Core Idea
 ---------
@@ -46,12 +46,12 @@ To unify the contradicting requirements of simplicity and advanced features, the
 Status
 ------
 
-UBN is under development. The grammar will be finalized soon at some point when it is consollidated that nothing important is missing. There will be no different versions for the core grammar. At the moment a flag for a beta status is set. The meta language, in contrast, will grow from time to time and new features will be added. A version number will indicate the compatibility of the releases.
+UBN is under development. The grammar will be finalized soon at some point when it is consolidated that nothing important is missing. There will be no different versions for the core grammar. At the moment a flag for a beta status is set. The meta language, in contrast, will grow from time to time and new features will be added. A version number will indicate the compatibility of the releases.
 
 Grammar (beta1)
 --------------
 
-The graphical representation of the grammar rules below should contain all information to enable a programmer writing valid UBN files. The red round boxes represent data to be written. Single black characters inside are stored directly as ascii characters. Green boxes require nested grammer rules.
+The graphical representation of the grammar rules below should contain all information to enable a programmer writing valid UBN files. The red round boxes represent data to be written. Single black characters inside are stored directly as ASCII characters. Green boxes require nested grammer rules.
 
 <p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/UBN_file.png"></p>
 
@@ -75,18 +75,18 @@ In contrast to text files no stop symbol can be defined for binary elements sinc
 
 | Type    | Name      | Bytes | Description                    | Comment                                       |
 |:-------:|-----------|:-----:|--------------------------------|-----------------------------------------------|
-| ```i``` | uint8     | 1     | unsigned integer 8-bit         | C type: unsigned char                         |
-| ```j``` | uint16    | 2     | unsigned integer 16-bit        | C type: unsigned short int                    |
-| ```k``` | uint32    | 4     | unsigned integer 32-bit        | C type: unsigned int                          |
-| ```l``` | uint64    | 8     | unsigned integer 64-bit        | C type: unsigned long int                     |
-| ```I``` | int8      | 1     | signed integer 8-bit           | C type: char                                  |
-| ```J``` | int16     | 2     | signed integer 16-bit          | C type: short int                             |
-| ```K``` | int32     | 4     | signed integer 32-bit          | C type: int                                   |
-| ```L``` | int64     | 8     | signed integer 64-bit          | C type: long int                              |
+| ```i``` | uint8     | 1     | unsigned integer 8-bit         | C-type: unsigned char                         |
+| ```j``` | uint16    | 2     | unsigned integer 16-bit        | C-type: unsigned short int                    |
+| ```k``` | uint32    | 4     | unsigned integer 32-bit        | C-type: unsigned int                          |
+| ```l``` | uint64    | 8     | unsigned integer 64-bit        | C-type: unsigned long int                     |
+| ```I``` | int8      | 1     | signed integer 8-bit           | C-type: char                                  |
+| ```J``` | int16     | 2     | signed integer 16-bit          | C-type: short int                             |
+| ```K``` | int32     | 4     | signed integer 32-bit          | C-type: int                                   |
+| ```L``` | int64     | 8     | signed integer 64-bit          | C-type: long int                              |
 | ```b``` | boolean   | 1     | boolean type                   | values: 0x00 = false or 0xFF = true           |
 | ```h``` | float16   | 2     | half precision float 16-bit    | IEEE 754-2008 half precission                 |
-| ```f``` | float32   | 4     | float 32-bit                   | IEEE 754 single precision, C type: float      |
-| ```d``` | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C type: double     |
+| ```f``` | float32   | 4     | float 32-bit                   | IEEE 754 single precision, C-type: float      |
+| ```d``` | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
 | ```s``` | str/utf-8 | 1     | ascii / utf-8 string           | no other coding than utf-8 is specified       |
 | ```u``` | uft-16    | 2     | unicode string in utf-16       |                                               |
 | ```x``` | other     | 1     | user defined type 1            | struct, compressed data etc.                  |
@@ -95,7 +95,7 @@ In contrast to text files no stop symbol can be defined for binary elements sinc
 Examples
 --------
 
-In the examples below characters in brackets ```[ ]``` symbolize bytes stored directly as ascii values. Parentheses ```( )``` show readable representations of the corresponding binary data. If no type is noted for integers in parantheses the type is uint8. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
+In the examples below, characters in brackets ```[ ]``` symbolize bytes stored directly as ASCII values. Parentheses ```( )``` show readable representations of the corresponding binary data. If no type is noted for integers in parentheses the type is uint8. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
 
 * **String**:
 
@@ -244,11 +244,11 @@ Let's assume the element, including the meta information, is 1200 byte. The meta
 
 **Explanation:**
 
-This meta feature tags an element as deleted, wthen the value is set to true. This is usefull for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an ```x``` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. Next time the entire file is rebuilt, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later.
+This meta feature tags an element as deleted, when the value is set to true. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an ```x``` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. The next time the entire file is rebuilt, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later.
 
 **Example:**
 
-In the following example an element with 10000 bytes is taged as deleted. The included metainfo and the ```x``` array type definition are together 15 bytes long. The remaining bytes of the 10000 bytes are covered by the 9985 long ```x``` array. So, only 15 bytes had to be written to remove the element, instead of writing 10000 spaces or rebuilding the whole file.
+In the following example an element with 10000 bytes is tagged as deleted. The included metainfo and the ```x``` array type definition together are 15 bytes long. The remaining bytes of the 10000 bytes are covered by the 9985 long ```x``` array. So, only 15 bytes had to be written to remove the element, instead of writing 10000 spaces or rebuilding the whole file.
 
 ```
 [<] (7) [d] [e] [l] [e] [t] [e] [d]
@@ -302,7 +302,7 @@ An element of the struct with e.g. the numbers 120 and 2.25:
 (5) [x] (int8: 123) (float32: 2.25)
 ```
 
-So the interpreter compares all other-types with the bytes ```(5) [x]```. In case of a match the data is interpreted as the corresponding struct.
+Thus, the interpreter compares all ```other```-types with the bytes ```(5) [x]```. In case of a match the data is interpreted as the corresponding struct.
 
 **Example 2:**
 
