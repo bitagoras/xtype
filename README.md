@@ -136,7 +136,7 @@ hex:   03  69          0A           C8           FF
 [7, "seven", 7.77]
 
 UBN:
-[[] [i] (uint8: 7) (uint8: 5) [s] [s] [e] [v] [e] [n] [f] (float32: 7.77) []]
+[[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
 ```
 
 * **3 x 3 matrix of double:**
@@ -175,9 +175,9 @@ UBN:
 
 UBN:
 [{]
-    (6) [s] ("planet") (9) [s] ("Proxima b")
-    (4) [s] ("mass") [d] (float64: 1.27)
-    (9) [s] ("habitable") [T]
+    (6) [s] [planet] (9) [s] [Proxima b]
+    (4) [s] [mass] [d] (float64: 1.27)
+    (9) [s] [habitable] [T]
 [}]
 ```
 
@@ -193,8 +193,8 @@ UBN:
 UBN:
 [[]
     [[]
-        (3) [s] [l] [o] [n]
-        (3) [s] [l] [a] [t]
+        (3) [s] [lon]
+        (3) [s] [lat]
         [s] [h]
     []]
     (3) [d] (1.1) (3.3) (5.5)
@@ -231,7 +231,7 @@ This meta feature tells the number of bytes of an element. The size also include
 Let's assume the element, including the meta information, is 1200 byte. The meta information would be:
 
 ```
-[<] (4) [s] [i] [z] [e]
+[<] (4) [size]
     [j] (unit16: 1200)
 [>]
 ```
@@ -251,7 +251,7 @@ This meta feature tags an element as deleted, when the value is set to true. Thi
 In the following example an element with 10000 bytes is tagged as deleted. The included metainfo and the ```x``` array type definition together are 15 bytes long. The remaining bytes of the 10000 bytes are covered by the 9985 long ```x``` array. So, only 15 bytes had to be written to remove the element, instead of writing 10000 spaces or rebuilding the whole file.
 
 ```
-[<] (7) [d] [e] [l] [e] [t] [e] [d]
+[<] (7) [deleted]
     [T]
 [>]
 [n] (unit16: 9985) [x]
@@ -286,7 +286,7 @@ The struct definition is only valid for the related element and all sub-elements
 Let's assume we want to define a struct int8 + float32. The metainfo would be
 
 ```
-[<] (6) [s] [t] [r] [u] [c] [t]
+[<] (6) [struct]
     [{]
         (2) [x]
             (5) [x]
@@ -309,7 +309,7 @@ Thus, the interpreter compares all ```other```-types with the bytes ```(5) [x]``
 Let's assume we want to define a struct int8 + float32 and another one int16 + int16 + int8, both of same size (5 bytes). The two types ```y``` and ```x``` could be used to distinguish in this case two structs. When many more structs have to be defined of same length, the following metainfo can be used:
 
 ```
-[<] (6) [s] [t] [r] [u] [c] [t]
+[<] (6) [struct]
     [{]
         (3) [x]
             (6) [x] (55)
