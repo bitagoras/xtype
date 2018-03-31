@@ -212,6 +212,8 @@ The content of the ```metainfo``` object gives information about how to read or 
 
 ### Size of element
 
+**Purpose:** Gives a size information about this element
+
 **Keyword:** ```size```
 
 **Value:** ```N```
@@ -238,6 +240,8 @@ Let's assume the element, including the meta information, is 1200 byte. The meta
 
 ### Deleted element
 
+**Purpose:** Flags this element as deleted
+
 **Keyword:** ```deleted```
 
 **Value:** ```T``` (true) or ```F``` (false)
@@ -257,7 +261,42 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 [n] (unit16: 9985) [x]
 ```
 
+### Prototype
+
+**Purpose:** Flags the first line in a matrix as prototype line
+
+**Keyword:** ```prototype```
+
+**Value:** ```"x"```  or ```"y"```
+
+**Explanation:**
+
+This meta feature defines a prototype for repeated data structures for more efficient matrices of mixed type. It tags a list element of type list (e.g. the first line of a matrix) as a prototype for all subsequent elements. After this prototype all other-type elements (x or y) with a suitable length are interpreted as pure data with the same data structure as the prototype. This is only valid for other list elements but not for nested objects.
+
+This meta feature can also flag a dict. In this case only the values but not the keys are prototyped while the keys stay constant.
+
+**Example:**
+
+A matrix has one column of int32 and 5 columns of double
+
+```
+[[]
+    [<] (7) [prototype]
+        (1) [s] (x)
+    [>]
+    [[]
+        [K] (111) [d] (2.34) [d] (3.12) [d] (4.43) [d] (5.73) [d] (6.14)
+    []]
+    [m] (44) [x] (222) (2.43) (3.21) (4.34) (5.37) (6.41)
+    [m] (44) [x] (333) (3.43) (4.21) (5.34) (6.37) (7.41)
+    ...
+[]]
+```
+Every subsequent line has now an overhead of 3 bytes instead of 6 bytes for the type definitions.
+
 ### Structured types
+
+**Purpose:** Defines one or more structs for multiple use in this or in nested elements
 
 **Keyword:** ```struct```
 
@@ -286,11 +325,11 @@ The struct definition is only valid for the related element and all sub-elements
 Let's assume we want to define a struct int8 + float32. The metainfo would be
 
 ```
-[<] (6) [struct]
-    [{]
-        (2) [x]
+[<] (6) [struct]       # keyword
+    [{]                # value
+        (2) [x]            # key
             (5) [x]
-        (2) [x]
+        (2) [x]            # value
             [I] [f]
     [}]
 [>]
@@ -309,15 +348,15 @@ Thus, the interpreter compares all ```other```-types with the bytes ```(5) [x]``
 Let's assume we want to define a struct int8 + float32 and another one int16 + int16 + int8, both of same size (5 bytes). The two types ```y``` and ```x``` could be used to distinguish in this case two structs. When many more structs have to be defined of same length, the following metainfo can be used:
 
 ```
-[<] (6) [struct]
-    [{]
-        (3) [x]
+[<] (6) [struct]            # keyword
+    [{]                     # value
+        (3) [x]                 # key
             (6) [x] (55)
-        (2) [x]
+        (2) [x]                 # value
             [I] [f]
-        (3) [x]
+        (3) [x]                 # key
             (6) [x] (77)
-        (3) [x]
+        (3) [x]                 # value
             [J] [J] [I]
     [}]
 [>]
