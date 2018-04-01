@@ -89,8 +89,8 @@ Other than data in text formats no stop symbols can be defined for binary elemen
 | ```d``` | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
 | ```s``` | str/utf-8 | 1     | ascii / utf-8 string           | no other coding than utf-8 is specified       |
 | ```u``` | uft-16    | 2     | unicode string in utf-16       |                                               |
-| ```x``` | byte      | 1     | user defined data 1            | compressed data etc.                          |
-| ```X``` | byte      | 1     | user defined data 2            | compressed data etc.                          |
+| ```x``` | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
+| ```X``` | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
 
 Examples
 --------
