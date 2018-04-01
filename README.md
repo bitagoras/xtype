@@ -208,7 +208,9 @@ UBN:
 
 Version: 0.1
 
-The content of the ```metainfo``` object gives information and hints about how to read or pre-process the data, before it is passed to the application. This is mostly used for optimizing the storage efficiency or speed for large files. It can also contain application-specific information of how to apply the data. The metainfo consists of objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for ```x```, or instructions to transpose or concatenate matrices or vectors when loaded into memory. The metainfo object contains pairs of keywords and values. Each pair represents an extended feature that is not contained in the UBN core grammar. Some first examples of meta features are listed below. More will follow.
+The content of the ```metainfo``` object gives information and hints about how to read or pre-process the data, before it is passed to the application. This is mostly used for optimizing the storage efficiency or speed for large files. It can also contain application-specific information of how to apply the data. The metainfo consists of objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for ```x```, or instructions to transpose or concatenate matrices or vectors when loaded into memory. The metainfo object contains pairs of keywords and values. Each pair represents a feature to extent the UBN core grammar. Some first examples of meta features are listed below. More will follow.
+
+All information about sizes or relative jump positions are related to the whole element including the metainfo itself. So the parser has to remeber the position of the ```<``` character of the metainfo as the referred absolute position. Also some whitespaces belong to the element as defined in the grammar.
 
 ### Size of element
 
@@ -248,15 +250,49 @@ Let's assume the element, including the meta information, is 1200 byte. The meta
 
 **Explanation:**
 
-This meta feature tags an element as deleted, when the value is set to true. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an ```x``` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. The next time the entire file is rebuilt, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later.
+This meta feature tags an element as deleted, when the value is set to true. This is useful for big files when an element in the middle should be able to be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an ```x``` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. The next time the entire file is rebuilt, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later.
 
 **Example:**
 
-In the following example an element with 10000 bytes is tagged as deleted. The included metainfo and the ```x``` array type definition together are 15 bytes long. The remaining bytes of the 10000 bytes are covered by the 9985 long ```x``` array. So, only 15 bytes had to be written to remove the element, instead of writing 10000 spaces or rebuilding the whole file.
+In the following example an element with 10000 bytes is tagged as deleted. The included metainfo and the ```x``` byte-array type definition together are 15 bytes long. The remaining bytes of the 10000 bytes are covered by the 9985 long ```x``` array. So, only 15 bytes had to be written to remove the element, instead of writing 10000 spaces or rebuilding the whole file.
 
 ```
 [<] (7) [deleted]
     [T]
 [>]
 [n] (unit16: 9985) [x]
+```
+
+## Table of content
+
+**Purpose:** Lists the starting positions of all elements in a list
+
+**Keyword:** ```listTOC```
+
+**Value:**
+
+```
+    type:    array of unsigned integer (i,j,k,l)
+    content: relative byte offset of elements from the beginning of the metainfo
+```
+
+**Explanation:**
+
+This meta feature allows to access an element of large data files. The relativ offsets are stored in an integer array with the same length as the list object. The offset points to the beginning of each element, which can include another meta information for this element (e.g. for integritiy check or TOCs for subelements).
+
+**Example:**
+
+This example shows a table of a short list with mixed types
+
+```
+[7, "seven", 7.77]
+
+UBN:
+
+[<] (7) [listTOC]
+    (3) [i]                 # uint8 array of length 3
+        (17) (19) (26)      # offsets to the elements
+[>]
+[[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
+     ^              ^                      ^   # target positions 
 ```
