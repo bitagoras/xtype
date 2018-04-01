@@ -48,7 +48,7 @@ Status
 
 UBN is under development. The grammar will be finalized soon at some point when it is consolidated that nothing important is missing. There will be no different versions for the core grammar. At the moment a flag for a beta status is set. The meta language, in contrast, will grow from time to time and new features will be added. A version number will indicate the compatibility of the releases.
 
-Grammar (beta1)
+Grammar (beta2)
 --------------
 
 The graphical representation of the grammar rules below should contain all information to enable a programmer writing valid UBN files. The red round boxes represent data to be written. Single black characters inside are stored directly as ASCII characters. Green boxes require nested grammer rules.
@@ -89,8 +89,8 @@ Other than data in text formats no stop symbols can be defined for binary elemen
 | ```d``` | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
 | ```s``` | str/utf-8 | 1     | ascii / utf-8 string           | no other coding than utf-8 is specified       |
 | ```u``` | uft-16    | 2     | unicode string in utf-16       |                                               |
-| ```x``` | other     | 1     | user defined type 1            | struct, compressed data etc.                  |
-| ```y``` | other     | 1     | user defined type 2            | struct, compressed data etc.                  |
+| ```x``` | byte      | 1     | user defined data 1            | compressed data etc.                          |
+| ```X``` | byte      | 1     | user defined data 2            | compressed data etc.                          |
 
 Examples
 --------
@@ -208,7 +208,7 @@ UBN:
 
 Version: 0.1
 
-The content of the ```metainfo``` object gives information about how to read or pre-process the data, before it is passed to the application. This is mostly used for optimizing the storage efficiency or speed for large files. It can also contain application-specific information of how to apply the data. The metainfo consists of objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for ```x```, or instructions to transpose or concatenate matrices or vectors when loaded into memory. The metainfo object contains pairs of keywords and values. Each pair represents an extended feature that is not contained in the UBN core grammar. Some first examples of meta features are listed below. More will follow.
+The content of the ```metainfo``` object gives information and hints about how to read or pre-process the data, before it is passed to the application. This is mostly used for optimizing the storage efficiency or speed for large files. It can also contain application-specific information of how to apply the data. The metainfo consists of objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for ```x```, or instructions to transpose or concatenate matrices or vectors when loaded into memory. The metainfo object contains pairs of keywords and values. Each pair represents an extended feature that is not contained in the UBN core grammar. Some first examples of meta features are listed below. More will follow.
 
 ### Size of element
 
@@ -259,118 +259,4 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
     [T]
 [>]
 [n] (unit16: 9985) [x]
-```
-
-### Prototype
-
-**Purpose:** Flags the first line in a matrix as prototype line
-
-**Keyword:** ```prototype```
-
-**Value:** ```"x"```  or ```"y"```
-
-**Explanation:**
-
-This meta feature defines a prototype for repeated data structures for more efficient matrices of mixed type. It tags a list element of type list (e.g. the first line of a matrix) as a prototype for all subsequent elements. After this prototype all other-type elements (x or y) with a suitable length are interpreted as pure data with the same data structure as the prototype. This is only valid for other list elements but not for nested objects.
-
-This meta feature can also flag a dict. In this case only the values but not the keys are prototyped while the keys stay constant.
-
-**Example:**
-
-A matrix has one column of int32 and 5 columns of double
-
-```
-[[]
-    [<] (7) [prototype]
-        (1) [s] (x)
-    [>]
-    [[]
-        [K] (111) [d] (2.34) [d] (3.12) [d] (4.43) [d] (5.73) [d] (6.14)
-    []]
-    [m] (44) [x] (222) (2.43) (3.21) (4.34) (5.37) (6.41)
-    [m] (44) [x] (333) (3.43) (4.21) (5.34) (6.37) (7.41)
-    ...
-[]]
-```
-Every subsequent line has now an overhead of 3 bytes instead of 6 bytes for the type definitions.
-
-### Structured types
-
-**Purpose:** Defines one or more structs for multiple use in this or in nested elements
-
-**Keyword:** ```struct```
-
-**Value:** ```{ A: B, ...}```
-
-```
-   A:
-      type:    array of type x
-      content: type definition for an array of type x or y that should be recognized as struct
-       
-   B: 
-      type:    array of type x
-      content: type1 type2 ...
-               sequence of types that define the struct
-```
-**Explanation:**
-
-The value of the meta feature keyword ```struct``` is of type ```dict```. The dict contains one or multiple struct definitions. Each key of the dict (```A```) is e.g. the targeted ```x```-type including a certain length that should be recognized as struct. The value of the dict (```B```) contains the type definition of the struct. A key could be for example ```A = (12) [x]```. This means that all arrays of type ```x``` that have the exact length of 12 will be interpreted as the struct defined in ```B```. A struct definition that consist of an int32 and a float64 would be ```A = [k] [d]```. Both ```A``` and ```B``` are of type ```x``` and need an appropriate prefix.
-
-In case were many structs of the same size must be defined, ```A``` can also contain one or two data bytes (type uint8 or uint16) as identifiers to distinguish the different structs. The same ID must then be present at the beginning of every data of the ```x``` or ```y``` array that contains the structured data. The struct definition will refer only to the part of the ```x``` or ```y``` array with the structured data, excluding the receding struct ID bytes.
-
-The struct definition is only valid for the related element and all sub-elements. Nested elements can overwrite outer struct definitions temporarily inside the own scope.
-
-**Example 1:**
-
-Let's assume we want to define a struct int8 + float32. The metainfo would be
-
-```
-[<] (6) [struct]       # keyword
-    [{]                # value
-        (2) [x]            # key
-            (5) [x]
-        (2) [x]            # value
-            [I] [f]
-    [}]
-[>]
-```
-
-An element of the struct with e.g. the numbers 120 and 2.25:
-
-```
-(5) [x] (int8: 123) (float32: 2.25)
-```
-
-Thus, the interpreter compares all ```other```-types with the bytes ```(5) [x]```. In case of a match the data is interpreted as the corresponding struct.
-
-**Example 2:**
-
-Let's assume we want to define a struct int8 + float32 and another one int16 + int16 + int8, both of same size (5 bytes). The two types ```y``` and ```x``` could be used to distinguish in this case two structs. When many more structs have to be defined of same length, the following metainfo can be used:
-
-```
-[<] (6) [struct]            # keyword
-    [{]                     # value
-        (3) [x]                 # key
-            (6) [x] (55)
-        (2) [x]                 # value
-            [I] [f]
-        (3) [x]                 # key
-            (6) [x] (77)
-        (3) [x]                 # value
-            [J] [J] [I]
-    [}]
-[>]
-```
-The values (55) and (77) are arbitrary IDs to distinguish the two structs. 
-
-An element of the first struct (ID 55) with the data 120 and 2.25 would be:
-
-```
-(6) [x] (55) (int8: 123) (float32: 2.25)
-```
-
-An element of the second struct (ID 77) with the data 1234, 2345 and 11 would be:
-
-```
-(6) [x] (77) (int16: 1234) (int16: 2345) (int8: 11)
 ```
