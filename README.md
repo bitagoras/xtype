@@ -32,7 +32,7 @@ UBN is also suitable for data streams. All elements of the grammar begin with as
 4. Lists of mixed arbitrary elements
 5. Objects or dictionaries with key/value pairs for arbitrary elements
 6. Arbitrary hierarchy levels
-7. Unfinished files are syntactically valid as long as the last element is complete
+7. Unfinished files can be syntactically valid and complete as long as the last element of a list or dict is complete
 8. Self-similarity: Inner elements can be extracted as complete and valid files
 
 ### Additional features that makes use of the optional meta information
