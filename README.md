@@ -35,7 +35,7 @@ UBN is also suitable for data streams. All elements of the grammar begin with as
 7. Unfinished files can be syntactically valid and complete as long as the last element of a list or dict is complete
 8. Self-similarity: Inner elements can be extracted as complete and valid files
 
-### Additional features that makes use of the optional meta information
+### Additional (possible) features that makes use of the optional meta information
 
 1. Table of contents
 2. Size information of the elements
