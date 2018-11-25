@@ -44,8 +44,8 @@ UBN is also suitable for data streams. All elements of the grammar begin with as
 5. Chunk data mode for efficient writing and reading of big files
 6. Compressed elements
 7. Included checksum
-8. Definition for date and time notation
-9. Units definitions
+8. Definitions for date and time notation
+9. Definitions for units
 
 Status
 ------
