@@ -31,9 +31,9 @@
      inkscape:window-height="1128"
      id="namedview376"
      showgrid="false"
-     inkscape:zoom="0.5946522"
-     inkscape:cx="361.62801"
-     inkscape:cy="821.7122"
+     inkscape:zoom="0.84096521"
+     inkscape:cx="178.03281"
+     inkscape:cy="886.36064"
      inkscape:window-x="394"
      inkscape:window-y="9"
      inkscape:window-maximized="0"
@@ -1092,7 +1092,7 @@
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">data (size of type)</tspan></text>
   </g>
   <rect
-     y="74.869263"
+     y="95.494263"
      x="62.655098"
      height="11.25"
      width="18.202883"
@@ -1103,7 +1103,7 @@
   <use
      height="100%"
      width="100%"
-     transform="translate(0,-49.497889)"
+     transform="translate(0,-28.872889)"
      id="use5267"
      xlink:href="#circle5037"
      y="0"
@@ -1113,7 +1113,7 @@
   <path
      inkscape:connector-curvature="0"
      id="path5269"
-     d="M 144.46436,80.494246 H 420.55125"
+     d="M 144.46436,101.11925 H 420.55125"
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
@@ -1121,68 +1121,68 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="106.51679"
-     y="85.6203"
+     y="106.2453"
      id="text5273"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan5271"
        x="106.51679"
-       y="85.6203">file</tspan></text>
+       y="106.2453">file</tspan></text>
   <rect
      style="opacity:1;fill:#c4dbff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect5277"
      width="33.28381"
      height="19.428198"
      x="411.07516"
-     y="70.780144"
+     y="91.405144"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="414.98422"
-     y="85.620308"
+     y="106.24531"
      id="text5281"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan5279"
        x="414.98422"
-       y="85.620308">eof</tspan></text>
+       y="106.24531">eof</tspan></text>
   <rect
      style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect5303"
      width="74.204262"
      height="19.428198"
      x="238.99702"
-     y="70.780136"
+     y="91.405136"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="244.26201"
-     y="85.6203"
+     y="106.2453"
      id="text5307"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan5305"
        x="244.26201"
-       y="85.6203">element</tspan></text>
+       y="106.2453">element</tspan></text>
   <text
      id="text5327"
-     y="105.9109"
+     y="85.44709"
      x="376.87079"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="105.9109"
+       y="85.44709"
        x="376.87079"
        id="tspan5325">end of file</tspan></text>
   <path
      inkscape:connector-curvature="0"
-     d="m 211.25728,80.494246 h 3.22891 c 1.71864,0 6.8037,-3.77913 6.8037,-7.87196 v -4.91552 c 0,-4.67697 1.87307,-8.58145 6.90703,-8.58145 h 96.87591 c 5.03397,0 6.90704,3.90448 6.90704,8.58145 v 4.91552 c 0,4.27747 2.22372,7.87196 6.8037,7.87196 h 2.15747"
+     d="m 211.25728,101.11925 h 3.22891 c 1.71864,0 6.8037,-3.779134 6.8037,-7.871964 v -4.91552 c 0,-4.67697 1.87307,-8.58145 6.90703,-8.58145 h 96.87591 c 5.03397,0 6.90704,3.90448 6.90704,8.58145 v 4.91552 c 0,4.27747 2.22372,7.871964 6.8037,7.871964 h 2.15747"
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="path4866"
      inkscape:export-xdpi="96"
