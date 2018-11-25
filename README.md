@@ -138,7 +138,16 @@ hex:   33  69          0A           C8           FF
 [7, "seven", 7.77]
 
 UBN:
-[[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
+[[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float64: 7.77) []]
+```
+
+* **Struct with integer, string and float:**
+
+```
+[(uint8) 7, (string*5) "seven", (double) 7.77]
+
+UBN:
+[(] [i] [5] [s] [f] [)] (uint8: 7) [seven] (float64: 7.77)
 ```
 
 * **3 x 3 matrix of double:**
