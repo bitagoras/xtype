@@ -9,44 +9,46 @@ Universal Binary Notation (UBN) is a general purpose self-explained binary file 
 The Vision
 ----------
 
-The success of the Digital Revolution is based on the common notation of all kind of information by binary series of zeros and ones. It is therefore all the more astonishing that the idea of unification did not find its way to the syntax of binary data structures. Many thousand binary file formats exist in the world that need custom-built programs or libraries to decode the data. The leak of a unified data structure format counteracts the full advantage of digitalization.
+The success of the Digital Revolution is based on the common notation of all kind of information by binary series of zeros and ones. Unfortunately this idea of unification did not find its way to the syntax of binary data structures. Many thousand binary file formats exist in the world that need custom-built programs or libraries to decode the data. The leak of a unified data structure format counteracts the full advantage of digitalization.
 
-For text files universal formats exist, like [XML](https://www.w3.org/XML/), [JSON](http://www.json.org/), [CSV](https://en.wikipedia.org/wiki/Comma-separated_values). As a drawback text formats have limited speed and storage efficiency since numerical values have to be translated into their decimal text representations and included elements cannot be read without parsing the whole text file. 
+For text files universal formats exist, like [XML](https://www.w3.org/XML/), [JSON](http://www.json.org/), [CSV](https://en.wikipedia.org/wiki/Comma-separated_values). As a drawback text formats have limited speed and storage efficiency since numerical values have to be translated into their decimal text representations and certain sub elements cannot be read without parsing the whole text file. 
 
-Here comes the vision of a Universal Binary Notation (UBN) that is easy to use and provides all desirable properties of binary formats. One single editor should be able to view and edit the content of any binary file format that is based on UBN. This would allow binary files to gain the popularity of text files, which can all be opened by one text-editor. Due to it's binary structure certain sub-elements can be accessed very efficiently. This would make binary files even more flexible than text-files and enable users to handle elements as intuitively as files in a directory tree of a file system.
+Here comes the vision of a Universal Binary Notation (UBN) that is easy to use and provides all desirable properties of binary formats. One single editor or viewer should be able to decode the content of any binary file format that is based on UBN. This would allow binary files to gain the popularity of text files, which can all be opened by one text-editor. Due to it's binary structure certain sub-elements can be accessed very efficiently. This would make binary files even more flexible than text-files and enable users to handle elements as intuitively as files in a directory tree of a file system.
 
-But why again a new format? Does no common binary format exist for general purposes? There are some examples, however they suffer from too high complexity or limited versatility. Examples are [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format) and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation). The former is feature-rich and suitable for huge scientific data sets but has a quite complicated grammar while the latter is very simple, but is not optimized for big databases. UBN is supposed to bridge the gap.
+But why again a new format? Does no common binary format exist for general purposes? There are some examples, however they suffer from too high complexity or limited versatility. Examples are [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format) and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation). The former is feature-rich and suitable for huge scientific data sets but has a quite complicated grammar while the latter is very simple, but is not optimized for big databases with random access. UBN is supposed to bridge the gap.
 
 Core Idea
 ---------
 
-To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The core grammar describes a very simple but hierarchical data structure. Advanced features such as random access are hidden in a special grammar rule for meta information. When ignoring the meta information, the file still can be parsed with the core grammar and most of the binary data types can be understood. It is assumed that most UBN files of typical usage will not contain any meta information.
+To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The core grammar describes a very simple but hierarchical data structure. Advanced features such as random access are hidden behind elements with the meta information flag. When ignoring the meta information, the file still can be parsed with the core grammar and at least most of the binary data can be understood. It is assumed that most UBN files of typical usage will probably not contain any meta information.
 
 ### Features of the grammar
 
 1. Basic boolean, integer, floating point data types and strings
 2. Arrays, multi-dimensional arrays
-3. Lists of mixed arbitrary elements
-4. Objects or dictionaries with key/value pairs for arbitrary elements
-5. Arbitrary hierarchy levels
-6. Unfinished files are syntactically valid as long as the last element is complete
-7. Self-similarity: Inner elements can be extracted as complete and valid files
+3. Structured types
+4. Lists of mixed arbitrary elements
+5. Objects or dictionaries with key/value pairs for arbitrary elements
+6. Arbitrary hierarchy levels
+7. Unfinished files are syntactically valid as long as the last element is complete
+8. Self-similarity: Inner elements can be extracted as complete and valid files
 
-### Possible features by making use of the optional meta information
+### Additional features that makes use of the optional meta information
 
 1. Table of contents
-2. Fast random access to certain sub-elements in big files
-3. Structured types
+2. Size information of the elements
+3. Fast random access to certain sub-elements in big files
 4. Fast deletion and addition of elements in big files
 5. Chunk data mode for efficient writing and reading of big files
-6. Compression of data
+6. Compressed elements
 7. Included checksum
-8. Datetime definition
+8. Definition for date and time notation
+9. Units definitions
 
 Status
 ------
 
-UBN is under development. The grammar will be finalized soon at some point when it is consolidated that nothing important is missing. There will be no different versions for the core grammar. At the moment a flag for a beta status is set. The meta language, in contrast, will grow from time to time and new features will be added. A version number will indicate the compatibility of the releases.
+UBN is under development. The grammar will be finalized at some point when it is consolidated that nothing important is missing. There will be no different versions for the core grammar. At the moment a flag for a beta status is set. The meta language, in contrast, will grow from time to time and new features will be added. A version number will indicate the compatibility of the releases.
 
 Grammar (beta4)
 --------------
