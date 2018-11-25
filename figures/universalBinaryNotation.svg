@@ -31,9 +31,9 @@
      inkscape:window-height="1128"
      id="namedview376"
      showgrid="false"
-     inkscape:zoom="0.84096521"
-     inkscape:cx="235.37712"
-     inkscape:cy="937.21874"
+     inkscape:zoom="1.6819304"
+     inkscape:cx="410.21308"
+     inkscape:cy="990.82655"
      inkscape:window-x="394"
      inkscape:window-y="9"
      inkscape:window-maximized="0"
@@ -68,7 +68,7 @@
      inkscape:export-ydpi="96"
      inkscape:export-xdpi="96"
      id="path3704"
-     d="m 404.08797,203.13389 c -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62225 v -6.24377 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 l 15.88436,0 c 3.61734,0 6.54976,2.96488 6.54976,6.62224 v 6.24377 c 0,3.65738 -2.93242,6.62225 -6.54976,6.62225 z"
+     d="m 404.08797,203.13389 c -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62225 v -6.24377 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 h 15.88436 c 3.61734,0 6.54976,2.96488 6.54976,6.62224 v 6.24377 c 0,3.65738 -2.93242,6.62225 -6.54976,6.62225 z"
      style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="scsssssss" />
@@ -2865,17 +2865,6 @@
        x="187.75067"
        y="164.85152"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';stroke-width:1px">meta info</tspan></text>
-  <text
-     inkscape:export-ydpi="96"
-     inkscape:export-xdpi="96"
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="399.87097"
-     y="198.42326"
-     id="text5519"><tspan
-       id="tspan5517"
-       x="399.87097"
-       y="198.42326">nul</tspan></text>
   <g
      id="g8270"
      transform="translate(-564.40555,370.48967)">
@@ -3943,4 +3932,17 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:1px"
        x="303.90198"
        y="780.81104">:</tspan></text>
+  <text
+     id="text2599-1"
+     y="197.40105"
+     x="399.02527"
+     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"><tspan
+       y="197.40105"
+       x="399.02527"
+       id="tspan2597-1"
+       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px">nul</tspan></text>
 </svg>
