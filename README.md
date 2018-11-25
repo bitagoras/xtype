@@ -208,7 +208,12 @@ Version: 0.1
 
 The content of the `meta info` element gives information and hints about how to read or pre-process the data, before it is passed to the application. A parser that do not support this meta information has to parse the element after `[*]` but hat ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information of how to apply the data. The meta info consists normally of dict objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for `x`, or instructions to transpose or concatenate matrices or vectors when loaded into memory. When the meta information is a dict object, it contains pairs of keywords and values. Each pair represents a feature to extent the UBN core grammar. Some examples of meta features are listed below.
 
-All information about sizes or relative jump positions are related to the whole element including the metainfo itself. So the parser has to remeber the position of the `*` character of the metainfo as the referred absolute position. Also some whitespaces belong to the element as defined in the grammar.
+All information about sizes or relative jump positions are related to the whole element including the metainfo itself. So the parser has to remember the position of the `*` character of the metainfo as the referred absolute position. Also some whitespaces belong to the element as defined in the grammar.
+
+Meta information objects can be nested. This is usefull when e.g. the simplified convention is used:
+```
+[*] (meta info with size) [*] (meta info with table of content) (data of type list)
+```
 
 ### Size of element
 
@@ -235,12 +240,12 @@ Let's assume the element, without the size of the meta information, is 1200 byte
 ```
 [*] [{] [4] [size]
     [j] (unit16: 1211)
-[}]
+[}] (data with 1200 byte)
 ```
 or in the simplified convention:
 
 ```
-[*] [j] (unit16: 1204)
+[*] [j] (unit16: 1204) (data with 1200 byte)
 ```
 
 ### Deleted element
