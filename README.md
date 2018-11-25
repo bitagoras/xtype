@@ -22,6 +22,8 @@ Core Idea
 
 To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The core grammar describes a very simple but hierarchical data structure. Advanced features such as random access are hidden behind elements with the meta information flag. When ignoring the meta information, the file still can be parsed with the core grammar and at least most of the binary data can be understood. It is assumed that most UBN files of typical usage will probably not contain any meta information.
 
+UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127. Other ASCII values are reserved for the communication control.
+
 ### Features of the grammar
 
 1. Basic boolean, integer, floating point data types and strings
