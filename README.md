@@ -147,7 +147,7 @@ UBN:
 [(uint8) 7, (string*5) "seven", (double) 7.77]
 
 UBN:
-[(] [i] [5] [s] [f] [)] (uint8: 7) [seven] (float64: 7.77)
+[<] [i] [5] [s] [f] [>] (uint8: 7) [seven] (float64: 7.77)
 ```
 
 * **3 x 3 matrix of double:**
