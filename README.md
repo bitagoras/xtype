@@ -230,7 +230,7 @@ Meta information objects can be nested. This is usefull when e.g. the simplified
 
 ### Size of element
 
-**Purpose:** Gives a size information about this element. As a convention the size information can also be noted as a simplified meta information that consists only of a number `N` instead of an dict object.
+**Purpose:** Gives a size information about this element. 
 
 **Keyword:** `size`
 
@@ -244,7 +244,7 @@ Meta information objects can be nested. This is usefull when e.g. the simplified
 
 **Explanation:**
 
-This meta feature tells the number of bytes of an element. The size also includes the metainfo itself, as well as white-spaces after the metainfo. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements.
+This meta feature tells the number of bytes of an element. The size also includes the metainfo itself, as well as white-spaces after the metainfo. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements. As a convention the size information can also be noted as a simplified meta information that consists only of a number `N` instead of an dict object.
 
 **Example:**
 
@@ -263,7 +263,7 @@ or in the simplified convention:
 
 ### Deleted element
 
-**Purpose:** Flags this element as deleted when the value for the keyword `enabled` is set to false. For this flag also exist a simplified convention where the meta information consist only of the value true or false.
+**Purpose:** Flags this element as disabled or deleted. 
 
 **Keyword:** `enabled`
 
@@ -271,7 +271,7 @@ or in the simplified convention:
 
 **Explanation:**
 
-This meta feature tags an element as deleted, when the value is set to false. This is useful for big files when an element in the middle should be able to be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. The next time the entire file is rebuilt, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later.
+This meta feature tags an element as deleted, when the value is set to false. This is useful for big files when an element in the middle should be able to be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. The next time the entire file is rebuilt, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later. For this flag also exist a simplified convention where the meta information consist only of the value true or false.
 
 **Example:**
 
