@@ -263,31 +263,31 @@ or in the simplified convention:
 
 ### Deleted element
 
-**Purpose:** Flags this element as deleted. For this flag also exist a simplified convention where the meta information consist only of the value true or false.
+**Purpose:** Flags this element as deleted when the value for the keyword `enabled` is set to false. For this flag also exist a simplified convention where the meta information consist only of the value true or false.
 
-**Keyword:** `deleted`
+**Keyword:** `enabled`
 
 **Value:** `T` (true) or `F` (false)
 
 **Explanation:**
 
-This meta feature tags an element as deleted, when the value is set to true. This is useful for big files when an element in the middle should be able to be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. The next time the entire file is rebuilt, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later.
+This meta feature tags an element as deleted, when the value is set to false. This is useful for big files when an element in the middle should be able to be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. The next time the entire file is rebuilt, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later.
 
 **Example:**
 
 In the following example an element with 10000 bytes is tagged as deleted. The included metainfo and the `x` byte-array type definition together are 15 bytes long. The remaining bytes of the 10000 bytes are covered by the 9985 long `x` array. So, only 15 bytes had to be written to remove the element, instead of writing 10000 spaces or rebuilding the whole file.
 
 ```
-[*] [{] (7) [deleted]
-    [T]
+[*] [{] (7) [enabled]
+    [F]
 [}]
-[n] (unit16: 9985) [x]
+[n] (unit16: 9984) [x]
 ```
 or in the simplified convention:
 
 ```
-[*] [T]
-[n] (unit16: 9985) [x]
+[*] [F]
+[n] (unit16: 9995) [x]
 ```
 
 
@@ -324,7 +324,7 @@ UBN:
 [[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
      ^              ^                      ^   # target positions 
 ```
-or in the simplified notation
+or in the simplified convention
 
 ```
 [*] [3] [i]                 # uint8 array of length 3
