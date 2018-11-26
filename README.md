@@ -71,7 +71,7 @@ The graphical representation of the grammar rules below should contain all infor
 
 <p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/UBN_count.png"></p>
 
-Other than data in text formats no stop symbols can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be determined by the parser from information stored in front of the data. The size of basic data types are given in the type table. In case of structs or arrays the number of bytes have to be added or multiplied accordingly.
+Other than for data in text formats no stop symbols can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be determined by the parser from information stored in front of the data. The size of basic data types are given in the type table. In case of structs or arrays the number of bytes have to be added or multiplied accordingly.
 
 ## Types
 
@@ -230,7 +230,7 @@ Meta information objects can be nested. This is usefull when e.g. the simplified
 
 ### Size of element
 
-**Purpose:** Gives a size information about this element. As a convention the size information can also be noted as a simplified meta information that consists only of a number `N` instead of an dict object.
+**Purpose:** Gives a size information about this element. 
 
 **Keyword:** `size`
 
@@ -244,7 +244,7 @@ Meta information objects can be nested. This is usefull when e.g. the simplified
 
 **Explanation:**
 
-This meta feature tells the number of bytes of an element. The size also includes the metainfo itself, as well as white-spaces after the metainfo. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements.
+This meta feature tells the number of bytes of an element. The size also includes the metainfo itself, as well as white-spaces after the metainfo. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements. As a convention the size information can also be noted as a simplified meta information that consists only of a number `N` instead of an dict object.
 
 **Example:**
 
@@ -263,31 +263,31 @@ or in the simplified convention:
 
 ### Deleted element
 
-**Purpose:** Flags this element as deleted. For this flag also exist a simplified convention where the meta information consist only of the value true or false.
+**Purpose:** Flags this element as disabled or deleted. 
 
-**Keyword:** `deleted`
+**Keyword:** `enabled`
 
 **Value:** `T` (true) or `F` (false)
 
 **Explanation:**
 
-This meta feature tags an element as deleted, when the value is set to true. This is useful for big files when an element in the middle should be able to be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. The next time the entire file is rebuilt, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later.
+This meta feature tags an element as deleted, when the value is set to false. This is useful for big files when an element in the middle should be able to be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. The next time the entire file is rebuilt, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later. For this flag also exist a simplified convention where the meta information consist only of the value true or false.
 
 **Example:**
 
-In the following example an element with 10000 bytes is tagged as deleted. The included metainfo and the `x` byte-array type definition together are 15 bytes long. The remaining bytes of the 10000 bytes are covered by the 9985 long `x` array. So, only 15 bytes had to be written to remove the element, instead of writing 10000 spaces or rebuilding the whole file.
+In the following example an element with 10000 bytes is tagged as deleted. The included metainfo and the `x` byte-array type definition together are 16 bytes long for the dict meta info and 6 bytes in the simplified convention. The remaining bytes of the 10000 bytes are covered by the 9986 or 9995 long `x` array. So, only 16 or 6 bytes have to be written to remove the element, instead of writing 10000 zero bytes or rebuilding the whole file which requires to update all links in the table of contents.
 
 ```
-[*] [{] (7) [deleted]
-    [T]
+[*] [{] (7) [enabled]
+    [F]
 [}]
-[n] (unit16: 9985) [x]
+[n] (unit16: 9984) [x]
 ```
 or in the simplified convention:
 
 ```
-[*] [T]
-[n] (unit16: 9985) [x]
+[*] [F]
+[n] (unit16: 9995) [x]
 ```
 
 
@@ -324,7 +324,7 @@ UBN:
 [[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
      ^              ^                      ^   # target positions 
 ```
-or in the simplified notation
+or in the simplified convention
 
 ```
 [*] [3] [i]                 # uint8 array of length 3
