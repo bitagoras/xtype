@@ -275,7 +275,7 @@ This meta feature tags an element as deleted, when the value is set to false. Th
 
 **Example:**
 
-In the following example an element with 10000 bytes is tagged as deleted. The included metainfo and the `x` byte-array type definition together are 16 bytes long for the dict meta info and 6 bytes in the simplified convention. The remaining bytes of the 10000 bytes are covered by the 9986 or 9995 long `x` array. So, only 16 or 6 bytes have to be written to remove the element, instead of writing 10000 zero bytes or rebuilding the whole file.
+In the following example an element with 10000 bytes is tagged as deleted. The included metainfo and the `x` byte-array type definition together are 16 bytes long for the dict meta info and 6 bytes in the simplified convention. The remaining bytes of the 10000 bytes are covered by the 9986 or 9995 long `x` array. So, only 16 or 6 bytes have to be written to remove the element, instead of writing 10000 zero bytes or rebuilding the whole file which requires to update all links in the table of contents.
 
 ```
 [*] [{] (7) [enabled]
