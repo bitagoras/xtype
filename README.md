@@ -223,7 +223,7 @@ The content of the `meta info` element gives information and hints about how to 
 
 All information about sizes or relative jump positions are related to the whole element including the meta info itself. So the parser has to remember the position of the `*` character of the meta info as the reference position. Also some zero-bytes belong to the element as defined in the grammar rule for the element and therefore is addressed by the meta info. 
 
-Meta information objects can be nested. This is usefull for several meta infos with different types, e.g.:
+Objects with meta information can be nested. This is usefull for several meta infos with different types, e.g.:
 ```
 [*] (meta info with size) [*] (meta info with table of content) (data of type list)
 ```
