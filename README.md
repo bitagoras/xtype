@@ -245,7 +245,7 @@ This meta feature tells the number of bytes of an element. The size also include
 
 **Example:**
 
-Let's assume the element, without the size of the meta information, is 1200 byte. The meta information (with size 11 byte) would be:
+Let's assume the element, without the size of the meta information, is 1200 byte. The meta information (with size 4 byte) would be:
 
 ```
 [*] [j] (unit16: 1204) (data with 1200 byte)
