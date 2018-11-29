@@ -20,9 +20,9 @@ But why again a new format? Does no common binary format exist for general purpo
 Core Idea
 ---------
 
-To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The core grammar describes a very simple but hierarchical data structure, inspired by UBJSON. Advanced features such as random access are hidden behind elements with the meta information flag. When ignoring the meta information, the file still can be parsed with the core grammar and at least most of the binary data can be understood. It is assumed that most UBN files of typical usage will probably not contain any meta information.
+To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The core grammar describes a very simple but hierarchical data structure, inspired by UBJSON. Advanced features such as random access are hidden behind elements with the meta information flag. When ignoring the meta information, the file still can be parsed with the core grammar and at least most of the binary data can be understood. It is assumed that most UBN files of typical usage will probably not require any meta information.
 
-UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127. Other ASCII values are reserved for the communication control.
+UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127. Other ASCII values are reserved for the communication protocol.
 
 ### Features of the grammar
 
@@ -219,43 +219,33 @@ UBN:
 
 Version: 0.1
 
-The content of the `meta info` element gives information and hints about how to read or pre-process the data, before it is passed to the application. A parser that do not support this meta information has to parse the element after `[*]` but hat ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information of how to apply the data. The meta info consists normally of dict objects in front of elements and contains e.g. pointers to sub-elements, definitions of user-defined types for `x`, or instructions to transpose or concatenate matrices or vectors when loaded into memory. When the meta information is a dict object, it contains pairs of keywords and values. Each pair represents a feature to extent the UBN core grammar. Some examples of meta features are listed below.
+The content of the `meta info` element gives information and hints about how to read, interpret or pre-process the data, before it is passed to the application. A parser that do not support this meta information has to parse the element after `[*]` but can ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information of how to apply the data. The meta info consists of differenty data types. Most of the meta information is given by a dict object with pairs of keywords and values. There are e.g. keywords to give instructions to transpose or concatenate matrices or vectors when loaded into memory. With the keyword the meta info feature becomes more self-explained. Each meta information extends the UBN format without changing the core grammar. 
 
-All information about sizes or relative jump positions are related to the whole element including the metainfo itself. So the parser has to remember the position of the `*` character of the metainfo as the referred absolute position. Also some whitespaces belong to the element as defined in the grammar.
+All information about sizes or relative jump positions are related to the whole element including the meta info itself. So the parser has to remember the position of the `*` character of the meta info as the reference position. Also some zero-bytes belong to the element as defined in the grammar rule for the element and therefore is addressed by the meta info. 
 
-Meta information objects can be nested. This is usefull when e.g. the simplified convention is used:
+Meta information objects can be nested. This is usefull for several meta infos with different types, e.g.:
 ```
 [*] (meta info with size) [*] (meta info with table of content) (data of type list)
 ```
+Some first examples of the meta description language are given below.
 
 ### Size of element
 
 **Purpose:** Gives a size information about this element. 
 
-**Keyword:** `size`
+**Meta element type:** `unsigned integer (i,j,k,l)`
 
-**Value:** `N`
+**Meta element value:** `number of bytes of the element`
 
-```
-   N: 
-      type:    unsigned integer (i,j,k,l)
-      content: number of bytes of the element
-```
+**Alternative with dict keyword:** `size`
 
 **Explanation:**
 
-This meta feature tells the number of bytes of an element. The size also includes the metainfo itself, as well as white-spaces after the metainfo. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements. As a convention the size information can also be noted as a simplified meta information that consists only of a number `N` instead of an dict object.
+This meta feature tells the number of bytes of an element. The size also includes the meta info itself, as well as white-spaces (zero-bytes) after the meta info. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements. 
 
 **Example:**
 
 Let's assume the element, without the size of the meta information, is 1200 byte. The meta information (with size 11 byte) would be:
-
-```
-[*] [{] [4] [size]
-    [j] (unit16: 1211)
-[}] (data with 1200 byte)
-```
-or in the simplified convention:
 
 ```
 [*] [j] (unit16: 1204) (data with 1200 byte)
@@ -265,48 +255,36 @@ or in the simplified convention:
 
 **Purpose:** Flags this element as disabled or deleted. 
 
-**Keyword:** `enabled`
+**Meta element value:** `T` (true) or `F` (false)
 
-**Value:** `T` (true) or `F` (false)
+**Alternative with dict keyword:** `enabled`
 
 **Explanation:**
 
-This meta feature tags an element as deleted, when the value is set to false. This is useful for big files when an element in the middle should be able to be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with spaces. For larger elements a metainfo like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. The next time the entire file is rebuilt, the unused space can be discarded. This feature also can be used to reserve some space for e.g. a table of content that will be included later. For this flag also exist a simplified convention where the meta information consist only of the value true or false.
+This meta feature tags an element as deleted, when the value is set to false. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with zero-bytes. For larger elements a metainfo like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. The next time the entire file is rebuilt, the unused space can be eliminated. This feature also can be used to reserve some space for e.g. a table of content that will be included later. For this flag also exist a simplified convention where the meta information consist only of the value true or false.
 
 **Example:**
 
-In the following example an element with 10000 bytes is tagged as deleted. The included metainfo and the `x` byte-array type definition together are 16 bytes long for the dict meta info and 6 bytes in the simplified convention. The remaining bytes of the 10000 bytes are covered by the 9986 or 9995 long `x` array. So, only 16 or 6 bytes have to be written to remove the element, instead of writing 10000 zero bytes or rebuilding the whole file which requires to update all links in the table of contents.
-
-```
-[*] [{] (7) [enabled]
-    [F]
-[}]
-[n] (unit16: 9984) [x]
-```
-or in the simplified convention:
+In the following example an element with 10000 bytes is tagged as deleted. The included metainfo and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be written to remove the element, instead of writing 10000 zero bytes or rebuilding the whole file which may requires to update some links in the table of contents.
 
 ```
 [*] [F]
-[n] (unit16: 9995) [x]
+[n] (unit16: 9994) [x]
 ```
-
 
 ## Table of content
 
 **Purpose:** Table of content: Lists the starting positions of all elements in a list
 
-**Keyword:** `TOC`
+**Meta element type:** `array of unsigned integer (i,j,k,l)`
 
-**Value:**
+**Meta element value:** `relative byte offset to the list elements from the beginning of the metainfo`
 
-```
-    type:    array of unsigned integer (i,j,k,l)
-    content: relative byte offset of elements from the beginning of the metainfo
-```
+**Alternative with dict keyword:** `TOC`
 
 **Explanation:**
 
-This meta feature allows to access an element of large data files. The relativ offsets are stored in an integer array with the same length as the list object. The offset points to the beginning of each element, which can include another meta information for this element (e.g. for integritiy check or TOCs for subelements). For this meta information also a simplified convention exists whith the meta information that consist only of the value, an integer array.
+This meta feature allows to access a elements of large data files. The relativ offsets are stored in an integer array with the same length as the list object. The offset points to the beginning of each element, which can be another meta information for this element (e.g. for integritiy check or TOCs for subelements). 
 
 **Example:**
 
@@ -317,16 +295,6 @@ This example shows a table of a short list with mixed types
 
 UBN:
 
-[*] [{] [3] [s] [TOC]
-    [3] [i]                 # uint8 array of length 3
-        (15) (17) (24)      # offsets to the elements
-[}]
-[[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
-     ^              ^                      ^   # target positions 
-```
-or in the simplified convention
-
-```
 [*] [3] [i]                 # uint8 array of length 3
         (9) (11) (18)       # offsets to the elements
 [}]
