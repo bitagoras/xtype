@@ -231,7 +231,7 @@ Some first examples of the meta description language are given below.
 
 ### Size of element
 
-**Purpose:** Gives a size information about this element. 
+**Purpose:** Gives a size information about an element. 
 
 **Meta element type:** `unsigned integer (i,j,k,l)`
 
@@ -253,7 +253,7 @@ Let's assume the element, without the size of the meta information, is 1200 byte
 
 ### Deleted element
 
-**Purpose:** Flags this element as deleted. 
+**Purpose:** Flags an element as deleted. 
 
 **Meta element type:** `boolean T or F`
 
@@ -276,7 +276,7 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 
 ## Table of content
 
-**Purpose:** Table of content: Lists the starting positions of all elements in a list
+**Purpose:** Table of content: Lists the starting positions of all elements in a list element
 
 **Meta element type:** `array of unsigned integer (i,j,k,l)`
 
