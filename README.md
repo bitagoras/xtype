@@ -75,24 +75,24 @@ Other than for data in text formats no stop symbols can be defined for binary el
 
 ## Types
 
-| Type| Name      | Bytes | Description                    | Comment                                       |
-|:---:|-----------|:-----:|--------------------------------|-----------------------------------------------|
-| `i` | uint8     | 1     | unsigned integer 8-bit         | C-type: unsigned char                         |
-| `j` | uint16    | 2     | unsigned integer 16-bit        | C-type: unsigned short int                    |
-| `k` | uint32    | 4     | unsigned integer 32-bit        | C-type: unsigned int                          |
-| `l` | uint64    | 8     | unsigned integer 64-bit        | C-type: unsigned long int                     |
-| `I` | int8      | 1     | signed integer 8-bit           | C-type: char                                  |
-| `J` | int16     | 2     | signed integer 16-bit          | C-type: short int                             |
-| `K` | int32     | 4     | signed integer 32-bit          | C-type: int                                   |
-| `L` | int64     | 8     | signed integer 64-bit          | C-type: long int                              |
-| `b` | boolean   | 1     | boolean type                   | values: 0x00 = false or 0xFF = true           |
-| `h` | float16   | 2     | half precision float 16-bit    | IEEE 754-2008 half precission                 |
-| `f` | float32   | 4     | float 32-bit                   | IEEE 754 single precision, C-type: float      |
-| `d` | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
-| `s` | str/utf-8 | 1     | ascii / utf-8 string           | no other coding than utf-8 is specified       |
-| `u` | uft-16    | 2     | unicode string in utf-16       |                                               |
-| `x` | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
-| `X` | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
+| Type   | Name      | Bytes | Description                    | Comment                                       |
+|:------:|-----------|:-----:|--------------------------------|-----------------------------------------------|
+| `i, m` | uint8     | 1     | unsigned integer 8-bit         | C-type: unsigned char                         |
+| `j, n` | uint16    | 2     | unsigned integer 16-bit        | C-type: unsigned short int                    |
+| `k, o` | uint32    | 4     | unsigned integer 32-bit        | C-type: unsigned int                          |
+| `l, p` | uint64    | 8     | unsigned integer 64-bit        | C-type: unsigned long int                     |
+| `I`    | int8      | 1     | signed integer 8-bit           | C-type: char                                  |
+| `J`    | int16     | 2     | signed integer 16-bit          | C-type: short int                             |
+| `K`    | int32     | 4     | signed integer 32-bit          | C-type: int                                   |
+| `L`    | int64     | 8     | signed integer 64-bit          | C-type: long int                              |
+| `b`    | boolean   | 1     | boolean type                   | values: 0x00 = false or 0xFF = true           |
+| `h`    | float16   | 2     | half precision float 16-bit    | IEEE 754-2008 half precission                 |
+| `f`    | float32   | 4     | float 32-bit                   | IEEE 754 single precision, C-type: float      |
+| `d`    | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
+| `s`    | str/utf-8 | 1     | ascii / utf-8 string           | no other coding than utf-8 is specified       |
+| `u`    | uft-16    | 2     | unicode string in utf-16       |                                               |
+| `x`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
+| `X`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
 
 Examples
 --------
