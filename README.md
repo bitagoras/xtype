@@ -233,9 +233,9 @@ Some first examples of the meta description language are given below.
 
 **Purpose:** Gives a size information about an element. 
 
-**Meta element type:** `unsigned integer (i,j,k,l)`
+**Meta element type:** unsigned integer (`i`,`j`,`k`,`l`)
 
-**Meta element value:** `number of bytes of the element`
+**Meta element value:** number of bytes of the element
 
 **Alternative with dict keyword:** `size`
 
@@ -255,7 +255,7 @@ Let's assume the element, without the size of the meta information, is 1200 byte
 
 **Purpose:** Flags an element as deleted. 
 
-**Meta element type:** `boolean T or F`
+**Meta element type:** boolean `T` or `F`
 
 **Meta element value:** `T` (true for enabled), `F` (false for disabled or deleted)
 
@@ -278,9 +278,9 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 
 **Purpose:** Table of content: Lists the starting positions of all elements in a list element
 
-**Meta element type:** `array of unsigned integer (i,j,k,l)`
+**Meta element type:** array of unsigned integer (`i`,`j`,`k`,`l`)
 
-**Meta element value:** `relative byte offset to the list elements from the beginning of the metainfo`
+**Meta element value:** relative byte offset to the list elements from the beginning of the metainfo
 
 **Alternative with dict keyword:** `TOC`
 
