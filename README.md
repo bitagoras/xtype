@@ -276,7 +276,7 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 
 ## Table of content
 
-**Purpose:** Table of content: Lists the starting positions of all elements in a list element
+**Purpose:** Table of content: Lists the starting positions of all elements in a list or dict
 
 **Meta element type:** array of unsigned integer (`i`,`j`,`k`,`l`)
 
@@ -286,7 +286,7 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 
 **Explanation:**
 
-This meta feature allows to access a elements of large data files. The relativ offsets are stored in an integer array with the same length as the list object. The offset points to the beginning of each element, which can be another meta information for this element (e.g. for integritiy check or TOCs for subelements). 
+This meta feature allows to access a elements of large data files. The relative offsets are stored in an integer array with the same length as the list or dict object. The offset points to the beginning of each element (in list) or the keyword value (in dict). If the targeting  element has other meta information, the offset points to the `*` token which is the first byte of the list element.
 
 **Example:**
 
