@@ -253,9 +253,11 @@ Let's assume the element, without the size of the meta information, is 1200 byte
 
 ### Deleted element
 
-**Purpose:** Flags this element as disabled or deleted. 
+**Purpose:** Flags this element as deleted. 
 
-**Meta element value:** `T` (true) or `F` (false)
+**Meta element type:** `boolean T or F`
+
+**Meta element value:** `T` (true for enabled), `F` (false for disabled or deleted)
 
 **Alternative with dict keyword:** `enabled`
 
