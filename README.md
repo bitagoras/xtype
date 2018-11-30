@@ -4,7 +4,7 @@ Universal Binary Notation file format specification (beta)
 
 Introduction
 ------------
-Universal Binary Notation (UBN) is a general purpose self-explained binary file format for hierarchically structured data. The basic syntax is very simple and easy to implement but it tries to satisfy the needs of all imaginable applications for binary data storage and exchange. The simplicity allows to generate typical data files by a few lines of code without any library. Simultaneously, with the use of meta information big data files can be generated that are manageable efficiently with random access.
+Universal Binary Notation (UBN) is a general purpose self-explained binary file format for hierarchically structured data. The basic syntax is very simple and easy to implement but it tries to satisfy the needs of all imaginable applications for binary data storage and exchange. The simplicity allows to generate typical data files by a few lines of code without any library. Simultaneously, with the use of metadata big data files can be generated that are manageable efficiently with random access.
 
 The Vision
 ----------
@@ -20,7 +20,7 @@ But why again a new format? Does no common binary format exist for general purpo
 Core Idea
 ---------
 
-To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The core grammar describes a very simple but hierarchical data structure, inspired by UBJSON. Advanced features such as random access are hidden behind elements with the meta information flag. When ignoring the meta information, the file still can be parsed with the core grammar and at least most of the binary data can be understood. It is assumed that most UBN files of typical usage will probably not require any meta information.
+To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The core grammar describes a very simple but hierarchical data structure, inspired by UBJSON. Advanced features such as random access are hidden behind elements with the metadata flag. When ignoring the metadata, the file still can be parsed with the core grammar and at least most of the binary data can be understood. It is assumed that most UBN files of typical usage will probably not require any metadata.
 
 UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127. Other ASCII values are reserved for the communication protocol.
 
@@ -35,7 +35,7 @@ UBN is also suitable for data streams. All elements of the grammar begin with as
 7. Unfinished files can be syntactically valid and complete as long as the last element of a list or dict is complete
 8. Self-similarity: Inner elements can be extracted as complete and valid files
 
-### Additional (possible) features that makes use of the optional meta information
+### Additional (possible) features that makes use of the optional metadata
 
 1. Table of contents
 2. Size information of the elements
@@ -219,13 +219,13 @@ UBN:
 
 Version: 0.1
 
-The content of the `meta info` element gives information and hints about how to read, interpret or pre-process the data, before it is passed to the application. A parser that do not support this meta information has to parse the element after `[*]` but can ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information of how to apply the data. The meta info consists of differenty data types. Most of the meta information is given by a dict object with pairs of keywords and values. There are e.g. keywords to give instructions to transpose or concatenate matrices or vectors when loaded into memory. With the keyword the meta info feature becomes more self-explained. Each meta information extends the UBN format without changing the core grammar. 
+The content of the `metadata` element gives information and hints about how to read, interpret or pre-process the data, before it is passed to the application. A parser that do not support this metadata has to parse the element after `[*]` but can ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information of how to apply the data. The metadata consists of differenty data types. Most of the metadata is given by a dict object with pairs of keywords and values. There are e.g. keywords to give instructions to transpose or concatenate matrices or vectors when loaded into memory. With the keyword the metadata feature becomes more self-explained. Each metadata extends the UBN format without changing the core grammar. 
 
-All information about sizes or relative jump positions are related to the whole element including the meta info itself. So the parser has to remember the position of the `*` character of the meta info as the reference position. Also some zero-bytes belong to the element as defined in the grammar rule for the element and therefore is addressed by the meta info. 
+All information about sizes or relative jump positions are related to the whole element including the metadata itself. So the parser has to remember the position of the `*` character of the metadata as the reference position. Also some zero-bytes belong to the element as defined in the grammar rule for the element and therefore is addressed by the metadata. 
 
-Objects with meta information can be nested. This is usefull for several meta infos with different types, e.g.:
+Objects with metadata can be nested. This is usefull for several metadata elements with different types, e.g.:
 ```
-[*] (meta info with size) [*] (meta info with table of content) (data of type list)
+[*] (metadata with size) [*] (metadata with table of content) (data of type list)
 ```
 Some first examples of the meta description language are given below.
 
@@ -241,11 +241,11 @@ Some first examples of the meta description language are given below.
 
 **Explanation:**
 
-This meta feature tells the number of bytes of an element. The size also includes the meta info itself, as well as white-spaces (zero-bytes) after the meta info. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements. 
+This meta feature tells the number of bytes of an element. The size also includes the metadata itself, as well as white-spaces (zero-bytes) after the metadata. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements. 
 
 **Example:**
 
-Let's assume the element, without the size of the meta information, is 1200 byte. The meta information (with size 4 byte) would be:
+Let's assume the element, without the size of the metadata, is 1200 byte. The metadata (with size 4 byte) would be:
 
 ```
 [*] [j] (unit16: 1204) (data with 1200 byte)
@@ -263,11 +263,11 @@ Let's assume the element, without the size of the meta information, is 1200 byte
 
 **Explanation:**
 
-This meta feature tags an element as deleted, when the value is set to false. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with zero-bytes. For larger elements a metainfo like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. Next time the entire file is rebuilt, the unused space can be eliminated. This feature also can be used for reserving some space for e.g. a table of content that will be included later after the subelements are written and their sizes are known.
+This meta feature tags an element as deleted, when the value is set to false. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with zero-bytes. For larger elements a metadata like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. Next time the entire file is rebuilt, the unused space can be eliminated. This feature also can be used for reserving some space for e.g. a table of content that will be included later after the subelements are written and their sizes are known.
 
 **Example:**
 
-In the following example an element with 10000 bytes is tagged as deleted. The included metainfo and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be written to remove the element, instead of writing 10000 zero bytes or rebuilding the whole file which may requires to update some links in the table of contents.
+In the following example an element with 10000 bytes is tagged as deleted. The included metadata and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be written to remove the element, instead of writing 10000 zero bytes or rebuilding the whole file which may requires to update some links in the table of contents.
 
 ```
 [*] [F]
@@ -280,13 +280,13 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 
 **Meta element type:** array of unsigned integer (`i`,`j`,`k`,`l`)
 
-**Meta element value:** relative byte offset to the list elements from the beginning of the metainfo
+**Meta element value:** relative byte offset to the list elements from the beginning of the metadata
 
 **Alternative with dict keyword:** `TOC`
 
 **Explanation:**
 
-This meta feature allows to access a elements of large data files. The relative offsets are stored in an integer array with the same length as the list or dict object. The offset points to the beginning of each element (in list) or the keyword value (in dict). If the targeting  element has other meta information, the offset points to the `*` token which is the first byte of the list element.
+This meta feature allows to access a elements of large data files. The relative offsets are stored in an integer array with the same length as the list or dict object. The offset points to the beginning of each element (in list) or the keyword value (in dict). If the targeting  element has other metadata, the offset points to the `*` token which is the first byte of the list element.
 
 **Example:**
 
