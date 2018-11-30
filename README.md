@@ -263,7 +263,7 @@ Let's assume the element, without the size of the meta information, is 1200 byte
 
 **Explanation:**
 
-This meta feature tags an element as deleted, when the value is set to false. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with zero-bytes. For larger elements a metainfo like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. The next time the entire file is rebuilt, the unused space can be eliminated. This feature also can be used to reserve some space for e.g. a table of content that will be included later. For this flag also exist a simplified convention where the meta information consist only of the value true or false.
+This meta feature tags an element as deleted, when the value is set to false. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with zero-bytes. For larger elements a metainfo like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. Next time the entire file is rebuilt, the unused space can be eliminated. This feature also can be used for reserving some space for e.g. a table of content that will be included later after the subelements are written and their sizes are known.
 
 **Example:**
 
