@@ -298,8 +298,7 @@ This example shows a table of a short list with mixed types
 UBN:
 
 [*] [3] [i]                 # uint8 array of length 3
-        (9) (11) (18)       # offsets to the elements
-[}]
+        (7) (9) (16)       # offsets to the elements
 [[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
      ^              ^                      ^   # target positions 
 ```
