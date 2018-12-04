@@ -271,7 +271,7 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 
 ```
 [*] [F]
-[n] (unit16: 9994) [x]
+[n] (unit16: 9994) [x] (data with 9994 byte)
 ```
 
 ## Table of content
