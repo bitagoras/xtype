@@ -97,7 +97,7 @@ Other than in data of text formats no stop symbols can be defined for binary ele
 Examples
 --------
 
-In the examples below, characters in brackets `[ ]` symbolize bytes stored directly as ASCII values. Parentheses `( )` show readable representations of the corresponding binary data. If no type is noted for integers in parentheses the type is uint8. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
+In the examples below, characters in brackets `[ ]` symbolize characters that are directly stored as their ASCII values. Parentheses `( )` show readable representations of the corresponding binary data. If no type is noted for integers in parentheses the type is uint8. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
 
 * **String**:
 
@@ -248,7 +248,7 @@ This meta feature tells the number of bytes of an element. The size also include
 Let's assume the element, without the size of the metadata, is 1200 byte. The metadata (with size 4 byte) would be:
 
 ```
-[*] [j] (unit16: 1204) (data with 1200 byte)
+[*] [j] (uint16: 1204) (data with 1200 byte)
 ```
 
 ### Deleted element
@@ -271,7 +271,7 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 
 ```
 [*] [F]
-[n] (unit16: 9994) [x] (data with 9994 byte)
+[n] (uint16: 9994) [x] (data with 9994 byte)
 ```
 
 ## Table of content
