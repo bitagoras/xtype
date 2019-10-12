@@ -73,6 +73,8 @@ The graphical representation of the grammar rules below should contain all infor
 
 Other than in data of text formats no stop symbols can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be determined by the parser from information stored in front of the data. The size of basic data types are given in the type table. In case of structs or arrays the number of bytes have to be added or multiplied accordingly.
 
+The grammar has an ambiguity for the attribution of the ignored zero-bytes to the element in case of nested metadata. As a rule the zero-bytes are always attributed to the most inner element. As a consequence all nested meta elements must take the subsequent zero-bytes into account when they refer to the size of the element.
+
 ## Types
 
 | Type   | Name      | Bytes | Description                    | Comment                                       |
@@ -216,10 +218,9 @@ UBN:
 ```
 
 # Meta Language
+## Overview
 
-Version: 0.2
-
-The content of the `metadata` element gives information and hints about how to read, interpret or pre-process the data, before it is passed to the application. A parser that do not support this metadata has to parse the element after `[*]` but can ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information of how to apply the data. The metadata consists of differenty data types. Most of the metadata is given by a dict object with pairs of keywords and values. There are e.g. keywords to give instructions to transpose or concatenate matrices or vectors when loaded into memory. With the keyword the metadata feature becomes more self-explained. Each metadata extends the UBN format without changing the core grammar.
+The content of the `metadata` element gives information and hints about how to read, interpret or pre-process the data, before it is passed to the application. A parser that do not support this metadata has to parse the element after `[*]` but can ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information of how to apply the data. The metadata consists of differenty data types or dicts with different meta information. There is e.g. information with instructions to transpose or concatenate matrices or vectors when loaded into memory. Metadata allows to extend the UBN format without changing the core grammar.
 
 All information about sizes or relative jump positions are related to the whole element including the metadata itself. So the parser has to remember the position of the `*` character of the metadata as the reference position. Also some zero-bytes belong to the element as defined in the grammar rule for the element and therefore is addressed by the metadata. 
 
@@ -227,21 +228,42 @@ Objects with metadata can be nested. This is usefull for several metadata elemen
 ```
 [*] (metadata with size) [*] (metadata with table of content) (data of type list)
 ```
-Some first examples of the meta description language are given below.
+
+Metadata elements can have string identifiers to indicate the purpose of the metadata or to identify other use-case specific meta languages. The identifiers are again nested inside the meta elements, e.g.:
+
+```
+[*] [*] (string "size") (metadata with size) [*] [*] (string "TOC") (metadata with table of content) (data of type list)
+```
+
+Use-case specific and user-defined metadata has the format
+
+```
+[*] [*] (string with meta language identifier) [{] (dict with meta information) [}] (element)
+```
+
+If there is for example a binary format for numpy with specific information about the data type, the metadata would be
+
+```
+[*] [*] [numpy] [{] (dict with meta information) [}] (element)
+```
+
+## Default Meta Language
+
+Version: 0.2
 
 ### Size of element
 
 **Purpose:** Gives a size information about an element. 
 
+**Optional identifier keyword:** `size`
+
 **Metadata type:** unsigned integer (`i`,`j`,`k`,`l`)
 
-**Metadata element value:** number of bytes of the element
-
-**Alternative with dict keyword:** `size`
+**Metadata element value:** number of bytes of the whole data element, including this metadata
 
 **Explanation:**
 
-This meta feature tells the number of bytes of an element. The size also includes the metadata itself, as well as white-spaces (zero-bytes) after the metadata. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements. 
+This meta feature tells the number of bytes of an element. The size also includes the metadata itself, as well as white-spaces (zero-bytes) after the metadata. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements.
 
 **Example:**
 
@@ -251,42 +273,71 @@ Let's assume the element, without the size of the metadata, is 1200 byte. The me
 [*] [j] (uint16: 1204) (data with 1200 byte)
 ```
 
+Self-explained with meta identifier keyword `size`:
+
+```
+[*] [*] [4] [s] [size] [j] (uint16: 1211) (data with 1200 byte)
+```
+
 ### Deleted element
 
-**Purpose:** Flags an element as deleted. 
+**Purpose:** Flags an element as deleted
+
+**Optional identifier keyword:** `deleted`
+
+**Metadata type:** None
+
+**Metadata value:** `N` (None)
+
+**Explanation:**
+
+This meta feature tags an element as deleted. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with zero-bytes. For larger elements metadata like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. Next time the entire file is rebuilt, the unused space can be eliminated.
+
+**Example:**
+
+In the following example an element with 10000 bytes is tagged as deleted. The included metadata and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be written to remove the element, instead of writing 10000 zero bytes or rebuilding the whole file which may require to update some links in the table of contents.
+
+```
+[*] [N]
+[n] (uint16: 9994) [x] (data with 9994 byte)
+```
+
+### Element visibility
+
+**Purpose:** Flags an element as visible or invisible (disabled)
+
+**Optional identifier keyword:** `enabled`
 
 **Metadata type:** boolean `T` or `F`
 
 **Metadata value:** `T` (true for enabled), `F` (false for disabled or deleted)
 
-**Alternative with dict keyword:** `enabled`
-
 **Explanation:**
 
-This meta feature tags an element as deleted, when the value is set to false. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with zero-bytes. For larger elements a metadata like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. Next time the entire file is rebuilt, the unused space can be eliminated. This feature also can be used for reserving some space for e.g. a table of content that will be included later after the subelements are written and their sizes are known.
+This meta feature tags an element or meta element as invisible, when the value is set to false. This feature be used for reserving some space for e.g. elements to be added later or as placeholder for a table of content that will be added after all subelements are written and their sizes and positions are known.
 
 **Example:**
 
-In the following example an element with 10000 bytes is tagged as deleted. The included metadata and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be written to remove the element, instead of writing 10000 zero bytes or rebuilding the whole file which may requires to update some links in the table of contents.
+In the following example an element is tagged as invisible. This element is treated as non-exisiting, but the element will not be deleted when the file is rebuilt. This could be an element that is inserted later at another list by a certain link instruction but is physically added at the end for efficiency reasons. Note that invisible elements can only be placed at locations where the grammar allows an element.
 
 ```
-[*] [F]
-[n] (uint16: 9994) [x] (data with 9994 byte)
+[*] [F] (some element)
+
 ```
 
-## Simple table of content for quick random access
+## Simple table of content for random access
 
-**Purpose:** Table of content: Lists the starting positions of all elements in a list or dict
+**Purpose:** Table of content: List with the relative starting positions of all elements in a list or dict data
+
+**Optional identifier keyword:** `TOC`
 
 **Metadata type:** array of unsigned integer (`i`,`j`,`k`,`l`)
 
 **Metadata value:** relative byte offset to the list elements from the beginning of the metadata
 
-**Alternative with dict keyword:** 'TOC'
-
 **Explanation:**
 
-This meta feature allows to access a elements of large data files. The relative offsets are stored in an integer array with the same length as the list or dict object. The offset points to the beginning of each element (in list) or the keyword value (in dict). If the targeting  element has other metadata, the offset points to the `*` token which is the first byte of the list element.
+This meta feature allows to access elements of lists or dicts in large data files. The relative offsets are stored in an integer array with the same length as the list or dict object. The offset points to the beginning of each element (in list) or the keyword value (in dict). If the targeting element has other metadata, the offset points to the `*` token which is the first byte of the list element.
 
 **Example:**
 
@@ -305,14 +356,55 @@ UBN:
 
 ## More complex table of content for random access
 
-**Purpose:** Table of content: Gives a prototype of the data structure with lists and dicts where each element contains the offset to the actual data
+**Purpose:** Table of content: Gives a prototype of the data structure with dicts, lists and integer arrays where each element specifies the offset to the actual data.
 
-**Metadata type:** Hierarchical structure of lists and dicts with integer elements.
+**Optional identifier keyword:** `TOC`
 
-**Metadata values:** relative byte offset to the actuall data element
+**Metadata type:** Hierarchical structure of dicts, lists and arrays with integer elements.
 
-**Alternative with dict keyword:** 'TOC'
+**Metadata values:** Byte offset to the actual data element relative to the meta `*`
 
 **Explanation:**
 
-This meta feature allows to quickly access elements in huge hierarchical data structures. The meta data is a copy of the actual data structure down to an appropriate hierarchy level, where the element with the data is replaced by an integer giving the byte-offset to the actual element.
+This meta feature allows to quickly access elements in huge hierarchical data structures. The metadata is a copy of the actual data structure down to an appropriate hierarchy level. The data of each element is replaced by an integer value that specifies the byte-offset to the actual element.
+
+
+**Example:**
+
+In this example the data is a dict with mixed types, including a list
+
+```
+{
+  'Point of Interest': 'Shipwreck Michelle',
+  'coordinates': {'lon': 44.167618, 'lat': 14.812889}
+}
+
+UBN:
+
+# Meta information with data structure and offset information
+[*]  # Reference for all relative offsets insite this element
+[*] [3] [s] [TOC] 
+[*] [i] (offset first * to #1) [{]
+    [i] (17) [s] [Point of Interest] [i] (offset first * to #2)
+    [i] (11) [s] [Coordinates]
+    [*] [i] (offset first * to #3) [{] 
+         [3] [s] [lon] [d] [i] (offset first * to #4)
+         [3] [s] [lat] [d] [i] (offset first * to #5)
+    [}]
+[}]
+
+# Structure with actual data
+[{]
+ ^ target position #1
+    [i] (17) [s] [Point of Interest] [i] (18) [s] [Shipwreck Michelle]
+                                      ^ target position #2
+    [i] (11) [s] [Coordinates]
+    [{] 
+     ^ target position #3
+         [3] [s] [lon] [d] (14.812889)
+                            ^ target position #4
+         [3] [s] [lat] [d] (44.167618)
+                            ^ target position #5
+    [}]
+[}]
+```
