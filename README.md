@@ -382,7 +382,7 @@ In this example the data is a dict with mixed types, including a list
 UBN:
 
 # Meta information with data structure and offset information
-[*]  # Reference for all relative offsets insite this element
+[*]  # Reference for all relative offsets inside this TOC
 [*] [3] [s] [TOC] 
 [*] [i] (offset first * to #1) [{]
     [i] (17) [s] [Point of Interest] [i] (offset first * to #2)
