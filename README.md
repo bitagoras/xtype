@@ -9,20 +9,20 @@ Universal Binary Notation (UBN) is a general purpose self-explained binary file 
 The Vision
 ----------
 
-The success of the Digital Revolution is based on the common notation of all kind of information by binary series of zeros and ones. Unfortunately this idea of unification did not find its way to the syntax of binary data structures. Many thousand binary file formats exist in the world that need custom-built programs or libraries to decode the data. The leak of a unified data structure format counteracts the full advantage of digitalization.
+The success of the digital revolution is based on the common notation of all kind of information by binary series of zeros and ones. Unfortunately this idea of unification did not find its way to the syntax of binary data structures. Many thousand binary file formats exist in the world that need custom-built programs or libraries to decode the data.
 
-For text files universal formats exist, like [XML](https://www.w3.org/XML/), [JSON](http://www.json.org/), [CSV](https://en.wikipedia.org/wiki/Comma-separated_values). As a drawback text formats have limited speed and storage efficiency since numerical values have to be translated into their decimal text representations and certain sub elements cannot be read without parsing the whole text file. 
+For text files universal formats already exist, such as [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/). As a drawback text formats have limited speed and storage efficiency since numerical values have to be translated into their decimal text representations and certain sub elements cannot be read without parsing the whole text file. 
 
-Here comes the vision of a Universal Binary Notation (UBN) that is easy to use and provides all desirable properties of binary formats. One single editor or viewer should be able to decode the content of any binary file format that is based on UBN. This would allow binary files to gain the popularity of text files, which can all be opened by one text-editor. Due to it's binary structure certain sub-elements can be accessed very efficiently. This would make binary files even more flexible than text-files and enable users to handle elements as intuitively as files in a directory tree of a file system.
+Here comes the vision of a Universal Binary Notation (UBN) that is easy to use and provides all desirable properties of binary formats. One single editor or viewer should be able to display the content of any binary file format that is based on UBN. This would allow binary files to gain the popularity of text files, which can all be opened by one text-editor and read by any programing language. Due to it's binary structure certain sub-elements can be accessed very efficiently. This would make binary files even more flexible than text-files and enable users to handle elements as intuitively as files in a directory tree of a file system.
 
-But why again a new format? Does no common binary format exist for general purposes? There are some examples, however they suffer from too high complexity or limited versatility. Examples are [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format) and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation). The former is feature-rich and suitable for huge scientific data sets but has a quite complicated grammar while the latter is very simple, but is not optimized for big databases with random access. UBN is supposed to bridge the gap.
+But why yet another format? Are there no general purpose binary formats? Actually there are some examples, however they suffer from too high complexity or limited versatility. Examples are [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format) and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation). The former is feature-rich and suitable for huge scientific data sets but has a quite complicated grammar while the latter is very simple, but is not optimized for big databases with random access. UBN is supposed to bridge the gap.
 
 Core Idea
 ---------
 
-To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The core grammar describes a very simple but hierarchical data structure, inspired by UBJSON. Advanced features such as random access are hidden behind elements with the metadata flag. When ignoring the metadata, the file still can be parsed with the core grammar and at least most of the binary data can be understood. It is assumed that most UBN files of typical usage will probably not require any metadata.
+To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The core grammar describes a minimalistic hierarchical data structure, inspired by UBJSON. Advanced features such as random access are hidden behind elements with the metadata flag. When ignoring the metadata, the file still can be parsed with the core grammar and at least most of the binary data can be understood. It is assumed that most UBN files of typical usage will probably not require any metadata.
 
-UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127. Other ASCII values are reserved for the communication protocol.
+UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127. Other ASCII values are reserved for communication protocols.
 
 ### Features of the grammar
 
@@ -90,7 +90,7 @@ Other than in data of text formats no stop symbols can be defined for binary ele
 | `f`    | float32   | 4     | float 32-bit                   | IEEE 754 single precision, C-type: float      |
 | `d`    | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
 | `s`    | str/utf-8 | 1     | ascii / utf-8 string           | no other coding than utf-8 is specified       |
-| `u`    | uft-16    | 2     | unicode string in utf-16       |                                               |
+| `u`    | utf-16    | 2     | unicode string in utf-16       |                                               |
 | `x`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
 | `X`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
 
@@ -217,9 +217,9 @@ UBN:
 
 # Meta Language
 
-Version: 0.1
+Version: 0.2
 
-The content of the `metadata` element gives information and hints about how to read, interpret or pre-process the data, before it is passed to the application. A parser that do not support this metadata has to parse the element after `[*]` but can ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information of how to apply the data. The metadata consists of differenty data types. Most of the metadata is given by a dict object with pairs of keywords and values. There are e.g. keywords to give instructions to transpose or concatenate matrices or vectors when loaded into memory. With the keyword the metadata feature becomes more self-explained. Each metadata extends the UBN format without changing the core grammar. 
+The content of the `metadata` element gives information and hints about how to read, interpret or pre-process the data, before it is passed to the application. A parser that do not support this metadata has to parse the element after `[*]` but can ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information of how to apply the data. The metadata consists of differenty data types. Most of the metadata is given by a dict object with pairs of keywords and values. There are e.g. keywords to give instructions to transpose or concatenate matrices or vectors when loaded into memory. With the keyword the metadata feature becomes more self-explained. Each metadata extends the UBN format without changing the core grammar.
 
 All information about sizes or relative jump positions are related to the whole element including the metadata itself. So the parser has to remember the position of the `*` character of the metadata as the reference position. Also some zero-bytes belong to the element as defined in the grammar rule for the element and therefore is addressed by the metadata. 
 
@@ -274,7 +274,7 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 [n] (uint16: 9994) [x] (data with 9994 byte)
 ```
 
-## Table of content
+## Simple table of content for quick random access
 
 **Purpose:** Table of content: Lists the starting positions of all elements in a list or dict
 
@@ -282,7 +282,7 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 
 **Metadata value:** relative byte offset to the list elements from the beginning of the metadata
 
-**Alternative with dict keyword:** `TOC`
+**Alternative with dict keyword:** 'TOC'
 
 **Explanation:**
 
@@ -290,7 +290,7 @@ This meta feature allows to access a elements of large data files. The relative 
 
 **Example:**
 
-This example shows a table of a short list with mixed types
+This example shows short list with mixed types and a table of content with offsets
 
 ```
 [7, "seven", 7.77]
@@ -302,3 +302,17 @@ UBN:
 [[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
      ^              ^                      ^   # target positions 
 ```
+
+## More complex table of content for random access
+
+**Purpose:** Table of content: Gives a prototype of the data structure with lists and dicts where each element contains the offset to the actual data
+
+**Metadata type:** Hierarchical structure of lists and dicts with integer elements.
+
+**Metadata values:** relative byte offset to the actuall data element
+
+**Alternative with dict keyword:** 'TOC'
+
+**Explanation:**
+
+This meta feature allows to quickly access elements in huge hierarchical data structures. The meta data is a copy of the actual data structure down to an appropriate hierarchy level, where the element with the data is replaced by an integer giving the byte-offset to the actual element.
