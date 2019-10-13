@@ -378,7 +378,7 @@ In this example the data is a dict with mixed types, including a list
 ```
 {
   'Point of Interest': 'Shipwreck Michelle',
-  'coordinates': {'lon': 44.167618, 'lat': 14.812889}
+  'coordinates': {'lon': 14.812889, 'lat': 44.167618}
 }
 
 UBN:
