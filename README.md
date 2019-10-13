@@ -38,14 +38,14 @@ UBN is also suitable for data streams. All elements of the grammar begin with as
 ### Additional (possible) features that makes use of the optional metadata
 
 1. Table of contents
-2. Size information of the elements
+2. Size information of elements
 3. Fast random access to certain sub-elements in big files
 4. Fast deletion and addition of elements in big files
 5. Chunk data mode for efficient writing and reading of big files
 6. Compressed elements
 7. Included checksum
 8. Definitions for date and time notation
-9. Definitions for units
+9. Definitions for physical units
 
 Status
 ------
@@ -69,7 +69,7 @@ The graphical representation of the grammar rules below should contain all infor
 
 <p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/UBN_type.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/UBN_count.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/UBN_length.png"></p>
 
 Other than in data of text formats no stop symbols can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be determined by the parser from information stored in front of the data. The size of basic data types are given in the type table. In case of structs or arrays the number of bytes have to be added or multiplied accordingly.
 

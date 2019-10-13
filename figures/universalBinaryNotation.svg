@@ -14,7 +14,7 @@
    height="297mm"
    width="210mm"
    sodipodi:docname="universalBinaryNotation.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\Universal-Binary-Notation\trunk\UBN_list.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
@@ -31,13 +31,13 @@
      inkscape:window-height="1128"
      id="namedview376"
      showgrid="false"
-     inkscape:zoom="1.1893044"
-     inkscape:cx="279.26879"
-     inkscape:cy="1004.0025"
+     inkscape:zoom="0.84096521"
+     inkscape:cx="351.75462"
+     inkscape:cy="544.4514"
      inkscape:window-x="394"
      inkscape:window-y="9"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg5993" />
+     inkscape:current-layer="g8154" />
   <defs
      id="defs5995" />
   <metadata
@@ -130,26 +130,18 @@
      height="100%"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#circle5037"
+  <circle
+     r="3.4343083"
+     cy="406.11896"
+     cx="144.43472"
      id="use5055"
-     transform="translate(0,276.1268)"
-     width="100%"
-     height="100%"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#circle5037"
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <circle
+     r="3.4343083"
+     cy="248.09268"
+     cx="144.43472"
      id="use5059"
-     transform="translate(0,118.10052)"
-     width="100%"
-     height="100%"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.78246784px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -371,26 +363,18 @@
      d="m 237.75106,248.09266 h -3.22891 c -4.56314,0 -6.8037,3.77913 -6.8037,7.87196 v 4.91552 c 0,4.67697 1.87307,8.58145 6.90703,8.58145 h 93.12591 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58145 v -4.91552 c 0,-4.27747 -2.22372,-7.87196 -6.8037,-7.87196 h -2.15747"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
-  <use
-     height="100%"
-     width="100%"
-     transform="translate(297.48993,276.1268)"
+  <circle
+     r="3.4343083"
+     cy="406.11896"
+     cx="441.92465"
      id="use5061"
-     xlink:href="#circle5037"
-     y="0"
-     x="0"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <use
-     height="100%"
-     width="100%"
-     transform="translate(297.48993,118.10051)"
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <circle
+     r="3.4343083"
+     cy="248.09267"
+     cx="441.92465"
      id="use5065"
-     xlink:href="#circle5037"
-     y="0"
-     x="0"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <path
      inkscape:connector-curvature="0"
      id="path4787"
@@ -442,24 +426,20 @@
   <text
      id="text5410"
      y="797.15662"
-     x="86.939178"
+     x="81.420357"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        y="797.15662"
-       x="86.939178"
-       id="tspan5408">count</tspan></text>
-  <use
-     x="0"
-     y="0"
-     xlink:href="#circle5037"
+       x="81.420357"
+       id="tspan5408">length</tspan></text>
+  <circle
+     r="3.4343083"
+     cy="792.03058"
+     cx="144.43472"
      id="use5569"
-     transform="translate(0,662.0384)"
-     width="100%"
-     height="100%"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <path
      inkscape:connector-curvature="0"
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -509,16 +489,12 @@
        y="828.49933"
        x="196.38269"
        id="tspan5587">n</tspan></text>
-  <use
-     height="100%"
-     width="100%"
-     transform="translate(297.48993,662.0384)"
+  <circle
+     r="3.4343083"
+     cy="792.03058"
+     cx="441.92465"
      id="use5599"
-     xlink:href="#circle5037"
-     y="0"
-     x="0"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <use
      x="0"
      y="0"
@@ -680,16 +656,12 @@
          x="261.9819"
          y="687.37103">n</tspan></text>
   </g>
-  <use
-     height="100%"
-     width="100%"
-     transform="translate(-2.2170757e-6,197.52433)"
+  <circle
+     r="3.4343083"
+     cy="327.51648"
+     cx="144.43472"
      id="use5057"
-     xlink:href="#circle5037"
-     y="0"
-     x="0"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <path
      inkscape:connector-curvature="0"
      id="path4805"
@@ -843,16 +815,12 @@
          x="297.7038"
          id="tspan5013">value</tspan></text>
   </g>
-  <use
-     x="0"
-     y="0"
-     xlink:href="#circle5037"
+  <circle
+     r="3.4343083"
+     cy="327.51651"
+     cx="441.92465"
      id="use5063"
-     transform="translate(297.48993,197.52434)"
-     width="100%"
-     height="100%"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <rect
      y="238.37856"
      x="244.0863"
@@ -919,175 +887,6 @@
        y="509.53741"
        x="1071.8726"
        id="tspan4950" /></text>
-  <g
-     id="g8309"
-     transform="translate(0,1275.6995)">
-    <use
-       height="100%"
-       width="100%"
-       transform="translate(-2.2170757e-6,244.25427)"
-       id="use5454"
-       xlink:href="#circle5037"
-       y="0"
-       x="0" />
-    <path
-       id="path5456"
-       d="M 144.53836,374.24644 H 442.35338"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="61.513741"
-       y="379.3725"
-       id="text5460"><tspan
-         id="tspan5458"
-         x="61.513741"
-         y="379.3725"
-         style="stroke-width:1px">metainfo</tspan></text>
-    <use
-       x="0"
-       y="0"
-       xlink:href="#path6605"
-       id="use5478"
-       transform="translate(-9.3749998,126.15379)"
-       width="100%"
-       height="100%" />
-    <text
-       id="text5482"
-       y="378.28387"
-       x="158.32283"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.62500095px;line-height:100%;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="378.28387"
-         x="158.32283"
-         id="tspan5480"
-         style="stroke-width:1px">&lt;</tspan></text>
-    <use
-       x="0"
-       y="0"
-       xlink:href="#path6605"
-       id="use5484"
-       transform="translate(251.96152,126.15379)"
-       width="100%"
-       height="100%" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.62500095px;line-height:100%;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="418.82013"
-       y="378.28387"
-       id="text5488"><tspan
-         id="tspan5486"
-         x="418.82013"
-         y="378.28387"
-         style="stroke-width:1px">&gt;</tspan></text>
-    <use
-       x="0"
-       y="0"
-       xlink:href="#circle5037"
-       id="use5506"
-       transform="translate(297.48993,244.25427)"
-       width="100%"
-       height="100%" />
-    <path
-       id="path4843-5"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 189.62325,374.24644 h -3.22891 c -4.56314,0 -6.8037,-3.7791 -6.8037,-7.8719 v -12.4156 c 0,-4.6769 1.87307,-8.5814 6.90703,-8.5814 h 212.95297 c 5.03397,0 6.90704,3.9045 6.90704,8.5814 v 12.4156 c 0,4.2774 -2.22372,7.8719 -6.8037,7.8719 h -2.15747"
-       inkscape:connector-curvature="0" />
-    <rect
-       y="364.53241"
-       x="318.95004"
-       height="19.428198"
-       width="74.204262"
-       id="rect4815-8"
-       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <text
-       id="text4819-6"
-       y="379.3725"
-       x="324.21503"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="379.3725"
-         x="324.21503"
-         id="tspan4817-3">element</tspan></text>
-    <rect
-       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4847-01"
-       width="51.002316"
-       height="19.428198"
-       x="192.79402"
-       y="364.53241" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="196.26027"
-       y="379.3725"
-       id="text4851-9"><tspan
-         id="tspan4849-8"
-         x="196.26027"
-         y="379.3725">count</tspan></text>
-    <text
-       id="text5015-08"
-       y="400.11517"
-       x="337.0788"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-         y="400.11517"
-         x="337.0788"
-         id="tspan5013-9">value</tspan></text>
-    <g
-       transform="translate(-7.5,-18.384054)"
-       id="g4933">
-      <path
-         style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         d="m 266.42475,402.30982 c -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -6.24377 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 H 301.581 c 3.61733,0 6.54976,2.96488 6.54976,6.62224 v 6.24377 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 z"
-         id="path5368"
-         inkscape:connector-curvature="0" />
-      <text
-         id="text5372"
-         y="396.35904"
-         x="264.03125"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-           y="396.35904"
-           x="264.03125"
-           id="tspan5370">string</tspan></text>
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="214.75357"
-       y="400.11517"
-       id="text4949"><tspan
-         id="tspan4947"
-         x="214.75357"
-         y="400.11517"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">keyword</tspan></text>
-    <text
-       id="text4957"
-       y="359.80267"
-       x="214.63089"
-       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="359.80267"
-         x="214.63089"
-         id="tspan4955"
-         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px">n</tspan></text>
-    <text
-       id="text4976"
-       y="359.80267"
-       x="247.56607"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-         y="359.80267"
-         x="247.56607"
-         id="tspan4974">(size=<tspan
-   style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold Italic';fill:#d40000"
-   id="tspan4972">n</tspan>)</tspan></text>
-  </g>
   <path
      inkscape:connector-curvature="0"
      style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -1120,16 +919,12 @@
      style="opacity:0;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.8125;stroke-miterlimit:4;stroke-dasharray:none"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
-  <use
-     height="100%"
-     width="100%"
-     transform="translate(0,-28.872889)"
+  <circle
+     r="3.4343083"
+     cy="101.11927"
+     cx="144.43472"
      id="use5267"
-     xlink:href="#circle5037"
-     y="0"
-     x="0"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <path
      inkscape:connector-curvature="0"
      id="path5269"
@@ -1222,168 +1017,6 @@
      d="m 213.53406,248.09266 h 3.22891 c 1.71864,0 6.8037,-3.77913 6.8037,-7.87196 v -4.91552 c 0,-4.67697 1.87307,-8.58145 6.90703,-8.58145 h 102.50091 c 5.03397,0 6.90704,3.90448 6.90704,8.58145 v 4.91552 c 0,4.27747 2.22372,7.87196 6.8037,7.87196 h 2.15747"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cssssssssc" />
-  <g
-     id="g8185"
-     transform="translate(0,1416.0604)">
-    <rect
-       style="opacity:0;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.8125;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect5058"
-       width="18.202883"
-       height="11.25"
-       x="62.655098"
-       y="125.8906" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 144.53836,129.99215 H 442.35337"
-       id="path4594"
-       inkscape:connector-curvature="0" />
-    <text
-       id="text4656"
-       y="135.11821"
-       x="67.334663"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="135.11821"
-         x="67.334663"
-         id="tspan4654">element</tspan></text>
-    <circle
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="circle5037"
-       cx="144.43472"
-       cy="129.99216"
-       r="3.4343083" />
-    <use
-       height="100%"
-       width="100%"
-       transform="translate(297.48993,6.3994445e-6)"
-       id="use5067"
-       xlink:href="#circle5037"
-       y="0"
-       x="0" />
-    <path
-       id="path4699"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 151.97801,129.99215 h 3.22891 c 4.57609,0 6.8037,3.27155 6.8037,7.87196 v 4.91552 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 93.12591 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146 v -4.91552 c 0,-4.60041 2.2276,-7.87196 6.8037,-7.87196 h 2.15747"
-       inkscape:connector-curvature="0" />
-    <g
-       transform="matrix(1,0,0,-1,-1.8749891,244.37724)"
-       id="g4867">
-      <g
-         id="g4659"
-         transform="matrix(1,0,0,-1,220.03182,183.77346)">
-        <path
-           inkscape:connector-curvature="0"
-           id="path4612"
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 187.47781,69.388375 h -2.73086 c -4.57609,0 -6.8037,3.27155 -6.8037,7.87196 v 5.318281 c 0,3.06215 1.87307,8.581464 6.90703,8.581464 h 19.29778 c 5.03397,0 6.90704,-3.90448 6.90704,-8.581464 v -5.318281 c 0,-3.012233 -2.2276,-7.87196 -6.8037,-7.87196 h -4.03247" />
-      </g>
-      <use
-         x="0"
-         y="0"
-         xlink:href="#path6605"
-         id="use5256"
-         transform="translate(242.55689,-155.4195)"
-         width="100%"
-         height="100%" />
-    </g>
-    <text
-       id="text5023"
-       y="104.5598"
-       x="392.70239"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-         y="104.5598"
-         x="392.70239"
-         id="tspan5021">space</tspan></text>
-    <rect
-       y="141.37752"
-       x="176.32758"
-       height="19.428198"
-       width="77.311661"
-       id="rect4693"
-       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <text
-       id="text4697"
-       y="156.21768"
-       x="180.42612"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="156.21768"
-         x="180.42612"
-         id="tspan4695">metainfo</tspan></text>
-    <path
-       sodipodi:nodetypes="cssssssssc"
-       d="m 277.91177,129.99215 h 3.22891 c 4.57609,0 6.8037,3.27155 6.8037,7.87196 v 10.93373 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 74.37591 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146 v -10.93373 c 0,-4.60041 2.2276,-7.87196 6.8037,-7.87196 h 2.15747"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path4740"
-       inkscape:connector-curvature="0" />
-    <rect
-       y="120.27805"
-       x="303.74606"
-       height="19.428198"
-       width="56.07143"
-       id="rect4713"
-       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <text
-       id="text4717"
-       y="134.78676"
-       x="319.25369"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="134.78676"
-         x="319.25369"
-         id="tspan4715">list</tspan></text>
-    <rect
-       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4719"
-       width="56.07143"
-       height="19.428198"
-       x="303.74606"
-       y="147.37778" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="316.97098"
-       y="161.82977"
-       id="text4723"><tspan
-         id="tspan4721"
-         x="316.97098"
-         y="161.82977">dict</tspan></text>
-    <text
-       id="text4862"
-       y="119.63716"
-       x="381.17133"
-       style="font-style:normal;font-weight:normal;font-size:37.5px;line-height:18.75px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-size:13.75px;stroke-width:0.9375px"
-         y="119.63716"
-         x="381.17133"
-         id="tspan4860"
-         sodipodi:role="line">(ignored)</tspan></text>
-    <path
-       inkscape:connector-curvature="0"
-       id="path4880"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 277.91177,129.99215 h 3.22891 c 4.57609,0 6.8037,-3.27155 6.8037,-7.87196 v -10.93373 c 0,-4.67698 1.87307,-8.58146 6.90703,-8.58146 h 74.37591 c 5.03397,0 6.90704,3.90448 6.90704,8.58146 v 10.93373 c 0,4.60041 2.2276,7.87196 6.8037,7.87196 h 2.15747"
-       sodipodi:nodetypes="cssssssssc" />
-    <rect
-       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4644"
-       width="56.07143"
-       height="19.428198"
-       x="303.74606"
-       y="93.081612" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="310.952"
-       y="107.68742"
-       id="text4648"><tspan
-         id="tspan4646"
-         x="310.952"
-         y="107.68742">value</tspan></text>
-  </g>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.7824688px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -2265,13 +1898,13 @@
        inkscape:export-xdpi="96"
        id="text4886-5"
        y="765.32733"
-       x="756.7406"
+       x="737.07874"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          y="765.32733"
-         x="756.7406"
+         x="737.07874"
          id="tspan4884-2"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">(only little endian byte order)</tspan></text>
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">(little endian byte order by default)</tspan></text>
     <path
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
@@ -2427,25 +2060,25 @@
     <rect
        inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_type.png"
        y="524.9798"
-       x="798.50305"
+       x="802.34875"
        height="19.428198"
-       width="43.982601"
+       width="42.011913"
        id="rect4960"
-       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:1.99968755;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:1.99968743;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <text
        inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_type.png"
        id="text4964"
        y="538.72131"
-       x="803.37067"
+       x="806.23102"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          style="line-height:13.75px;stroke-width:1px"
          y="538.72131"
-         x="803.37067"
+         x="806.23102"
          id="tspan4962">type</tspan></text>
     <text
        inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_type.png"
@@ -2463,25 +2096,25 @@
     <rect
        inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_type.png"
        y="524.9798"
-       x="736.1416"
+       x="734.2666"
        height="19.428198"
-       width="53.074921"
+       width="58.981186"
        id="rect4970"
-       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:1.99968755;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:1.99968767;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <text
        inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_type.png"
        id="text4975"
        y="538.72131"
-       x="740.6441"
+       x="738.68091"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          y="538.72131"
-         x="740.6441"
-         id="tspan4973">count</tspan></text>
+         x="738.68091"
+         id="tspan4973">length</tspan></text>
     <rect
        inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_type.png"
        style="opacity:0;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.8125;stroke-miterlimit:4;stroke-dasharray:none"
@@ -2865,133 +2498,6 @@
        x="187.75067"
        y="164.85152"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';stroke-width:1px">metadata</tspan></text>
-  <g
-     id="g8270"
-     transform="translate(-564.40555,370.48967)">
-    <use
-       inkscape:export-ydpi="96"
-       inkscape:export-xdpi="96"
-       height="100%"
-       width="100%"
-       transform="translate(564.40551,913.86676)"
-       id="use5661"
-       xlink:href="#circle5037-8"
-       y="0"
-       x="0"
-       inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_data.png" />
-    <path
-       inkscape:export-ydpi="96"
-       inkscape:export-xdpi="96"
-       id="path5663"
-       d="m 708.9439,1085.232 h 297.815"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_data.png" />
-    <text
-       inkscape:export-ydpi="96"
-       inkscape:export-xdpi="96"
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.453125px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="660.8985"
-       y="1090.3582"
-       id="text5667"
-       inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_data.png"><tspan
-         style="line-height:14.453125px"
-         id="tspan5665"
-         x="660.8985"
-         y="1090.3582">data</tspan></text>
-    <rect
-       inkscape:export-ydpi="96"
-       inkscape:export-xdpi="96"
-       y="1075.5179"
-       x="760.66577"
-       height="19.428198"
-       width="50.339405"
-       id="rect5669"
-       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:1.99968755;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_data.png" />
-    <text
-       inkscape:export-ydpi="96"
-       inkscape:export-xdpi="96"
-       id="text5673"
-       y="1089.5659"
-       x="768.71179"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.453125px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"
-       inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_data.png"><tspan
-         style="line-height:14.453125px"
-         y="1089.5659"
-         x="768.71179"
-         id="tspan5671">type</tspan></text>
-    <path
-       sodipodi:nodetypes="cssssssssc"
-       inkscape:export-ydpi="96"
-       inkscape:export-xdpi="96"
-       id="path5675"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 722.71168,1085.232 h 5.10391 c 4.57609,0 6.8037,3.2716 6.8037,7.872 v 11.0186 c 0,4.6769 1.87307,8.5814 6.90703,8.5814 h 88.40911 c 5.03397,0 6.90704,-3.9045 6.90704,-8.5814 v -11.0186 c 0,-4.6004 2.2276,-7.872 6.8037,-7.872 h 4.03247"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_data.png" />
-    <use
-       inkscape:export-ydpi="96"
-       inkscape:export-xdpi="96"
-       x="0"
-       y="0"
-       xlink:href="#circle5037-8"
-       id="use5677"
-       transform="translate(861.89544,913.86676)"
-       width="100%"
-       height="100%"
-       inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_data.png" />
-    <path
-       inkscape:export-ydpi="96"
-       inkscape:export-xdpi="96"
-       id="path5679"
-       d="m 859.80512,1094.9762 c -3.61733,0 -6.54975,-2.9649 -6.54976,-6.6223 v -6.2438 c 0,-3.6573 2.93243,-6.6222 6.54976,-6.6222 h 121.40625 c 3.61734,0 6.54976,2.9649 6.54976,6.6222 v 6.2438 c 0,3.6574 -2.93242,6.6223 -6.54976,6.6223 z"
-       style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_data.png" />
-    <g
-       inkscape:export-ydpi="96"
-       inkscape:export-xdpi="96"
-       id="g5685"
-       transform="translate(644.34755,401.84903)"
-       inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_data.png">
-      <text
-         id="text5683"
-         y="687.17627"
-         x="219.0257"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-           y="687.17627"
-           x="219.0257"
-           id="tspan5681">data bytes (size)</tspan></text>
-    </g>
-    <rect
-       style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:1.99968755;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect5687"
-       width="60.018822"
-       height="19.254166"
-       x="757.00281"
-       y="1102.8893"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_data.png" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.453125px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="764.96179"
-       y="1116.8502"
-       id="text5691"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_data.png"><tspan
-         id="tspan5689"
-         x="764.96179"
-         y="1116.8502"
-         style="line-height:14.453125px">struct</tspan></text>
-  </g>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.78246784px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -3012,521 +2518,37 @@
        x="1986.0007"
        id="tspan4950-9" /></text>
   <path
-     inkscape:connector-curvature="0"
-     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 144.53836,1112.9755 H 442.35337"
-     id="path5573-9"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <path
-     inkscape:connector-curvature="0"
-     d="m 165.33739,1112.9755 h 5.10391 c 4.57609,0 6.8037,3.2715 6.8037,7.872 v 49.7055 c 0,4.677 1.87307,8.5816 6.90703,8.5816 h 214.03411 c 5.03397,0 6.90704,-3.9046 6.90704,-8.5816 v -49.7055 c 0,-4.6005 2.2276,-7.872 6.8037,-7.872 h 4.03247"
-     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path5577-4"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <path
-     inkscape:connector-curvature="0"
-     d="m 177.24499,1120.9339 c 0,4.677 1.87307,8.5815 6.90703,8.5815 h 214.03411 c 5.03397,0 6.90704,-3.9045 6.90704,-8.5815"
-     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path5601-41"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <path
-     inkscape:connector-curvature="0"
-     id="path5571-9"
-     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 177.24499,1154.0134 c 0,4.6769 1.87307,8.5814 6.90703,8.5814 h 214.03411 c 5.03397,0 6.90704,-3.9045 6.90704,-8.5814"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <path
-     inkscape:connector-curvature="0"
-     d="m 177.26937,1137.4736 c 0,4.677 1.87307,8.5815 6.90703,8.5815 h 213.94256 c 5.03397,0 6.90704,-3.9045 6.90704,-8.5815"
-     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path5575-2"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <use
-     height="100%"
-     width="100%"
-     transform="translate(-102.55963,16.494612)"
-     id="use5282-0"
-     xlink:href="#path5113-4"
-     y="0"
-     x="0"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#path5113-4"
-     id="use5284-35"
-     transform="translate(-102.9112,-16.713388)"
-     width="100%"
-     height="100%"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#path5113-4"
-     id="use5265-7"
-     transform="translate(0.32176719,33.018052)"
-     width="100%"
-     height="100%"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <text
-     id="text5410-70"
-     y="1118.1016"
-     x="86.939178"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     xml:space="preserve"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       y="1118.1016"
-       x="86.939178"
-       id="tspan5408-6">count</tspan></text>
-  <circle
-     r="3.4343083"
-     cy="1112.9755"
-     cx="144.43468"
-     id="use5569-9"
-     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-  <path
-     inkscape:connector-curvature="0"
-     style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 209.10989,1117.7942 c 0,3.6574 -2.9325,6.6223 -6.5498,6.6223 -3.6173,0 -6.5497,-2.9649 -6.5498,-6.6223 v -9.9937 c 0,-3.6574 2.9325,-6.6223 6.5498,-6.6223 3.6173,0 6.5498,2.9649 6.5498,6.6223 z"
-     id="use5579-2"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <path
-     inkscape:connector-curvature="0"
-     style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 310.87726,1134.3616 c 0,3.6574 -2.9325,6.6223 -6.5498,6.6223 -3.6173,0 -6.5497,-2.9649 -6.5498,-6.6223 v -9.9937 c 0,-3.6574 2.9325,-6.6223 6.5498,-6.6223 3.6173,0 6.5498,2.9649 6.5498,6.6223 z"
-     id="use5581-2"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="197.80315"
-     y="1116.3679"
-     id="text5585-31"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       id="tspan5583-91"
-       x="197.80315"
-       y="1116.3679">m</tspan></text>
-  <text
-     id="text5589-7"
-     y="1132.9315"
-     x="299.64685"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     xml:space="preserve"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       y="1132.9315"
-       x="299.64685"
-       id="tspan5587-2">n</tspan></text>
-  <circle
-     r="3.4343083"
-     cy="1112.9755"
-     cx="441.92459"
-     id="use5599-6"
-     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-  <path
-     inkscape:connector-curvature="0"
-     style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 310.87726,1167.5256 c 0,3.6574 -2.9325,6.6223 -6.5498,6.6223 -3.6173,0 -6.5497,-2.9649 -6.5498,-6.6223 v -9.9937 c 0,-3.6574 2.9325,-6.6223 6.5498,-6.6223 3.6173,0 6.5498,2.9649 6.5498,6.6223 z"
-     id="use5066-2"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="299.91769"
-     y="1165.3435"
-     id="text5070-3"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       id="tspan5068-3"
-       x="299.91769"
-       y="1165.3435">p</tspan></text>
-  <path
-     inkscape:connector-curvature="0"
-     style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 209.10226,1150.885 c 0,3.6574 -2.9325,6.6223 -6.5498,6.6223 -3.6173,0 -6.5497,-2.9649 -6.5498,-6.6223 v -9.9937 c 0,-3.6574 2.9325,-6.6223 6.5498,-6.6223 3.6173,0 6.5498,2.9649 6.5498,6.6223 z"
-     id="use5089-7"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <text
-     id="text5093-6"
-     y="1149.3291"
-     x="197.84892"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     xml:space="preserve"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       y="1149.3291"
-       x="197.84892"
-       id="tspan5091-1">o</tspan></text>
-  <path
-     inkscape:connector-curvature="0"
-     style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 325.89992,1139.2261 c -3.61733,0 -6.54975,-2.9649 -6.54976,-6.6223 v -6.2438 c 0,-3.6573 2.93243,-6.6222 6.54976,-6.6222 h 53.90625 c 3.61733,0 6.54976,2.9649 6.54976,6.6222 v 6.2438 c 0,3.6574 -2.93243,6.6223 -6.54976,6.6223 z"
-     id="path5113-4"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="323.82822"
-     y="1133.0557"
-     id="text5117-4"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       id="tspan5115-3"
-       x="323.82822"
-       y="1133.0557"
-       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">uint16:</tspan></text>
-  <g
-     id="g5280-6"
-     transform="translate(-94.187592,480.09818)"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="318.53281"
-       y="636.7417"
-       id="text5139-7"><tspan
-         id="tspan5137-3"
-         x="318.53281"
-         y="636.7417"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">uint8:</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="359.95065"
-       y="636.9364"
-       id="use5257-8"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px"
-         id="tspan5015"
-         x="359.95065"
-         y="636.9364">n</tspan></text>
-  </g>
-  <g
-     id="g5275-1"
-     transform="translate(-94.187592,480.09818)"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96">
-    <text
-       id="text5156-3"
-       y="669.59814"
-       x="314.78281"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-         y="669.59814"
-         x="314.78281"
-         id="tspan5154-7">uint32:</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="364.40378"
-       y="669.79285"
-       id="use5259-2"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px"
-         id="tspan5019"
-         x="364.40378"
-         y="669.79285">n</tspan></text>
-  </g>
-  <text
-     xml:space="preserve"
-     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="372.74609"
-     y="1133.2504"
-     id="use5261-8"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px"
-       id="tspan5023"
-       x="372.74609"
-       y="1133.2504">n</tspan></text>
-  <g
-     id="g5270-1"
-     transform="translate(110.76414,480.09818)"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="213.06406"
-       y="687.17627"
-       id="text5103-9"><tspan
-         id="tspan5101-7"
-         x="213.06406"
-         y="687.17627"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">uint64:</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="261.9819"
-       y="687.37097"
-       id="use5263-9"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px"
-         id="tspan5027"
-         x="261.9819"
-         y="687.37097">n</tspan></text>
-  </g>
-  <rect
-     style="opacity:0;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.8125;stroke-miterlimit:4;stroke-dasharray:none"
-     id="rect5056-3"
-     width="18.202883"
-     height="11.25"
-     x="62.655098"
-     y="1109.21"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <path
-     inkscape:connector-curvature="0"
-     style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 209.10226,1183.6901 c 0,3.6574 -2.9325,6.6223 -6.5498,6.6223 -3.6173,0 -6.5497,-2.9649 -6.5498,-6.6223 v -9.9937 c 0,-3.6574 2.9325,-6.6223 6.5498,-6.6223 3.6173,0 6.5498,2.9649 6.5498,6.6223 z"
-     id="use5268"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <text
-     id="text5272"
-     y="1183.6409"
-     x="197.86038"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     xml:space="preserve"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       y="1183.6409"
-       x="197.86038"
-       id="tspan5270">0</tspan></text>
-  <path
-     sodipodi:nodetypes="cssssssc"
-     inkscape:connector-curvature="0"
-     d="m 177.20857,1172.5075 v 15.8057 c 0,0 1.87307,7.5769 6.90703,7.5769 h 104.27952 c 5.03397,0 6.90704,-3.4474 6.90704,-7.5769 v -2.2214 c 0,-3.777 2.22372,-6.9507 6.8037,-6.9507 h 2.15747"
-     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="path5274"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png" />
-  <path
-     inkscape:connector-curvature="0"
-     style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 231.20609,1200.7129 c 0,3.6574 -2.9325,6.6223 -6.5498,6.6223 -3.6173,0 -6.5497,-2.9649 -6.5498,-6.6223 v -9.9937 c 0,-3.6574 2.9325,-6.6223 6.5498,-6.6223 3.6173,0 6.5498,2.9649 6.5498,6.6223 z"
-     id="use5276"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="219.96416"
-     y="1200.6635"
-     id="text5280"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       id="tspan5278"
-       x="219.96416"
-       y="1200.6635">1</tspan></text>
-  <g
-     id="g5303"
-     transform="translate(-18.75,201.56766)"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96">
-    <path
-       inkscape:export-ydpi="96"
-       inkscape:export-xdpi="96"
-       id="path5301"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 195.96268,983.9926 v 30.9999 c 0,4.1295 1.87307,7.5769 6.90703,7.5769 h 104.27541 c 5.03397,0 6.90704,-3.4474 6.90704,-7.5769 v -30.40762"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cssssc" />
-  </g>
-  <path
-     inkscape:connector-curvature="0"
-     style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 283.14103,1228.9372 c 0,3.6574 -2.9325,6.6223 -6.5498,6.6223 -3.6173,0 -6.5497,-2.9649 -6.5498,-6.6223 v -9.9937 c 0,-3.6574 2.9325,-6.6223 6.5498,-6.6223 3.6173,0 6.5498,2.9649 6.5498,6.6223 z"
-     id="use5305"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <text
-     id="text5309"
-     y="1228.8878"
-     x="271.89917"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     xml:space="preserve"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       y="1228.8878"
-       x="271.89917"
-       id="tspan5307">9</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="808.10211"
-     y="922.15735"
-     id="text5315"
-     transform="rotate(30)"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       id="tspan5313"
-       x="808.10211"
-       y="922.15735">...</tspan></text>
-  <text
-     id="text5243-3"
-     y="1175.837"
-     x="212.92131"
-     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     xml:space="preserve"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       y="1175.837"
-       x="212.92131"
-       id="tspan5241-7"
-       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px">n</tspan></text>
-  <text
-     id="text5251-3"
-     y="1175.8281"
-     x="226.19087"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     xml:space="preserve"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       id="tspan5249-7"
-       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';stroke-width:1px"
-       x="226.19087"
-       y="1175.8281">= 0</tspan></text>
-  <text
-     id="text5243-31"
-     y="1198.2465"
-     x="301.08981"
-     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     xml:space="preserve"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       y="1198.2465"
-       x="301.08981"
-       id="tspan5241-3"
-       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px">n</tspan></text>
-  <text
-     id="text5251-2"
-     y="1198.2375"
-     x="314.35938"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     xml:space="preserve"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       id="tspan5249-6"
-       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';stroke-width:1px"
-       x="314.35938"
-       y="1198.2375">= 1</tspan></text>
-  <text
-     id="text5243-31-4"
-     y="1228.7006"
-     x="300.53241"
-     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     xml:space="preserve"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       y="1228.7006"
-       x="300.53241"
-       id="tspan5241-3-9"
-       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px">n</tspan></text>
-  <text
-     id="text5251-2-6"
-     y="1228.6917"
-     x="313.80197"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     xml:space="preserve"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       id="tspan5249-6-1"
-       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';stroke-width:1px"
-       x="313.80197"
-       y="1228.6917">= 9</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="1202.3763"
-     y="-319.20718"
-     id="text5407"
-     transform="rotate(90)"
-     inkscape:export-filename="F:\Programmierprojekte\UniversalBinaryNotation\temp_Universal-Binary-Notation\trunk\figures\UBN_count.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       y="-319.20718"
-       x="1202.3763"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright';stroke-width:1px"
-       id="tspan5405">...</tspan></text>
-  <path
      id="path2284"
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 165.33739,1301.2568 h 5.10391 c 4.57609,0 6.8037,3.2715 6.8037,7.8719 v 49.7057 c 0,4.677 1.87307,8.5815 6.90703,8.5815 h 214.03411 c 5.03397,0 6.90704,-3.9045 6.90704,-8.5815 v -49.7057 c 0,-4.6004 2.2276,-7.8719 6.8037,-7.8719 h 4.03247"
+     d="m 165.33739,1118.3768 h 5.10391 c 4.57609,0 6.8037,3.2715 6.8037,7.8719 v 49.7057 c 0,4.677 1.87307,8.5815 6.90703,8.5815 h 214.03411 c 5.03397,0 6.90704,-3.9045 6.90704,-8.5815 v -49.7057 c 0,-4.6004 2.2276,-7.8719 6.8037,-7.8719 h 4.03247"
      inkscape:connector-curvature="0" />
   <path
      id="path2286"
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 177.24499,1309.2152 c 0,4.6769 1.87307,8.5814 6.90703,8.5814 h 214.03411 c 5.03397,0 6.90704,-3.9045 6.90704,-8.5814"
+     d="m 177.24499,1126.3352 c 0,4.6769 1.87307,8.5814 6.90703,8.5814 h 214.03411 c 5.03397,0 6.90704,-3.9045 6.90704,-8.5814"
      inkscape:connector-curvature="0" />
   <path
-     d="m 177.24499,1342.2946 c 0,4.677 1.87307,8.5815 6.90703,8.5815 h 214.03411 c 5.03397,0 6.90704,-3.9045 6.90704,-8.5815"
+     d="m 177.24499,1159.4146 c 0,4.677 1.87307,8.5815 6.90703,8.5815 h 214.03411 c 5.03397,0 6.90704,-3.9045 6.90704,-8.5815"
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="path2288"
      inkscape:connector-curvature="0" />
   <path
      id="path2290"
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 177.26937,1325.7549 c 0,4.677 1.87307,8.5815 6.90703,8.5815 h 213.94256 c 5.03397,0 6.90704,-3.9045 6.90704,-8.5815"
+     d="m 177.26937,1142.8749 c 0,4.677 1.87307,8.5815 6.90703,8.5815 h 213.94256 c 5.03397,0 6.90704,-3.9045 6.90704,-8.5815"
      inkscape:connector-curvature="0" />
   <use
      x="0"
      y="0"
      xlink:href="#path5113"
      id="use2292"
-     transform="translate(102.39209,525.72084)"
+     transform="translate(102.39209,342.84083)"
      width="100%"
      height="100%" />
   <use
      height="100%"
      width="100%"
-     transform="translate(102.04052,492.51284)"
+     transform="translate(102.04052,309.63283)"
      id="use2294"
      xlink:href="#path5113"
      y="0"
@@ -3534,31 +2556,20 @@
   <use
      height="100%"
      width="100%"
-     transform="translate(0.3217725,542.24428)"
+     transform="translate(0.3217725,359.36427)"
      id="use2296"
      xlink:href="#path5113"
      y="0"
      x="0" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="86.939178"
-     y="1306.3828"
-     id="text2300"><tspan
-       id="tspan2298"
-       x="86.939178"
-       y="1306.3828">count</tspan></text>
-  <use
-     height="100%"
-     width="100%"
-     transform="translate(0,1171.2646)"
+  <circle
+     r="3.4343083"
+     cy="1118.3767"
+     cx="144.43472"
      id="use2302"
-     xlink:href="#circle5037"
-     y="0"
-     x="0" />
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <path
      id="path2304"
-     d="M 144.53836,1301.2568 H 442.35337"
+     d="M 144.53836,1118.3768 H 442.35337"
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      inkscape:connector-curvature="0" />
   <use
@@ -3566,47 +2577,45 @@
      y="0"
      xlink:href="#path6605"
      id="use2306"
-     transform="translate(132.27357,1069.5636)"
+     transform="translate(132.27357,886.68359)"
      width="100%"
      height="100%" />
   <use
      height="100%"
      width="100%"
-     transform="translate(29.089216,1086.131)"
+     transform="translate(29.089216,903.25099)"
      id="use2308"
      xlink:href="#path6605"
      y="0"
      x="0" />
   <text
      id="text2312"
-     y="1321.162"
+     y="1138.282"
      x="299.49075"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"><tspan
-       y="1321.162"
+       y="1138.282"
        x="299.49075"
        id="tspan2310">m</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="196.38269"
-     y="1337.7255"
+     y="1154.8455"
      id="text2316"><tspan
        id="tspan2314"
        x="196.38269"
-       y="1337.7255">n</tspan></text>
-  <use
-     x="0"
-     y="0"
-     xlink:href="#circle5037"
+       y="1154.8455">n</tspan></text>
+  <circle
+     r="3.4343083"
+     cy="1118.3767"
+     cx="441.92465"
      id="use2318"
-     transform="translate(297.48993,1171.2646)"
-     width="100%"
-     height="100%" />
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <use
      height="100%"
      width="100%"
-     transform="translate(29.089216,1053.2289)"
+     transform="translate(29.089216,870.34889)"
      id="use2320"
      xlink:href="#path6605"
      y="0"
@@ -3615,19 +2624,19 @@
      xml:space="preserve"
      style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="195.88815"
-     y="1304.39"
+     y="1121.51"
      id="text2324"><tspan
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px"
        id="tspan2322"
        x="195.88815"
-       y="1304.39">n</tspan></text>
+       y="1121.51">n</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="212.58371"
-     y="1295.4814"
+     y="1112.6014"
      id="text2330"><tspan
-       y="1295.4814"
+       y="1112.6014"
        x="212.58371"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
        id="tspan2328">uint8: 1 ≤ <tspan
@@ -3638,22 +2647,22 @@
      y="0"
      xlink:href="#path6605"
      id="use2332"
-     transform="translate(29.089216,1119.2951)"
+     transform="translate(29.089216,936.41509)"
      width="100%"
      height="100%" />
   <text
      id="text2336"
-     y="1370.1375"
+     y="1187.2574"
      x="196.65353"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"><tspan
-       y="1370.1375"
+       y="1187.2574"
        x="196.65353"
        id="tspan2334">p</tspan></text>
   <use
      height="100%"
      width="100%"
-     transform="translate(132.26594,1102.6544)"
+     transform="translate(132.26594,919.77439)"
      id="use2338"
      xlink:href="#path6605"
      y="0"
@@ -3662,28 +2671,28 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="299.53653"
-     y="1354.123"
+     y="1171.243"
      id="text2342"><tspan
        id="tspan2340"
        x="299.53653"
-       y="1354.123">o</tspan></text>
+       y="1171.243">o</tspan></text>
   <path
      id="path2344"
-     d="m 222.63578,1344.0201 c -3.61733,0 -6.54975,-2.9648 -6.54976,-6.6222 v -6.2438 c 0,-3.6573 2.93243,-6.6222 6.54976,-6.6222 h 53.90625 c 3.61733,0 6.54976,2.9649 6.54976,6.6222 v 6.2438 c 0,3.6574 -2.93243,6.6222 -6.54976,6.6222 z"
+     d="m 222.63578,1161.1401 c -3.61733,0 -6.54975,-2.9648 -6.54976,-6.6222 v -6.2438 c 0,-3.6573 2.93243,-6.6222 6.54976,-6.6222 h 53.90625 c 3.61733,0 6.54976,2.9649 6.54976,6.6222 v 6.2438 c 0,3.6574 -2.93243,6.6222 -6.54976,6.6222 z"
      style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      inkscape:connector-curvature="0" />
   <text
      id="text2348"
-     y="1337.8497"
+     y="1154.9697"
      x="220.56406"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="1337.8497"
+       y="1154.9697"
        x="220.56406"
        id="tspan2346">uint16:</tspan></text>
   <g
-     transform="translate(7.5,684.89228)"
+     transform="translate(7.5,502.01227)"
      id="g2356">
     <text
        id="text2352"
@@ -3707,7 +2716,7 @@
          y="636.93646">n</tspan></text>
   </g>
   <g
-     transform="translate(7.5,684.89228)"
+     transform="translate(7.5,502.01227)"
      id="g2364">
     <text
        xml:space="preserve"
@@ -3734,14 +2743,14 @@
      xml:space="preserve"
      style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="269.4819"
-     y="1338.0446"
+     y="1155.1646"
      id="use2366"><tspan
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px"
        id="tspan2569"
        x="269.4819"
-       y="1338.0446">n</tspan></text>
+       y="1155.1646">n</tspan></text>
   <g
-     transform="translate(7.5,684.89228)"
+     transform="translate(7.5,502.01227)"
      id="g2374">
     <text
        id="text2370"
@@ -3765,7 +2774,7 @@
          y="687.37103">n</tspan></text>
   </g>
   <rect
-     y="1297.4911"
+     y="1114.6111"
      x="62.655098"
      height="11.25"
      width="18.202883"
@@ -3855,39 +2864,24 @@
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';stroke-width:1px"
        x="227.95639"
        y="781.59937">=</tspan></text>
-  <use
-     x="0"
-     y="0"
-     xlink:href="#circle5037"
+  <circle
+     r="1.0941142"
+     cy="778.04437"
+     cx="268.59964"
      id="use3670"
-     transform="matrix(0.31858357,0,0,0.31858357,222.58511,736.63098)"
-     width="100%"
-     height="100%"
-     style="stroke-width:3.13889384"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <use
-     style="stroke-width:3.13889384"
-     height="100%"
-     width="100%"
-     transform="matrix(0.31858357,0,0,0.31858357,228.30011,736.63098)"
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.63716716;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <circle
+     r="1.0941142"
+     cy="778.04437"
+     cx="274.31464"
      id="use3672"
-     xlink:href="#circle5037"
-     y="0"
-     x="0"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <use
-     x="0"
-     y="0"
-     xlink:href="#circle5037"
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.63716716;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <circle
+     r="1.0941142"
+     cy="778.04437"
+     cx="280.02963"
      id="use3674"
-     transform="matrix(0.31858357,0,0,0.31858357,234.01511,736.63098)"
-     width="100%"
-     height="100%"
-     style="stroke-width:3.13889384"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.63716716;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <text
      id="text3682"
      y="781.71582"
@@ -3945,4 +2939,15 @@
        x="399.02527"
        id="tspan2597-1"
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px">nul</tspan></text>
+  <text
+     inkscape:export-ydpi="96"
+     inkscape:export-xdpi="96"
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="81.420357"
+     y="1122.5125"
+     id="text4977"><tspan
+       id="tspan4975"
+       x="81.420357"
+       y="1122.5125">length</tspan></text>
 </svg>
