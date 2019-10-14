@@ -75,8 +75,6 @@ The graphical representation of the grammar rules below should contain all infor
 
 Other than in data of text formats no stop symbols can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be determined by the parser from information stored in front of the data. The size of basic data types are given in the type table. In case of structs or arrays the number of bytes have to be added or multiplied accordingly.
 
-The grammar has an ambiguity for the attribution of the ignored spaces to the element in case of nested metadata. As a rule the spaces are always attributed to the most inner element. As a consequence all nested meta elements must take the subsequent spaces into account when they refer to the size of the element.
-
 ## Types
 
 | Type   | Name      | Bytes | Description                    | Comment                                       |
