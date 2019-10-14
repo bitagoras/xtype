@@ -26,9 +26,9 @@
      inkscape:window-maximized="0"
      inkscape:window-y="0"
      inkscape:window-x="146"
-     inkscape:cy="150.24317"
-     inkscape:cx="285.27295"
-     inkscape:zoom="1.1893044"
+     inkscape:cy="406.59913"
+     inkscape:cx="151.97964"
+     inkscape:zoom="0.84096521"
      showgrid="false"
      id="namedview376"
      inkscape:window-height="1128"
@@ -132,6 +132,8 @@
      cy="406.11896"
      r="3.4343083" />
   <circle
+     inkscape:export-ydpi="96"
+     inkscape:export-xdpi="96"
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="use5059"
      cx="144.43472"
@@ -365,6 +367,8 @@
      cy="406.11896"
      r="3.4343083" />
   <circle
+     inkscape:export-ydpi="96"
+     inkscape:export-xdpi="96"
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="use5065"
      cx="441.92465"
@@ -379,6 +383,8 @@
      id="path4787"
      inkscape:connector-curvature="0" />
   <g
+     inkscape:export-ydpi="96"
+     inkscape:export-xdpi="96"
      transform="translate(13.393311)"
      id="g1294">
     <rect
@@ -661,6 +667,8 @@
          style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px">n</tspan></text>
   </g>
   <circle
+     inkscape:export-ydpi="96"
+     inkscape:export-xdpi="96"
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="use5057"
      cx="144.43472"
@@ -738,6 +746,8 @@
      d="m 376.64798,327.5165 h 3.22891 c 4.57609,0 6.8037,3.27155 6.8037,7.87196 v 10.93373 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 7.99818"
      inkscape:connector-curvature="0" />
   <g
+     inkscape:export-ydpi="96"
+     inkscape:export-xdpi="96"
      transform="translate(13.393311)"
      id="g1289">
     <rect
@@ -825,6 +835,8 @@
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">value</tspan></text>
   </g>
   <circle
+     inkscape:export-ydpi="96"
+     inkscape:export-xdpi="96"
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="use5063"
      cx="441.92465"
@@ -933,7 +945,7 @@
      inkscape:export-ydpi="96"
      inkscape:export-xdpi="96"
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 144.40724,101.11925 H 401.76089"
+     d="M 144.40724,101.11925 H 400.97261"
      id="path5269"
      inkscape:connector-curvature="0" />
   <text
