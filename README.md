@@ -35,7 +35,7 @@ UBN is also suitable for data streams. All elements of the grammar begin with as
 7. Unfinished files can be syntactically valid and complete as long as the last element of a list or dict is complete
 8. Self-similarity: Inner elements can be extracted as complete and valid files
 
-### Additional (possible) features that makes use of the optional metadata
+### Additional (possible) features that make use of the optional metadata
 
 1. Table of contents
 2. Size information of elements
@@ -46,6 +46,8 @@ UBN is also suitable for data streams. All elements of the grammar begin with as
 7. Included checksum
 8. Definitions for date and time notation
 9. Definitions for physical units
+
+With the metadata users have the freedom to create their own new formats for their specific applications based new meta rules. This is similar to text formats where users can freely design file structures with their own format rules. But all text formats have in common that they are obliged to respect the ascii code as a standard when every common editor should be able to show and edit the content.
 
 Status
 ------
@@ -376,7 +378,7 @@ In this example the data is a dict with mixed types, including a list
 ```
 {
   'Point of Interest': 'Shipwreck Michelle',
-  'coordinates': {'lon': 44.167618, 'lat': 14.812889}
+  'coordinates': {'lon': 14.812889, 'lat': 44.167618}
 }
 
 UBN:
