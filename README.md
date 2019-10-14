@@ -54,7 +54,7 @@ Status
 
 UBN is under development. The grammar will be finalized at some point when it is consolidated that nothing important is missing. There will be no different versions for the core grammar. At the moment a flag for a beta status is set. The meta language, in contrast, will grow from time to time and new features will be added. A version number will indicate the compatibility of the releases.
 
-Grammar (beta4)
+Grammar (beta5)
 --------------
 
 The graphical representation of the grammar rules below should contain all information to enable a programmer writing valid UBN files. The red round boxes represent data to be written. Single black characters inside are stored directly as ASCII characters. Green boxes require nested grammer rules.
@@ -75,7 +75,7 @@ The graphical representation of the grammar rules below should contain all infor
 
 Other than in data of text formats no stop symbols can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be determined by the parser from information stored in front of the data. The size of basic data types are given in the type table. In case of structs or arrays the number of bytes have to be added or multiplied accordingly.
 
-The grammar has an ambiguity for the attribution of the ignored zero-bytes to the element in case of nested metadata. As a rule the zero-bytes are always attributed to the most inner element. As a consequence all nested meta elements must take the subsequent zero-bytes into account when they refer to the size of the element.
+The grammar has an ambiguity for the attribution of the ignored spaces to the element in case of nested metadata. As a rule the spaces are always attributed to the most inner element. As a consequence all nested meta elements must take the subsequent spaces into account when they refer to the size of the element.
 
 ## Types
 
