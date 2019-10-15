@@ -4,23 +4,29 @@ Universal Binary Notation file format specification (beta)
 
 Introduction
 ------------
-Universal Binary Notation (UBN) is a general purpose self-explained binary file format for hierarchically structured data. The basic syntax is very simple and easy to implement but it tries to satisfy the needs of all imaginable applications for binary data storage and exchange. The simplicity allows to generate typical data files by a few lines of code without any library. Simultaneously, with the use of metadata big data files can be generated that are manageable efficiently with random access.
+Universal Binary Notation (UBN) is a general purpose self-explained binary file format for hierarchically structured data. The basic syntax is very simple and easy to implement but it tries to satisfy the needs of all imaginable applications for binary data storage and exchange. The simple grammar allows to generate typical data files by a few lines of code without any library. Simultaneously, with the use of optional metadata big data files can be generated and handled efficiently with random access.
 
 The Vision
 ----------
 
-The success of the digital revolution is based on the common notation of all kind of information by binary series of zeros and ones. Unfortunately this idea of unification did not find its way to the syntax of binary data structures. Many thousand binary file formats exist in the world that need custom-built programs or libraries to decode the data.
+The digital revolution is based on the simple convention to notate all kind of information by series of zeros and ones. The ASCII or unicode standard gives it a language that everybody can understand. Although the usefulness of such conventions is very obvious, it is missing at a higher level for binary data structures. Many thousand binary file formats exist in the world that need custom-built programs or libraries to decode them. As a consequence, many people use text formats for data exchange as it is the most universal standard. As a drawback text formats have limited speed and storage efficiency since numerical values have to be translated into their decimal text representations. Also certain sub elements cannot be read without parsing the whole text file.
 
-For text files universal formats already exist, such as [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/). As a drawback text formats have limited speed and storage efficiency since numerical values have to be translated into their decimal text representations and certain sub elements cannot be read without parsing the whole text file. 
+This is where the vision of a Universal Binary Notation (UBN) comes into play:
 
-Here comes the vision of a Universal Binary Notation (UBN) that is easy to use and provides all desirable properties of binary formats. One single editor or viewer should be able to display the content of any binary file format that is based on UBN. This would allow binary files to gain the popularity of text files, which can all be opened by one text-editor and read by any programing language. Due to it's binary structure certain sub-elements can be accessed very efficiently. This would make binary files even more flexible than text-files and enable users to handle elements as intuitively as files in a directory tree of a file system.
+* It should cover all desirable properties of binary formats.
+* It should be very flexible and hierarchically structured.
+* One single editor should be able to display the content of all binary format based on it,.
+* Reading should be efficient and sub-elements should be readable by random access.
 
-But why yet another format? Are there no general purpose binary formats? Actually there are some examples, however they suffer from too high complexity or limited versatility. Examples are [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format) and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation). The former is feature-rich and suitable for huge scientific data sets but has a quite complicated grammar while the latter is very simple, but is not optimized for big databases with random access. UBN is supposed to bridge the gap.
+Existing solutions
+------------------
+
+For text files universal formats already exist, such as [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) with the disadvantage of low efficiency. Existing universal binary format are e.g. [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format) which is suitable for huge scientific data sets but has a quite complicated grammar and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation) which is very simple, but is not optimized for big databases with random access. UBN is supposed to unify all needs.
 
 Core Idea
 ---------
 
-To unify the contradicting requirements of simplicity and advanced features, the format specification is divided into two meta levels. The core grammar describes a minimalistic hierarchical data structure, inspired by UBJSON. Advanced features such as random access are hidden behind elements with the metadata flag. When ignoring the metadata, the file still can be parsed with the core grammar and at least most of the binary data can be understood. It is assumed that most UBN files of typical usage will probably not require any metadata.
+To unify the contradicting requirements of simplicity and advanced features, the format specification includes an optional second meta level to improve data handling in complex files. The core grammar describes a minimalistic hierarchical data structure (inspired by UBJSON). Advanced features such as random access are hidden in so-called _footnotes_. As in books footnotes give additional information about the content but they are not mandatory to understand the book. A parser is not required to understand and use the information inside the footnote. Most UBN files of typical usage will probably not require any footnotes with meta information.
 
 UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127. Other ASCII values are reserved for communication protocols.
 
@@ -35,7 +41,7 @@ UBN is also suitable for data streams. All elements of the grammar begin with as
 7. Unfinished files can be syntactically valid and complete as long as the last element of a list or dict is complete
 8. Self-similarity: Inner elements can be extracted as complete and valid files
 
-### Additional (possible) features that make use of the optional metadata
+### Additional (possible) features that make use of the optional meta information in footnotes
 
 1. Table of contents
 2. Size information of elements
@@ -47,12 +53,12 @@ UBN is also suitable for data streams. All elements of the grammar begin with as
 8. Definitions for date and time notation
 9. Definitions for physical units
 
-With the metadata users have the freedom to create their own new formats for their specific applications based new meta rules. This is similar to text formats where users can freely design file structures with their own format rules. But all text formats have in common that they are obliged to respect the ascii code as a standard when every common editor should be able to show and edit the content.
+With the footnotes users have the freedom to create their own new formats for their specific applications based new meta rules. This is similar to text formats where users can freely design file structures with their own format rules. But all text formats have in common that they are obliged to respect the ascii standard to make sure that every editor can show and edit the content.
 
 Status
 ------
 
-UBN is under development. The grammar will be finalized at some point when it is consolidated that nothing important is missing. There will be no different versions for the core grammar. At the moment a flag for a beta status is set. The meta language, in contrast, will grow from time to time and new features will be added. A version number will indicate the compatibility of the releases.
+UBN is under development. The grammar has still beta status and will be finalized at some point. There will be no different versions for the core grammar. The meta language, in contrast, is flexible and will grow from time to time and new features will be added.
 
 Grammar (beta5)
 --------------
@@ -217,37 +223,37 @@ UBN:
 []]
 ```
 
-# Meta Language
+# Footnote Meta Language
 ## Overview
 
-The content of the `metadata` element gives information and hints about how to read, interpret or pre-process the data, before it is passed to the application. A parser that do not support this metadata has to parse the element after `[*]` but can ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information of how to apply the data. The metadata consists of differenty data types or dicts with different meta information. There is e.g. information with instructions to transpose or concatenate matrices or vectors when loaded into memory. Metadata allows to extend the UBN format without changing the core grammar.
+The content of the `footnote` element gives information and hints about how to read, interpret or pre-process the data, before it is passed to the application. A parser that makes no use of the footnotes has to parse the element after `[*]` but can ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information of how to apply the data. The footnote can be a string or other data types. There is e.g. information with instructions to transpose or concatenate matrices or vectors when loaded into memory. The footnote allows to extend the UBN format without changing the core grammar.
 
-All information about sizes or relative jump positions are related to the whole element including the metadata itself. So the parser has to remember the position of the `*` character of the metadata as the reference position. Also some zero-bytes belong to the element as defined in the grammar rule for the element and therefore is addressed by the metadata. 
+All information about sizes or relative jump positions are related to the whole element including the footnote itself. So the parser has to remember the position of the `*` character of the footnote as the reference position. Also some zero-bytes belong to the element as defined in the grammar rule for the element and therefore is addressed by the footnote. 
 
-Objects with metadata can be nested. This is usefull for several metadata elements with different types, e.g.:
+Objects with footnotes can be nested. This is usefull for several footnote elements with different types, e.g.:
 ```
-[*] (metadata with size) [*] (metadata with table of content) (data of type list)
-```
-
-Metadata elements can have string identifiers to indicate the purpose of the metadata or to identify other use-case specific meta languages. The identifiers are again nested inside the meta elements, e.g.:
-
-```
-[*] [*] (string "size") (metadata with size) [*] [*] (string "TOC") (metadata with table of content) (data of type list)
+[*] (footnote with size) [*] (footnote with table of content) (data of type list)
 ```
 
-Use-case specific and user-defined metadata has the format
+footnote elements can have string identifiers to indicate the purpose of the footnote or to identify other use-case specific meta languages. The string identifiers are footnotes of the footnote:
+
+```
+[*] [*] (string "size") (footnote with size) [*] [*] (string "TOC") (footnote with table of content) (data of type list)
+```
+
+Use-case specific and user-defined footnotes have the format
 
 ```
 [*] [*] (string with meta language identifier) [{] (dict with meta information) [}] (element)
 ```
 
-If there is for example a binary format for numpy with specific information about the data type, the metadata would be
+If there is for example a binary format for numpy with specific information about the data type, the footnote would be
 
 ```
 [*] [*] [numpy] [{] (dict with meta information) [}] (element)
 ```
 
-## Default Meta Language
+## Default Footnote Meta Language
 
 Version: 0.2
 
@@ -257,23 +263,23 @@ Version: 0.2
 
 **Optional identifier keyword:** `size`
 
-**Metadata type:** unsigned integer (`i`,`j`,`k`,`l`)
+**footnote type:** unsigned integer (`i`,`j`,`k`,`l`)
 
-**Metadata element value:** number of bytes of the whole data element, including this metadata
+**footnote element value:** number of bytes of the whole data element, including this footnote
 
 **Explanation:**
 
-This meta feature tells the number of bytes of an element. The size also includes the metadata itself, as well as white-spaces (zero-bytes) after the metadata. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements.
+This footnote tells the number of bytes of an element. The size also includes the footnote itself, the `*` and spaces after the footnote. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements.
 
 **Example:**
 
-Let's assume the element, without the size of the metadata, is 1200 byte. The metadata (with size 4 byte) would be:
+Let's assume the element, without the size of the footnote, is 1200 byte. The footnote (with size 4 byte) would be:
 
 ```
 [*] [j] (uint16: 1204) (data with 1200 byte)
 ```
 
-Self-explained with meta identifier keyword `size`:
+Self-explained with footnote identifier keyword `size`:
 
 ```
 [*] [*] [4] [s] [size] [j] (uint16: 1211) (data with 1200 byte)
@@ -285,17 +291,17 @@ Self-explained with meta identifier keyword `size`:
 
 **Optional identifier keyword:** `deleted`
 
-**Metadata type:** None
+**Footnote type:** None
 
-**Metadata value:** `N` (None)
+**Footnote value:** `N` (None)
 
 **Explanation:**
 
-This meta feature tags an element as deleted. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with zero-bytes. For larger elements metadata like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. Next time the entire file is rebuilt, the unused space can be eliminated.
+This footnote tags an element as deleted. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with zero-bytes. For larger elements footnotes like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. Next time the entire file is rebuilt, the unused space can be eliminated.
 
 **Example:**
 
-In the following example an element with 10000 bytes is tagged as deleted. The included metadata and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be written to remove the element, instead of writing 10000 zero bytes or rebuilding the whole file which may require to update some links in the table of contents.
+In the following example an element with 10000 bytes is tagged as deleted. The included footnote and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be written to remove the element, instead of writing 10000 zero bytes or rebuilding the whole file which may require to update some links in the table of contents.
 
 ```
 [*] [N]
@@ -308,13 +314,13 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 
 **Optional identifier keyword:** `enabled`
 
-**Metadata type:** boolean `T` or `F`
+**Footnote type:** boolean `T` or `F`
 
-**Metadata value:** `T` (true for enabled), `F` (false for disabled or deleted)
+**Footnote value:** `T` (true for enabled), `F` (false for disabled or deleted)
 
 **Explanation:**
 
-This meta feature tags an element or meta element as invisible, when the value is set to false. This feature be used for reserving some space for e.g. elements to be added later or as placeholder for a table of content that will be added after all subelements are written and their sizes and positions are known.
+This footnote type tags an element as invisible, when the value is set to false. This feature can be used for reserving some space for e.g. elements to be added later or as placeholder for a table of content that will be added after all subelements are written and their sizes and positions are known.
 
 **Example:**
 
@@ -325,19 +331,19 @@ In the following example an element is tagged as invisible. This element is trea
 
 ```
 
-## Simple table of content for random access
+## Table of content for quick random access
 
 **Purpose:** Table of content: List with the relative starting positions of all elements in a list or dict data
 
 **Optional identifier keyword:** `TOC`
 
-**Metadata type:** array of unsigned integer (`i`,`j`,`k`,`l`)
+**Footnote type:** array of unsigned integer (`i`,`j`,`k`,`l`)
 
-**Metadata value:** relative byte offset to the list elements from the beginning of the metadata
+**Footnote value:** relative byte offset to the list elements from the beginning of the footnote
 
 **Explanation:**
 
-This meta feature allows to access elements of lists or dicts in large data files. The relative offsets are stored in an integer array with the same length as the list or dict object. The offset points to the beginning of each element (in list) or the keyword value (in dict). If the targeting element has other metadata, the offset points to the `*` token which is the first byte of the list element.
+This footnote type allows to access elements of lists or dicts in large data files. The relative offsets are stored in an integer array with the same length as the list or dict object. The offset points to the beginning of each element (in list) or the keyword value (in dict). If the targeting element has another footnote, the offset points to the `*` token which is the first byte of the list element.
 
 **Example:**
 
@@ -354,57 +360,49 @@ UBN:
      ^              ^                      ^   # target positions 
 ```
 
-## More complex table of content for random access
+## Element links
 
-**Purpose:** Table of content: Gives a prototype of the data structure with dicts, lists and integer arrays where each element specifies the offset to the actual data.
+**Purpose:** In more complex data structures and big files it can be usefull to use links to elements. This allows to quickly parse the main structure without reading the whole data and to allow to add, move or delete elements.
 
-**Optional identifier keyword:** `TOC`
+**Footnote type:** String
 
-**Metadata type:** Hierarchical structure of dicts, lists and arrays with integer elements.
+**Footnote value:** `@`
 
-**Metadata values:** Byte offset to the actual data element relative to the meta `*`
+**Element value:** The content of the element is replaced by an unsigned integer (`i`,`j`,`k`,`l`) or array of unsigned integers that points to the absolute address (relative to the beginning of the file) of the elements with the actual data.
 
 **Explanation:**
 
-This meta feature allows to quickly access elements in huge hierarchical data structures. The metadata is a copy of the actual data structure down to an appropriate hierarchy level. The data of each element is replaced by an integer value that specifies the byte-offset to the actual element.
-
+This footnote type allows to keep the main data structure small and efficient and allows fast random access to sub elements and more flexibility. The elements of the structure contain only the links to the actuall elements which are stored in a list at then end.
 
 **Example:**
 
-In this example the data is a dict with mixed types, including a list
+In this example a data structure contains some very big elements:
 
 ```
 {
-  'Point of Interest': 'Shipwreck Michelle',
-  'coordinates': {'lon': 14.812889, 'lat': 44.167618}
+  'file1': 'bigdata1',
+  'folder1': {'fileA': 'bigdata2', 'fileB': 'bigdata3'}
 }
 
 UBN:
 
-# Meta information with data structure and offset information
-[*]  # Reference for all relative offsets inside this TOC
-[*] [3] [s] [TOC] 
-[*] [i] (offset first * to #1) [{]
-    [i] (17) [s] [Point of Interest] [i] (offset first * to #2)
-    [i] (11) [s] [Coordinates]
-    [*] [i] (offset first * to #3) [{] 
-         [3] [s] [lon] [d] [i] (offset first * to #4)
-         [3] [s] [lat] [d] [i] (offset first * to #5)
+[[]  # List
+    # Data Structure with links instead of actual data elements
+    [{]
+        [5] [s] [file1]
+            [*] [1] [s] [@] [i] (...)  # Link to element bigdata1
+        [{] 
+            [5] [s] [fileA]
+                [*] [1] [s] [@] [i] (...)  # Link to element bigdata2
+            [5] [s] [fileB]
+                [*] [1] [s] [@] [i] (...)  # Link to element bigdata3
+            [ ] [ ] [ ] [ ] [ ] [ ] ...  # Place holder for adding elements in future
+        [}]
     [}]
-[}]
+    [8] [s] [bigdata1]
+    [8] [s] [bigdata2]
+    [8] [s] [bigdata3]
 
-# Structure with actual data
-[{]
- ^ target position #1
-    [i] (17) [s] [Point of Interest] [i] (18) [s] [Shipwreck Michelle]
-                                      ^ target position #2
-    [i] (11) [s] [Coordinates]
-    [{] 
-     ^ target position #3
-         [3] [s] [lon] [d] (14.812889)
-                            ^ target position #4
-         [3] [s] [lat] [d] (44.167618)
-                            ^ target position #5
-    [}]
-[}]
+# No []] at the end to add more elements in future
+
 ```
