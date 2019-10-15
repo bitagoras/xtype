@@ -53,7 +53,7 @@ UBN is also suitable for data streams. All elements of the grammar begin with as
 8. Definitions for date and time notation
 9. Definitions for physical units
 
-With the footnotes users have the freedom to create their own new formats for their specific applications based new meta rules. This is similar to text formats where users can freely design file structures with their own format rules. But all text formats have in common that they are obliged to respect the ascii standard to make sure that every editor can show and edit the content.
+With the footnotes users have the freedom to create their own formats for their specific applications. This is similar to text formats where users can freely design file structures with their own format rules. But all text formats have in common that they are obliged to respect the ascii standard to make sure that every editor can show and edit the content. This idea is continued in UBN for binary formats. 
 
 Status
 ------
