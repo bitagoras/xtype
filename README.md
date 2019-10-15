@@ -328,7 +328,6 @@ In the following example an element is tagged as invisible. This element is trea
 
 ```
 [*] [F] (some element)
-
 ```
 
 ## Table of content for quick random access
