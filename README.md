@@ -15,20 +15,20 @@ This is where the vision of a Universal Binary Notation (UBN) comes into play:
 
 * It should cover all desirable properties of binary formats.
 * It should be very flexible and hierarchically structured.
-* One single editor should be able to display the content of all binary format based on it,.
-* Reading should be efficient and sub-elements should be readable by random access.
+* One single editor should be able to display the content of all binary formats based on it.
+* Reading should be efficient and random access should be possible for sub-elements.
 
 Existing solutions
 ------------------
 
-For text files universal formats already exist, such as [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) with the disadvantage of low efficiency. Existing universal binary format are e.g. [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format) which is suitable for huge scientific data sets but has a quite complicated grammar and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation) which is very simple, but is not optimized for big databases with random access. UBN is supposed to unify all needs.
+For text files universal formats already exist, such as [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) with the disadvantage of low efficiency. Existing universal binary format are e.g. [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format), which is suitable for huge scientific data sets but has a quite complicated grammar and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation), which is very simple, but is not optimized for big databases with random access. UBN is supposed to unify all needs.
 
 Core Idea
 ---------
 
-To unify the contradicting requirements of simplicity and advanced features, the format specification includes an optional second meta level to improve data handling in complex files. The core grammar describes a minimalistic hierarchical data structure (inspired by UBJSON). Advanced features such as random access are hidden in so-called _footnotes_. As in books footnotes give additional information about the content but they are not mandatory to understand the book. A parser is not required to understand and use the information inside the footnote. Most UBN files of typical usage will probably not require any footnotes with meta information.
+To unify the contradicting requirements of simplicity and advanced features, the format specification is explandible. The core grammar describes a minimalistic hierarchical data structure (inspired by UBJSON) while advanced features, as required for random access and handling of big data, are hidden in so-called _footnotes_. As in books footnotes give additional information about the content but they are not mandatory to understand the book. A parser for UBN is not required to understand and use the information inside the footnote. Most UBN files of typical usage will probably not require any footnotes and meta information.
 
-UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127. Other ASCII values are reserved for communication protocols.
+UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127 and have a defined end. Other ASCII values can be used for communication protocols.
 
 ### Features of the grammar
 
