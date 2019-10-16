@@ -42,7 +42,7 @@ Properties
 4. Lists of mixed arbitrary elements
 5. Objects or dictionaries with key/value pairs for arbitrary elements
 6. Arbitrary hierarchy levels
-7. Files with unfinished lists can be syntactically valid and complete which allows to append more elements later.
+7. Logging: Files with unfinished lists are syntactically valid which allows to append more elements later.
 8. Self-similarity: Inner elements can be extracted and stored independently as complete and valid files.
 
 ### Additional (possible) features that make use of the optional meta information in footnotes
