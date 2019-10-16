@@ -15,20 +15,20 @@ This is where the vision of a Universal Binary Notation (UBN) comes into play:
 
 * It should cover all desirable properties of binary formats.
 * It should be very flexible and hierarchically structured.
-* One single editor should be able to display the content of all binary format based on it,.
-* Reading should be efficient and sub-elements should be readable by random access.
+* One single editor should be able to display the content of all binary formats based on it.
+* Reading should be efficient and random access should be possible for sub-elements.
 
 Existing solutions
 ------------------
 
-For text files universal formats already exist, such as [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) with the disadvantage of low efficiency. Existing universal binary format are e.g. [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format) which is suitable for huge scientific data sets but has a quite complicated grammar and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation) which is very simple, but is not optimized for big databases with random access. UBN is supposed to unify all needs.
+For text files universal formats already exist, such as [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) with the disadvantage of low efficiency. Existing universal binary format are e.g. [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format), which is suitable for huge scientific data sets but has a quite complicated grammar and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation), which is very simple, but is not optimized for big databases with random access. UBN is supposed to unify all needs.
 
 Core Idea
 ---------
 
-To unify the contradicting requirements of simplicity and advanced features, the format specification includes an optional second meta level to improve data handling in complex files. The core grammar describes a minimalistic hierarchical data structure (inspired by UBJSON). Advanced features such as random access are hidden in so-called _footnotes_. As in books footnotes give additional information about the content but they are not mandatory to understand the book. A parser is not required to understand and use the information inside the footnote. Most UBN files of typical usage will probably not require any footnotes with meta information.
+To unify the contradicting requirements of simplicity and advanced features, the format specification is expandable. The core grammar describes a minimalistic hierarchical data structure (inspired by UBJSON) while advanced features, as required for random access and handling of big data, are hidden in so-called _footnotes_. As in books footnotes give additional information about the content but they are not mandatory to understand the book. A parser for UBN is not required to understand and use the information inside the footnote. Most UBN files of typical usage will probably not require any footnotes and meta information.
 
-UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127. Other ASCII values are reserved for communication protocols.
+UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127 and have a defined end. Other ASCII values can be used for communication protocols.
 
 ### Features of the grammar
 
@@ -53,7 +53,7 @@ UBN is also suitable for data streams. All elements of the grammar begin with as
 8. Definitions for date and time notation
 9. Definitions for physical units
 
-With the footnotes users have the freedom to create their own new formats for their specific applications based new meta rules. This is similar to text formats where users can freely design file structures with their own format rules. But all text formats have in common that they are obliged to respect the ascii standard to make sure that every editor can show and edit the content.
+With the footnotes users have the freedom to create their own formats for their specific applications. This is similar to text formats where users can freely design file structures with their own format rules. But all text formats have in common that they are obliged to respect the ascii standard to make sure that every editor can show and edit the content. This idea is continued in UBN for binary formats. 
 
 Status
 ------
@@ -200,7 +200,7 @@ UBN:
 [}]
 ```
 
-* **3 x 3 table of doubles with named colums "lon", "lat", "h":**
+* **4 x 3 table of doubles with named colums "lon", "lat", "h":**
 
 ```
 [ ["lon", "lat",   "h"],
@@ -216,10 +216,11 @@ UBN:
         [3] [s] [lat]
         [s] [h]
     []]
-    [3] [d] (1.1) (3.3) (5.5)
-    [3] [d] (2.2) (4.4) (6.6)
-    [3] [d] (3.3) (5.5) (7.7)
-    [3] [d] (4.4) (6.6) (8.8)
+    [4] [3] [d]
+        (1.1) (3.3) (5.5)
+        (2.2) (4.4) (6.6)
+        (3.3) (5.5) (7.7)
+        (4.4) (6.6) (8.8)
 []]
 ```
 
@@ -328,7 +329,6 @@ In the following example an element is tagged as invisible. This element is trea
 
 ```
 [*] [F] (some element)
-
 ```
 
 ## Table of content for quick random access
@@ -362,7 +362,7 @@ UBN:
 
 ## Element links
 
-**Purpose:** In more complex data structures and big files it can be usefull to use links to elements. This allows to quickly parse the main structure without reading the whole data and to allow to add, move or delete elements.
+**Purpose:** In more complex data structures and big files it can be usefull to use links to elements. This allows to quickly parse the main structure without reading the whole data and to allows to add, move or delete elements.
 
 **Footnote type:** String
 
@@ -390,12 +390,12 @@ UBN:
     # Data Structure with links instead of actual data elements
     [{]
         [5] [s] [file1]
-            [*] [1] [s] [@] [i] (...)  # Link to element bigdata1
+            [*] [s] [@] [i] (...)  # Link to element bigdata1
         [{] 
             [5] [s] [fileA]
-                [*] [1] [s] [@] [i] (...)  # Link to element bigdata2
+                [*] [s] [@] [i] (...)  # Link to element bigdata2
             [5] [s] [fileB]
-                [*] [1] [s] [@] [i] (...)  # Link to element bigdata3
+                [*] [s] [@] [i] (...)  # Link to element bigdata3
         [}]
         [*] [F] [n] (1000) [x] (1000 Byte) # Invisible place holder buffer for
     [}]                                    # adding more elements in future
