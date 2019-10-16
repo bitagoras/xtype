@@ -200,7 +200,7 @@ UBN:
 [}]
 ```
 
-* **3 x 3 table of doubles with named colums "lon", "lat", "h":**
+* **4 x 3 table of doubles with named colums "lon", "lat", "h":**
 
 ```
 [ ["lon", "lat",   "h"],
