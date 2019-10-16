@@ -105,7 +105,7 @@ Other than in data of text formats no stop symbols can be defined for binary ele
 | `e`    | element   | 1     | element as defined in grammar  | Encapsulated element in array of e            |
 | `x`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
 
-A special type is `e` for elements which can be used as array of bytes to reserve space for another UBN element. It is actually an additional size information for elements. It helps to more quickly parse a file and step over larger subelements.
+A special type is `e` for elements which can be used as an array of bytes to reserve space for another UBN element. It acts as an additional size information for elements. It helps to parse a file more quickly and step over larger subelements.
 
 Examples
 --------
