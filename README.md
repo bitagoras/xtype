@@ -26,7 +26,7 @@ For text files universal formats already exist, such as [XML](https://www.w3.org
 Core Idea
 ---------
 
-To unify the contradicting requirements of simplicity and advanced features, the format specification is explandible. The core grammar describes a minimalistic hierarchical data structure (inspired by UBJSON) while advanced features, as required for random access and handling of big data, are hidden in so-called _footnotes_. As in books footnotes give additional information about the content but they are not mandatory to understand the book. A parser for UBN is not required to understand and use the information inside the footnote. Most UBN files of typical usage will probably not require any footnotes and meta information.
+To unify the contradicting requirements of simplicity and advanced features, the format specification is expandable. The core grammar describes a minimalistic hierarchical data structure (inspired by UBJSON) while advanced features, as required for random access and handling of big data, are hidden in so-called _footnotes_. As in books footnotes give additional information about the content but they are not mandatory to understand the book. A parser for UBN is not required to understand and use the information inside the footnote. Most UBN files of typical usage will probably not require any footnotes and meta information.
 
 UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127 and have a defined end. Other ASCII values can be used for communication protocols.
 
