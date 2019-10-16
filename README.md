@@ -63,7 +63,7 @@ Status
 
 UBN is under development. The grammar has still beta status and will be finalized at some point. There will be no different versions for the core grammar. The meta language of the footnotes, in contrast, is flexible and can grow from time to time and new features will be added or conventions can be changed while outdated files still can be parsed.
 
-Grammar (beta5)
+Grammar (beta6)
 --------------
 
 The graphical representation of the grammar rules below should contain all information to enable a programmer writing valid UBN files. The red round boxes represent data to be written. Single black characters inside are stored directly as ASCII characters. Green boxes require nested grammer rules.
