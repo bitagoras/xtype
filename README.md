@@ -389,12 +389,12 @@ UBN:
     # Data Structure with links instead of actual data elements
     [{]
         [5] [s] [file1]
-            [*] [1] [s] [@] [i] (...)  # Link to element bigdata1
+            [*] [s] [@] [i] (...)  # Link to element bigdata1
         [{] 
             [5] [s] [fileA]
-                [*] [1] [s] [@] [i] (...)  # Link to element bigdata2
+                [*] [s] [@] [i] (...)  # Link to element bigdata2
             [5] [s] [fileB]
-                [*] [1] [s] [@] [i] (...)  # Link to element bigdata3
+                [*] [s] [@] [i] (...)  # Link to element bigdata3
             [ ] [ ] [ ] [ ] [ ] [ ] ...  # Place holder for adding elements in future
         [}]
     [}]
@@ -402,6 +402,6 @@ UBN:
     [8] [s] [bigdata2]
     [8] [s] [bigdata3]
 
-# No []] at the end to add more elements in future
+# No []] at the end to append more elements in future
 
 ```
