@@ -11,9 +11,9 @@ The Vision
 
 The digital revolution is based on the simple convention of noting all kinds of information through a series of zeros and ones. Although the usefulness of such conventions is very obvious, it is missing at a higher level for binary data structures. Too many binary file formats exist that need custom-built programs or libraries to decode them. As a consequence, many people use text formats for data exchange as it is the most universal standard. As a drawback text formats have limited speed and storage efficiency since numerical values have to be translated into their decimal text representations. Also certain sub elements cannot be read without parsing the whole text file.
 
-This is where the vision of a Universal Binary Notation (UBN) comes in:
+This is where the vision of the format Universal Binary Notation (UBN) comes in:
 
-* It should cover all desirable properties of binary formats.
+* It should cover all needs of binary formats.
 * It should be very flexible and hierarchically structured.
 * It should be so simple without overhead that writing simple files do not require any library.
 * One single editor should be able to display the content of all binary formats based on it.
@@ -22,7 +22,7 @@ This is where the vision of a Universal Binary Notation (UBN) comes in:
 Existing solutions
 ------------------
 
-For text files universal formats already exist, such as [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) with the disadvantage of low efficiency. For universal binary formats one can mention e.g. [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format), which is suitable for huge scientific data sets but has a quite complicated grammar. Much more simpler is [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation), but it cannot be used for big an complex databases with random access. UBN is supposed to unify all good properties of text and binary formats.
+For text files universal formats already exist, such as [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) with the disadvantage of low efficiency. For universal binary formats one can mention e.g. [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format), which is suitable for huge scientific data sets but has a quite complicated grammar. Much more simpler is [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation), but it cannot be used for big and complex databases with random access. UBN is supposed to unify all good properties of text and binary formats.
 
 The Philosophy
 --------------
@@ -31,8 +31,8 @@ To unify the contradicting requirements of simplicity and advanced features, the
 
 UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127 and have a defined end. Other ASCII symbols can be used before or after the elements for communication protocols.
 
-Core Idea
----------
+Properties
+----------
 
 ### Features of the grammar
 
