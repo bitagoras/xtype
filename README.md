@@ -4,31 +4,35 @@ Universal Binary Notation file format specification (beta)
 
 Introduction
 ------------
-Universal Binary Notation (UBN) is a general purpose self-explained binary file format for hierarchically structured data. The basic syntax is very simple and easy to implement but it tries to satisfy the needs of all imaginable applications for binary data storage and exchange. The simple grammar allows to generate typical data files by a few lines of code without any library. Simultaneously, with the use of optional metadata big data files can be generated and handled efficiently with random access.
+Universal Binary Notation (UBN) is a general purpose self-explained binary file format for hierarchically structured data. The basic syntax is very simple and easy to implement but it tries to satisfy the needs of all imaginable applications for binary data storage and exchange. The simple grammar allows to generate typical data files by a few lines of code without any library. On the other hand more complex files and huge data bases can be defined and handled efficiently with random access.
 
 The Vision
 ----------
 
-The digital revolution is based on the simple convention to notate all kind of information by series of zeros and ones. The ASCII or unicode standard gives it a language that everybody can understand. Although the usefulness of such conventions is very obvious, it is missing at a higher level for binary data structures. Many thousand binary file formats exist in the world that need custom-built programs or libraries to decode them. As a consequence, many people use text formats for data exchange as it is the most universal standard. As a drawback text formats have limited speed and storage efficiency since numerical values have to be translated into their decimal text representations. Also certain sub elements cannot be read without parsing the whole text file.
+The digital revolution is based on the simple convention of noting all kinds of information through a series of zeros and ones. Although the usefulness of such conventions is very obvious, it is missing at a higher level for binary data structures. Too many binary file formats exist that need custom-built programs or libraries to decode them. As a consequence, many people use text formats for data exchange as it is the most universal standard. As a drawback text formats have limited speed and storage efficiency since numerical values have to be translated into their decimal text representations. Also certain sub elements cannot be read without parsing the whole text file.
 
-This is where the vision of a Universal Binary Notation (UBN) comes into play:
+This is where the vision of a Universal Binary Notation (UBN) comes in:
 
 * It should cover all desirable properties of binary formats.
 * It should be very flexible and hierarchically structured.
+* It should be so simple without overhead that writing simple files do not require any library.
 * One single editor should be able to display the content of all binary formats based on it.
 * Reading should be efficient and random access should be possible for sub-elements.
 
 Existing solutions
 ------------------
 
-For text files universal formats already exist, such as [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) with the disadvantage of low efficiency. Existing universal binary format are e.g. [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format), which is suitable for huge scientific data sets but has a quite complicated grammar and [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation), which is very simple, but is not optimized for big databases with random access. UBN is supposed to unify all needs.
+For text files universal formats already exist, such as [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) with the disadvantage of low efficiency. For universal binary formats one can mention e.g. [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format), which is suitable for huge scientific data sets but has a quite complicated grammar. Much more simpler is [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation), but it cannot be used for big an complex databases with random access. UBN is supposed to unify all good properties of text and binary formats.
+
+The Philosophy
+--------------
+
+To unify the contradicting requirements of simplicity and advanced features, the format specification is expandable. The simple grammar describes a minimalistic hierarchical data structure (inspired by UBJSON) while advanced features, as required for random access and handling of big data, are optional and hidden in so-called _footnotes_ without blowing up the grammaar. Just like you know it from books, footnotes give additional information about the content, but they are not mandatory to understand the book. A parser for UBN is not required to understand and use the information inside the footnote to read the elements of the file. Most UBN files of typical usage will probably not require any footnotes at all.
+
+UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127 and have a defined end. Other ASCII symbols can be used before or after the elements for communication protocols.
 
 Core Idea
 ---------
-
-To unify the contradicting requirements of simplicity and advanced features, the format specification is expandable. The core grammar describes a minimalistic hierarchical data structure (inspired by UBJSON) while advanced features, as required for random access and handling of big data, are hidden in so-called _footnotes_. As in books footnotes give additional information about the content but they are not mandatory to understand the book. A parser for UBN is not required to understand and use the information inside the footnote. Most UBN files of typical usage will probably not require any footnotes and meta information.
-
-UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127 and have a defined end. Other ASCII values can be used for communication protocols.
 
 ### Features of the grammar
 
@@ -38,27 +42,26 @@ UBN is also suitable for data streams. All elements of the grammar begin with as
 4. Lists of mixed arbitrary elements
 5. Objects or dictionaries with key/value pairs for arbitrary elements
 6. Arbitrary hierarchy levels
-7. Unfinished files can be syntactically valid and complete as long as the last element of a list or dict is complete
-8. Self-similarity: Inner elements can be extracted as complete and valid files
+7. Files with unfinished lists can be syntactically valid and complete which allows to append more elements later.
+8. Self-similarity: Inner elements can be extracted and stored independently as complete and valid files.
 
 ### Additional (possible) features that make use of the optional meta information in footnotes
 
 1. Table of contents
-2. Size information of elements
-3. Fast random access to certain sub-elements in big files
-4. Fast deletion and addition of elements in big files
-5. Chunk data mode for efficient writing and reading of big files
-6. Compressed elements
-7. Included checksum
-8. Definitions for date and time notation
-9. Definitions for physical units
+2. Fast random access to certain sub-elements in big files
+3. Fast deletion and addition of elements in big files
+4. Chunk data mode for efficient writing and reading of big files
+5. Included checksum
+6. Definitions for date and time notation
+7. Definitions for physical units
+8. Compressed elements
 
-With the footnotes users have the freedom to create their own formats for their specific applications. This is similar to text formats where users can freely design file structures with their own format rules. But all text formats have in common that they are obliged to respect the ascii standard to make sure that every editor can show and edit the content. This idea is continued in UBN for binary formats. 
+With the footnotes users have the freedom to create their own formats for their specific applications. This is similar to text formats where users can freely design file structures with their own format rules. But all text formats have in common that they respect the ascii standard to make sure that every editor can show and edit the content. This idea is used by UBN and continued for binary formats. 
 
 Status
 ------
 
-UBN is under development. The grammar has still beta status and will be finalized at some point. There will be no different versions for the core grammar. The meta language, in contrast, is flexible and will grow from time to time and new features will be added.
+UBN is under development. The grammar has still beta status and will be finalized at some point. There will be no different versions for the core grammar. The meta language of the footnotes, in contrast, is flexible and can grow from time to time and new features will be added or conventions can be changed while outdated files still can be parsed.
 
 Grammar (beta5)
 --------------
@@ -101,6 +104,8 @@ Other than in data of text formats no stop symbols can be defined for binary ele
 | `u`    | utf-16    | 2     | unicode string in utf-16       |                                               |
 | `e`    | element   | 1     | element as defined in grammar  | Encapsulated element in array of e            |
 | `x`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
+
+A special type is `e` for elements which can be used as array of bytes to reserve space for another UBN element. It is actually an additional size information for elements. It helps to more quickly parse a file and step over larger subelements.
 
 Examples
 --------
@@ -227,28 +232,33 @@ UBN:
 # Footnote Meta Language
 ## Overview
 
-The content of the `footnote` element gives information and hints about how to read, interpret or pre-process the data, before it is passed to the application. A parser that makes no use of the footnotes has to parse the element after `[*]` but can ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information of how to apply the data. The footnote can be a string or other data types. There is e.g. information with instructions to transpose or concatenate matrices or vectors when loaded into memory. The footnote allows to extend the UBN format without changing the core grammar.
+The content of the `footnote` element gives information and hints about how to read, interpret or pre-process the data, before it is used by the application. A parser that makes no use of the footnotes must parse the element after `[*]` to find out its size but can ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information on how to apply the data. The footnote can be a string or any other data type.
 
-All information about sizes or relative jump positions are related to the whole element including the footnote itself. So the parser has to remember the position of the `*` character of the footnote as the reference position. Also some zero-bytes belong to the element as defined in the grammar rule for the element and therefore is addressed by the footnote. 
+Information about jump positions in table of contents are given relative to the `*` character of the footnote as the reference position.
 
-Objects with footnotes can be nested. This is usefull for several footnote elements with different types, e.g.:
+Objects with several footnotes can be nested:
 ```
-[*] (footnote with size) [*] (footnote with table of content) (data of type list)
-```
-
-footnote elements can have string identifiers to indicate the purpose of the footnote or to identify other use-case specific meta languages. The string identifiers are footnotes of the footnote:
-
-```
-[*] [*] (string "size") (footnote with size) [*] [*] (string "TOC") (footnote with table of content) (data of type list)
+[*] (footnote with unit) [*] (footnote with table of content) (data of type list)
 ```
 
-Use-case specific and user-defined footnotes have the format
+Several footnotes can also be listed:
+```
+[*] [[] (footnote with unit) (footnote with table of content) []] (data of type list)
+```
+
+Footnote elements can have string identifiers to indicate the purpose of the footnote or to identify use-case specific meta languages. The string identifiers are footnotes of the footnote:
+
+```
+[*] [*] (string "unit") (string "cm") [*] [*] (string "TOC") (footnote with table of content) (data of type list)
+```
+
+Use-case specific and user-defined footnotes are recommended have the format
 
 ```
 [*] [*] (string with meta language identifier) [{] (dict with meta information) [}] (element)
 ```
 
-If there is for example a binary format for numpy with specific information about the data type, the footnote would be
+If there is for example a binary format for `numpy` with specific information about the data type, the footnote would be
 
 ```
 [*] [*] [numpy] [{] (dict with meta information) [}] (element)
@@ -257,34 +267,6 @@ If there is for example a binary format for numpy with specific information abou
 ## Default Footnote Meta Language
 
 Version: 0.2
-
-### Size of element
-
-**Purpose:** Gives a size information about an element. 
-
-**Optional identifier keyword:** `size`
-
-**footnote type:** unsigned integer (`i`,`j`,`k`,`l`)
-
-**footnote element value:** number of bytes of the whole data element, including this footnote
-
-**Explanation:**
-
-This footnote tells the number of bytes of an element. The size also includes the footnote itself, the `*` and spaces after the footnote. The size information helps to browse more quickly through the file structure in order to access a certain sub-element in large files, without parsing all previous elements.
-
-**Example:**
-
-Let's assume the element, without the size of the footnote, is 1200 byte. The footnote (with size 4 byte) would be:
-
-```
-[*] [j] (uint16: 1204) (data with 1200 byte)
-```
-
-Self-explained with footnote identifier keyword `size`:
-
-```
-[*] [*] [4] [s] [size] [j] (uint16: 1211) (data with 1200 byte)
-```
 
 ### Deleted element
 
