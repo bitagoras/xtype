@@ -99,8 +99,8 @@ Other than in data of text formats no stop symbols can be defined for binary ele
 | `d`    | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
 | `s`    | str/utf-8 | 1     | ascii / utf-8 string           | no other coding than utf-8 is specified       |
 | `u`    | utf-16    | 2     | unicode string in utf-16       |                                               |
+| `e`    | element   | 1     | element as defined in grammar  | Encapsulated element in array of e            |
 | `x`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
-| `X`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
 
 Examples
 --------
@@ -396,13 +396,13 @@ UBN:
                 [*] [1] [s] [@] [i] (...)  # Link to element bigdata2
             [5] [s] [fileB]
                 [*] [1] [s] [@] [i] (...)  # Link to element bigdata3
-            [ ] [ ] [ ] [ ] [ ] [ ] ...  # Place holder for adding elements in future
         [}]
-    [}]
+        [*] [F] [n] (1000) [x] (1000 Byte) # Invisible place holder buffer for
+    [}]                                    # adding more elements in future
     [8] [s] [bigdata1]
     [8] [s] [bigdata2]
     [8] [s] [bigdata3]
 
-# No []] at the end to add more elements in future
+# No []] at the end to append more elements in future
 
 ```
