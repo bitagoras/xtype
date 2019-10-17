@@ -13,9 +13,9 @@ The digital revolution is based on the simple convention of noting all kinds of 
 
 This is where the vision of the format Universal Binary Notation (UBN) comes in:
 
+* It should be very simple without overhead so that writing simple files do not require any library.
 * It should cover all needs of binary formats.
 * It should be very flexible and hierarchically structured.
-* It should be so simple without overhead that writing simple files do not require any library.
 * One single editor should be able to display the content of all binary formats based on it.
 * Reading should be efficient and random access should be possible for sub-elements.
 
