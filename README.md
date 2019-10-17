@@ -82,7 +82,7 @@ The graphical representation of the grammar rules below should contain all infor
 
 <p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/UBN_length.png"></p>
 
-Other than in data of text formats no stop symbols can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be determined by the parser from information stored in front of the data. The size of basic data types are given in the type table. In case of structs or arrays the number of bytes have to be added or multiplied accordingly.
+Other than in data of text formats no stop symbols can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be determined by the parser from information stored in front of the data. The sizes of basic data types are given in the type table. In case of structs or arrays the number of bytes have to be added or multiplied accordingly. A special basic type is `e` to enclose UBN elements in an array of bytes. This acts as an additional size information for elements and helps to parse a file more quickly and step over larger elements.
 
 ## Types
 
@@ -104,8 +104,6 @@ Other than in data of text formats no stop symbols can be defined for binary ele
 | `u`    | utf-16    | 2     | unicode string in utf-16       |                                               |
 | `e`    | element   | 1     | element as defined in grammar  | Encapsulated element in array of e            |
 | `x`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
-
-A special type is `e` for elements which can be used as an array of bytes to reserve space for another UBN element. It acts as an additional size information for elements. It helps to parse a file more quickly and step over larger subelements.
 
 Examples
 --------
