@@ -252,7 +252,7 @@ Footnote elements can have string identifiers to indicate the purpose of the foo
 [*] [*] (string "unit") (string "cm") [*] [*] (string "TOC") (footnote with table of content) (data of type list)
 ```
 
-Use-case specific and user-defined footnotes are recommended have the format
+Use-case specific and user-defined footnotes are recommended to have the format
 
 ```
 [*] [*] (string with meta language identifier) [{] (dict with meta information) [}] (element)
