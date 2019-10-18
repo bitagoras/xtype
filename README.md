@@ -1,35 +1,18 @@
-# Universal Binary Notation (UBN)
+# Xeno (format)
 
-Universal Binary Notation file format specification (beta)
+Universal binary data language
 
-Introduction
-------------
-Universal Binary Notation (UBN) is a general purpose self-explained binary file format for hierarchically structured data. The basic syntax is very simple and easy to implement but it tries to satisfy the needs of all imaginable applications for binary data storage and exchange. The simple grammar allows to generate typical data files by a few lines of code without any library. On the other hand more complex files and huge data bases can be defined and handled efficiently with random access.
+Overview
+--------
 
-The Vision
+Xeno is a universal description language for binary data formats. It is the binary equivalent to [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency.
+
+The name Xeno derives from the ancient Greek word ξένος (_alien_), which well describes the property of a non-human-readable binary language.
+
+Basic idea
 ----------
 
-The digital revolution is based on the simple convention of noting all kinds of information through a series of zeros and ones. Although the usefulness of such conventions is very obvious, it is missing at a higher level for binary data structures. Too many binary file formats exist that need custom-built programs or libraries to decode them. As a consequence, many people use text formats for data exchange as it is the most universal standard. As a drawback text formats have limited speed and storage efficiency since numerical values have to be translated into their decimal text representations. Also certain sub elements cannot be read without parsing the whole text file.
-
-This is where the vision of the format Universal Binary Notation (UBN) comes in:
-
-* It should be very simple without overhead so that writing simple files do not require any library.
-* It should cover all needs of binary formats.
-* It should be very flexible and hierarchically structured.
-* One single editor should be able to display the content of all binary formats based on it.
-* Reading should be efficient and random access should be possible for sub-elements.
-
-Existing solutions
-------------------
-
-For text files universal formats already exist, such as [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) with the disadvantage of low efficiency. For universal binary formats one can mention e.g. [HDF5](https://www.hdfgroup.org/HDF5/) (Hierarchical Data Format), which is suitable for huge scientific data sets but has a quite complicated grammar. Much more simpler is [UBJSON](https://github.com/ubjson/universal-binary-json/) (Universal Binary Java Script Object Notation), but is not as versatile and cannot be used for big and complex databases with random access. UBN is supposed to enable all desirable properties of text and binary formats.
-
-The Philosophy
---------------
-
-To unify the contradicting requirements of simplicity and advanced features, the format specification is expandable. The simple grammar describes a minimalistic hierarchical data structure (inspired by UBJSON) while advanced features, as required for random access and handling of big data, are optional and hidden in so-called _footnotes_ without blowing up the grammar. Just like you know it from books, footnotes give additional information about the content, but they are not mandatory to understand the book. A parser for UBN is not required to understand and use the information inside the footnote to read the elements of the file. Most UBN files of typical usage will probably not require any footnotes at all.
-
-UBN is also suitable for data streams. All elements of the grammar begin with ascii characters with values between 32 and 127 and have a defined end. Other ASCII symbols can be used before or after the elements for communication protocols.
+The grammar tries to be minimalistic while it covers all possible application cases. Missing features of the format can be added by so-called _footnotes_. As in books, footnotes can be ignored while reading, but provide additional information to understand the content. A footnote adds user-defined additional information to a data element, which allows the application to read or understand the data in a new specific way.
 
 Properties
 ----------
@@ -39,50 +22,43 @@ Properties
 1. Basic boolean, integer, floating point data types and strings
 2. Arrays, multi-dimensional arrays
 3. Structured types
-4. Lists of mixed arbitrary elements
+4. Lists of arbitrary elements with mixed type
 5. Objects or dictionaries with key/value pairs for arbitrary elements
-6. Arbitrary hierarchy levels
-7. Logging: Files with unfinished lists are syntactically valid which allows to append more elements later.
-8. Self-similarity: Inner elements can be extracted and stored independently as complete and valid files.
+6. Unlimited hierarchy levels
+7. Append more data to log files with valid and completed syntax
+8. Elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
 
-### Additional (possible) features that make use of the optional meta information in footnotes
+### Possible format extensions by user-defined footnotes
 
 1. Table of contents
 2. Fast random access to certain sub-elements in big files
 3. Fast deletion and addition of elements in big files
 4. Chunk data mode for efficient writing and reading of big files
-5. Included checksum
-6. Definitions for date and time notation
-7. Definitions for physical units
-8. Compressed elements
+5. Checksums for integrity checks
+6. Date and time notation formats
+7. Notation of physical units
+8. Values and arrays with complex numbers
+9. Elements with data compression
 
-With the footnotes users have the freedom to create their own formats for their specific applications. This is similar to text formats where users can freely design file structures with their own format rules. But all text formats have in common that they respect the ascii standard to make sure that every editor can show and edit the content. This idea is used by UBN and continued for binary formats. 
+Grammar
+-------
 
-Status
-------
+The grammar is defined and explained by graphical figures. The red round boxes represent data to be written. Single black characters inside are stored directly as ASCII characters. Green boxes require nested grammer rules.
 
-UBN is under development. The grammar has still beta status and will be finalized at some point. There will be no different versions for the core grammar. The meta language of the footnotes, in contrast, is flexible and can grow from time to time and new features will be added or conventions can be changed while outdated files still can be parsed.
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_file.png"></p>
 
-Grammar (beta6)
---------------
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_element.png"></p>
 
-The graphical representation of the grammar rules below should contain all information to enable a programmer writing valid UBN files. The red round boxes represent data to be written. Single black characters inside are stored directly as ASCII characters. Green boxes require nested grammer rules.
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_list.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/UBN_file.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_dict.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/UBN_element.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_value.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/UBN_list.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_type.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/UBN_dict.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_length.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/UBN_value.png"></p>
-
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/UBN_type.png"></p>
-
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/UBN_length.png"></p>
-
-Other than in data of text formats no stop symbols can be defined for binary elements since the whole value range is reserved for the binary data. Therefore the size of the data must be determined by the parser from information stored in front of the data. The sizes of basic data types are given in the type table. In case of structs or arrays the number of bytes have to be added or multiplied accordingly. A special basic type is `e` to enclose UBN elements in an array of bytes. This acts as an additional size information for elements and helps to parse a file more quickly and step over larger elements.
 
 ## Types
 
@@ -105,17 +81,19 @@ Other than in data of text formats no stop symbols can be defined for binary ele
 | `e`    | element   | 1     | element as defined in grammar  | Encapsulated element in array of e            |
 | `x`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
 
+A special basic data type is `e` to enclose Xeno elements in an array of bytes. This acts as an additional size information for elements and helps to parse a file more quickly by stepping over large elements.
+
 Examples
 --------
 
-In the examples below, characters in brackets `[ ]` symbolize characters that are directly stored as their ASCII values. Parentheses `( )` show readable representations of the corresponding binary data. If no type is noted for integers in parentheses the type is uint8. All examples are valid and complete UBN files. No additional header is required. That's simple, isn't it?
+In the examples below, characters in brackets `[ ]` symbolize characters that are directly stored as their ASCII values. Parentheses `( )` show readable representations of the corresponding binary data. If no type is noted for integers in parentheses the type is uint8. All examples are valid and complete Xeno files. No additional header is required. That's simple, isn't it?
 
 * **String**:
 
 ```
 "hello world"
 
-UBN:
+Xeno:
      [m] (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
 
 hex: 6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
@@ -126,7 +104,7 @@ hex: 6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 1025
 
-UBN:
+Xeno:
 [j] (uint16: 1025)
 
 hex: 6A 01 04
@@ -137,7 +115,7 @@ hex: 6A 01 04
 ```
 [10, 200, 255]
 
-UBN:
+Xeno:
        [3] [i] (uint8: 10) (uint8: 200) (uint8: 255)
 
 hex:   33  69          0A           C8           FF   
@@ -148,7 +126,7 @@ hex:   33  69          0A           C8           FF
 ```
 [7, "seven", 7.77]
 
-UBN:
+Xeno:
 [[] [i] (uint8: 7) (uint8: 5) [s] [seven] [d] (float64: 7.77) []]
 ```
 
@@ -157,7 +135,7 @@ UBN:
 ```
 [(uint8) 7, (string*5) "seven", (double) 7.77]
 
-UBN:
+Xeno:
 [(] [i] [5] [s] [d] [)] (uint8: 7) [seven] (float64: 7.77)
 ```
 
@@ -168,7 +146,7 @@ UBN:
   [2.2, 4.4, 6.6],
   [3.3, 5.5, 7.7] ]
   
-UBN:  
+Xeno:  
 [3]
     [3] [d]
         (float64: 1.1) (3.3) (5.5)
@@ -179,7 +157,7 @@ UBN:
 * **800 x 600 x 3 RGB Image:**
 
 ```
-UBN:
+Xeno:
 [n] (uint16: 800)
     [n] (uint16: 600)
         [3] [i]
@@ -195,7 +173,7 @@ UBN:
   "habitable": True
 }
 
-UBN:
+Xeno:
 [{]
     [6] [s] [planet] [9] [s] [Proxima b]
     [4] [s] [mass] [d] (float64: 1.27)
@@ -212,7 +190,7 @@ UBN:
   [3.3,    5.5,    7.7],
   [4.4,    6.6,    8.8] ]
 
-UBN:
+Xeno:
 [[]
     [[]
         [3] [s] [lon]
@@ -227,42 +205,24 @@ UBN:
 []]
 ```
 
-# Footnote Meta Language
+# Footnotes
 ## Overview
 
-The content of the `footnote` element gives information and hints about how to read, interpret or pre-process the data, before it is used by the application. A parser that makes no use of the footnotes must parse the element after `[*]` to find out its size but can ignore its content. The content is mostly used for optimizing the efficiency or speed for writing and reading large files with random access. It can also contain application-specific information on how to apply the data. The footnote can be a string or any other data type.
+The content of the `footnote` element gives information and hints about how to read, interpret or pre-process the data, before it is used by the application. The footnote can be a list, dict or any other data type. A parser that makes no use of the footnotes must parse the element after `[*]`, to find out its size, but can ignore its content.
 
-Information about jump positions in table of contents are given relative to the `*` character of the footnote as the reference position.
+Information about jump positions in table of contents are given, as a convention, relative to the `*` character of the footnote. This position has to be remembered by the parser as the reference position.
 
-Objects with several footnotes can be nested:
+Footnotes with several information items can be organized in lists or dicts, or footnotes can be nested as in the example:
 ```
 [*] (footnote with unit) [*] (footnote with table of content) (data of type list)
 ```
-
-Several footnotes can also be listed:
-```
-[*] [[] (footnote with unit) (footnote with table of content) []] (data of type list)
-```
-
-Footnote elements can have string identifiers to indicate the purpose of the footnote or to identify use-case specific meta languages. The string identifiers are footnotes of the footnote:
+Footnote elements can have a string identifier keyword to indicate the purpose of the footnote or to identify a use-case specific meta language. The string identifiers are a footnote to the footnote, e.g.:
 
 ```
-[*] [*] (string "unit") (string "cm") [*] [*] (string "TOC") (footnote with table of content) (data of type list)
+[*] [*] (string with meta language identifier) [{] (dict with meta information) [}] (data element)
 ```
 
-Use-case specific and user-defined footnotes are recommended to have the format
-
-```
-[*] [*] (string with meta language identifier) [{] (dict with meta information) [}] (element)
-```
-
-If there is for example a binary format for `numpy` with specific information about the data type, the footnote would be
-
-```
-[*] [*] [numpy] [{] (dict with meta information) [}] (element)
-```
-
-## Default Footnote Meta Language
+## Default Footnote Meta Language Elements
 
 Version: 0.2
 
@@ -278,11 +238,11 @@ Version: 0.2
 
 **Explanation:**
 
-This footnote tags an element as deleted. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. Small elements can be deleted by overwriting them with zero-bytes. For larger elements footnotes like this can be added, followed by an `x` array that covers the element until the end. By this a very large element can be deleted by writing only a few bytes at the beginning. Next time the entire file is rebuilt, the unused space can be eliminated.
+This footnote tags an element as deleted. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. To adapt the size, the data of the deleted element can be an array of `x` to cover the rest of the element. Next time the entire file is rebuilt, the unused space can be eliminated.
 
 **Example:**
 
-In the following example an element with 10000 bytes is tagged as deleted. The included footnote and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be written to remove the element, instead of writing 10000 zero bytes or rebuilding the whole file which may require to update some links in the table of contents.
+In the following example an element with 10000 bytes is tagged as deleted. The included footnote and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be changed to remove the whole element.
 
 ```
 [*] [N]
@@ -301,11 +261,11 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 
 **Explanation:**
 
-This footnote type tags an element as invisible, when the value is set to false. This feature can be used for reserving some space for e.g. elements to be added later or as placeholder for a table of content that will be added after all subelements are written and their sizes and positions are known.
+This footnote type tags an element as invisible, when the value is set to false. This feature can be used as placeholder for e.g. elements to be added later or flexible ordered elements for other elements pointing on it with links.
 
 **Example:**
 
-In the following example an element is tagged as invisible. This element is treated as non-exisiting, but the element will not be deleted when the file is rebuilt. This could be an element that is inserted later at another list by a certain link instruction but is physically added at the end for efficiency reasons. Note that invisible elements can only be placed at locations where the grammar allows an element.
+In the following example an element is tagged as invisible. This element is treated as non-exisiting, but the element will not be deleted when the file is rebuilt, since the content is used for a certain purpose.
 
 ```
 [*] [F] (some element)
@@ -332,7 +292,7 @@ This example shows short list with mixed types and a table of content with offse
 ```
 [7, "seven", 7.77]
 
-UBN:
+Xeno:
 
 [*] [3] [i]                # uint8 array of length 3
         (7) (9) (16)       # offsets to the elements
@@ -364,7 +324,7 @@ In this example a data structure contains some very big elements:
   'folder1': {'fileA': 'bigdata2', 'fileB': 'bigdata3'}
 }
 
-UBN:
+Xeno:
 
 [[]  # List
     # Data Structure with links instead of actual data elements
