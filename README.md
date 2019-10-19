@@ -5,14 +5,14 @@ Universal binary data language
 Overview
 --------
 
-Xeno is a gerenal-purpose description language for binary data. It is the binary equivalent to [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency.
+Xeno is a gerenal-purpose description language for binary data. It is the binary equivalent to text formats [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency.
 
 The name Xeno derives from the ancient Greek word ξένος (_alien_), which well describes the property of a non-human-readable binary language.
 
 Basic idea
 ----------
 
-The grammar tries to be minimalistic while it covers all possible application cases. Missing features of the format can be added by so-called _footnotes_. As in books, footnotes can be ignored while reading, but provide additional background information on the meaning or context. A footnote adds user-defined meta data to an element, which allows the application to read or understand the data in a new specific way.
+The grammar tries to be minimalistic while it covers all possible application cases. Missing features of the format can be added by so-called _footnotes_. As in books, footnotes can be ignored while reading, but provide additional background information on the meaning or context. A footnote adds user-defined meta data to the element, which allows the application to read or understand the data in a new specific way.
 
 Properties
 ----------
