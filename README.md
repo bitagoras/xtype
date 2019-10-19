@@ -25,7 +25,7 @@ Properties
 4. Lists of arbitrary elements with mixed types
 5. Objects or dictionaries with key/value pairs for arbitrary elements
 6. Unlimited hierarchy levels
-7. Append more data to log files with valid and completed syntax
+7. More data can be appended to log files of valid and completed syntax
 8. Elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
 
 ### Possible format extensions by user-defined footnotes
