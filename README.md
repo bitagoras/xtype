@@ -12,7 +12,7 @@ The name Xeno derives from the ancient Greek word ξένος (_alien_), which we
 Basic idea
 ----------
 
-The grammar tries to be minimalistic while it covers all possible application cases. Missing features of the format can be added by so-called _footnotes_. As in books, footnotes can be ignored while reading, but provide additional information to better understand the meaning. A footnote adds user-defined meta data to an element, which allows the application to read or understand the data in a new specific way.
+The grammar tries to be minimalistic while it covers all possible application cases. Missing features of the format can be added by so-called _footnotes_. As in books, footnotes can be ignored while reading, but provide additional background information about the context or meaning. A footnote adds user-defined meta data to an element, which allows the application to read or understand the data in a new specific way.
 
 Properties
 ----------
