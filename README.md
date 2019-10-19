@@ -5,7 +5,7 @@ Universal binary data language
 Overview
 --------
 
-Xeno is a universal description language for binary data formats. It is the binary equivalent to [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency.
+Xeno is a gerenal-purpose description language for binary data. It is the binary equivalent to [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency.
 
 The name Xeno derives from the ancient Greek word ξένος (_alien_), which well describes the property of a non-human-readable binary language.
 
