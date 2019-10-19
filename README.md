@@ -361,9 +361,9 @@ Xeno:
         [}]
         [*] [F] [n] (1000) [x] (1000 Byte) # Invisible place holder buffer for
     [}]                                    # adding more elements in future
-    [8] [s] [bigdata1]
-    [8] [s] [bigdata2]
-    [8] [s] [bigdata3]
+    [8] [s] [bigdata1]   # Link target with actual data
+    [8] [s] [bigdata2]   # Link target with actual data
+    [8] [s] [bigdata3]   # Link target with actual data
 
 # No []] at the end to append more elements in future
 
