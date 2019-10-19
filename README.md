@@ -1,6 +1,6 @@
 # Xeno (format)
 
-Universal binary data language
+A universal binary data language
 
 Overview
 --------
