@@ -21,8 +21,8 @@ Properties
 
 1. Basic boolean, integer, floating point data types and strings
 2. Arrays, multi-dimensional arrays
-3. Structured types
-4. Lists of arbitrary elements with mixed type
+3. Structured types, struct arrays
+4. Lists of arbitrary elements with mixed types
 5. Objects or dictionaries with key/value pairs for arbitrary elements
 6. Unlimited hierarchy levels
 7. Append more data to log files with valid and completed syntax
