@@ -315,7 +315,7 @@ This footnote type allows to keep the main data structure small and efficient an
 
 **Example:**
 
-In this example a data structure contains some very big elements:
+In this example imagine that a data structure contains some very big elements:
 
 ```
 {
