@@ -5,14 +5,14 @@ A universal binary data language
 Overview
 --------
 
-Xeno is a gerenal-purpose description language for binary data. It is the binary equivalent to the text formats [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency.
+Xeno is a general-purpose description language for binary data. It is supposed to be the binary equivalent to text formats like [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) without their limitations of efficiency. Xeno can be used to replace XML based formats, represent Python data structures and store scientific data sets.
 
 The name Xeno derives from the ancient Greek word ξένος (_alien_), which well describes the property of a non-human-readable binary language.
 
 Basic idea
 ----------
 
-The grammar tries to be minimalistic while it covers all possible application cases. Missing features of the format can be added by so-called _footnotes_. As in books, footnotes can be ignored while reading, but provide additional background information on the meaning or context. A footnote adds user-defined meta data to the element, which allows the application to read or understand the data in a new specific way.
+The grammar tries to be minimalistic while it covers all possible application cases. Missing features of the format can be added by so-called _footnotes_. As in books, footnotes can be ignored while reading, but provide additional background information on the meaning or context of the content. A footnote adds user-defined meta data to the element, which allows the application to read or understand the data in a new specific way.
 
 Properties
 ----------
@@ -25,7 +25,7 @@ Properties
 4. Lists of arbitrary elements with mixed types
 5. Objects or dictionaries with key/value pairs for arbitrary elements
 6. Unlimited hierarchy levels
-7. More data can be appended to log files of valid and completed syntax
+7. Data can be appended to log files even the syntax is valid and completed
 8. Elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
 
 ### Possible format extensions by user-defined footnotes
@@ -43,7 +43,7 @@ Properties
 Grammar
 -------
 
-The grammar is defined and explained by graphical figures. The red round boxes represent data to be written. Single black characters inside are stored directly as ASCII characters. Green boxes require nested grammer rules.
+The grammar is defined and explained by graphical figures. The red round boxes represent data to be written. Single black characters in those boxes are stored directly as ASCII characters. Green boxes require nested grammer rules.
 
 <p align="center"><img src="figures/Xeno_file.png"></p>
 
