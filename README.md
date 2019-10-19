@@ -5,7 +5,7 @@ A universal binary data language
 Overview
 --------
 
-Xeno is a general-purpose description language for binary data. It is supposed to be the binary equivalent to text formats like [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) without their limitations of efficiency. Xeno can be used to replace XML based formats, represent Python data structures and store scientific data sets.
+Xeno is a general-purpose description language for binary data. It is supposed to be the binary equivalent to text formats like [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) without their limitations of efficiency. Xeno can be used to replace XML based formats, represent Python data structures or store scientific data.
 
 The name Xeno derives from the ancient Greek word ξένος (_alien_), which well describes the property of a non-human-readable binary language.
 
@@ -223,7 +223,30 @@ Footnote elements can have a string identifier keyword to indicate the purpose o
 
 ## Default Footnote Meta Language Elements
 
-Version: 0.2
+### File signature and byte order mark
+
+**Purpose:** Magic byte
+
+**Footnote type:** int16
+
+**Footnote value:** 1234
+
+**Explanation:**
+
+This is a footnote for the beginning of the file to indicate the byte order (little or big endian). It also acts as the file signature or the magic bytes. The 16-bit signed integer has the defined value 1234. For a Xeno reader with the wrong byte order the number would be -11772.
+
+```
+Xeno: [*] [J] (1234)
+hex:  2A  4A  D2 04    # little endian (default)
+hex:  2A  4A  04 D2    # big endian
+```
+
+**Example:**
+
+```
+Xeno file:
+[*] [J] (1234) (data of the file)
+```
 
 ### Deleted element
 
