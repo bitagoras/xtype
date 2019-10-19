@@ -301,7 +301,7 @@ Xeno:
 
 ## Element links
 
-**Purpose:** In more complex data structures and big files it can be usefull to use links to elements. This allows to quickly parse the main structure without reading the whole data and to allows to add, move or delete elements.
+**Purpose:** In more complex data structures and big files it can be usefull to use links to elements. This allows to quickly parse the main structure without reading the whole data and to add, move or delete elements.
 
 **Footnote type:** String
 
