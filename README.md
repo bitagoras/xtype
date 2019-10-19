@@ -45,20 +45,19 @@ Grammar
 
 The grammar is defined and explained by graphical figures. The red round boxes represent data to be written. Single black characters inside are stored directly as ASCII characters. Green boxes require nested grammer rules.
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_file.png"></p>
+<p align="center"><img src="figures/Xeno_file.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_element.png"></p>
+<p align="center"><img src="figures/Xeno_element.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_list.png"></p>
+<p align="center"><img src="figures/Xeno_list.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_dict.png"></p>
+<p align="center"><img src="figures/Xeno_dict.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_value.png"></p>
+<p align="center"><img src="figures/Xeno_value.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_type.png"></p>
+<p align="center"><img src="figures/Xeno_type.png"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/bitagoras/Universal-Binary-Notation/master/figures/Xeno_length.png"></p>
-
+<p align="center"><img src="figures/Xeno_length.png"></p>
 
 ## Types
 
