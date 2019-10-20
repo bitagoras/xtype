@@ -87,7 +87,7 @@ A special basic data type is `e` to enclose Xeno elements in an array of bytes. 
 Examples
 --------
 
-In the examples below, characters in brackets `[ ]` symbolize characters that are directly stored as their ASCII values. Parentheses `( )` show readable representations of the corresponding binary data. If no type is noted for integers in parentheses the type is uint8. All examples are valid and complete Xeno files. No additional header is required. That's simple, isn't it?
+In the examples below, characters in brackets `[ ]` symbolize characters that are directly stored as their ASCII values. Parentheses `( )` show readable representations of the corresponding binary data. All examples are valid and complete Xeno files. No additional header is required. That's simple, isn't it?
 
 * **String**:
 
