@@ -228,7 +228,7 @@ _Footnote value_ | 1234
 
 **Explanation:**
 
-This is a footnote for the beginning of the file to indicate the byte order (little or big endian) and acts as the file signature with four magic bytes. The 16-bit signed integer has the defined value 1234. A Xeno reader with the wrong byte order would recocnize the number as -11772. If no such File signature is given, the Xeno format is specified for little endian byte order.
+This is a footnote for the beginning of the file to indicate the byte order (little or big endian) and acts as the file signature with four magic bytes. The 16-bit signed integer has the defined value 1234. A Xeno reader with the wrong byte order would recognize the number as -11772. If no such File signature is given, the Xeno format is specified for little endian byte order.
 
 ```
 Xeno: [*] [J] (1234)
