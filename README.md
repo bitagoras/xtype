@@ -45,7 +45,7 @@ Properties
 Grammar
 -------
 
-The grammar is entirely defined and explained by graphical figures. The green boxes require nested grammer rules. Red round boxes represent data to be written. Single black characters in those boxes are stored directly as ASCII characters. Red symbols in the red boxes are placeholders for certain other ASCII characters, as shown.
+The grammar is entirely defined and explained by graphical figures. The green boxes require nested grammar rules. Red round boxes represent data to be written. Single black characters in those boxes are stored directly as ASCII characters. Red symbols in the red boxes are placeholders for certain other ASCII characters, as shown.
 
 <p align="center"><img src="figures/Xeno_file.png"></p>
 
