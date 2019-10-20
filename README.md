@@ -5,14 +5,14 @@ A universal binary data language
 Overview
 --------
 
-Xeno is a general-purpose description language for binary data. It is supposed to be the binary equivalent to text formats like [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) without their limitations of efficiency. Xeno can be used to replace XML based formats, represent Python data structures or store scientific data.
+Xeno is a general-purpose description language for binary data. It is supposed to be a binary equivalent to text formats like [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) without their limitations of efficiency. Xeno is also suitable for the representation of typical C and Python data structures and offers a lightweight alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage.
 
 The name Xeno derives from the ancient Greek word ξένος (_alien_), which well describes the property of a non-human-readable binary language.
 
 Basic idea
 ----------
 
-The grammar tries to be minimalistic while it covers all possible application cases. Missing features of the format can be added by so-called _footnotes_. As in books, footnotes can be ignored while reading, but provide additional background information on the meaning or context of the content. A footnote adds user-defined meta data to the element, which allows the application to read or understand the data in a new specific way.
+The grammar tries to be minimalistic while it covers all possible application cases. Missing features of the format can be added by so-called _footnotes_. As in books, footnotes can be ignored while reading, but provide additional background information on the meaning or context. A footnote adds user-defined meta data to the element, which allows the application to read or understand the data in a new specific way.
 
 Properties
 ----------
@@ -25,7 +25,7 @@ Properties
 4. Lists of arbitrary elements with mixed types
 5. Objects or dictionaries with key/value pairs for arbitrary elements
 6. Unlimited hierarchy levels
-7. Data can be appended to log files even the syntax is valid and completed
+7. New data can be appended to log files even the syntax is already valid and completed
 8. Elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
 
 ### Possible format extensions by user-defined footnotes
@@ -207,33 +207,32 @@ Xeno:
 # Footnotes
 ## Overview
 
-The content of the `footnote` element gives information and hints about how to read, interpret or pre-process the data, before it is used by the application. The footnote can be a list, dict or any other data type. A parser that makes no use of the footnotes must parse the element after `[*]`, to find out its size, but can ignore its content.
+The content of the `footnote` element gives information and hints about how to read, interpret or pre-process the data, before it is used by the application. The footnote can be a list, dict or any other data type. A parser that makes no use of the footnotes must parse the element after `[*]`, to determine its size, but can ignore its content.
 
 Information about jump positions in table of contents are given, as a convention, relative to the `*` character of the footnote. This position has to be remembered by the parser as the reference position.
 
-Footnotes with several information items can be organized in lists or dicts, or footnotes can be nested as in the example:
+Footnotes with several information items can be organized in lists or dicts, or footnotes can be nested, as for example:
 ```
 [*] (footnote with unit) [*] (footnote with table of content) (data of type list)
 ```
 Footnote elements can have a string identifier keyword to indicate the purpose of the footnote or to identify a use-case specific meta language. The string identifiers are a footnote to the footnote, e.g.:
 
 ```
-[*] [*] (string with meta language identifier) [{] (dict with meta information) [}] (data element)
+[*] [*] (meta language string identifier) [{] (dict with meta information) [}] (data element)
 ```
 
 ## Default Footnote Meta Language Elements
 
-### File signature and byte order mark
+### File signature
 
-**Purpose:** Magic byte
-
-**Footnote type:** int16
-
-**Footnote value:** 1234
+_Footnote Purpose_ | File signature and byte order mark
+--- | --- 
+_Footnote type_ | 16-bit signed integer (`J`)
+_Footnote value_ | 1234
 
 **Explanation:**
 
-This is a footnote for the beginning of the file to indicate the byte order (little or big endian). It also acts as the file signature or the magic bytes. The 16-bit signed integer has the defined value 1234. For a Xeno reader with the wrong byte order the number would be -11772.
+This is a footnote for the beginning of the file to indicate the byte order (little or big endian) and acts as the file signature with four magic bytes. The 16-bit signed integer has the defined value 1234. A Xeno reader with the wrong byte order would recocnize the number as -11772. If no such File signature is given, the Xeno format is specified for little endian byte order.
 
 ```
 Xeno: [*] [J] (1234)
@@ -250,13 +249,10 @@ Xeno file:
 
 ### Deleted element
 
-**Purpose:** Flags an element as deleted
-
-**Optional identifier keyword:** `deleted`
-
-**Footnote type:** None
-
-**Footnote value:** `N` (None)
+_Footnote Purpose_ | Flags an element as deleted
+--- | --- 
+_Footnote type_ | None
+_Footnote value_ | `N` (_None_)
 
 **Explanation:**
 
@@ -273,13 +269,11 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 
 ### Element visibility
 
-**Purpose:** Flags an element as visible or invisible (disabled)
-
-**Optional identifier keyword:** `enabled`
-
-**Footnote type:** boolean `T` or `F`
-
-**Footnote value:** `T` (true for enabled), `F` (false for disabled or deleted)
+_Footnote Purpose_ | Flags an element as visible or invisible / disabled
+--- | --- 
+_Footnote type_ | boolean `T` or `F`
+_Footnote value_ | `T` (true for visible / enabled), `F` (false for invisible / disabled)
+_Optional keyword_ |  `enabled`
 
 **Explanation:**
 
@@ -295,13 +289,11 @@ In the following example an element is tagged as invisible. This element is trea
 
 ## Table of content for quick random access
 
-**Purpose:** Table of content: List with the relative starting positions of all elements in a list or dict data
-
-**Optional identifier keyword:** `TOC`
-
-**Footnote type:** array of unsigned integer (`i`,`j`,`k`,`l`)
-
-**Footnote value:** relative byte offset to the list elements from the beginning of the footnote
+_Footnote Purpose_ | Table of content: pointer to elements in a list or dict
+--- | --- 
+_Footnote type_ | array of unsigned integer (`i`,`j`,`k`,`l`)
+_Footnote value_ | relative byte offset to the list elements from the the footnote start `*` 
+_Optional keyword_ |  `TOC`
 
 **Explanation:**
 
@@ -324,17 +316,15 @@ Xeno:
 
 ## Element links
 
-**Purpose:** In more complex data structures and big files it can be usefull to use links to elements. This allows to quickly parse the main structure without reading the whole data and to add, move or delete elements.
-
-**Footnote type:** String
-
-**Footnote value:** `@`
-
-**Element value:** The content of the element is replaced by an unsigned integer (`i`,`j`,`k`,`l`) or array of unsigned integers that points to the absolute address (relative to the beginning of the file) of the elements with the actual data.
+_Footnote Purpose_ | Pointers to elements instead of the data itself
+--- | --- 
+_Footnote type_ | String (`s`)
+_Footnote value_ | `@`
+_Element value_ | Unsigned integer (`i`,`j`,`k`,`l`) with absolute address of actual element
 
 **Explanation:**
 
-This footnote type allows to keep the main data structure small and efficient and allows fast random access to sub elements and more flexibility. The elements of the structure contain only the links to the actuall elements which are stored in a list at then end.
+The content of the element is replaced by an unsigned integer (`i`,`j`,`k`,`l`) or array of unsigned integers pointing to the absolute address (relative to the beginning of the file) of the elements with the actual data. This footnote type allows to keep the main data structure small and efficient and allows fast random access to sub elements which gives also more flexibility to manage the content.
 
 **Example:**
 
