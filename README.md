@@ -9,7 +9,7 @@ Xeno is a general-purpose description language for binary data. It is supposed t
 
 The name Xeno derives from the ancient Greek word ξένος (_alien_), which well describes the property of a non-human-readable binary language.
 
-Currently, for Xeno there exists no library so far, nor a Xeno editor or reader.
+Currently, there exists no library so far for Xeno, nor a Xeno editor or reader.
 
 Basic idea
 ----------
