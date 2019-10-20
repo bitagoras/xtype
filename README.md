@@ -103,10 +103,8 @@ hex: 6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 1025
 
-Xeno:
-[j] (uint16: 1025)
-
-hex: 6A 01 04
+Xeno: [j] (uint16: 1025)
+hex:  6A 01 04
 ```
 
 * **3d vector of type uint8:**
@@ -114,9 +112,7 @@ hex: 6A 01 04
 ```
 [10, 200, 255]
 
-Xeno:
-       [3] [i] (uint8: 10) (uint8: 200) (uint8: 255)
-
+Xeno:  [3] [i] (uint8: 10) (uint8: 200) (uint8: 255)
 hex:   33  69          0A           C8           FF   
 ```
 
@@ -307,7 +303,6 @@ This example shows short list with mixed types and a table of content with offse
 [7, "seven", 7.77]
 
 Xeno:
-
 [*] [3] [i]                # uint8 array of length 3
         (7) (9) (16)       # offsets to the elements
 [[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
@@ -337,7 +332,6 @@ In this example imagine that a data structure contains some very big elements:
 }
 
 Xeno:
-
 [[]  # List
     # Data Structure with links instead of actual data elements
     [{]
