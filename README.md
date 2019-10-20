@@ -226,7 +226,7 @@ Footnote elements can have a string identifier keyword to indicate the purpose o
 ### File signature
 
 _Footnote Purpose_ | File signature and byte order mark
---- | --- 
+:---|:--- 
 _Footnote type_ | 16-bit signed integer (`J`)
 _Footnote value_ | 1234
 
@@ -250,7 +250,7 @@ Xeno file:
 ### Deleted element
 
 _Footnote Purpose_ | Flags an element as deleted
---- | --- 
+:---|:--- 
 _Footnote type_ | None
 _Footnote value_ | `N` (_None_)
 
@@ -270,7 +270,7 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 ### Element visibility
 
 _Footnote Purpose_ | Flags an element as visible or invisible / disabled
---- | --- 
+:---|:---  
 _Footnote type_ | boolean `T` or `F`
 _Footnote value_ | `T` (true for visible / enabled), `F` (false for invisible / disabled)
 _Optional keyword_ |  `enabled`
@@ -290,7 +290,7 @@ In the following example an element is tagged as invisible. This element is trea
 ## Table of content for quick random access
 
 _Footnote Purpose_ | Table of content: pointer to elements in a list or dict
---- | --- 
+:---|:--- 
 _Footnote type_ | array of unsigned integer (`i`,`j`,`k`,`l`)
 _Footnote value_ | relative byte offset to the list elements from the the footnote start `*` 
 _Optional keyword_ |  `TOC`
@@ -317,7 +317,7 @@ Xeno:
 ## Element links
 
 _Footnote Purpose_ | Pointers to elements instead of the data itself
---- | --- 
+:---|:--- 
 _Footnote type_ | String (`s`)
 _Footnote value_ | `@`
 _Element value_ | Unsigned integer (`i`,`j`,`k`,`l`) with absolute address of actual element
