@@ -19,26 +19,26 @@ Properties
 
 ### Features of the grammar
 
-1. Basic boolean, integer, floating point data types and strings
-2. Arrays, multi-dimensional arrays
-3. Structured types, struct arrays
-4. Lists of arbitrary elements with mixed types
-5. Objects or dictionaries with key/value pairs for arbitrary elements
-6. Unlimited hierarchy levels
-7. New data can be appended to log files even the syntax is already valid and completed
-8. Elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
+* Basic boolean, integer, floating point data types and strings
+* Arrays, multi-dimensional arrays
+* Structured types, struct arrays
+* Lists of arbitrary elements with mixed types
+* Objects or dictionaries with key/value pairs for arbitrary elements
+* Unlimited hierarchy levels
+* New data can be appended to log files even the syntax is already valid and completed
+* Elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
 
 ### Possible format extensions by user-defined footnotes
 
-1. Table of contents
-2. Fast random access to certain sub-elements in big files
-3. Fast deletion and addition of elements in big files
-4. Chunk data mode for efficient writing and reading of big files
-5. Checksums for integrity checks
-6. Date and time notation formats
-7. Notation of physical units
-8. Values and arrays with complex numbers
-9. Elements with data compression
+* Table of contents
+* Fast random access to certain sub-elements in big files
+* Fast deletion and addition of elements in big files
+* Chunk data mode for efficient writing and reading of big files
+* Checksums for integrity checks
+* Date and time notation formats
+* Notation of physical units
+* Values and arrays with complex numbers
+* Elements with data compression
 
 Grammar
 -------
@@ -92,10 +92,8 @@ In the examples below, characters in brackets `[ ]` symbolize characters that ar
 ```
 "hello world"
 
-Xeno:
-     [m] (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
-
-hex: 6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
+Xeno: [m] (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
+hex:  6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 
 * **Integer:**
@@ -103,10 +101,8 @@ hex: 6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 1025
 
-Xeno:
-[j] (uint16: 1025)
-
-hex: 6A 01 04
+Xeno: [j] (uint16: 1025)
+hex:  6A 01 04
 ```
 
 * **3d vector of type uint8:**
@@ -114,9 +110,7 @@ hex: 6A 01 04
 ```
 [10, 200, 255]
 
-Xeno:
-       [3] [i] (uint8: 10) (uint8: 200) (uint8: 255)
-
+Xeno:  [3] [i] (uint8: 10) (uint8: 200) (uint8: 255)
 hex:   33  69          0A           C8           FF   
 ```
 
@@ -226,7 +220,7 @@ Footnote elements can have a string identifier keyword to indicate the purpose o
 ### File signature
 
 _Footnote Purpose_ | File signature and byte order mark
---- | --- 
+:---|:--- 
 _Footnote type_ | 16-bit signed integer (`J`)
 _Footnote value_ | 1234
 
@@ -250,7 +244,7 @@ Xeno file:
 ### Deleted element
 
 _Footnote Purpose_ | Flags an element as deleted
---- | --- 
+:---|:--- 
 _Footnote type_ | None
 _Footnote value_ | `N` (_None_)
 
@@ -270,7 +264,7 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 ### Element visibility
 
 _Footnote Purpose_ | Flags an element as visible or invisible / disabled
---- | --- 
+:---|:---  
 _Footnote type_ | boolean `T` or `F`
 _Footnote value_ | `T` (true for visible / enabled), `F` (false for invisible / disabled)
 _Optional keyword_ |  `enabled`
@@ -290,7 +284,7 @@ In the following example an element is tagged as invisible. This element is trea
 ## Table of content for quick random access
 
 _Footnote Purpose_ | Table of content: pointer to elements in a list or dict
---- | --- 
+:---|:--- 
 _Footnote type_ | array of unsigned integer (`i`,`j`,`k`,`l`)
 _Footnote value_ | relative byte offset to the list elements from the the footnote start `*` 
 _Optional keyword_ |  `TOC`
@@ -307,7 +301,6 @@ This example shows short list with mixed types and a table of content with offse
 [7, "seven", 7.77]
 
 Xeno:
-
 [*] [3] [i]                # uint8 array of length 3
         (7) (9) (16)       # offsets to the elements
 [[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
@@ -317,7 +310,7 @@ Xeno:
 ## Element links
 
 _Footnote Purpose_ | Pointers to elements instead of the data itself
---- | --- 
+:---|:--- 
 _Footnote type_ | String (`s`)
 _Footnote value_ | `@`
 _Element value_ | Unsigned integer (`i`,`j`,`k`,`l`) with absolute address of actual element
@@ -337,7 +330,6 @@ In this example imagine that a data structure contains some very big elements:
 }
 
 Xeno:
-
 [[]  # List
     # Data Structure with links instead of actual data elements
     [{]
