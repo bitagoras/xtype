@@ -19,26 +19,26 @@ Properties
 
 ### Features of the grammar
 
-1. Basic boolean, integer, floating point data types and strings
-2. Arrays, multi-dimensional arrays
-3. Structured types, struct arrays
-4. Lists of arbitrary elements with mixed types
-5. Objects or dictionaries with key/value pairs for arbitrary elements
-6. Unlimited hierarchy levels
-7. New data can be appended to log files even the syntax is already valid and completed
-8. Elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
+* Basic boolean, integer, floating point data types and strings
+* Arrays, multi-dimensional arrays
+* Structured types, struct arrays
+* Lists of arbitrary elements with mixed types
+* Objects or dictionaries with key/value pairs for arbitrary elements
+* Unlimited hierarchy levels
+* New data can be appended to log files even the syntax is already valid and completed
+* Elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
 
 ### Possible format extensions by user-defined footnotes
 
-1. Table of contents
-2. Fast random access to certain sub-elements in big files
-3. Fast deletion and addition of elements in big files
-4. Chunk data mode for efficient writing and reading of big files
-5. Checksums for integrity checks
-6. Date and time notation formats
-7. Notation of physical units
-8. Values and arrays with complex numbers
-9. Elements with data compression
+* Table of contents
+* Fast random access to certain sub-elements in big files
+* Fast deletion and addition of elements in big files
+* Chunk data mode for efficient writing and reading of big files
+* Checksums for integrity checks
+* Date and time notation formats
+* Notation of physical units
+* Values and arrays with complex numbers
+* Elements with data compression
 
 Grammar
 -------
