@@ -1,4 +1,4 @@
-# Xeno (format) <img src="figures/Xeno_logo.png" width="40" align="right">
+# Xeno (format) <img src="figures/Xeno_logo.png" width="50" align="right">
 
 A universal binary data language
 
