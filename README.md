@@ -77,7 +77,7 @@ The grammar is defined and explained by graphical figures. The red round boxes r
 | `d`    | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
 | `s`    | str/utf-8 | 1     | ascii / utf-8 string           | no other coding than utf-8 is specified       |
 | `u`    | utf-16    | 2     | unicode string in utf-16       |                                               |
-| `e`    | element   | 1     | element as defined in grammar  | Encapsulated element in array of e            |
+| `e`    | element   | 1     | element as defined in grammar  | For encapsulated elements in arrays of e      |
 | `x`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
 
 A special basic data type is `e` to enclose Xeno elements in an array of bytes. This acts as an additional size information for elements and helps to parse a file more quickly by stepping over large elements.
