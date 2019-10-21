@@ -1,4 +1,4 @@
-# Xenote (format) <img src="figures/Xenote.png" width="110" align="right">
+# Xenote (format) <img src="figures/Xenote.png" width="120" align="right">
 
 A universal binary data language
 
