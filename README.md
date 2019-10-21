@@ -9,6 +9,8 @@ Xeno is a general-purpose description language for binary data. It is supposed t
 
 The name Xeno derives from the ancient Greek word ξένος (_alien_), which well describes the property of a non-human-readable binary language.
 
+Currently it exists neither a Xeno library nor a Xeno editor or reader.
+
 Basic idea
 ----------
 
@@ -43,7 +45,7 @@ Properties
 Grammar
 -------
 
-The grammar is defined and explained by graphical figures. The red round boxes represent data to be written. Single black characters in those boxes are stored directly as ASCII characters. Green boxes require nested grammer rules.
+The grammar is entirely defined and explained by graphical figures. The green boxes require nested grammar rules. Red round boxes represent data to be written. Single black characters in those boxes are stored directly as ASCII characters. Red symbols in the red boxes are placeholders for certain other ASCII characters, as shown.
 
 <p align="center"><img src="figures/Xeno_file.png"></p>
 
@@ -77,7 +79,7 @@ The grammar is defined and explained by graphical figures. The red round boxes r
 | `d`    | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
 | `s`    | str/utf-8 | 1     | ascii / utf-8 string           | no other coding than utf-8 is specified       |
 | `u`    | utf-16    | 2     | unicode string in utf-16       |                                               |
-| `e`    | element   | 1     | element as defined in grammar  | Encapsulated element in array of e            |
+| `e`    | element   | 1     | element as defined in grammar  | For encapsulated elements in arrays of e      |
 | `x`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
 
 A special basic data type is `e` to enclose Xeno elements in an array of bytes. This acts as an additional size information for elements and helps to parse a file more quickly by stepping over large elements.
@@ -85,7 +87,7 @@ A special basic data type is `e` to enclose Xeno elements in an array of bytes. 
 Examples
 --------
 
-In the examples below, characters in brackets `[ ]` symbolize characters that are directly stored as their ASCII values. Parentheses `( )` show readable representations of the corresponding binary data. If no type is noted for integers in parentheses the type is uint8. All examples are valid and complete Xeno files. No additional header is required. That's simple, isn't it?
+In the examples below, characters in brackets `[ ]` symbolize characters that are directly stored as their ASCII values. Parentheses `( )` show readable representations of the corresponding binary data. All examples are valid and complete Xeno files. No additional header is required. That's simple, isn't it?
 
 * **String**:
 
@@ -226,7 +228,7 @@ _Footnote value_ | 1234
 
 **Explanation:**
 
-This is a footnote for the beginning of the file to indicate the byte order (little or big endian) and acts as the file signature with four magic bytes. The 16-bit signed integer has the defined value 1234. A Xeno reader with the wrong byte order would recocnize the number as -11772. If no such File signature is given, the Xeno format is specified for little endian byte order.
+This is a footnote for the beginning of the file to indicate the byte order (little or big endian) and acts as the file signature with four magic bytes. The 16-bit signed integer has the defined value 1234. A Xeno reader with the wrong byte order would recognize the number as -11772. If no such File signature is given, the Xeno format is specified for little endian byte order.
 
 ```
 Xeno: [*] [J] (1234)
