@@ -205,7 +205,7 @@ The content of the `footnote` element gives information and hints about how to r
 
 Information about jump positions in table of contents are given, as a convention, relative to the `*` character of the footnote. This position has to be remembered by the parser as the reference position.
 
-Footnotes with several information items can be organized in lists or dicts, or footnotes can be nested, as for example:
+Footnotes with several information items can be organized in lists or dicts, or multiple footnotes can be concatenated, as for example:
 ```
 [*] (footnote with unit) [*] (footnote with table of content) (data of type list)
 ```
