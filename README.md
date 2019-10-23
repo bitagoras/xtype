@@ -1,15 +1,13 @@
-# Xenote (format) <img src="figures/Xenote.png" width="120" align="right">
+# xtype (format) <img src="figures/logo_xtype.png" width="50" align="right">
 
-A universal binary data language
+A universal binary notation language
 
 Overview
 --------
 
-Xenote is a general-purpose description language for binary data. It is supposed to be a binary equivalent to text formats like [XML](https://www.w3.org/XML/) and [JSON](http://www.json.org/) without their limitations of efficiency. Xenote is also suitable for the representation of typical C and Python data structures and offers a lightweight alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage.
+xtype is a universal binary notation language for hierarchical data structures. It is supposed to be a binary equivalent to text formats like [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency. xtype is also suitable for the representation of typical C and Python data structures and offers a lightweight alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage.
 
-Since Xenote defines a none human-readable notation, the name is composed of "_xeno_" from the Greek word ξένος (_alien_) and "_note_" from notation.
-
-So far there exists neither a Xenote library nor a Xenote editor or reader.
+So far there exists neither a xtype library nor a xtype editor or reader.
 
 Basic idea
 ----------
@@ -47,19 +45,19 @@ Grammar
 
 The grammar is entirely defined and explained by graphical figures. The green boxes require nested grammar rules. Red round boxes represent data to be written. Single black characters in those boxes are stored directly as ASCII characters. Red symbols in the red boxes are placeholders for certain other ASCII characters, as shown.
 
-<p align="center"><img src="figures/Xenote_file.png"></p>
+<p align="center"><img src="figures/xtype_file.png"></p>
 
-<p align="center"><img src="figures/Xenote_element.png"></p>
+<p align="center"><img src="figures/xtype_element.png"></p>
 
-<p align="center"><img src="figures/Xenote_list.png"></p>
+<p align="center"><img src="figures/xtype_list.png"></p>
 
-<p align="center"><img src="figures/Xenote_dict.png"></p>
+<p align="center"><img src="figures/xtype_dict.png"></p>
 
-<p align="center"><img src="figures/Xenote_value.png"></p>
+<p align="center"><img src="figures/xtype_value.png"></p>
 
-<p align="center"><img src="figures/Xenote_type.png"></p>
+<p align="center"><img src="figures/xtype_type.png"></p>
 
-<p align="center"><img src="figures/Xenote_length.png"></p>
+<p align="center"><img src="figures/xtype_length.png"></p>
 
 ## Types
 
@@ -82,19 +80,19 @@ The grammar is entirely defined and explained by graphical figures. The green bo
 | `e`    | element   | 1     | element as defined in grammar  | For encapsulated elements in arrays of e      |
 | `x`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
 
-A special basic data type is `e` to enclose Xenote elements in an array of bytes. This acts as an additional size information for elements and helps to parse a file more quickly by stepping over large elements.
+A special basic data type is `e` to enclose xtype elements in an array of bytes. This acts as an additional size information for elements and helps to parse a file more quickly by stepping over large elements.
 
 Examples
 --------
 
-In the examples below, characters in brackets `[ ]` symbolize characters that are directly stored as their ASCII values. Parentheses `( )` show readable representations of the corresponding binary data. All examples are valid and complete Xenote files. No additional header is required. That's simple, isn't it?
+In the examples below, characters in brackets `[ ]` symbolize characters that are directly stored as their ASCII values. Parentheses `( )` show readable representations of the corresponding binary data. All examples are valid and complete xtype files. No additional header is required. That's simple, isn't it?
 
 * **String**:
 
 ```
 "hello world"
 
-Xenote: [m] (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
+xtype: [m] (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
 hex:  6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 
@@ -103,7 +101,7 @@ hex:  6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 1025
 
-Xenote:
+xtype:
       [j] (uint16: 1025)
 hex:  6A 01 04
 ```
@@ -113,7 +111,7 @@ hex:  6A 01 04
 ```
 [10, 200, 255]
 
-Xenote:
+xtype:
        [3] [i] (uint8: 10) (uint8: 200) (uint8: 255)
 hex:   33  69          0A           C8           FF   
 ```
@@ -123,7 +121,7 @@ hex:   33  69          0A           C8           FF
 ```
 [7, "seven", 7.77]
 
-Xenote:
+xtype:
 [[] [i] (uint8: 7) (uint8: 5) [s] [seven] [d] (float64: 7.77) []]
 ```
 
@@ -132,7 +130,7 @@ Xenote:
 ```
 [(uint8) 7, (string*5) "seven", (double) 7.77]
 
-Xenote:
+xtype:
 [(] [i] [5] [s] [d] [)] (uint8: 7) [seven] (float64: 7.77)
 ```
 
@@ -143,7 +141,7 @@ Xenote:
   [2.2, 4.4, 6.6],
   [3.3, 5.5, 7.7] ]
   
-Xenote:  
+xtype:  
 [3]
     [3] [d]
         (float64: 1.1) (3.3) (5.5)
@@ -154,7 +152,7 @@ Xenote:
 * **800 x 600 x 3 RGB Image:**
 
 ```
-Xenote:
+xtype:
 [n] (uint16: 800)
     [n] (uint16: 600)
         [3] [i]
@@ -170,7 +168,7 @@ Xenote:
   "habitable": True
 }
 
-Xenote:
+xtype:
 [{]
     [6] [s] [planet] [9] [s] [Proxima b]
     [4] [s] [mass] [d] (float64: 1.27)
@@ -187,7 +185,7 @@ Xenote:
   [3.3,    5.5,    7.7],
   [4.4,    6.6,    8.8] ]
 
-Xenote:
+xtype:
 [[]
     [[]
         [3] [s] [lon]
@@ -230,10 +228,10 @@ _Footnote value_ | 1234
 
 **Explanation:**
 
-This is a footnote at the very beginning of the file to indicate the byte order (little or big endian) and acts as the file signature with four magic bytes. The 16-bit signed integer has the defined value of 1234. A Xenote reader with the wrong byte order would recognize the number as -11772. If no such File signature is given, Xenote is specified for little endian byte order.
+This is a footnote at the very beginning of the file to indicate the byte order (little or big endian) and acts as the file signature with four magic bytes. The 16-bit signed integer has the defined value of 1234. A xtype reader with the wrong byte order would recognize the number as -11772. If no such File signature is given, xtype is specified for little endian byte order.
 
 ```
-Xenote: [*] [J] (1234)
+xtype: [*] [J] (1234)
 hex:  2A  4A  D2 04    # little endian (default)
 hex:  2A  4A  04 D2    # big endian
 ```
@@ -241,7 +239,7 @@ hex:  2A  4A  04 D2    # big endian
 **Example:**
 
 ```
-Xenote file:
+xtype file:
 [*] [J] (1234) (data of the file)
 ```
 
@@ -304,7 +302,7 @@ This example shows short list with mixed types and a table of content with offse
 ```
 [7, "seven", 7.77]
 
-Xenote:
+xtype:
 [*] [3] [i]                # uint8 array of length 3
         (7) (9) (16)       # offsets to the elements
 [[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
@@ -333,7 +331,7 @@ In this example imagine that a data structure contains some very big elements:
   'folder1': {'fileA': 'bigdata2', 'fileB': 'bigdata3'}
 }
 
-Xenote:
+xtype:
 [[]  # List
     # Data Structure with links instead of actual data elements
     [{]
