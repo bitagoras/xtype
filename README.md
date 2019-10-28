@@ -5,7 +5,7 @@ A universal binary notation language
 Overview
 --------
 
-xtype is a universal binary notation language for hierarchical data structures for data exchange or storage. It is supposed to be a binary equivalent to text formats like [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency. xtype is also suitable for the representation of typical C and Python data structures and offers a lightweight alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage.
+xtype is a universal binary notation language for the exchange and storage of hierarchically structured data. It is supposed to be a binary equivalent to text formats like [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency. xtype is also suitable for the representation of typical C and Python data structures and offers a lightweight alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage.
 
 So far there exists neither a xtype library nor a xtype editor or reader.
 
