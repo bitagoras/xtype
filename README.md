@@ -80,7 +80,7 @@ The grammar is entirely defined and explained by graphical figures. The green bo
 | `e`    | element   | 1     | element as defined in grammar  | For encapsulated elements in arrays of e      |
 | `x`    | byte      | 1     | user defined data byte         | special structs, compressed data etc.         |
 
-A special basic data type is `e` to enclose xtype elements in an array of bytes. This acts as an additional size information for elements and helps to parse a file more quickly by stepping over large elements.
+The special basic data type `e` is used to enclose xtype elements in an array of bytes. This acts as an additional size information for elements and helps to parse a file more quickly by stepping over large elements.
 
 Examples
 --------
