@@ -7,12 +7,12 @@ Overview
 
 xtype is a universal binary notation language for the exchange and storage of hierarchically structured data. It is supposed to be a binary equivalent to text formats like [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency. xtype is also suitable for the representation of typical C and Python data structures and offers a lightweight alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage.
 
-So far there exists neither a xtype library nor a xtype editor or reader.
+Up to now there exists neither a xtype library nor a xtype editor or reader.
 
 Basic idea
 ----------
 
-The grammar tries to be minimalistic while it covers all possible application cases. Missing features of the format can be added by so-called _footnotes_. As in books, footnotes can be ignored while reading, but provide additional background information on the meaning or context. A footnote adds user-defined meta data to the element, which allows the application to read or understand the data in a new specific way.
+The grammar tries to be minimalistic while it covers all possible application cases. Missing features of the format can be added by so-called _footnotes_. Similar to books, footnotes can be ignored while reading, but provide additional background information on the meaning or context. A footnote adds user-defined meta data to the element, which allows the application to read or understand the data in a specific way.
 
 Properties
 ----------
@@ -46,17 +46,12 @@ Grammar
 The grammar is entirely defined and explained by graphical figures. The green boxes require nested grammar rules. Red round boxes represent data to be written. Single non-italic black characters in those red boxes are stored directly as ASCII characters. Red symbols in the red boxes are placeholders for certain other ASCII characters, as shown.
 
 <p align="center"><img src="figures/xtype_file.png"></p>
-
 <p align="center"><img src="figures/xtype_element.png"></p>
-
+<p align="center"><img src="figures/xtype_content.png"></p>
 <p align="center"><img src="figures/xtype_list.png"></p>
-
 <p align="center"><img src="figures/xtype_dict.png"></p>
-
 <p align="center"><img src="figures/xtype_value.png"></p>
-
 <p align="center"><img src="figures/xtype_type.png"></p>
-
 <p align="center"><img src="figures/xtype_length.png"></p>
 
 ## Types
@@ -113,7 +108,7 @@ hex:  6A 01 04
 
 xtype:
        [3] [i] (uint8: 10) (uint8: 200) (uint8: 255)
-hex:   33  69          0A           C8           FF   
+hex:   33  69          0A           C8           FF
 ```
 
 * **List with integer, string and float:**
@@ -140,8 +135,8 @@ xtype:
 [ [1.1, 3.3, 5.5],
   [2.2, 4.4, 6.6],
   [3.3, 5.5, 7.7] ]
-  
-xtype:  
+
+xtype:
 [3]
     [3] [d]
         (float64: 1.1) (3.3) (5.5)
@@ -211,18 +206,13 @@ Footnotes with several information items can be organized in lists or dicts, or 
 ```
 [*] (footnote with unit) [*] (footnote with table of content) (data of type list)
 ```
-Footnote elements can have a string identifier keyword to indicate the purpose of the footnote or to identify a use-case specific meta language. The string identifiers are a footnote to the footnote, e.g.:
-
-```
-[*] [*] (meta language string identifier) [{] (dict with meta information) [}] (data element)
-```
 
 ## Default Footnote Meta Language Elements
 
 ### File signature
 
 _Footnote Purpose_ | File signature and byte order mark
-:---|:--- 
+:---|:---
 _Footnote type_ | 16-bit signed integer (`J`)
 _Footnote value_ | 1234
 
@@ -246,7 +236,7 @@ xtype file:
 ### Deleted element
 
 _Footnote Purpose_ | Flags an element as deleted
-:---|:--- 
+:---|:---
 _Footnote type_ | None
 _Footnote value_ | `N` (_None_)
 
@@ -266,7 +256,7 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 ### Element visibility
 
 _Footnote Purpose_ | Flags an element as visible or invisible / disabled
-:---|:---  
+:---|:---
 _Footnote type_ | boolean `T` or `F`
 _Footnote value_ | `T` (true for visible / enabled), `F` (false for invisible / disabled)
 
@@ -286,9 +276,9 @@ In the following example an element is tagged as invisible. This element is trea
 ## Table of content for quick random access
 
 _Footnote Purpose_ | Table of content: pointer to elements in a list or dict
-:---|:--- 
+:---|:---
 _Footnote type_ | array of unsigned integer (`i`,`j`,`k`,`l`)
-_Footnote value_ | relative byte offset to the list elements from the the footnote start `*` 
+_Footnote value_ | relative byte offset to the list elements from the the footnote start `*`
 _Optional keyword_ |  `TOC`
 
 **Explanation:**
@@ -306,13 +296,13 @@ xtype:
 [*] [3] [i]                # uint8 array of length 3
         (7) (9) (16)       # offsets to the elements
 [[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
-     ^              ^                      ^   # target positions 
+     ^              ^                      ^   # target positions
 ```
 
 ## Element links
 
 _Footnote Purpose_ | Pointers to elements instead of the data itself
-:---|:--- 
+:---|:---
 _Footnote type_ | String (`s`)
 _Footnote value_ | `@`
 _Element value_ | Unsigned integer (`i`,`j`,`k`,`l`) with absolute address of actual element
@@ -337,7 +327,7 @@ xtype:
     [{]
         [5] [s] [file1]
             [*] [s] [@] [i] (...)  # Link to element bigdata1
-        [{] 
+        [{]
             [5] [s] [fileA]
                 [*] [s] [@] [i] (...)  # Link to element bigdata2
             [5] [s] [fileB]
