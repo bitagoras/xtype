@@ -84,7 +84,7 @@ In the examples below, characters in brackets `[ ]` symbolize characters that ar
 
 * **String**:
 
-```json5
+```J
 "hello world"
 
 xtype: [m] (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
@@ -93,7 +93,7 @@ hex:   6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 
 * **Integer:**
 
-```json5
+```J
 1025
 
 xtype:
@@ -103,7 +103,7 @@ hex:  6A 01 04
 
 * **3d vector of type uint8:**
 
-```json5
+```J
 [10, 200, 255]
 
 xtype:
@@ -113,7 +113,7 @@ hex:   33  69          0A           C8           FF
 
 * **List with integer, string and float:**
 
-```json5
+```J
 [7, "seven", 7.77]
 
 xtype:
@@ -122,7 +122,7 @@ xtype:
 
 * **Struct with integer, string and float:**
 
-```json5
+```J
 [(uint8) 7, (string*5) "seven", (double) 7.77]
 
 xtype:
@@ -131,7 +131,7 @@ xtype:
 
 * **3 x 3 matrix of double:**
 
-```json5
+```J
 [ [1.1, 3.3, 5.5],
   [2.2, 4.4, 6.6],
   [3.3, 5.5, 7.7] ]
@@ -146,7 +146,7 @@ xtype:
 
 * **800 x 600 x 3 RGB Image:**
 
-```json5
+```J
 xtype:
 [n] (uint16: 800)
     [n] (uint16: 600)
@@ -156,7 +156,7 @@ xtype:
 
 * **Object:**
 
-```json5
+```J
 {
   "planet": "Proxima b",
   "mass": 1.27,
@@ -173,7 +173,7 @@ xtype:
 
 * **4 x 3 table of doubles with named colums "lon", "lat", "h":**
 
-```json5
+```J
 [ ["lon", "lat",   "h"],
   [1.1,    3.3,    5.5],
   [2.2,    4.4,    6.6],
@@ -203,7 +203,7 @@ The content of the `footnote` element gives information and hints about how to r
 Information about jump positions in table of contents are given, as a convention, relative to the `*` character of the footnote. This position has to be remembered by the parser as the reference position.
 
 Footnotes with several information items can be organized in lists or dicts, or multiple footnotes can be concatenated, as for example:
-```json5
+```J
 [*] (footnote with unit) [*] (footnote with table of content) (data of type list)
 ```
 
@@ -220,7 +220,7 @@ _Footnote value_ | 1234
 
 This is a footnote at the very beginning of the file to indicate the byte order (little or big endian) and acts as the file signature with four magic bytes. The 16-bit signed integer has the defined value of 1234. A xtype reader with the wrong byte order would recognize the number as -11772. If no such File signature is given, xtype is specified for little endian byte order.
 
-```json5
+```J
 xtype: [*] [J] (1234)
 hex:  2A  4A  D2 04    # little endian (default)
 hex:  2A  4A  04 D2    # big endian
@@ -228,7 +228,7 @@ hex:  2A  4A  04 D2    # big endian
 
 **Example:**
 
-```json5
+```J
 xtype file:
 [*] [J] (1234) (data of the file)
 ```
@@ -248,7 +248,7 @@ This footnote tags an element as deleted. This is useful for big files when an e
 
 In the following example an element with 10000 bytes is tagged as deleted. The included footnote and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be changed to remove the whole element.
 
-```json5
+```J
 [*] [N]
 [n] (uint16: 9994) [x] (data with 9994 byte)
 ```
@@ -269,7 +269,7 @@ This footnote type tags an element as invisible, when the value is set to false.
 
 In the following example an element is tagged as invisible. This element is treated as non-exisiting, but the element will not be deleted when the file is rebuilt, since the content is used for a certain purpose.
 
-```json5
+```J
 [*] [F] (some element)
 ```
 
@@ -289,7 +289,7 @@ This footnote type allows to access elements of lists or dicts in large data fil
 
 This example shows short list with mixed types and a table of content with offsets
 
-```json5
+```J
 [7, "seven", 7.77]
 
 xtype:
@@ -315,7 +315,7 @@ The content of the element is replaced by an unsigned integer (`i`,`j`,`k`,`l`) 
 
 In this example imagine that a data structure contains some very big elements:
 
-```json5
+```J
 {
   "file1": "bigdata1",
   "folder1": {"fileA": "bigdata2", "fileB": "bigdata3"}
