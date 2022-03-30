@@ -350,6 +350,6 @@ xtype:
     [8] [s] [bigdata2]   # Link target with actual data
     [8] [s] [bigdata3]   # Link target with actual data
 
-# No []] at the end to append more elements in future
+# No []] at the end. This allows to append more elements later.
 
 ```
