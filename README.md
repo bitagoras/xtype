@@ -27,7 +27,7 @@ Properties
 * Lists of arbitrary elements with mixed types
 * Objects or dictionaries with key/value pairs for arbitrary elements
 * Unlimited hierarchy levels
-* Log files can be written sequentially, while the syntax is valid and complete in each step
+* A log file format allows to append elements sequentially while the syntax is valid and complete after every update
 * All elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
 
 ### Possible format extensions by user-defined footnotes (meta information)
