@@ -27,10 +27,10 @@ Properties
 * Lists of arbitrary elements with mixed types
 * Objects or dictionaries with key/value pairs for arbitrary elements
 * Unlimited hierarchy levels
-* New data can be appended to log files even the syntax is already valid and completed
-* Elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
+* Log files can be written sequentially, while the syntax is valid and complete in each step
+* All elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
 
-### Possible format extensions by user-defined footnotes
+### Possible format extensions by user-defined footnotes (meta information)
 
 * Table of contents
 * Fast random access to certain sub-elements in big files
