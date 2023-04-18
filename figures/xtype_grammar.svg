@@ -24,10 +24,10 @@
      showguides="true"
      inkscape:current-layer="svg5993"
      inkscape:window-maximized="0"
-     inkscape:window-y="8"
-     inkscape:window-x="879"
-     inkscape:cy="798.22042"
-     inkscape:cx="339.97026"
+     inkscape:window-y="0"
+     inkscape:window-x="366"
+     inkscape:cy="654.93276"
+     inkscape:cx="277.78882"
      inkscape:zoom="0.7397706"
      inkscape:snap-global="true"
      showgrid="false"
@@ -146,22 +146,22 @@
      inkscape:connector-curvature="0"
      id="path5577"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
-     d="m 257.83913,878.27679 h 5.10391 c 4.57609,0 6.8037,3.27155 6.8037,7.87196 v 49.70568 c 0,4.67699 1.87307,8.58149 6.90703,8.58149 h 214.03411 c 5.03397,0 6.90704,-3.9045 6.90704,-8.58149 v -49.70568 c 0,-4.60041 2.2276,-7.87196 6.8037,-7.87196 h 4.03247" />
+     d="m 257.83913,868.35651 h 5.10391 c 4.57609,0 6.8037,3.27155 6.8037,7.87196 v 49.70568 c 0,4.67699 1.87307,8.58149 6.90703,8.58149 h 214.03411 c 5.03397,0 6.90704,-3.9045 6.90704,-8.58149 v -49.70568 c 0,-4.60041 2.2276,-7.87196 6.8037,-7.87196 h 4.03247" />
   <path
      inkscape:connector-curvature="0"
      id="path5601"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
-     d="m 269.74673,886.23519 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 214.03411 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146" />
+     d="m 269.74673,876.31491 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 214.03411 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146" />
   <path
      inkscape:connector-curvature="0"
-     d="m 269.74673,919.31466 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 214.03411 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146"
+     d="m 269.74673,909.39438 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 214.03411 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
      id="path5571" />
   <path
      inkscape:connector-curvature="0"
      id="path5575"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
-     d="m 269.77111,902.77493 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 H 490.6207 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146" />
+     d="m 269.77111,892.85465 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 H 490.6207 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146" />
   <use
      x="0"
      y="0"
@@ -191,18 +191,9 @@
      style="opacity:1;stop-opacity:1" />
   <circle
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
-     id="use5055"
-     cx="236.93646"
-     cy="490.49017"
-     r="3.4343083"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <circle
-     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      id="use5059"
      cx="236.93646"
-     cy="366.2139"
+     cy="356.29364"
      r="3.4343083"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
      inkscape:export-xdpi="96"
@@ -210,7 +201,7 @@
   <path
      inkscape:connector-curvature="0"
      id="path4749"
-     d="M 237.0401,366.2139 H 534.85511"
+     d="M 237.0401,356.29362 H 534.85511"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
      inkscape:export-xdpi="96"
@@ -219,197 +210,37 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="199.01855"
-     y="371.33994"
+     y="361.41968"
      id="text4769"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan4767"
        x="199.01855"
-       y="371.33994">list</tspan></text>
+       y="361.41968">list</tspan></text>
   <path
      inkscape:connector-curvature="0"
      id="path6605"
-     d="m 271.02561,371.14598 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99377 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
+     d="m 271.02561,361.2257 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99377 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
      style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <text
      id="text6563"
-     y="370.25128"
+     y="360.33102"
      x="258.80722"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:100%;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
-       y="370.25128"
+       y="360.33102"
        x="258.80722"
        id="tspan6565">[</tspan></text>
   <path
      inkscape:connector-curvature="0"
-     d="m 262.71548,527.36959 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 236.53411 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146"
-     style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
-     id="path4853"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <path
-     inkscape:connector-curvature="0"
-     id="path4855"
-     d="M 237.0401,490.49019 H 534.85511"
-     style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
-     x="181.46849"
-     y="495.61627"
-     id="text4875"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       style="line-height:14.4531px"
-       id="tspan4873"
-       x="181.46849"
-       y="495.61627">value</tspan></text>
-  <path
-     inkscape:connector-curvature="0"
-     id="path4893"
-     style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
-     d="m 262.73986,509.29587 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 236.44256 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <rect
-     y="480.77612"
-     x="288.76199"
-     height="19.428198"
-     width="50.339405"
-     id="rect4909"
-     style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <text
-     id="text4913"
-     y="494.82404"
-     x="296.80798"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
-     xml:space="preserve"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"><tspan
-       style="line-height:14.4531px"
-       y="494.82404"
-       x="296.80798"
-       id="tspan4911">type</tspan></text>
-  <path
-     inkscape:connector-curvature="0"
-     id="path4941"
-     style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
-     d="m 250.80788,490.49019 h 5.10391 c 4.57609,0 6.8037,3.27155 6.8037,7.87196 v 45.95568 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 236.53411 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146 v -45.95568 c 0,-4.60041 2.2276,-7.87196 6.8037,-7.87196 h 4.03247"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <g
-     transform="translate(85.001742,62.299508)"
-     id="g4946"
-     style="opacity:1;stop-opacity:1"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96">
-    <use
-       height="100%"
-       width="100%"
-       transform="translate(-47.34694,62.443704)"
-       id="use5262"
-       xlink:href="#path6605"
-       y="0"
-       x="0" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#path6605"
-       id="use5264"
-       transform="translate(-0.85104,79.59704)"
-       width="100%"
-       height="100%" />
-    <use
-       height="100%"
-       width="100%"
-       transform="translate(46.814976,96.54528)"
-       id="use5266"
-       xlink:href="#path6605"
-       y="0"
-       x="0" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.4531px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="211.94856"
-       y="459.89221"
-       id="text4933"><tspan
-         id="tspan4931"
-         x="211.94856"
-         y="459.89221"
-         style="line-height:14.4531px">T</tspan></text>
-    <text
-       id="text4939"
-       y="477.41174"
-       x="258.58942"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.4531px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="477.41174"
-         x="258.58942"
-         id="tspan4937"
-         style="line-height:14.4531px">F</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.4531px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="306.53772"
-       y="493.62756"
-       id="text4947"><tspan
-         id="tspan4945"
-         x="306.53772"
-         y="493.62756"
-         style="line-height:14.4531px">N</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="228.09448"
-       y="452.58783"
-       id="text4965"><tspan
-         id="tspan4963"
-         x="228.09448"
-         y="452.58783"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">true</tspan></text>
-    <text
-       id="text4969"
-       y="470.54916"
-       x="274.63751"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="470.54916"
-         x="274.63751"
-         id="tspan4967"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">false</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="322.93088"
-       y="487.40494"
-       id="text4973"><tspan
-         id="tspan4971"
-         x="322.93088"
-         y="487.40494"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">null / none</tspan></text>
-  </g>
-  <path
-     inkscape:connector-curvature="0"
-     d="m 330.2528,366.2139 h -3.22891 c -4.56314,0 -6.8037,3.77913 -6.8037,7.87196 v 4.91552 c 0,4.67697 1.87307,8.58145 6.90703,8.58145 h 93.12591 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58145 v -4.91552 c 0,-4.27747 -2.22372,-7.87196 -6.8037,-7.87196 H 418.199"
+     d="m 330.2528,356.29362 h -3.22891 c -4.56314,0 -6.8037,3.77913 -6.8037,7.87196 v 4.91552 c 0,4.67697 1.87307,8.58145 6.90703,8.58145 h 93.12591 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58145 v -4.91552 c 0,-4.27747 -2.22372,-7.87196 -6.8037,-7.87196 H 418.199"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
      id="path4803"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
@@ -417,54 +248,37 @@
      inkscape:export-ydpi="96" />
   <circle
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
-     id="use5061"
-     cx="534.42639"
-     cy="490.49017"
-     r="3.4343083"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <circle
-     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      id="use5065"
      cx="534.42639"
-     cy="366.2139"
+     cy="356.29364"
      r="3.4343083"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <path
      inkscape:connector-curvature="0"
-     d="m 469.14971,366.2139 h 3.22891 c 4.57609,0 6.8037,3.27155 6.8037,7.87196 v 10.93373 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 7.99818"
+     d="m 469.14971,356.29362 h 3.22891 c 4.57609,0 6.8037,3.27155 6.8037,7.87196 v 10.93373 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 7.99818"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
      id="path4787"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
-  <g
-     transform="translate(105.89506,118.12124)"
-     id="g1294"
-     style="opacity:1;stop-opacity:1"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96">
-    <rect
-       y="265.47827"
-       x="397.68185"
-       height="19.428198"
-       width="33.28381"
-       id="rect4789"
-       style="opacity:1;fill:#c4dbff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <text
-       id="text4793"
-       y="280.31842"
-       x="401.59091"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="280.31842"
-         x="401.59091"
-         id="tspan4791">eof</tspan></text>
-  </g>
+  <rect
+     y="373.67923"
+     x="503.5769"
+     height="19.428198"
+     width="33.28381"
+     id="rect4789"
+     style="fill:#c4dbff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <text
+     id="text4793"
+     y="388.51938"
+     x="507.48596"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"><tspan
+       y="388.51938"
+       x="507.48596"
+       id="tspan4791">eof</tspan></text>
   <use
      x="0"
      y="0"
@@ -481,33 +295,33 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:100%;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="501.47949"
-     y="370.25128"
+     y="360.33102"
      id="text4801"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan4799"
        x="501.47949"
-       y="370.25128">]</tspan></text>
+       y="360.33102">]</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="173.9221"
-     y="883.40283"
+     y="873.48254"
      id="text5410"><tspan
        id="tspan5408"
        x="173.9221"
-       y="883.40283">length</tspan></text>
+       y="873.48254">length</tspan></text>
   <circle
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      id="use5569"
      cx="236.93646"
-     cy="878.27679"
+     cy="868.35651"
      r="3.4343083" />
   <path
      inkscape:connector-curvature="0"
      id="path5573"
-     d="M 237.0401,878.27679 H 534.85511"
+     d="M 237.0401,868.35651 H 534.85511"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1" />
   <use
      x="0"
@@ -529,27 +343,27 @@
      style="opacity:1;stop-opacity:1" />
   <text
      id="text5585"
-     y="898.18201"
+     y="888.26172"
      x="391.99249"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"><tspan
-       y="898.18201"
+       y="888.26172"
        x="391.99249"
        id="tspan5583">m</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="288.88443"
-     y="914.74554"
+     y="904.82526"
      id="text5589"><tspan
        id="tspan5587"
        x="288.88443"
-       y="914.74554">n</tspan></text>
+       y="904.82526">n</tspan></text>
   <circle
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      id="use5599"
      cx="534.42639"
-     cy="878.27679"
+     cy="868.35651"
      r="3.4343083" />
   <use
      height="100%"
@@ -571,11 +385,11 @@
      style="opacity:1;stop-opacity:1" />
   <text
      id="text5070"
-     y="947.15753"
+     y="937.23724"
      x="289.15527"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"><tspan
-       y="947.15753"
+       y="937.23724"
        x="289.15527"
        id="tspan5068">p</tspan></text>
   <use
@@ -591,28 +405,28 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="392.03827"
-     y="931.14313"
+     y="921.22284"
      id="text5093"><tspan
        id="tspan5091"
        x="392.03827"
-       y="931.14313">o</tspan></text>
+       y="921.22284">o</tspan></text>
   <path
      inkscape:connector-curvature="0"
      id="path5113"
-     d="m 315.13752,921.04018 c -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -6.24377 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 h 53.90625 c 3.61733,0 6.54976,2.96488 6.54976,6.62224 v 6.24377 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 z"
+     d="m 315.13752,911.1199 c -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -6.24377 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 h 53.90625 c 3.61733,0 6.54976,2.96488 6.54976,6.62224 v 6.24377 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 z"
      style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1" />
   <text
      id="text5117"
-     y="914.86975"
+     y="904.94946"
      x="313.0658"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="914.86975"
+       y="904.94946"
        x="313.0658"
        id="tspan5115">uint16:</tspan></text>
   <g
-     transform="translate(100.00175,261.91229)"
+     transform="translate(100.00175,251.99201)"
      id="g5280"
      style="opacity:1;stop-opacity:1">
     <text
@@ -637,7 +451,7 @@
          style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px">n</tspan></text>
   </g>
   <g
-     transform="translate(100.00175,261.91229)"
+     transform="translate(100.00175,251.99201)"
      id="g5275"
      style="opacity:1;stop-opacity:1">
     <text
@@ -663,16 +477,16 @@
   </g>
   <text
      id="use5261"
-     y="915.06458"
+     y="905.14429"
      x="361.98364"
      style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"><tspan
-       y="915.06458"
+       y="905.14429"
        x="361.98364"
        id="tspan2585"
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px">n</tspan></text>
   <g
-     transform="translate(100.00175,261.91229)"
+     transform="translate(100.00175,251.99201)"
      id="g5270"
      style="opacity:1;stop-opacity:1">
     <text
@@ -700,7 +514,7 @@
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      id="use5057"
      cx="236.93646"
-     cy="428.7627"
+     cy="418.84244"
      r="3.4343083"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
@@ -708,21 +522,21 @@
   <path
      inkscape:connector-curvature="0"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
-     d="M 237.0401,428.76274 H 534.85512"
+     d="M 237.0401,418.84246 H 534.85512"
      id="path4805"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <text
      id="text4813"
-     y="433.88876"
+     y="423.96851"
      x="193.916"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
-       y="433.88876"
+       y="423.96851"
        x="193.916"
        id="tspan4811"
        style="stroke-width:1px">dict</tspan></text>
@@ -742,14 +556,14 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:100%;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="259.77997"
-     y="432.80011"
+     y="422.87985"
      id="text4835"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan4833"
        x="259.77997"
-       y="432.80011"
+       y="422.87985"
        style="stroke-width:1px">{</tspan></text>
   <use
      height="100%"
@@ -765,14 +579,14 @@
      inkscape:export-ydpi="96" />
   <text
      id="text4841"
-     y="432.80011"
+     y="422.87985"
      x="500.54489"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:100%;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
-       y="432.80011"
+       y="422.87985"
        x="500.54489"
        id="tspan4839"
        style="stroke-width:1px">}</tspan></text>
@@ -780,37 +594,29 @@
      inkscape:connector-curvature="0"
      id="path4821"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
-     d="m 469.14972,428.76274 h 3.22891 c 4.57609,0 6.8037,3.27155 6.8037,7.87196 v 10.93373 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 7.99818"
+     d="m 469.14972,418.84246 h 3.22891 c 4.57609,0 6.8037,3.27155 6.8037,7.87196 v 10.93373 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 7.99818"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
-  <g
-     transform="translate(105.89506,101.24624)"
-     id="g1289"
-     style="opacity:1;stop-opacity:1"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96">
-    <rect
-       style="opacity:1;fill:#c4dbff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4823"
-       width="33.28381"
-       height="19.428198"
-       x="397.68185"
-       y="344.9021" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="401.59091"
-       y="359.74228"
-       id="text4827"><tspan
-         id="tspan4825"
-         x="401.59091"
-         y="359.74228">eof</tspan></text>
-  </g>
+  <rect
+     style="fill:#c4dbff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect4823"
+     width="33.28381"
+     height="19.428198"
+     x="503.5769"
+     y="436.22806" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="507.48596"
+     y="451.06824"
+     id="text4827"><tspan
+       id="tspan4825"
+       x="507.48596"
+       y="451.06824">eof</tspan></text>
   <path
      inkscape:connector-curvature="0"
-     d="m 302.21428,428.76274 h -3.22891 c -4.56314,0 -6.8037,3.77913 -6.8037,7.87196 v 14.29052 c 0,4.67697 1.87307,8.58145 6.90703,8.58145 h 149.20297 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58145 V 436.6347 c 0,-4.27747 -2.22372,-7.87196 -6.8037,-7.87196 h -2.15747"
+     d="m 302.21428,418.84246 h -3.22891 c -4.56314,0 -6.8037,3.77913 -6.8037,7.87196 v 14.29052 c 0,4.67697 1.87307,8.58145 6.90703,8.58145 h 149.20297 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58145 v -14.29052 c 0,-4.27747 -2.22372,-7.87196 -6.8037,-7.87196 h -2.15747"
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="path4843"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
@@ -822,7 +628,7 @@
      width="74.689026"
      height="19.428198"
      x="369.42371"
-     y="419.04858"
+     y="409.12833"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
@@ -830,16 +636,16 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="374.94113"
-     y="433.88876"
+     y="423.96851"
      id="text4819"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan4817"
        x="374.94113"
-       y="433.88876">element</tspan></text>
+       y="423.96851">element</tspan></text>
   <rect
-     y="419.04858"
+     y="409.12833"
      x="307.96317"
      height="19.428198"
      width="50.365818"
@@ -850,19 +656,19 @@
      inkscape:export-ydpi="96" />
   <text
      id="text4851"
-     y="433.88876"
+     y="423.96851"
      x="312.31631"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
-       y="433.88876"
+       y="423.96851"
        x="312.31631"
        id="tspan4849">value</tspan></text>
   <text
      id="text5011"
-     y="453.41937"
+     y="443.49911"
      x="319.72049"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
@@ -870,27 +676,27 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="453.41937"
+       y="443.49911"
        x="319.72049"
        id="tspan5009">key</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="387.80154"
-     y="453.41937"
+     y="443.49911"
      id="text5015"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan5013"
        x="387.80154"
-       y="453.41937"
+       y="443.49911"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">value</tspan></text>
   <circle
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      id="use5063"
      cx="534.42639"
-     cy="428.76273"
+     cy="418.84247"
      r="3.4343083"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
@@ -901,7 +707,7 @@
      width="77.361687"
      height="19.428198"
      x="335.00934"
-     y="356.49979"
+     y="346.57953"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
@@ -909,40 +715,14 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="341.8631"
-     y="371.33994"
+     y="361.41968"
      id="text6083"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6081"
        x="341.8631"
-       y="371.33994">element</tspan></text>
-  <path
-     inkscape:connector-curvature="0"
-     id="path5368-3"
-     d="m 362.67649,500.23434 c -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62225 v -6.24377 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 h 121.40625 c 3.61734,0 6.54976,2.96488 6.54976,6.62224 v 6.24377 c 0,3.65738 -2.93242,6.62225 -6.54976,6.62225 z"
-     style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96" />
-  <g
-     id="g5374"
-     transform="translate(147.21892,-192.89274)"
-     style="opacity:1;stop-opacity:1"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96">
-    <text
-       id="text5372-3"
-       y="687.17627"
-       x="213.06406"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-         y="687.17627"
-         x="213.06406"
-         id="tspan5370-0">data (size of type)</tspan></text>
-  </g>
+       y="361.41968">element</tspan></text>
   <path
      inkscape:connector-curvature="0"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
@@ -1032,7 +812,7 @@
      sodipodi:nodetypes="cssssssssc" />
   <path
      inkscape:connector-curvature="0"
-     d="m 276.9733,428.76274 h 3.22891 c 1.71864,0 6.8037,-3.77913 6.8037,-7.87196 v -4.91552 c 0,-4.67697 1.87307,-8.58145 6.90703,-8.58145 h 158.75091 c 5.03397,0 6.90704,3.90448 6.90704,8.58145 v 4.91552 c 0,4.27747 2.22372,7.87196 6.8037,7.87196 h 2.15747"
+     d="m 276.9733,418.84246 h 3.22891 c 1.71864,0 6.8037,-3.77913 6.8037,-7.87196 v -4.91552 c 0,-4.67697 1.87307,-8.58145 6.90703,-8.58145 h 158.75091 c 5.03397,0 6.90704,3.90448 6.90704,8.58145 v 4.91552 c 0,4.27747 2.22372,7.87196 6.8037,7.87196 h 2.15747"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
      id="path4868"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
@@ -1040,14 +820,14 @@
      inkscape:export-ydpi="96" />
   <path
      inkscape:connector-curvature="0"
-     d="m 306.0358,366.2139 h 3.22891 c 1.71864,0 6.8037,-3.77913 6.8037,-7.87196 v -4.91552 c 0,-4.67697 1.87307,-8.58145 6.90703,-8.58145 h 102.50091 c 5.03397,0 6.90704,3.90448 6.90704,8.58145 v 4.91552 c 0,4.27747 2.22372,7.87196 6.8037,7.87196 h 2.15747"
+     d="m 306.0358,356.29362 h 3.22891 c 1.71864,0 6.8037,-3.77913 6.8037,-7.87196 v -4.91552 c 0,-4.67697 1.87307,-8.58145 6.90703,-8.58145 h 102.50091 c 5.03397,0 6.90704,3.90448 6.90704,8.58145 v 4.91552 c 0,4.27747 2.22372,7.87196 6.8037,7.87196 h 2.15747"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
      id="path4838"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <path
-     d="m 241.57911,627.60778 h 3.22891 c 4.57609,0 6.8037,-3.27156 6.8037,-7.87197 v -14.00743 c 0,-4.677 1.87307,-8.5815 6.90703,-8.5815 H 512.8947 c 5.0339,0 6.907,3.9045 6.907,8.5815 v 14.00743 c 0,4.60041 2.2276,7.87197 6.8037,7.87197 h 2.15753"
+     d="m 241.57911,617.6875 h 3.22891 c 4.57609,0 6.8037,-3.27156 6.8037,-7.87197 V 595.8081 c 0,-4.677 1.87307,-8.5815 6.90703,-8.5815 H 512.8947 c 5.0339,0 6.907,3.9045 6.907,8.5815 v 14.00743 c 0,4.60041 2.2276,7.87197 6.8037,7.87197 h 2.15753"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
      id="path5411"
      inkscape:connector-curvature="0"
@@ -1056,7 +836,7 @@
      inkscape:export-ydpi="96" />
   <text
      id="text6423-7"
-     y="685.91608"
+     y="675.99579"
      x="470.08389"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1064,25 +844,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';fill:#0000ff"
-       y="685.91608"
+       y="675.99579"
        x="470.08389"
        id="tspan6421-3">bytes</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="419.4606"
-     y="685.91608"
+     y="675.99579"
      id="text6427-3"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6425-7"
        x="419.4606"
-       y="685.91608"
+       y="675.99579"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">type</tspan></text>
   <rect
      transform="scale(-1,1)"
-     y="691.15564"
+     y="681.23535"
      x="-486.67825"
      height="122.8125"
      width="71.978737"
@@ -1097,7 +877,7 @@
      width="71.978737"
      height="122.8125"
      x="-357.1962"
-     y="691.15564"
+     y="681.23535"
      transform="scale(-1,1)"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
@@ -1108,12 +888,12 @@
      width="20.003437"
      height="122.8125"
      x="486.67825"
-     y="691.15564"
+     y="681.23535"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <rect
-     y="691.15564"
+     y="681.23535"
      x="357.1962"
      height="122.8125"
      width="20.003437"
@@ -1123,7 +903,7 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <rect
-     y="691.15564"
+     y="681.23535"
      x="394.69565"
      height="122.8125"
      width="20.003872"
@@ -1134,7 +914,7 @@
      inkscape:export-ydpi="96" />
   <g
      style="opacity:1;stroke-width:0.975062;stop-opacity:1"
-     transform="matrix(1.0518051,0,0,1,-168.64612,-18.081515)"
+     transform="matrix(1.0518051,0,0,1,-168.64612,-28.001791)"
      id="g6081-3"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
@@ -1179,18 +959,18 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="400.29916"
-     y="703.66736"
+     y="693.74707"
      id="text6003-2"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6001-0"
        x="400.29916"
-       y="703.66736"
+       y="693.74707"
        style="font-size:15.6253px;line-height:13.75px">b</tspan></text>
   <text
      id="text6064-1"
-     y="703.53436"
+     y="693.61407"
      x="419.84329"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1198,38 +978,38 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="703.53436"
+       y="693.61407"
        x="419.84329"
        id="tspan6062-2">boolean</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="493.01083"
-     y="704.19733"
+     y="694.27704"
      id="text6088-0"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6086-5"
        x="493.01083"
-       y="704.19733"
+       y="694.27704"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">1</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="399.51712"
-     y="718.41669"
+     y="708.4964"
      id="text6363-5"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6361-2"
        x="399.51712"
-       y="718.41669"
+       y="708.4964"
        style="font-size:15.6253px;line-height:13.75px">h</tspan></text>
   <text
      id="text6367-3"
-     y="718.53436"
+     y="708.61407"
      x="419.70901"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1237,25 +1017,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="718.53436"
+       y="708.61407"
        x="419.70901"
        id="tspan6365-4">float16</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="493.01083"
-     y="719.19733"
+     y="709.27704"
      id="text6371-0"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6369-4"
        x="493.01083"
-       y="719.19733"
+       y="709.27704"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">2</tspan></text>
   <text
      id="text6291-9"
-     y="734.77466"
+     y="724.85437"
      x="399.66208"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1263,25 +1043,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-size:15.6253px;line-height:13.75px"
-       y="734.77466"
+       y="724.85437"
        x="399.66208"
        id="tspan6289-8">f</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="419.40689"
-     y="734.23749"
+     y="724.3172"
      id="text6295-8"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6293-7"
        x="419.40689"
-       y="734.23749"
+       y="724.3172"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">float32 </tspan></text>
   <text
      id="text6299-1"
-     y="734.90045"
+     y="724.98016"
      x="492.67178"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1289,12 +1069,12 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="734.90045"
+       y="724.98016"
        x="492.67178"
        id="tspan6297-8">4</tspan></text>
   <text
      id="text6351-6"
-     y="749.51587"
+     y="739.59558"
      x="399.66586"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1302,25 +1082,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-size:15.6253px;line-height:13.75px"
-       y="749.51587"
+       y="739.59558"
        x="399.66586"
        id="tspan6349-9">d</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="419.40689"
-     y="749.70624"
+     y="739.78595"
      id="text6355-9"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6353-0"
        x="419.40689"
-       y="749.70624"
+       y="739.78595"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">float64</tspan></text>
   <text
      id="text6359-7"
-     y="750.3692"
+     y="740.44891"
      x="492.37637"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1328,12 +1108,12 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="750.3692"
+       y="740.44891"
        x="492.37637"
        id="tspan6357-7">8</tspan></text>
   <text
      id="text6375-4"
-     y="763.95819"
+     y="754.0379"
      x="399.9863"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1341,25 +1121,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-size:15.6253px;line-height:13.75px"
-       y="763.95819"
+       y="754.0379"
        x="399.9863"
        id="tspan6373-6">s</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="420.1857"
-     y="764.70624"
+     y="754.78595"
      id="text6379-5"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6377-4"
        x="420.1857"
-       y="764.70624"
+       y="754.78595"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">str/utf-8 </tspan></text>
   <text
      id="text6383-6"
-     y="765.3692"
+     y="755.44891"
      x="493.01083"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1367,25 +1147,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="765.3692"
+       y="755.44891"
        x="493.01083"
        id="tspan6381-0">1</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="400.09317"
-     y="779.03088"
+     y="769.1106"
      id="text6387-2"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6385-6"
        x="400.09317"
-       y="779.03088"
+       y="769.1106"
        style="font-size:15.6253px;line-height:13.75px">u</tspan></text>
   <text
      id="text6391-0"
-     y="779.70624"
+     y="769.78595"
      x="419.5546"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1393,38 +1173,38 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="779.70624"
+       y="769.78595"
        x="419.5546"
        id="tspan6389-0">utf-16 </tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="492.70535"
-     y="780.3692"
+     y="770.44891"
      id="text6395-3"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6393-0"
        x="492.70535"
-       y="780.3692"
+       y="770.44891"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">2</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="400.13513"
-     y="794.84625"
+     y="784.92596"
      id="text6399-1"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6397-0"
        x="400.13513"
-       y="794.84625"
+       y="784.92596"
        style="font-size:15.6253px;line-height:13.75px">e</tspan></text>
   <text
      id="text6403-8"
-     y="795.17499"
+     y="785.2547"
      x="419.5546"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1432,25 +1212,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="795.17499"
+       y="785.2547"
        x="419.5546"
        id="tspan6401-9">element</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="492.67178"
-     y="795.83795"
+     y="785.91766"
      id="text6407-8"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6405-8"
        x="492.67178"
-       y="795.83795"
+       y="785.91766"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">1</tspan></text>
   <text
      id="text6411-4"
-     y="810.58252"
+     y="800.66223"
      x="399.99014"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1458,25 +1238,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-size:15.6253px;line-height:13.75px"
-       y="810.58252"
+       y="800.66223"
        x="399.99014"
        id="tspan6409-0">x</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="419.70901"
-     y="810.17499"
+     y="800.2547"
      id="text6415-8"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6413-6"
        x="419.70901"
-       y="810.17499"
+       y="800.2547"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">byte</tspan></text>
   <text
      id="text6419-9"
-     y="810.83795"
+     y="800.91766"
      x="493.01083"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1484,7 +1264,7 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="810.83795"
+       y="800.91766"
        x="493.01083"
        id="tspan6417-8">1</tspan></text>
   <rect
@@ -1493,13 +1273,13 @@
      width="20.003872"
      height="122.8125"
      x="265.21359"
-     y="691.15564"
+     y="681.23535"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <g
      id="g6748-9"
-     transform="matrix(1.0455939,0,0,1,-294.80214,-18.081515)"
+     transform="matrix(1.0455939,0,0,1,-294.80214,-28.001791)"
      style="opacity:1;stroke-width:0.977954;stop-opacity:1"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
@@ -1542,7 +1322,7 @@
   </g>
   <text
      id="text6752-2"
-     y="703.66736"
+     y="693.74707"
      x="270.53482"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1550,25 +1330,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-size:15.6253px;line-height:13.75px"
-       y="703.66736"
+       y="693.74707"
        x="270.53482"
        id="tspan6750-5">i</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="290.24039"
-     y="703.53436"
+     y="693.61407"
      id="text6756-3"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6754-5"
        x="290.24039"
-       y="703.53436"
+       y="693.61407"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">uint8</tspan></text>
   <text
      id="text6760-9"
-     y="704.19733"
+     y="694.27704"
      x="363.52878"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1576,25 +1356,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="704.19733"
+       y="694.27704"
        x="363.52878"
        id="tspan6758-3">1</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="270.95065"
-     y="717.52802"
+     y="707.60773"
      id="text6764-1"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6762-5"
        x="270.95065"
-       y="717.52802"
+       y="707.60773"
        style="font-size:15.6253px;line-height:13.75px">j</tspan></text>
   <text
      id="text6768-1"
-     y="718.53436"
+     y="708.61407"
      x="290.24039"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1602,38 +1382,38 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="718.53436"
+       y="708.61407"
        x="290.24039"
        id="tspan6766-2">uint16 </tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="363.2233"
-     y="719.19733"
+     y="709.27704"
      id="text6772-7"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6770-2"
        x="363.2233"
-       y="719.19733"
+       y="709.27704"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">2</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="270.46237"
-     y="734.14423"
+     y="724.22394"
      id="text6776-0"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6774-9"
        x="270.46237"
-       y="734.14423"
+       y="724.22394"
        style="font-size:15.6253px;line-height:13.75px">k</tspan></text>
   <text
      id="text6780-9"
-     y="734.00311"
+     y="724.08282"
      x="290.24039"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1641,25 +1421,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="734.00311"
+       y="724.08282"
        x="290.24039"
        id="tspan6778-1">uint32</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="363.18973"
-     y="734.66608"
+     y="724.74579"
      id="text6784-4"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6782-7"
        x="363.18973"
-       y="734.66608"
+       y="724.74579"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">4</tspan></text>
   <text
      id="text6788-2"
-     y="748.88544"
+     y="738.96515"
      x="270.52719"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1667,25 +1447,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-size:15.6253px;line-height:13.75px"
-       y="748.88544"
+       y="738.96515"
        x="270.52719"
        id="tspan6786-4">l</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="290.24039"
-     y="749.00311"
+     y="739.08282"
      id="text6792-8"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6790-0"
        x="290.24039"
-       y="749.00311"
+       y="739.08282"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">uint64</tspan></text>
   <text
      id="text6796-6"
-     y="749.66608"
+     y="739.74579"
      x="362.89432"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1693,25 +1473,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="749.66608"
+       y="739.74579"
        x="362.89432"
        id="tspan6794-2">8</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="270.52719"
-     y="763.95819"
+     y="754.0379"
      id="text6800-9"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6798-4"
        x="270.52719"
-       y="763.95819"
+       y="754.0379"
        style="font-size:15.6253px;line-height:13.75px">I</tspan></text>
   <text
      id="text6804-4"
-     y="764.70624"
+     y="754.78595"
      x="289.93826"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1719,25 +1499,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="764.70624"
+       y="754.78595"
        x="289.93826"
        id="tspan6802-2">int8</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="363.52878"
-     y="765.3692"
+     y="755.44891"
      id="text6808-8"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6806-8"
        x="363.52878"
-       y="765.3692"
+       y="755.44891"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">1</tspan></text>
   <text
      id="text6812-0"
-     y="779.69385"
+     y="769.77356"
      x="270.00076"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1745,25 +1525,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-size:15.6253px;line-height:13.75px"
-       y="779.69385"
+       y="769.77356"
        x="270.00076"
        id="tspan6810-5">J</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="289.93826"
-     y="779.70624"
+     y="769.78595"
      id="text6816-9"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6814-0"
        x="289.93826"
-       y="779.70624"
+       y="769.78595"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">int16</tspan></text>
   <text
      id="text6820-4"
-     y="780.3692"
+     y="770.44891"
      x="363.2233"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1771,12 +1551,12 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="780.3692"
+       y="770.44891"
        x="363.2233"
        id="tspan6818-1">2</tspan></text>
   <text
      id="text6824-8"
-     y="795.09802"
+     y="785.17773"
      x="270.38608"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1784,25 +1564,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-size:15.6253px;line-height:13.75px"
-       y="795.09802"
+       y="785.17773"
        x="270.38608"
        id="tspan6822-0">K</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="289.93826"
-     y="795.17499"
+     y="785.2547"
      id="text6828-9"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6826-3"
        x="289.93826"
-       y="795.17499"
+       y="785.2547"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">int32 </tspan></text>
   <text
      id="text6832-8"
-     y="795.83795"
+     y="785.91766"
      x="363.18973"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1810,25 +1590,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="795.83795"
+       y="785.91766"
        x="363.18973"
        id="tspan6830-9">4</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="270.47"
-     y="810.58252"
+     y="800.66223"
      id="text6836-9"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6834-8"
        x="270.47"
-       y="810.58252"
+       y="800.66223"
        style="font-size:15.6253px;line-height:13.75px">L</tspan></text>
   <text
      id="text6840-5"
-     y="810.17499"
+     y="800.2547"
      x="289.93826"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1836,38 +1616,38 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="810.17499"
+       y="800.2547"
        x="289.93826"
        id="tspan6838-3">int64</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="362.89432"
-     y="810.83795"
+     y="800.91766"
      id="text6844-4"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6842-2"
        x="362.89432"
-       y="810.83795"
+       y="800.91766"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">8</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="340.60184"
-     y="685.91608"
+     y="675.99579"
      id="text6848-5"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan6846-1"
        x="340.60184"
-       y="685.91608"
+       y="675.99579"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';fill:#0000ff">bytes</tspan></text>
   <text
      id="text6852-9"
-     y="685.91608"
+     y="675.99579"
      x="289.84427"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1875,25 +1655,25 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
-       y="685.91608"
+       y="675.99579"
        x="289.84427"
        id="tspan6850-4">type</tspan></text>
   <text
      id="text4886-5"
-     y="827.62683"
+     y="817.70654"
      x="265.17496"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
-       y="827.62683"
+       y="817.70654"
        x="265.17496"
        id="tspan4884-2"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">(little endian byte order by default)</tspan></text>
   <path
      id="use4889-8"
-     d="m 273.59465,632.362 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99378 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
+     d="m 273.59465,622.44172 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99378 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
      style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      inkscape:connector-curvature="0"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
@@ -1903,7 +1683,7 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:100%;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="261.16263"
-     y="631.46674"
+     y="621.54645"
      id="text4894-8"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
@@ -1911,10 +1691,10 @@
        style="stroke-width:1px"
        id="tspan4892-3"
        x="261.16263"
-       y="631.46674">(</tspan></text>
+       y="621.54645">(</tspan></text>
   <path
      id="use4904-1"
-     d="m 511.78769,632.362 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99378 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
+     d="m 511.78769,622.44172 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99378 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
      style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      inkscape:connector-curvature="0"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
@@ -1922,19 +1702,19 @@
      inkscape:export-ydpi="96" />
   <text
      id="text4908-9"
-     y="631.46674"
+     y="621.54645"
      x="501.63687"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:100%;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
-       y="631.46674"
+       y="621.54645"
        x="501.63687"
        id="tspan4906-7"
        style="stroke-width:1px">)</tspan></text>
   <rect
-     y="617.65033"
+     y="607.73004"
      x="293.17905"
      height="19.428198"
      width="43.982601"
@@ -1945,7 +1725,7 @@
      inkscape:export-ydpi="96" />
   <text
      id="text4914-0"
-     y="631.39191"
+     y="621.47162"
      x="298.0466"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1953,12 +1733,12 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="line-height:13.75px;stroke-width:1px"
-       y="631.39191"
+       y="621.47162"
        x="298.0466"
        id="tspan4912-2">type</tspan></text>
   <text
      id="text4926-1"
-     y="622.50323"
+     y="612.58295"
      x="354.60776"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1966,12 +1746,12 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';stroke-width:1px"
-       y="622.50323"
+       y="612.58295"
        x="354.60776"
        id="tspan4924-5">struct (size=   sizes)</tspan></text>
   <text
      id="text4938-4"
-     y="624.00262"
+     y="614.08234"
      x="441.82535"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:18.75px;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -1979,7 +1759,7 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.9375px"
-       y="624.00262"
+       y="614.08234"
        x="441.82535"
        id="tspan4936-9">Σ</tspan></text>
   <circle
@@ -1988,12 +1768,12 @@
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      id="use4947"
      cx="236.93649"
-     cy="627.60553"
+     cy="617.68524"
      r="3.4343083"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png" />
   <path
      id="path4949"
-     d="M 237.04014,627.60559 H 534.85523"
+     d="M 237.04014,617.68531 H 534.85523"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99969;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
      inkscape:connector-curvature="0"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
@@ -2003,7 +1783,7 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="188.85381"
-     y="632.73169"
+     y="622.8114"
      id="text4954"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
@@ -2011,26 +1791,26 @@
        style="line-height:13.75px;stroke-width:1px"
        id="tspan4952"
        x="188.85381"
-       y="632.73169">type</tspan></text>
+       y="622.8114">type</tspan></text>
   <circle
      inkscape:export-ydpi="96"
      inkscape:export-xdpi="96"
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      id="use4956"
      cx="534.42645"
-     cy="627.60553"
+     cy="617.68524"
      r="3.4343083"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png" />
   <path
      id="path4958"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
-     d="m 241.57911,627.60559 h 3.22891 c 4.57609,0 6.8037,3.27156 6.8037,7.87197 v 14.00743 c 0,4.677 1.87307,8.5815 6.90703,8.5815 H 512.8947 c 5.0339,0 6.907,-3.9045 6.907,-8.5815 v -14.00743 c 0,-4.60041 2.2276,-7.87197 6.8037,-7.87197 h 2.15753"
+     d="m 241.57911,617.68531 h 3.22891 c 4.57609,0 6.8037,3.27156 6.8037,7.87197 v 14.00743 c 0,4.677 1.87307,8.5815 6.90703,8.5815 H 512.8947 c 5.0339,0 6.907,-3.9045 6.907,-8.5815 v -14.00743 c 0,-4.60041 2.2276,-7.87197 6.8037,-7.87197 h 2.15753"
      inkscape:connector-curvature="0"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <rect
-     y="587.2793"
+     y="577.35901"
      x="330.44498"
      height="19.428198"
      width="42.011913"
@@ -2041,7 +1821,7 @@
      inkscape:export-ydpi="96" />
   <text
      id="text4964"
-     y="601.02081"
+     y="591.10052"
      x="334.32724"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -2049,12 +1829,12 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="line-height:13.75px;stroke-width:1px"
-       y="601.02081"
+       y="591.10052"
        x="334.32724"
        id="tspan4962">type</tspan></text>
   <text
      id="text4968"
-     y="591.70435"
+     y="581.78406"
      x="377.10776"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
@@ -2062,11 +1842,11 @@
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';stroke-width:1px"
-       y="591.70435"
+       y="581.78406"
        x="377.10776"
        id="tspan4966">array (size=    size)</tspan></text>
   <rect
-     y="587.2793"
+     y="577.35901"
      x="262.36282"
      height="19.428198"
      width="58.981186"
@@ -2077,21 +1857,21 @@
      inkscape:export-ydpi="96" />
   <text
      id="text4975"
-     y="601.02081"
+     y="591.10052"
      x="266.77713"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
-       y="601.02081"
+       y="591.10052"
        x="266.77713"
        id="tspan4973">length</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="462.28891"
-     y="591.70435"
+     y="581.78406"
      id="text4981"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
@@ -2099,26 +1879,26 @@
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px"
        id="tspan4979"
        x="462.28891"
-       y="591.70435">n</tspan></text>
+       y="581.78406">n</tspan></text>
   <circle
      style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.8125;stroke-miterlimit:4;stroke-dasharray:none;stop-opacity:1"
      id="circle4983"
      cx="475.30447"
-     cy="588.20428"
+     cy="578.284"
      r="1.6572815"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <text
      id="text4987"
-     y="582.83844"
+     y="572.91815"
      x="286.03891"
      style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
-       y="582.83844"
+       y="572.91815"
        x="286.03891"
        id="tspan4985"
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px">n</tspan></text>
@@ -2126,20 +1906,20 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="377.5173"
-     y="652.01953"
+     y="642.09924"
      id="text5024"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan5022"
        x="377.5173"
-       y="652.01953"
+       y="642.09924"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';stroke-width:1px">scalar (size=<tspan
    style="line-height:13.75px;fill:#0000ff"
    id="tspan5020">bytes</tspan>)</tspan></text>
   <path
      id="use5026"
-     d="m 371.41186,662.93691 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99377 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
+     d="m 371.41186,653.01663 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99377 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
      style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      inkscape:connector-curvature="0"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
@@ -2147,7 +1927,7 @@
      inkscape:export-ydpi="96" />
   <path
      id="use5040"
-     d="m 273.59465,632.362 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99378 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
+     d="m 273.59465,622.44172 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99378 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
      style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      inkscape:connector-curvature="0"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
@@ -2155,20 +1935,20 @@
      inkscape:export-ydpi="96" />
   <text
      id="text5044"
-     y="631.46674"
+     y="621.54645"
      x="261.16263"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:100%;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
-       y="631.46674"
+       y="621.54645"
        x="261.16263"
        id="tspan5042"
        style="stroke-width:1px">(</tspan></text>
   <path
      id="use5046"
-     d="m 511.78769,632.362 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99378 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
+     d="m 511.78769,622.44172 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99378 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
      style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      inkscape:connector-curvature="0"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
@@ -2178,7 +1958,7 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:100%;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="501.63687"
-     y="631.46674"
+     y="621.54645"
      id="text5050"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
@@ -2186,14 +1966,14 @@
        style="stroke-width:1px"
        id="tspan5048"
        x="501.63687"
-       y="631.46674">)</tspan></text>
+       y="621.54645">)</tspan></text>
   <rect
      style="opacity:1;fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:1.99969;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      id="rect5053"
      width="43.982601"
      height="19.428198"
      x="293.52536"
-     y="617.65033"
+     y="607.73004"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
@@ -2201,17 +1981,17 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="298.39291"
-     y="631.39191"
+     y="621.47162"
      id="text5057"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        id="tspan5055"
        x="298.39291"
-       y="631.39191"
+       y="621.47162"
        style="line-height:13.75px;stroke-width:1px">type</tspan></text>
   <path
-     d="m 290.82924,627.61202 h -1.35391 c -4.56314,0 -6.8037,3.7791 -6.8037,7.8719 v 4.9156 c 0,4.67691 1.87307,8.58141 6.90703,8.58141 h 51.87591 c 5.03397,0 6.90704,-3.9045 6.90704,-8.58141 v -4.9156 c 0,-4.2774 -2.22372,-7.8719 -6.8037,-7.8719 h -2.15747"
+     d="m 290.82924,617.69174 h -1.35391 c -4.56314,0 -6.8037,3.7791 -6.8037,7.8719 v 4.9156 c 0,4.67691 1.87307,8.58141 6.90703,8.58141 h 51.87591 c 5.03397,0 6.90704,-3.9045 6.90704,-8.58141 v -4.9156 c 0,-4.2774 -2.22372,-7.8719 -6.8037,-7.8719 h -2.15747"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
      id="path5063"
      inkscape:connector-curvature="0"
@@ -2222,7 +2002,7 @@
      xml:space="preserve"
      style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="360.94455"
-     y="661.69305"
+     y="651.77277"
      id="text5066"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
@@ -2230,12 +2010,12 @@
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px"
        id="tspan5064"
        x="360.94455"
-       y="661.69305">s</tspan></text>
+       y="651.77277">s</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="271.298"
-     y="685.74744"
+     y="675.82715"
      id="text5066-2"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
@@ -2243,12 +2023,12 @@
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px"
        id="tspan5064-4"
        x="271.298"
-       y="685.74744">s</tspan></text>
+       y="675.82715">s</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="400.78763"
-     y="685.74744"
+     y="675.82715"
      id="text5066-1"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
@@ -2256,38 +2036,38 @@
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px"
        id="tspan5064-1"
        x="400.78763"
-       y="685.74744">s</tspan></text>
+       y="675.82715">s</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="289.31519"
-     y="882.62897"
+     y="872.70868"
      id="text2599"><tspan
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px"
        id="tspan2597"
        x="289.31519"
-       y="882.62897">c</tspan></text>
+       y="872.70868">c</tspan></text>
   <path
      inkscape:connector-curvature="0"
      style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
-     d="m 322.40321,863.17461 c 0,3.6574 -2.9325,6.6223 -6.5498,6.6223 -3.6173,0 -6.5497,-2.9649 -6.5498,-6.6223 v -9.9937 c 0,-3.6574 2.9325,-6.6223 6.5498,-6.6223 3.6173,0 6.5498,2.9649 6.5498,6.6223 z"
+     d="m 322.40321,853.25433 c 0,3.6574 -2.9325,6.6223 -6.5498,6.6223 -3.6173,0 -6.5497,-2.9649 -6.5498,-6.6223 v -9.9937 c 0,-3.6574 2.9325,-6.6223 6.5498,-6.6223 3.6173,0 6.5498,2.9649 6.5498,6.6223 z"
      id="path2601" />
   <text
      id="text2605"
-     y="863.12531"
+     y="853.20502"
      x="311.16135"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"><tspan
-       y="863.12531"
+       y="853.20502"
        x="311.16135"
        id="tspan2603">0</tspan></text>
   <text
      id="text2609-4"
-     y="863.50507"
+     y="853.58478"
      x="272.53278"
      style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"><tspan
-       y="863.50507"
+       y="853.58478"
        x="272.53278"
        id="tspan2607-6"
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px">c</tspan></text>
@@ -2295,9 +2075,9 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="287.80457"
-     y="863.00885"
+     y="853.08856"
      id="text3665"><tspan
-       y="863.00885"
+       y="853.08856"
        x="287.80457"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';stroke-width:1px"
        id="tspan3663">=</tspan></text>
@@ -2305,41 +2085,41 @@
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.637167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      id="use3670"
      cx="329.48026"
-     cy="859.45386"
+     cy="849.53357"
      r="1.0941142" />
   <circle
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.637167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      id="use3672"
      cx="335.19525"
-     cy="859.45386"
+     cy="849.53357"
      r="1.0941142" />
   <circle
      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.637167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
      id="use3674"
      cx="340.91025"
-     cy="859.45386"
+     cy="849.53357"
      r="1.0941142" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="311.16135"
-     y="863.12531"
+     y="853.20502"
      id="text3682"><tspan
        id="tspan3680"
        x="311.16135"
-       y="863.12531">0</tspan></text>
+       y="853.20502">0</tspan></text>
   <path
      inkscape:connector-curvature="0"
      style="opacity:1;fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-opacity:1"
-     d="m 360.89526,862.53401 c 0,3.6574 -2.9325,6.6223 -6.5498,6.6223 -3.6173,0 -6.5497,-2.9649 -6.5498,-6.6223 v -9.9937 c 0,-3.6574 2.9325,-6.6223 6.5498,-6.6223 3.6173,0 6.5498,2.9649 6.5498,6.6223 z"
+     d="m 360.89526,852.61373 c 0,3.6574 -2.9325,6.6223 -6.5498,6.6223 -3.6173,0 -6.5497,-2.9649 -6.5498,-6.6223 v -9.9937 c 0,-3.6574 2.9325,-6.6223 6.5498,-6.6223 3.6173,0 6.5498,2.9649 6.5498,6.6223 z"
      id="path3684" />
   <text
      id="text3688"
-     y="862.48456"
+     y="852.56427"
      x="349.65335"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.6875px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"><tspan
-       y="862.48456"
+       y="852.56427"
        x="349.65335"
        id="tspan3686">9</tspan></text>
   <path
@@ -2362,7 +2142,7 @@
   <path
      inkscape:connector-curvature="0"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.56219;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
-     d="M 494.74469,402.33244 V 384.29478"
+     d="M 494.74469,392.41216 V 374.3745"
      id="path1296"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
      inkscape:export-xdpi="96"
@@ -2370,7 +2150,7 @@
   <path
      inkscape:connector-curvature="0"
      id="path1298"
-     d="M 494.74469,464.88127 V 446.84361"
+     d="M 494.74469,454.96099 V 436.92333"
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.56219;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
@@ -2379,9 +2159,9 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="369.78305"
-     y="863.00885"
+     y="853.08856"
      id="text409"><tspan
-       y="863.00885"
+       y="853.08856"
        x="369.78305"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.6875px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic';stroke-width:1px"
        id="tspan407">(constant,     = 0 ... 9)</tspan></text>
@@ -2389,12 +2169,12 @@
      xml:space="preserve"
      style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      x="447.21344"
-     y="862.22943"
+     y="852.30914"
      id="text413"><tspan
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.6875px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px"
        id="tspan411"
        x="447.21344"
-       y="862.22943">n</tspan></text>
+       y="852.30914">n</tspan></text>
   <g
      id="g1366"
      transform="translate(-105.02405)">
@@ -2439,7 +2219,7 @@
        y="20.253605"
        style="stroke-width:0.9375px" /></text>
   <rect
-     y="360.89316"
+     y="350.9729"
      x="155.15685"
      height="11.25"
      width="18.202883"
@@ -2454,29 +2234,231 @@
      width="18.202883"
      height="11.25"
      x="155.15685"
-     y="423.44199"
+     y="413.52173"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
-  <rect
-     y="485.16943"
-     x="155.15685"
-     height="11.25"
-     width="18.202883"
-     id="rect5052"
-     style="opacity:0;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.8125;stroke-miterlimit:4;stroke-dasharray:none;stop-opacity:1"
+  <circle
+     style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="use5055"
+     cx="236.93646"
+     cy="480.56992"
+     r="3.4343083"
+     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <path
+     inkscape:connector-curvature="0"
+     d="m 262.71548,517.44931 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 236.53411 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path4853"
+     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <path
+     inkscape:connector-curvature="0"
+     id="path4855"
+     d="M 237.0401,480.56991 H 534.85511"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="181.46849"
+     y="485.69601"
+     id="text4875"
+     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"><tspan
+       style="line-height:14.4531px"
+       id="tspan4873"
+       x="181.46849"
+       y="485.69601">value</tspan></text>
+  <path
+     inkscape:connector-curvature="0"
+     id="path4893"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 262.73986,499.37559 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 236.44256 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <rect
-     y="874.81543"
+     y="470.85587"
+     x="288.76199"
+     height="19.428198"
+     width="50.339405"
+     id="rect4909"
+     style="fill:#d5ffd5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <text
+     id="text4913"
+     y="484.90378"
+     x="296.80798"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"
+     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"><tspan
+       style="line-height:14.4531px"
+       y="484.90378"
+       x="296.80798"
+       id="tspan4911">type</tspan></text>
+  <path
+     inkscape:connector-curvature="0"
+     id="path4941"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 250.80788,480.56991 h 5.10391 c 4.57609,0 6.8037,3.27155 6.8037,7.87196 v 45.95568 c 0,4.67698 1.87307,8.58146 6.90703,8.58146 h 236.53411 c 5.03397,0 6.90704,-3.90448 6.90704,-8.58146 v -45.95568 c 0,-4.60041 2.2276,-7.87196 6.8037,-7.87196 h 4.03247"
+     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <g
+     transform="translate(85.001742,52.379232)"
+     id="g4946"
+     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
+    <use
+       height="100%"
+       width="100%"
+       transform="translate(-47.34694,99.194962)"
+       id="use5262"
+       xlink:href="#path6605"
+       y="0"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path6605"
+       id="use5264"
+       transform="translate(-0.85104,116.3483)"
+       width="100%"
+       height="100%" />
+    <use
+       height="100%"
+       width="100%"
+       transform="translate(46.814976,133.29654)"
+       id="use5266"
+       xlink:href="#path6605"
+       y="0"
+       x="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.4531px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="211.94856"
+       y="459.89221"
+       id="text4933"><tspan
+         id="tspan4931"
+         x="211.94856"
+         y="459.89221"
+         style="line-height:14.4531px">T</tspan></text>
+    <text
+       id="text4939"
+       y="477.41174"
+       x="258.58942"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.4531px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="477.41174"
+         x="258.58942"
+         id="tspan4937"
+         style="line-height:14.4531px">F</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.4531px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="306.53772"
+       y="493.62756"
+       id="text4947"><tspan
+         id="tspan4945"
+         x="306.53772"
+         y="493.62756"
+         style="line-height:14.4531px">N</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="228.09448"
+       y="452.58783"
+       id="text4965"><tspan
+         id="tspan4963"
+         x="228.09448"
+         y="452.58783"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">true</tspan></text>
+    <text
+       id="text4969"
+       y="470.54916"
+       x="274.63751"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="470.54916"
+         x="274.63751"
+         id="tspan4967"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">false</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="322.93088"
+       y="487.40494"
+       id="text4973"><tspan
+         id="tspan4971"
+         x="322.93088"
+         y="487.40494"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">null / none</tspan></text>
+  </g>
+  <circle
+     style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="use5061"
+     cx="534.42639"
+     cy="480.56992"
+     r="3.4343083"
+     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <path
+     inkscape:connector-curvature="0"
+     id="path5368-3"
+     d="m 362.67649,490.31406 c -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62225 v -6.24377 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 h 121.40625 c 3.61734,0 6.54976,2.96488 6.54976,6.62224 v 6.24377 c 0,3.65738 -2.93242,6.62225 -6.54976,6.62225 z"
+     style="fill:#ffc5c5;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <g
+     id="g5374"
+     transform="translate(147.21892,-202.81302)"
+     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
+    <text
+       id="text5372-3"
+       y="687.17627"
+       x="213.06406"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:100%;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'"
+         y="687.17627"
+         x="213.06406"
+         id="tspan5370-0">data (size of type)</tspan></text>
+  </g>
+  <rect
+     y="475.24918"
+     x="155.15685"
+     height="11.25"
+     width="18.202883"
+     id="rect5052"
+     style="opacity:0;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.8125;stroke-miterlimit:4;stroke-dasharray:none"
+     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <rect
+     y="864.89514"
      x="155.15685"
      height="11.25"
      width="18.202883"
      id="rect5056"
      style="opacity:0;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.8125;stroke-miterlimit:4;stroke-dasharray:none;stop-opacity:1" />
   <rect
-     y="622.93903"
+     y="613.01874"
      x="155.15685"
      height="11.25"
      width="18.202883"
@@ -2491,7 +2473,7 @@
      width="18.202883"
      height="11.25"
      x="155.15691"
-     y="622.93903"
+     y="613.01874"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
@@ -2603,7 +2585,7 @@
     </g>
   </g>
   <rect
-     y="622.93903"
+     y="613.01874"
      x="155.15685"
      height="11.25"
      width="18.202883"
@@ -2618,7 +2600,7 @@
      width="18.202883"
      height="11.25"
      x="155.15691"
-     y="622.93903"
+     y="613.01874"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
