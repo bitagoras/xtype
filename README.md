@@ -14,8 +14,6 @@ Basic idea
 
 The grammar tries to be minimalistic while covering all possible use cases. Missing features of the format can be supplemented by so-called _footnotes_. Similar to books, footnotes can be ignored when reading if the meaning of the content is known, but provide additional background information about the meaning or context. A footnote adds user-defined metadata to the element that allows the application to read or understand the data in a specific way.
 
-Translated with www.DeepL.com/Translator (free version)
-
 Properties
 ----------
 
