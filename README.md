@@ -47,7 +47,6 @@ The grammar is entirely defined and explained by graphical figures. The green bo
 
 <p align="center"><img src="figures/xtype_file.png"></p>
 <p align="center"><img src="figures/xtype_element.png"></p>
-<p align="center"><img src="figures/xtype_content.png"></p>
 <p align="center"><img src="figures/xtype_list.png"></p>
 <p align="center"><img src="figures/xtype_dict.png"></p>
 <p align="center"><img src="figures/xtype_value.png"></p>
