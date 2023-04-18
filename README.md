@@ -5,14 +5,16 @@ A universal binary notation language
 Overview
 --------
 
-xtype is a universal binary notation language for the exchange and storage of hierarchically structured data. It is supposed to be a binary equivalent to text formats like [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency. xtype is also suitable for the representation of typical C and Python data structures and offers a lightweight alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage.
+xtype is a universal binary notation language for the exchange and storage of hierarchically structured data. It is supposed to be a binary equivalent to text formats like [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency. xtype is also suitable for the representation of typical C and Python data structures and offers a lightweight grammar alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage.
 
-Up to now there exists neither a xtype library nor a xtype editor or reader.
+So far there exists neither an xtype programming library nor an xtype editor or reader.
 
 Basic idea
 ----------
 
-The grammar tries to be minimalistic while it covers all possible application cases. Missing features of the format can be added by so-called _footnotes_. Similar to books, footnotes can be ignored while reading, but provide additional background information on the meaning or context. A footnote adds user-defined meta data to the element, which allows the application to read or understand the data in a specific way.
+The grammar tries to be minimalistic while covering all possible use cases. Missing features of the format can be supplemented by so-called _footnotes_. Similar to books, footnotes can be ignored when reading if the meaning of the content is known, but provide additional background information about the meaning or context. A footnote adds user-defined metadata to the element that allows the application to read or understand the data in a specific way.
+
+Translated with www.DeepL.com/Translator (free version)
 
 Properties
 ----------
@@ -43,7 +45,7 @@ Properties
 Grammar
 -------
 
-The grammar is entirely defined and explained by graphical figures. The green boxes require nested grammar rules. Red round boxes represent data to be written. Single non-italic black characters in those red boxes are stored directly as ASCII characters. Red symbols in the red boxes are placeholders for certain other ASCII characters, as shown.
+The grammar is fully defined and explained by a graphical representation. Green boxes require nested grammar rules. Red round boxes represent data to be written. Single non-italic black characters in these red boxes are stored directly as ASCII characters. Red symbols in the red boxes are placeholders for certain other ASCII characters, as shown.
 
 <p align="center"><img src="figures/xtype_file.png"></p>
 <p align="center"><img src="figures/xtype_element.png"></p>
@@ -225,7 +227,7 @@ _Footnote value_ | 1234
 
 **Explanation:**
 
-This is a footnote at the very beginning of the file to indicate the byte order (little or big endian) and acts as the file signature with four magic bytes. The 16-bit signed integer has the defined value of 1234. A xtype reader with the wrong byte order would recognize the number as -11772. If no such File signature is given, xtype is specified for little endian byte order.
+This is a footnote at the very beginning of the file to indicate the byte order (little or big endian) and acts as the file signature with four magic bytes. The 16-bit signed integer has the defined value of 1234. An xtype reader with the wrong byte order would recognize the number as -11772. If no such file signature is given, xtype is specified for little endian byte order.
 
 ```Awk
 xtype: [*] [J] (1234)
