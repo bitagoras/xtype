@@ -71,7 +71,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 | `d`    | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
 | `s`    | str/utf-8 | 1     | ascii / utf-8 string           | Only utf-8 is specified for 1-byte text coding|
 | `u`    | utf-16    | 2     | unicode string in utf-16       | 2-byte text coding                            |
-| `e`    | element   | 1     | element as defined in grammar  | For elements encapsulated in a type e array   |
+| `e`    | element   | 1     | element as defined in grammar  | For elements encapsulated in a byte array     |
 | `x`    | byte      | 1     | user defined data byte         | Special structs, compressed data etc.         |
 
 The special basic data type `e` is used to enclose xtype elements in an array of bytes. This acts as an additional size information for elements and helps to parse a file more quickly by stepping over large elements.
