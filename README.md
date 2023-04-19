@@ -91,7 +91,7 @@ xtype: [m] (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
 hex:   6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 
-In this string example the first 3 bytes are the header: the size type (m), the size (11 as 8-bit integer) and the array type (s for string). The next 11 bytes contain the text.
+In this string example the first 3 bytes represent the header: the size type (m), the size (11 as 8-bit integer) and the array type (s for string). The next 11 bytes contain the text.
 
 * **Integer:**
 
