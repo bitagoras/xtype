@@ -69,7 +69,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 | `h`    | float16   | 2     | half precision float 16-bit    | IEEE 754-2008 half precission                 |
 | `f`    | float32   | 4     | float 32-bit                   | IEEE 754 single precision, C-type: float      |
 | `d`    | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
-| `s`    | str/utf-8 | 1     | ascii / utf-8 string           | Only utf-8 is allows for 1-byte text coding   |
+| `s`    | str/utf-8 | 1     | ascii / utf-8 string           | Only utf-8 is specified for 1-byte text coding|
 | `u`    | utf-16    | 2     | unicode string in utf-16       | 2-byte text coding                            |
 | `e`    | element   | 1     | element as defined in grammar  | For elements encapsulated in a type e array   |
 | `x`    | byte      | 1     | user defined data byte         | Special structs, compressed data etc.         |
