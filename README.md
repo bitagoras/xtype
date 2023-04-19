@@ -91,6 +91,8 @@ xtype: [m] (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
 hex:   6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 
+In this string example the first 3 bytes are the header: the size type (m), the size (11 as 8-bit integer) and the array type (s for string). The next 11 bytes contain the text.
+
 * **Integer:**
 
 ```json5
@@ -105,6 +107,7 @@ hex:  6A 01 04
 * **3d vector of type uint8:**
 
 ```json5
+json:
 [10, 200, 255]
 ```
 ```Awk
@@ -116,6 +119,7 @@ hex:   33  69          0A           C8           FF
 * **List with integer, string and float:**
 
 ```json5
+json:
 [7, "seven", 7.77]
 ```
 ```Awk
@@ -126,6 +130,7 @@ xtype:
 * **Struct with integer, string and float:**
 
 ```json5
+json:
 [(uint8) 7, (string*5) "seven", (double) 7.77]
 ```
 ```Awk
@@ -136,6 +141,7 @@ xtype:
 * **3 x 3 matrix of double:**
 
 ```json5
+json:
 [ [1.1, 3.3, 5.5],
   [2.2, 4.4, 6.6],
   [3.3, 5.5, 7.7] ]
@@ -162,6 +168,7 @@ xtype:
 * **Object:**
 
 ```json5
+json:
 {
   "planet": "Proxima b",
   "mass": 1.27,
@@ -180,6 +187,7 @@ xtype:
 * **4 x 3 table of doubles with named colums "lon", "lat", "h":**
 
 ```json5
+json:
 [ ["lon", "lat",   "h"],
   [1.1,    3.3,    5.5],
   [2.2,    4.4,    6.6],
@@ -297,6 +305,7 @@ This footnote type allows to access elements of lists or dicts in large data fil
 This example shows short list with mixed types and a table of content with offsets
 
 ```json5
+json:
 [7, "seven", 7.77]
 ```
 ```Awk
@@ -324,6 +333,7 @@ The content of the element is replaced by an unsigned integer (`i`,`j`,`k`,`l`) 
 In this example imagine that a data structure contains some very big elements:
 
 ```json5
+json:
 {
   "file1": "bigdata1",
   "folder1": {"fileA": "bigdata2", "fileB": "bigdata3"}
