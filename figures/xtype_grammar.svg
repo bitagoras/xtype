@@ -7,7 +7,7 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg5993"
    version="1.1"
-   inkscape:export-filename="xtype_dict.png"
+   inkscape:export-filename="xtype_file.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -27,11 +27,11 @@
      showguides="true"
      inkscape:current-layer="svg5993"
      inkscape:window-maximized="0"
-     inkscape:window-y="0"
-     inkscape:window-x="95"
-     inkscape:cy="619.11084"
-     inkscape:cx="456.8984"
-     inkscape:zoom="0.7397706"
+     inkscape:window-y="23"
+     inkscape:window-x="443"
+     inkscape:cy="757.03004"
+     inkscape:cx="407.1904"
+     inkscape:zoom="0.52309681"
      inkscape:snap-global="true"
      showgrid="false"
      id="namedview400"
@@ -197,7 +197,7 @@
      cx="238.81146"
      cy="380.66864"
      r="3.4343083"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_list.png"
+     inkscape:export-filename="xtype_list.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <path
@@ -519,7 +519,7 @@
      cx="238.81146"
      cy="443.21744"
      r="3.4343083"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_dict.png"
+     inkscape:export-filename="xtype_dict.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <path
@@ -731,7 +731,7 @@
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
      d="M 250.03398,240.44647 H 495.34935"
      id="path5269"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_file.png"
+     inkscape:export-filename="xtype_file.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"
      sodipodi:nodetypes="cc" />
@@ -2248,7 +2248,7 @@
      cx="238.81146"
      cy="504.94492"
      r="3.4343083"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
+     inkscape:export-filename="xtype_element.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <path
@@ -2872,7 +2872,10 @@
      width="18.202883"
      height="11.25"
      x="157.03185"
-     y="303.14517" />
+     y="303.14517"
+     inkscape:export-filename="xtype_object.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
   <path
      inkscape:connector-curvature="0"
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
