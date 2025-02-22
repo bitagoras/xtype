@@ -46,12 +46,39 @@ Grammar
 The grammar is fully defined and explained by a graphical representation. Green boxes require nested grammar rules. Red round boxes represent data to be written. Single non-italic black characters in these red boxes are stored directly as ASCII characters. Red symbols in the red boxes are placeholders for certain other ASCII characters, as shown.
 
 <p align="center"><img src="figures/xtype_file.png"></p>
-<p align="center"><img src="figures/xtype_element.png"></p>
+<p align="center"><img src="figures/xtype_object.png"></p>
 <p align="center"><img src="figures/xtype_list.png"></p>
 <p align="center"><img src="figures/xtype_dict.png"></p>
-<p align="center"><img src="figures/xtype_value.png"></p>
+<p align="center"><img src="figures/xtype_element.png"></p>
 <p align="center"><img src="figures/xtype_type.png"></p>
 <p align="center"><img src="figures/xtype_length.png"></p>
+
+### Grammar rules
+
+    <file> ::= <EOF>
+    <file> ::= <object> <EOF>
+    <object> ::= <content>
+    <object> ::= <footnote> <content>
+    <footnote> ::= "*" <object>
+    <footnote> ::= "*" <object> <footnote>
+    <content> ::= <element> | <list> | <dict>
+    <list> ::= "[]" | "[" <EOF>
+    <list> ::= "[" <list_items> "]" | "[" <list_items> <EOF>
+    <list_items> ::= <object> | <object> <list_items>
+    <dict> ::= "{}"
+    <dict> ::= "{" <dict_elem> "}"
+    <dict_items> ::= <element> <object> | <element> <object> <dict_items>
+    <element> ::= <type> <data>
+    <type> ::= <lenght> <type> | "(" <types> ")" | <scalar>
+    <types> ::= <type> | <type> <types>
+    <bin_type> ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L"
+    <bin_type> ::= "b" | "h" | "f" | "d" | "s" | "u" | "O" | "x"
+    <lenght> ::= "0" | "1" | "2" | "3" | "4"
+    <lenght> ::= "5" | "6" | "7" | "8" | "9"
+    <lenght> ::= "m" <bin_data> | "n" <bin_data>
+    <lenght> ::= "o" <bin_data> | "p" <bin_data>
+    <scalar> ::= <bin_type> <bin_data>
+    <bin_data> ::= (binary data of defined length)
 
 ## Types
 
@@ -71,10 +98,10 @@ The grammar is fully defined and explained by a graphical representation. Green 
 | `d`    | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
 | `s`    | str/utf-8 | 1     | ascii / utf-8 string           | Only utf-8 is specified for 1-byte text coding|
 | `u`    | utf-16    | 2     | unicode string in utf-16       | 2-byte text coding                            |
-| `e`    | element   | 1     | element as defined in grammar  | For elements encapsulated in a byte array     |
+| `O`    | object    | 1     | object as defined in grammar   | For elements encapsulated in a byte array     |
 | `x`    | byte      | 1     | user defined data byte         | Special structs, compressed data etc.         |
 
-The special basic data type `e` is used to enclose xtype elements in an array of bytes. This acts as an additional size information for elements and helps to parse a file more quickly by stepping over large elements.
+The special basic data type `O` is used to enclose xtype objects in an array of bytes. This acts as an additional size information for objects and helps to parse a file more quickly by stepping over large objects.
 
 Examples
 --------
@@ -248,20 +275,20 @@ xtype file:
 [*] [J] (1234) (data of the file)
 ```
 
-### Deleted element
+### Deleted object
 
-_Footnote Purpose_ | Flags an element as deleted
+_Footnote Purpose_ | Flags an object as deleted
 :---|:---
 _Footnote type_ | None
 _Footnote value_ | `N` (_None_)
 
 **Explanation:**
 
-This footnote tags an element as deleted. This is useful for big files when an element in the middle should be deleted without rewriting the whole file. To adapt the size, the data of the deleted element can be an array of `x` to cover the rest of the element. Next time the entire file is rebuilt, the unused space can be eliminated.
+This footnote tags an object as deleted. This is useful for big files when an object in the middle should be deleted without rewriting the whole file. To adapt the size, the data of the deleted object can be an array of `x` to cover the rest of the object. Next time the entire file is rebuilt, the unused space can be eliminated.
 
 **Example:**
 
-In the following example an element with 10000 bytes is tagged as deleted. The included footnote and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be changed to remove the whole element.
+In the following example an object with 10000 bytes is tagged as deleted. The included footnote and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be changed to remove the whole object.
 
 ```Awk
 [*] [N]
@@ -270,7 +297,7 @@ In the following example an element with 10000 bytes is tagged as deleted. The i
 
 ### Element visibility
 
-_Footnote Purpose_ | Flags an element as visible or invisible / disabled
+_Footnote Purpose_ | Flags an object as visible or invisible / disabled
 :---|:---
 _Footnote type_ | boolean `T` or `F`
 _Footnote value_ | `T` (true for visible / enabled), `F` (false for invisible / disabled)
@@ -278,27 +305,27 @@ _Footnote value_ | `T` (true for visible / enabled), `F` (false for invisible / 
 
 **Explanation:**
 
-This footnote type tags an element as invisible, when the value is set to false. This feature can be used as placeholder for e.g. elements to be added later or flexible ordered elements for other elements pointing on it with links.
+This footnote type tags an object as invisible, when the value is set to false. This feature can be used as placeholder for e.g. objects to be added later or flexible ordered objects for other objects pointing on it with links.
 
 **Example:**
 
-In the following example an element is tagged as invisible. This element is treated as non-exisiting, but the element will not be deleted when the file is rebuilt, since the content is used for a certain purpose.
+In the following example an object is tagged as invisible. This object is treated as non-exisiting, but the object will not be deleted when the file is rebuilt, since the content is used for a certain purpose.
 
 ```Awk
-[*] [F] (some element)
+[*] [F] (some object)
 ```
 
 ## Table of content for quick random access
 
-_Footnote Purpose_ | Table of content: pointer to elements in a list or dict
+_Footnote Purpose_ | Table of content: pointer to objects in a list or dict
 :---|:---
 _Footnote type_ | array of unsigned integer (`i`,`j`,`k`,`l`)
-_Footnote value_ | relative byte offset to the list elements from the the footnote start `*`
+_Footnote value_ | relative byte offset to the list objects from the the footnote start `*`
 _Optional keyword_ |  `TOC`
 
 **Explanation:**
 
-This footnote type allows to access elements of lists or dicts in large data files. The relative offsets are stored in an integer array with the same length as the list or dict object. The offset points to the beginning of each element (in list) or the keyword value (in dict). If the targeting element has another footnote, the offset points to the `*` token which is the first byte of the list element.
+This footnote type allows to access objects of lists or dicts in large data files. The relative offsets are stored in an integer array with the same length as the list or dict object. The offset points to the beginning of each object (in list) or the keyword value (in dict). If the targeting object has another footnote, the offset points to the `*` token which is the first byte of the list object.
 
 **Example:**
 
@@ -311,26 +338,26 @@ json:
 ```Awk
 xtype:
 [*] [3] [i]                # uint8 array of length 3
-        (7) (9) (16)       # offsets to the elements
+        (7) (9) (16)       # offsets to the objects
 [[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
      ^              ^                      ^   # target positions
 ```
 
-## Element links
+## Object links
 
-_Footnote Purpose_ | Pointers to elements instead of the data itself
+_Footnote Purpose_ | Pointers to objects instead of the data itself
 :---|:---
 _Footnote type_ | String (`s`)
 _Footnote value_ | `@`
-_Element value_ | Unsigned integer (`i`,`j`,`k`,`l`) with absolute address of actual element
+_Object value_ | Unsigned integer (`i`,`j`,`k`,`l`) with absolute address of actual object
 
 **Explanation:**
 
-The content of the element is replaced by an unsigned integer (`i`,`j`,`k`,`l`) or array of unsigned integers pointing to the absolute address (relative to the beginning of the file) of the elements with the actual data. This footnote type allows to keep the main data structure small and efficient and allows fast random access to sub elements which gives also more flexibility to manage the content.
+The content of the object is replaced by an unsigned integer (`i`,`j`,`k`,`l`) or array of unsigned integers pointing to the absolute address (relative to the beginning of the file) of the objects with the actual data. This footnote type allows to keep the main data structure small and efficient and allows fast random access to sub objects which gives also more flexibility to manage the content.
 
 **Example:**
 
-In this example imagine that a data structure contains some very big elements:
+In this example imagine that a data structure contains some very big objects:
 
 ```json5
 json:
@@ -343,22 +370,22 @@ json:
 ```Awk
 xtype:
 [[]  # List
-    # Data Structure with links instead of actual data elements
+    # Data Structure with links instead of actual data objects
     [{]
         [5] [s] [file1]
-            [*] [s] [@] [i] (...)  # Link to element bigdata1
+            [*] [s] [@] [i] (...)  # Link to object bigdata1
         [{]
             [5] [s] [fileA]
-                [*] [s] [@] [i] (...)  # Link to element bigdata2
+                [*] [s] [@] [i] (...)  # Link to object bigdata2
             [5] [s] [fileB]
-                [*] [s] [@] [i] (...)  # Link to element bigdata3
+                [*] [s] [@] [i] (...)  # Link to object bigdata3
         [}]
         [*] [F] [n] (1000) [x] (1000 Byte) # Invisible place holder buffer for
-    [}]                                    # adding more elements in future
+    [}]                                    # adding more objects in future
     [8] [s] [bigdata1]   # Link target with actual data
     [8] [s] [bigdata2]   # Link target with actual data
     [8] [s] [bigdata3]   # Link target with actual data
 
-# No []] at the end. This allows to append more elements later.
+# No []] at the end. This allows to append more objects later.
 
 ```
