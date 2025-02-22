@@ -81,7 +81,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <lenght> ::= "5" | "6" | "7" | "8" | "9"
 <lenght> ::= "m" <bin_data> | "n" <bin_data>
 <lenght> ::= "o" <bin_data> | "p" <bin_data>
-<bin_data> ::= (binary data of defined length, see types below)
+<bin_data> ::= (binary data of defined length, see list of types below)
 ```
 
 
