@@ -73,13 +73,13 @@ The grammar is fully defined and explained by a graphical representation. Green 
     <element> ::= <type> <data>
     <type> ::= <lenght> <type> | "(" <types> ")" | <scalar>
     <types> ::= <type> | <type> <types>
+    <scalar> ::= <bin_type> <bin_data>
     <bin_type> ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L"
     <bin_type> ::= "b" | "h" | "f" | "d" | "s" | "u" | "O" | "x"
     <lenght> ::= "0" | "1" | "2" | "3" | "4"
     <lenght> ::= "5" | "6" | "7" | "8" | "9"
     <lenght> ::= "m" <bin_data> | "n" <bin_data>
     <lenght> ::= "o" <bin_data> | "p" <bin_data>
-    <scalar> ::= <bin_type> <bin_data>
     <bin_data> ::= (binary data of defined length)
 
 ## Types
