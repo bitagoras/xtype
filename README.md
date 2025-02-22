@@ -57,30 +57,33 @@ The grammar is fully defined and explained by a graphical representation. Green 
 
 ### Grammar rules as text
 
-    <file> ::= <EOF>
-    <file> ::= <object> <EOF>
-    <object> ::= <content>
-    <object> ::= <footnote> <content>
-    <footnote> ::= "*" <object>
-    <footnote> ::= "*" <object> <footnote>
-    <content> ::= <element> | <list> | <dict>
-    <list> ::= "[]" | "[" <EOF>
-    <list> ::= "[" <list_items> "]" | "[" <list_items> <EOF>
-    <list_items> ::= <object> | <object> <list_items>
-    <dict> ::= "{}"
-    <dict> ::= "{" <dict_elem> "}"
-    <dict_items> ::= <element> <object> | <element> <object> <dict_items>
-    <element> ::= <type> <data>
-    <type> ::= <lenght> <type> | "(" <types> ")" | <scalar>
-    <types> ::= <type> | <type> <types>
-    <scalar> ::= <bin_type> <bin_data>
-    <bin_type> ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L"
-    <bin_type> ::= "b" | "h" | "f" | "d" | "s" | "u" | "O" | "x"
-    <lenght> ::= "0" | "1" | "2" | "3" | "4"
-    <lenght> ::= "5" | "6" | "7" | "8" | "9"
-    <lenght> ::= "m" <bin_data> | "n" <bin_data>
-    <lenght> ::= "o" <bin_data> | "p" <bin_data>
-    <bin_data> ::= (binary data of defined length)
+```xml
+<file> ::= <EOF>
+<file> ::= <object> <EOF>
+<object> ::= <content>
+<object> ::= <footnote> <content>
+<footnote> ::= "*" <object>
+<footnote> ::= "*" <object> <footnote>
+<content> ::= <element> | <list> | <dict>
+<list> ::= "[]" | "[" <EOF>
+<list> ::= "[" <list_items> "]" | "[" <list_items> <EOF>
+<list_items> ::= <object> | <object> <list_items>
+<dict> ::= "{}"
+<dict> ::= "{" <dict_elem> "}"
+<dict_items> ::= <element> <object> | <element> <object> <dict_items>
+<element> ::= <type> <data>
+<type> ::= <lenght> <type> | "(" <types> ")" | <scalar>
+<types> ::= <type> | <type> <types>
+<scalar> ::= <bin_type> <bin_data>
+<bin_type> ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L"
+<bin_type> ::= "b" | "h" | "f" | "d" | "s" | "u" | "O" | "x"
+<lenght> ::= "0" | "1" | "2" | "3" | "4"
+<lenght> ::= "5" | "6" | "7" | "8" | "9"
+<lenght> ::= "m" <bin_data> | "n" <bin_data>
+<lenght> ::= "o" <bin_data> | "p" <bin_data>
+<bin_data> ::= (binary data of defined length)
+```
+
 
 ## Types
 
