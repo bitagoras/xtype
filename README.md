@@ -72,8 +72,8 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <dict> ::= "{" <dict_elem> "}"
 <dict_items> ::= <element> <object> | <element> <object> <dict_items>
 <element> ::= <type> <data>
-<type> ::= <lenght> <type> | "(" <types> ")" | <scalar>
-<types> ::= <type> | <type> <types>
+<type> ::= <lenght> <type> | "(" <struct> ")" | <scalar>
+<struct> ::= <type> | <type> <struct>
 <scalar> ::= <bin_type> <bin_data>
 <bin_type> ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L"
 <bin_type> ::= "b" | "h" | "f" | "d" | "s" | "u" | "O" | "x"
