@@ -45,6 +45,8 @@ Grammar
 
 The grammar is fully defined and explained by a graphical representation. Green boxes require nested grammar rules. Red round boxes represent data to be written. Single non-italic black characters in these red boxes are stored directly as ASCII characters. Red symbols in the red boxes are placeholders for certain other ASCII characters, as shown.
 
+### Grammar rules as figures
+
 <p align="center"><img src="figures/xtype_file.png"></p>
 <p align="center"><img src="figures/xtype_object.png"></p>
 <p align="center"><img src="figures/xtype_list.png"></p>
@@ -53,7 +55,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <p align="center"><img src="figures/xtype_type.png"></p>
 <p align="center"><img src="figures/xtype_length.png"></p>
 
-### Grammar rules
+### Grammar rules as text
 
     <file> ::= <EOF>
     <file> ::= <object> <EOF>
@@ -98,7 +100,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 | `d`    | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
 | `s`    | str/utf-8 | 1     | ascii / utf-8 string           | Only utf-8 is specified for 1-byte text coding|
 | `u`    | utf-16    | 2     | unicode string in utf-16       | 2-byte text coding                            |
-| `O`    | object    | 1     | object as defined in grammar   | For elements encapsulated in a byte array     |
+| `O`    | object    | 1     | object as defined in grammar   | For objects encapsulated in a byte array     |
 | `x`    | byte      | 1     | user defined data byte         | Special structs, compressed data etc.         |
 
 The special basic data type `O` is used to enclose xtype objects in an array of bytes. This acts as an additional size information for objects and helps to parse a file more quickly by stepping over large objects.
