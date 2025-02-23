@@ -58,18 +58,14 @@ The grammar is fully defined and explained by a graphical representation. Green 
 ### Grammar rules as text
 
 ```xml
-<file> ::= <EOF>
-<file> ::= <object> <EOF>
-<object> ::= <content>
-<object> ::= <footnote> <content>
-<footnote> ::= "*" <object>
-<footnote> ::= "*" <object> <footnote>
+<file> ::= <EOF> | <object> <EOF>
+<object> ::= <content> | <footnote> <content>
+<footnote> ::= "*" <object> | "*" <object> <footnote>
 <content> ::= <element> | <list> | <dict>
 <list> ::= "[]" | "[" <EOF>
 <list> ::= "[" <list_items> "]" | "[" <list_items> <EOF>
 <list_items> ::= <object> | <object> <list_items>
-<dict> ::= "{}"
-<dict> ::= "{" <dict_elem> "}"
+<dict> ::= "{}" | "{" <dict_elem> "}"
 <dict_items> ::= <element> <object> | <element> <object> <dict_items>
 <element> ::= <type> <data>
 <type> ::= <lenght> <type> | "(" <struct> ")" | <scalar>
@@ -82,8 +78,8 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <lenght> ::= "m" <bin_data> | "n" <bin_data>
 <lenght> ::= "o" <bin_data> | "p" <bin_data>
 <bin_data> ::= (binary data of defined length, see list of types below)
+<EOF> ::= (end of file defined by file system)
 ```
-
 
 ## Types
 
