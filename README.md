@@ -5,14 +5,14 @@ A universal binary notation language
 Overview
 --------
 
-xtype is a universal binary notation language for the exchange and storage of hierarchically structured data. It is supposed to be a binary equivalent to text formats like [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations of efficiency. xtype is also suitable for the representation of typical C and Python data structures and offers a lightweight grammar alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage, inspired by the simplicity of [UBJSON](https://github.com/ubjson/universal-binary-json).
+xtype is a universal binary notation language with a self-explanatory syntax for the exchange and storage of hierarchically structured data. It is intended to be a binary equivalent to text formats such as [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations in efficiency. xtype is also suitable for representing typical C and Python data structures, and provides a lightweight grammar alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage, inspired by the simplicity of [UBJSON](https://github.com/ubjson/universal-binary-json).
 
-For the time being there exists neither an xtype programming library nor an xtype editor or reader.
+There is currently no xtype programming library, editor or reader.
 
 Basic idea
 ----------
 
-The grammar tries to be minimalistic while covering all possible use cases. Missing features of the format can be supplemented by so-called _footnotes_. Similar to books, footnotes can be ignored when reading if the meaning of the content is known, but provide additional background information about the meaning or context. A footnote adds user-defined metadata to the element that allows the application to read or understand the data in a specific way.
+The grammar tries to be minimalistic while covering all possible use cases. Missing features of the format can be supplemented by so-called _footnotes_. Similar to books, footnotes can be ignored when reading if the meaning of the content is known, but provide additional background information about the meaning or context. A footnote adds user-defined metadata to the element, allowing the application to read or understand the data in a particular way.
 
 Properties
 ----------
@@ -83,49 +83,52 @@ The grammar is fully defined and explained by a graphical representation. Green 
 
 ## Types
 
-| Type   | Name      | Bytes | Description                    | Comment                                       |
-|:------:|-----------|:-----:|--------------------------------|-----------------------------------------------|
-| `i, m` | uint8     | 1     | unsigned integer 8-bit         | C-type: unsigned char                         |
-| `j, n` | uint16    | 2     | unsigned integer 16-bit        | C-type: unsigned short int                    |
-| `k, o` | uint32    | 4     | unsigned integer 32-bit        | C-type: unsigned int                          |
-| `l, p` | uint64    | 8     | unsigned integer 64-bit        | C-type: unsigned long int                     |
-| `I`    | int8      | 1     | signed integer 8-bit           | C-type: char                                  |
-| `J`    | int16     | 2     | signed integer 16-bit          | C-type: short int                             |
-| `K`    | int32     | 4     | signed integer 32-bit          | C-type: int                                   |
-| `L`    | int64     | 8     | signed integer 64-bit          | C-type: long int                              |
-| `b`    | boolean   | 1     | boolean type                   | values: 0x00 = false or 0xFF = true           |
-| `h`    | float16   | 2     | half precision float 16-bit    | IEEE 754-2008 half precission                 |
-| `f`    | float32   | 4     | float 32-bit                   | IEEE 754 single precision, C-type: float      |
-| `d`    | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
-| `s`    | str/utf-8 | 1     | ascii / utf-8 string           | Only utf-8 is specified for 1-byte text coding|
-| `u`    | utf-16    | 2     | unicode string in utf-16       | 2-byte text coding                            |
-| `O`    | object    | 1     | object as defined in grammar   | For objects encapsulated in a byte array     |
-| `x`    | byte      | 1     | user defined data byte         | Special structs, compressed data etc.         |
+| Type     | Name      | Bytes | Description                    | Comment                                       |
+|:--------:|-----------|:-----:|--------------------------------|-----------------------------------------------|
+| `i`, `n` | uint8     | 1     | unsigned integer 8-bit         | C-type: unsigned char                         |
+| `j`, `m` | uint16    | 2     | unsigned integer 16-bit        | C-type: unsigned short int                    |
+| `k`, `o` | uint32    | 4     | unsigned integer 32-bit        | C-type: unsigned int                          |
+| `l`, `p` | uint64    | 8     | unsigned integer 64-bit        | C-type: unsigned long int                     |
+| `I`      | int8      | 1     | signed integer 8-bit           | C-type: char                                  |
+| `J`      | int16     | 2     | signed integer 16-bit          | C-type: short int                             |
+| `K`      | int32     | 4     | signed integer 32-bit          | C-type: int                                   |
+| `L`      | int64     | 8     | signed integer 64-bit          | C-type: long int                              |
+| `b`      | boolean   | 1     | boolean type                   | values: 0x00 = false or 0xFF = true           |
+| `h`      | float16   | 2     | half precision float 16-bit    | IEEE 754-2008 half precission                 |
+| `f`      | float32   | 4     | float 32-bit                   | IEEE 754 single precision, C-type: float      |
+| `d`      | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
+| `s`      | str/utf-8 | 1     | ascii / utf-8 string           | Only utf-8 is specified for 1-byte text coding|
+| `u`      | utf-16    | 2     | unicode string in utf-16       | 2-byte text coding                            |
+| `O`      | object    | 1     | object as defined in grammar   | For objects encapsulated in a byte array      |
+| `x`      | byte      | 1     | user defined data byte         | Special structs, compressed data etc.         |
 
-The special basic data type `O` is used to enclose xtype objects in an array of bytes. This acts as an additional size information for objects and helps to parse a file more quickly by stepping over large objects.
+The special basic data type `O` is used to enclose xtype objects in an array of bytes. This acts as additional size information for objects and helps to parse a file faster by stepping over large objects. The number characters `n`, `m`, `o`, `p` indicate the same types as `i`, `j`, `k`, `l` (uint8 to uint64) but describe array lengths instead of data content.
+
 
 Examples
 --------
 
-In the examples below, characters in brackets `[ ]` symbolize characters that are directly stored as their ASCII values. Parentheses `( )` show readable representations of the corresponding binary data. All examples are valid and complete xtype files. No additional header is required. That's simple, isn't it?
+In the examples below, characters in brackets `[ ]` symbolise characters that are stored directly as their ASCII values. Parentheses `( )` show readable representations of the corresponding binary data. All the examples are valid and complete xtype files and no additional header is required.
 
 * **String**:
 
 ```json5
 "hello world"
 ```
+
 ```Awk
 xtype: [m] (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
 hex:   6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 
-In this string example the first 3 bytes represent the header: the size type (m), the size (11 as 8-bit integer) and the array type (s for string). The next 11 bytes contain the text.
+In this string example the first 3 bytes represent the header of the object: the size type (m), the size (11 as 8-bit integer) and the array type (s for string). The next 11 bytes contain the text.
 
 * **Integer:**
 
 ```json5
 1025
 ```
+
 ```Awk
 xtype:
       [j] (uint16: 1025)
@@ -138,6 +141,7 @@ hex:  6A 01 04
 json:
 [10, 200, 255]
 ```
+
 ```Awk
 xtype:
        [3] [i] (uint8: 10) (uint8: 200) (uint8: 255)
@@ -150,6 +154,7 @@ hex:   33  69          0A           C8           FF
 json:
 [7, "seven", 7.77]
 ```
+
 ```Awk
 xtype:
 [[] [i] (uint8: 7) (uint8: 5) [s] [seven] [d] (float64: 7.77) []]
@@ -159,8 +164,9 @@ xtype:
 
 ```json5
 json:
-[(uint8) 7, (string*5) "seven", (double) 7.77]
+[7, "seven", 7.77]
 ```
+
 ```Awk
 xtype:
 [(] [i] [5] [s] [d] [)] (uint8: 7) [seven] (float64: 7.77)
@@ -174,6 +180,7 @@ json:
   [2.2, 4.4, 6.6],
   [3.3, 5.5, 7.7] ]
 ```
+
 ```Awk
 xtype:
 [3]
@@ -203,6 +210,7 @@ json:
   "habitable": True
 }
 ```
+
 ```Awk
 xtype:
 [{]
@@ -222,6 +230,7 @@ json:
   [3.3,    5.5,    7.7],
   [4.4,    6.6,    8.8] ]
 ```
+
 ```Awk
 xtype:
 [[]
@@ -239,13 +248,15 @@ xtype:
 ```
 
 # Footnotes
+
 ## Overview
 
-The content of the `footnote` element gives information and hints about how to read, interpret or pre-process the data, before it is used by the application. The footnote can be a list, dict or any other data type. A parser that makes no use of the footnotes must parse the element after `[*]`, to determine its size, but can ignore its content.
+The content of the `footnote` object gives information and hints about how to read, interpret or pre-process the data, before it is used by the application. The footnote can be a list, dict or any other data type. A parser that makes no use of the footnotes must parse the object after `[*]`, to determine its size, but can ignore its content.
 
 Information about jump positions in table of contents are given, as a convention, relative to the `*` character of the footnote. This position has to be remembered by the parser as the reference position.
 
 Footnotes with several information items can be organized in lists or dicts, or multiple footnotes can be concatenated, as for example:
+
 ```Awk
 [*] (footnote with unit) [*] (footnote with table of content) (data of type list)
 ```
@@ -303,7 +314,6 @@ _Footnote Purpose_ | Flags an object as visible or invisible / disabled
 _Footnote type_ | boolean `T` or `F`
 _Footnote value_ | `T` (true for visible / enabled), `F` (false for invisible / disabled)
 
-
 **Explanation:**
 
 This footnote type tags an object as invisible, when the value is set to false. This feature can be used as placeholder for e.g. objects to be added later or flexible ordered objects for other objects pointing on it with links.
@@ -336,6 +346,7 @@ This example shows short list with mixed types and a table of content with offse
 json:
 [7, "seven", 7.77]
 ```
+
 ```Awk
 xtype:
 [*] [3] [i]                # uint8 array of length 3
