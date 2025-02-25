@@ -85,8 +85,8 @@ The grammar is fully defined and explained by a graphical representation. Green 
 
 | Type     | Name      | Bytes | Description                    | Comment                                       |
 |:--------:|-----------|:-----:|--------------------------------|-----------------------------------------------|
-| `i`, `n` | uint8     | 1     | unsigned integer 8-bit         | C-type: unsigned char                         |
-| `j`, `m` | uint16    | 2     | unsigned integer 16-bit        | C-type: unsigned short int                    |
+| `i`, `m` | uint8     | 1     | unsigned integer 8-bit         | C-type: unsigned char                         |
+| `j`, `n` | uint16    | 2     | unsigned integer 16-bit        | C-type: unsigned short int                    |
 | `k`, `o` | uint32    | 4     | unsigned integer 32-bit        | C-type: unsigned int                          |
 | `l`, `p` | uint64    | 8     | unsigned integer 64-bit        | C-type: unsigned long int                     |
 | `I`      | int8      | 1     | signed integer 8-bit           | C-type: char                                  |
@@ -102,7 +102,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 | `O`      | object    | 1     | object as defined in grammar   | For objects encapsulated in a byte array      |
 | `x`      | byte      | 1     | user defined data byte         | Special structs, compressed data etc.         |
 
-The special basic data type `O` is used to enclose xtype objects in an array of bytes. This acts as additional size information for objects and helps to parse a file faster by stepping over large objects. The number characters `n`, `m`, `o`, `p` indicate the same types as `i`, `j`, `k`, `l` (uint8 to uint64) but describe array lengths instead of data content.
+The special basic data type `O` is used to enclose xtype objects in an array of bytes. This acts as additional size information for objects and helps to parse a file faster by stepping over large objects. The characters `m`, `n`, `o`, `p` indicate the same types as `i`, `j`, `k`, `l` (uint8 to uint64) but describe array lengths instead of data content.
 
 
 Examples
