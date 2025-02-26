@@ -272,12 +272,12 @@ _Footnote value_ | 1234
 
 **Explanation:**
 
-This is a footnote at the very beginning of the file to indicate the byte order (little or big endian) and acts as the file signature with four magic bytes. The 16-bit signed integer has the defined value of 1234. An xtype reader with the wrong byte order would recognize the number as -11772. If no such file signature is given, xtype is specified for little endian byte order.
+This is a footnote at the very beginning of the file can be used to indicate the byte order (big or little endian) and can also act as the file signature with four magic bytes. The 16-bit signed integer has the defined value of 1234. An xtype reader with the wrong byte order would read the number as -11772. If no such file signature is given, xtype is specified for big endian byte order as default.
 
 ```Awk
 xtype: [*] [J] (1234)
-hex:  2A  4A  D2 04    # little endian (default)
-hex:  2A  4A  04 D2    # big endian
+hex:  2A  4A  04 D2    # big endian (default)
+hex:  2A  4A  D2 04    # little endian
 ```
 
 **Example:**
