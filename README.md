@@ -1,6 +1,6 @@
 # xtype (format) <img src="figures/logo_xtype.png" width="50" align="right">
 
-A universal binary notation language
+A universal binary format for data exchange
 
 Overview
 --------
@@ -67,16 +67,16 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <list_items> ::= <object> | <object> <list_items>
 <dict> ::= "{}" | "{" <dict_elem> "}"
 <dict_items> ::= <element> <object> | <element> <object> <dict_items>
-<element> ::= <type> <data>
+<element> ::= <type> <data> | "T"  | "F" | "n"
 <type> ::= <lenght> <type> | "(" <struct> ")" | <scalar>
 <struct> ::= <type> | <type> <struct>
 <scalar> ::= <bin_type> <bin_data>
 <bin_type> ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L"
-<bin_type> ::= "b" | "h" | "f" | "d" | "s" | "u" | "O" | "x"
+<bin_type> ::= "b" | "h" | "f" | "d" | "s" | "u" | "o" | "x"
 <lenght> ::= "0" | "1" | "2" | "3" | "4"
 <lenght> ::= "5" | "6" | "7" | "8" | "9"
-<lenght> ::= "m" <bin_data> | "n" <bin_data>
-<lenght> ::= "o" <bin_data> | "p" <bin_data>
+<lenght> ::= "M" <bin_data> | "N" <bin_data>
+<lenght> ::= "O" <bin_data> | "P" <bin_data>
 <bin_data> ::= (binary data of defined length, see list of types below)
 <EOF> ::= (end of file defined by file system)
 ```
@@ -85,24 +85,24 @@ The grammar is fully defined and explained by a graphical representation. Green 
 
 | Type     | Name      | Bytes | Description                    | Comment                                       |
 |:--------:|-----------|:-----:|--------------------------------|-----------------------------------------------|
-| `i`, `m` | uint8     | 1     | unsigned integer 8-bit         | C-type: unsigned char                         |
-| `j`, `n` | uint16    | 2     | unsigned integer 16-bit        | C-type: unsigned short int                    |
-| `k`, `o` | uint32    | 4     | unsigned integer 32-bit        | C-type: unsigned int                          |
-| `l`, `p` | uint64    | 8     | unsigned integer 64-bit        | C-type: unsigned long int                     |
-| `I`      | int8      | 1     | signed integer 8-bit           | C-type: char                                  |
-| `J`      | int16     | 2     | signed integer 16-bit          | C-type: short int                             |
-| `K`      | int32     | 4     | signed integer 32-bit          | C-type: int                                   |
-| `L`      | int64     | 8     | signed integer 64-bit          | C-type: long int                              |
+| `i`      | uint8     | 1     | unsigned integer 8-bit         | C-type: unsigned char                         |
+| `j`      | uint16    | 2     | unsigned integer 16-bit        | C-type: unsigned short int                    |
+| `k`      | uint32    | 4     | unsigned integer 32-bit        | C-type: unsigned int                          |
+| `l`      | uint64    | 8     | unsigned integer 64-bit        | C-type: unsigned long int                     |
+| `I`, `M` | int8      | 1     | signed integer 8-bit           | C-type: char                                  |
+| `J`, `N` | int16     | 2     | signed integer 16-bit          | C-type: short int                             |
+| `K`, `O` | int32     | 4     | signed integer 32-bit          | C-type: int                                   |
+| `L`, `P` | int64     | 8     | signed integer 64-bit          | C-type: long int                              |
 | `b`      | boolean   | 1     | boolean type                   | values: 0x00 = false or 0xFF = true           |
 | `h`      | float16   | 2     | half precision float 16-bit    | IEEE 754-2008 half precission                 |
 | `f`      | float32   | 4     | float 32-bit                   | IEEE 754 single precision, C-type: float      |
 | `d`      | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
 | `s`      | str/utf-8 | 1     | ascii / utf-8 string           | Only utf-8 is specified for 1-byte text coding|
 | `u`      | utf-16    | 2     | unicode string in utf-16       | 2-byte text coding                            |
-| `O`      | object    | 1     | object as defined in grammar   | For objects encapsulated in a byte array      |
+| `o`      | object    | 1     | object as defined in grammar   | For objects encapsulated in a byte array      |
 | `x`      | byte      | 1     | user defined data byte         | Special structs, compressed data etc.         |
 
-The special basic data type `O` is used to enclose xtype objects in an array of bytes. This acts as additional size information for objects and helps to parse a file faster by stepping over large objects. The characters `m`, `n`, `o`, `p` indicate the same types as `i`, `j`, `k`, `l` (uint8 to uint64) but describe array lengths instead of data content.
+The special basic data type `o` is used to enclose xtype objects in an array of bytes. This acts as additional size information for objects and helps to parse a file faster by stepping over large objects. The characters `M`, `N`, `O`, `P` indicate the same types as `I`, `J`, `K`, `L` (uint8 to uint64) but describe array lengths instead of data content.
 
 
 Examples
