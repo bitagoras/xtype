@@ -132,7 +132,7 @@ In this string example the first 3 bytes represent the header of the object: the
 ```Awk
 xtype:
       [j] (uint16: 1025)
-hex:  6A 01 04
+hex:  6A 04 01
 ```
 
 * **3d vector of type uint8:**
