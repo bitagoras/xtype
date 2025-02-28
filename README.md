@@ -85,14 +85,14 @@ The grammar is fully defined and explained by a graphical representation. Green 
 
 | Type     | Name      | Bytes | Description                    | Comment                                       |
 |:--------:|-----------|:-----:|--------------------------------|-----------------------------------------------|
-| `i`      | uint8     | 1     | unsigned integer 8-bit         | C-type: unsigned char                         |
-| `j`      | uint16    | 2     | unsigned integer 16-bit        | C-type: unsigned short int                    |
-| `k`      | uint32    | 4     | unsigned integer 32-bit        | C-type: unsigned int                          |
-| `l`      | uint64    | 8     | unsigned integer 64-bit        | C-type: unsigned long int                     |
-| `I`, `M` | int8      | 1     | signed integer 8-bit           | C-type: char                                  |
-| `J`, `N` | int16     | 2     | signed integer 16-bit          | C-type: short int                             |
-| `K`, `O` | int32     | 4     | signed integer 32-bit          | C-type: int                                   |
-| `L`, `P` | int64     | 8     | signed integer 64-bit          | C-type: long int                              |
+| `i`      | int8      | 1     | signed integer 8-bit           | C-type: char                                  |
+| `j`      | int16     | 2     | signed integer 16-bit          | C-type: short int                             |
+| `k`      | int32     | 4     | signed integer 32-bit          | C-type: int                                   |
+| `l`      | int64     | 8     | signed integer 64-bit          | C-type: long int                              |
+| `I`, `M` | uint8     | 1     | unsigned integer 8-bit         | C-type: unsigned char                         |
+| `J`, `N` | uint16    | 2     | unsigned integer 16-bit        | C-type: unsigned short int                    |
+| `K`, `O` | uint32    | 4     | unsigned integer 32-bit        | C-type: unsigned int                          |
+| `L`, `P` | uint64    | 8     | unsigned integer 64-bit        | C-type: unsigned long int                     |
 | `b`      | boolean   | 1     | boolean type                   | values: 0x00 = false or 0xFF = true           |
 | `h`      | float16   | 2     | half precision float 16-bit    | IEEE 754-2008 half precission                 |
 | `f`      | float32   | 4     | float 32-bit                   | IEEE 754 single precision, C-type: float      |
@@ -117,7 +117,7 @@ In the examples below, characters in brackets `[ ]` symbolise characters that ar
 ```
 
 ```Awk
-xtype: [m] (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
+xtype: [M] (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
 hex:   6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 
@@ -144,8 +144,8 @@ json:
 
 ```Awk
 xtype:
-       [3] [i] (uint8: 10) (uint8: 200) (uint8: 255)
-hex:   33  69          0A           C8           FF
+       [3] [I] (uint8: 10) (uint8: 200) (uint8: 255)
+hex:   33  49          0A           C8           FF
 ```
 
 * **List with integer, string and float:**
@@ -169,7 +169,7 @@ json:
 
 ```Awk
 xtype:
-[(] [i] [5] [s] [d] [)] (uint8: 7) [seven] (float64: 7.77)
+[(] [i] [5] [s] [d] [)] (int8: 7) [seven] (float64: 7.77)
 ```
 
 * **3 x 3 matrix of double:**
@@ -194,9 +194,9 @@ xtype:
 
 ```Awk
 xtype:
-[n] (uint16: 800)
-    [n] (uint16: 600)
-        [3] [i]
+[N] (uint16: 800)
+    [N] (uint16: 600)
+        [3] [I]
         (... 800*600*3 bytes of data ...)
 ```
 
