@@ -157,7 +157,7 @@ json:
 
 ```Awk
 xtype:
-[[] [i] (uint8: 7) (uint8: 5) [s] [seven] [d] (float64: 7.77) []]
+[[] [k] (int32: 7) (uint8: 5) [s] [seven] [d] (float64: 7.77) []]
 ```
 
 * **Struct with integer, string and float:**
@@ -169,7 +169,7 @@ json:
 
 ```Awk
 xtype:
-[(] [i] [5] [s] [d] [)] (int8: 7) [seven] (float64: 7.77)
+[(] [k] [5] [s] [d] [)] (int32: 7) [seven] (float64: 7.77)
 ```
 
 * **3 x 3 matrix of double:**
@@ -349,9 +349,9 @@ json:
 
 ```Awk
 xtype:
-[*] [3] [i]                # uint8 array of length 3
+[*] [3] [K]                # uint32 array of length 3
         (7) (9) (16)       # offsets to the objects
-[[] [i] (uint8: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
+[[] [k] (int32: 7) (uint8: 5) [s] [seven] [f] (float32: 7.77) []]
      ^              ^                      ^   # target positions
 ```
 
@@ -385,12 +385,12 @@ xtype:
     # Data Structure with links instead of actual data objects
     [{]
         [5] [s] [file1]
-            [*] [s] [@] [i] (...)  # Link to object bigdata1
+            [*] [s] [@] [K] (...)  # Link to object bigdata1
         [{]
             [5] [s] [fileA]
-                [*] [s] [@] [i] (...)  # Link to object bigdata2
+                [*] [s] [@] [K] (...)  # Link to object bigdata2
             [5] [s] [fileB]
-                [*] [s] [@] [i] (...)  # Link to object bigdata3
+                [*] [s] [@] [K] (...)  # Link to object bigdata3
         [}]
         [*] [F] [n] (1000) [x] (1000 Byte) # Invisible place holder buffer for
     [}]                                    # adding more objects in future
