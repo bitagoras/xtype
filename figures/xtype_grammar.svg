@@ -29,8 +29,8 @@
      inkscape:window-maximized="0"
      inkscape:window-y="0"
      inkscape:window-x="443"
-     inkscape:cy="419.04882"
-     inkscape:cx="204.11733"
+     inkscape:cy="952.99813"
+     inkscape:cx="405.53112"
      inkscape:zoom="0.7397706"
      inkscape:snap-global="true"
      showgrid="false"
@@ -838,7 +838,7 @@
      style="opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-opacity:1"
      id="path5411"
      inkscape:connector-curvature="0"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
+     inkscape:export-filename="xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
   <text
@@ -1668,16 +1668,16 @@
   <text
      id="text4886-5"
      y="807.86487"
-     x="267.04996"
+     x="270.42279"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stop-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_type.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96"><tspan
        y="807.86487"
-       x="267.04996"
+       x="270.42279"
        id="tspan4884-2"
-       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">(little endian byte order by default)</tspan></text>
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:13.75px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">(big endian byte order by default)</tspan></text>
   <path
      id="use4889-8"
      d="m 275.46965,612.60003 c 0,3.65737 -2.93243,6.62224 -6.54976,6.62224 -3.61733,0 -6.54975,-2.96487 -6.54976,-6.62224 v -9.99378 c 0,-3.65736 2.93243,-6.62224 6.54976,-6.62224 3.61733,0 6.54976,2.96488 6.54976,6.62224 z"
