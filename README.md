@@ -56,27 +56,27 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <p align="center"><img src="figures/xtype_type.png"></p>
 <p align="center"><img src="figures/xtype_length.png"></p>
 
-### Grammar rules as text
+### Grammar rules as BNF
 
 ```xml
-<file> ::= <EOF> | <object> <EOF>
-<object> ::= <content> | <footnote> <content>
-<footnote> ::= "*" <content> | "*" <content> <footnote>
-<content> ::= <element> | <list> | <dict>
-<list> ::= "[]" | "[" <EOF> | "[" <list_items> <EOF> | "[" <list_items> "]"
+<file>       ::= <EOF> | <object> <EOF>
+<object>     ::= <content> | <footnote> <content>
+<footnote>   ::= "*" <content> | "*" <content> <footnote>
+<content>    ::= <element> | <list> | <dict>
+<list>       ::= "[]" | "[" <EOF> | "[" <list_items> <EOF> | "[" <list_items> "]"
 <list_items> ::= <object> | <object> <list_items>
-<dict> ::= "{}" | "{" <dict_items> "}"
+<dict>       ::= "{}" | "{" <dict_items> "}"
 <dict_items> ::= <element> <object> | <element> <object> <dict_items>
-<element> ::= <type> <bin_data> | "T"  | "F" | "n"
-<type> ::= <lenght> <type> | "(" <struct> ")" | <scalar>
-<struct> ::= <type> | <type> <struct>
-<scalar> ::= <bin_type> <bin_data>
-<bin_type> ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L" |
-               "b" | "h" | "f" | "d" | "s" | "u" | "o" | "x"
-<lenght> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" |
-             "M" <bin_data> | "N" <bin_data> | "O" <bin_data> | "P" <bin_data>
-<bin_data> ::= (binary data of defined length, see table with the types below)
-<EOF> ::= (end of file defined by file system)
+<element>    ::= <type> <bin_data> | "T"  | "F" | "n"
+<type>       ::= <lenght> <type> | "(" <struct> ")" | <scalar>
+<struct>     ::= <type> | <type> <struct>
+<scalar>     ::= <bin_type> <bin_data>
+<bin_type>   ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L" |
+                 "b" | "h" | "f" | "d" | "s" | "u" | "o" | "x"
+<lenght>     ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" |
+                 "M" <bin_data> | "N" <bin_data> | "O" <bin_data> | "P" <bin_data>
+<bin_data>   ::= (binary data of defined length, see table with the types below)
+<EOF>        ::= (end of file defined by file system)
 ```
 
 ## Types
