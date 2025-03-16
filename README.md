@@ -49,6 +49,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 
 <p align="center"><img src="figures/xtype_file.png"></p>
 <p align="center"><img src="figures/xtype_object.png"></p>
+<p align="center"><img src="figures/xtype_content.png"></p>
 <p align="center"><img src="figures/xtype_list.png"></p>
 <p align="center"><img src="figures/xtype_dict.png"></p>
 <p align="center"><img src="figures/xtype_element.png"></p>
@@ -60,14 +61,14 @@ The grammar is fully defined and explained by a graphical representation. Green 
 ```xml
 <file> ::= <EOF> | <object> <EOF>
 <object> ::= <content> | <footnote> <content>
-<footnote> ::= "*" <object> | "*" <object> <footnote>
+<footnote> ::= "*" <content> | "*" <content> <footnote>
 <content> ::= <element> | <list> | <dict>
 <list> ::= "[]" | "[" <EOF>
 <list> ::= "[" <list_items> "]" | "[" <list_items> <EOF>
 <list_items> ::= <object> | <object> <list_items>
-<dict> ::= "{}" | "{" <dict_elem> "}"
+<dict> ::= "{}" | "{" <dict_items> "}"
 <dict_items> ::= <element> <object> | <element> <object> <dict_items>
-<element> ::= <type> <data> | "T"  | "F" | "n"
+<element> ::= <type> <bin_data> | "T"  | "F" | "n"
 <type> ::= <lenght> <type> | "(" <struct> ")" | <scalar>
 <struct> ::= <type> | <type> <struct>
 <scalar> ::= <bin_type> <bin_data>
@@ -77,10 +78,9 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <lenght> ::= "5" | "6" | "7" | "8" | "9"
 <lenght> ::= "M" <bin_data> | "N" <bin_data>
 <lenght> ::= "O" <bin_data> | "P" <bin_data>
-<bin_data> ::= (binary data of defined length, see list of types below)
+<bin_data> ::= (binary data of defined length, see table with the types below)
 <EOF> ::= (end of file defined by file system)
 ```
-
 ## Types
 
 | Type     | Name      | Bytes | Description                    | Comment                                       |
