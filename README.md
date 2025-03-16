@@ -63,8 +63,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <object> ::= <content> | <footnote> <content>
 <footnote> ::= "*" <content> | "*" <content> <footnote>
 <content> ::= <element> | <list> | <dict>
-<list> ::= "[]" | "[" <EOF>
-<list> ::= "[" <list_items> "]" | "[" <list_items> <EOF>
+<list> ::= "[]" | "[" <EOF> | "[" <list_items> <EOF> | "[" <list_items> "]"
 <list_items> ::= <object> | <object> <list_items>
 <dict> ::= "{}" | "{" <dict_items> "}"
 <dict_items> ::= <element> <object> | <element> <object> <dict_items>
@@ -72,15 +71,14 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <type> ::= <lenght> <type> | "(" <struct> ")" | <scalar>
 <struct> ::= <type> | <type> <struct>
 <scalar> ::= <bin_type> <bin_data>
-<bin_type> ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L"
-<bin_type> ::= "b" | "h" | "f" | "d" | "s" | "u" | "o" | "x"
-<lenght> ::= "0" | "1" | "2" | "3" | "4"
-<lenght> ::= "5" | "6" | "7" | "8" | "9"
-<lenght> ::= "M" <bin_data> | "N" <bin_data>
-<lenght> ::= "O" <bin_data> | "P" <bin_data>
+<bin_type> ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L" |
+               "b" | "h" | "f" | "d" | "s" | "u" | "o" | "x"
+<lenght> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" |
+             "M" <bin_data> | "N" <bin_data> | "O" <bin_data> | "P" <bin_data>
 <bin_data> ::= (binary data of defined length, see table with the types below)
 <EOF> ::= (end of file defined by file system)
 ```
+
 ## Types
 
 | Type     | Name      | Bytes | Description                    | Comment                                       |
