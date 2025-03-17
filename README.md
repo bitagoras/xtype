@@ -74,8 +74,9 @@ The grammar is fully defined and explained by a graphical representation. Green 
                  "M" <bin_data> | "N" <bin_data> | "O" <bin_data> | "P" <bin_data>
 <bin_type>   ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L" |
                  "b" | "h" | "f" | "d" | "s" | "u" | "o" | "x"
-<bin_data>   ::= (binary data of defined length, see table with the types below)
-<EOF>        ::= (end of file defined by file system)
+
+<bin_data> is the binary data of defined size, see table with types below.
+<EOF> is the end of file as defined by file system.
 ```
 
 ## Types
