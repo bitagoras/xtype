@@ -63,14 +63,13 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <object>     ::= <content> | <footnote> <content>
 <footnote>   ::= "*" <content> | "*" <content> <footnote>
 <content>    ::= <element> | <list> | <dict>
-<list>       ::= "[]" | "[" <EOF> | "[" <list_items> <EOF> | "[" <list_items> "]"
+<list>       ::= "[]" | "[" <list_items> "]" | "[" <EOF> | "[" <list_items> <EOF>
 <list_items> ::= <object> | <object> <list_items>
-<dict>       ::= "{}" | "{" <dict_items> "}"
+<dict>       ::= "{}" | "{" <dict_items> "}" | "{" <EOF> | "{" <list_items> <EOF>
 <dict_items> ::= <element> <object> | <element> <object> <dict_items>
 <element>    ::= <type> <bin_data> | "T"  | "F" | "n"
-<type>       ::= <lenght> <type> | "(" <struct> ")" | <scalar>
+<type>       ::= <lenght> <type> | "(" <struct> ")" | <bin_data>
 <struct>     ::= <type> | <type> <struct>
-<scalar>     ::= <bin_type> <bin_data>
 <lenght>     ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" |
                  "M" <bin_data> | "N" <bin_data> | "O" <bin_data> | "P" <bin_data>
 <bin_type>   ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L" |
