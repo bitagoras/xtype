@@ -21,17 +21,18 @@ Properties
 
 * Basic boolean, integer, floating point data types and strings
 * Arrays, multi-dimensional arrays
-* Structured types, struct arrays
 * Lists of arbitrary elements with mixed types
 * Objects or dictionaries with key/value pairs for arbitrary elements
 * Unlimited hierarchy levels
 * Open lists allow to append elements sequentially to a log file while the syntax is valid and complete after every update.
 * All elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
+* The data elements can be parsed very fast without a stack.
 
 ### Possible format extensions by user-defined footnotes (meta information)
 
+* Definition of structs
 * Table of contents
-* Fast random access to certain sub-elements in big files
+* Fast random access to sub-elements in big files
 * Fast deletion and addition of elements in big files
 * Chunk data mode for efficient writing and reading of big files
 * Checksums for integrity checks
@@ -68,15 +69,14 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <dict>       ::= "{}" | "{" <dict_items> "}" | "{" <EOF> | "{" <list_items> <EOF>
 <dict_items> ::= <element> <object> | <element> <object> <dict_items>
 <element>    ::= <type> <bin_data> | "T"  | "F" | "n"
-<type>       ::= <lenght> <type> | "(" <struct> ")" | <bin_data>
-<struct>     ::= <type> | <type> <struct>
+<type>       ::= <lenght> <type> | "S" <struct> | <bin_data>
 <lenght>     ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" |
                  "M" <bin_data> | "N" <bin_data> | "O" <bin_data> | "P" <bin_data>
 <bin_type>   ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L" |
                  "b" | "h" | "f" | "d" | "s" | "u" | "o" | "x"
 
 <bin_data> is the binary data of defined size, see table with types below.
-<EOF> is the end of file as defined by file system.
+<EOF> is the end of file as defined by the file system.
 ```
 
 ## Types
@@ -98,7 +98,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 | `s`      | str/utf-8 | 1     | ascii / utf-8 string           | Only utf-8 is specified for 1-byte text coding|
 | `u`      | utf-16    | 2     | unicode string in utf-16       | 2-byte text coding                            |
 | `o`      | object    | 1     | object as defined in grammar   | For objects encapsulated in a byte array      |
-| `x`      | byte      | 1     | user defined data byte         | Special structs, compressed data etc.         |
+| `x`      | byte      | 1     | user defined data byte         | Special data formats, compressed data etc.         |
 
 The special basic data type `o` is used to enclose xtype objects in an array of bytes. This acts as additional size information for objects and helps to parse a file faster by stepping over large objects. The characters `M`, `N`, `O`, `P` indicate the same types as `I`, `J`, `K`, `L` (uint8 to uint64) but describe array lengths instead of data content.
 
@@ -324,6 +324,39 @@ In the following example an object is tagged as invisible. This object is treate
 [*] [F] (some object)
 ```
 
+
+## Struct
+
+_Footnote Purpose_ | Struct definition
+:---|:---
+_Footnote type_ | Struct
+_Footnote value_ | Sequence that contains a xtype list or dict as a prototype of the struct without any data payload in the elements.
+_Target element_ | Struct or array of struct that is described by the footnote value.
+
+**Explanation:**
+
+The struct description is a xtype list or dict inside the footnote struct data. The elements of this list or dict have no data payload and consist only of the type identifiers or array lengths. When a dict is used for the struct description, the names of each field can be given.
+
+**Example:**
+
+The struct shall be the following C-structure:
+
+typedef struct {
+    short count;
+    char id[3]; // 3-byte char array
+    float average;
+} myStruct;
+
+The xtype type symbols are k, 3s, d. The byte sequence of the struct prototype would be `[j3sf]`. In a named struct definition the sequence would be `{5scountj2sid3s7saveragef}`, which is in a more readable form `{`(`5s`)"`count`": `j`, (`2s`)"`id`": `3s`, (`7s`)"`average`" :`f}`.
+
+
+```Awk
+xtype:
+[*] [S] [6]                         # Footnote with length of struct definition
+        [[] [j] [3] [s] [f] []]     # struct definition (size 2+3+4 = 9)
+[5] [S] [9] (data with size 5 x 9)  # array of 5 times this 9-byte struct type
+```
+
 ## Table of content for quick random access
 
 _Footnote Purpose_ | Table of content: pointer to objects in a list or dict
@@ -355,15 +388,15 @@ xtype:
 
 ## Object links
 
-_Footnote Purpose_ | Pointers to objects instead of the data itself
+_Footnote Purpose_ | Relative pointers to objects instead of the data itself
 :---|:---
 _Footnote type_ | String (`s`)
 _Footnote value_ | `@`
-_Object value_ | Unsigned integer (`i`,`j`,`k`,`l`) with absolute address of actual object
+_Target element_ | Unsigned integer (`I`,`J`,`K`,`L`) with relativ address of actual object
 
 **Explanation:**
 
-The content of the object is replaced by an unsigned integer (`i`,`j`,`k`,`l`) or array of unsigned integers pointing to the absolute address (relative to the beginning of the file) of the objects with the actual data. This footnote type allows to keep the main data structure small and efficient and allows fast random access to sub objects which gives also more flexibility to manage the content.
+The content of the object is replaced by an unsigned integer (`I`,`J`,`K`,`L`) or array of unsigned integers pointing to the relative address (relative to the beginning of the number element, so e.g. the `K` position) to the objects with the actual data. This footnote type allows to keep the main data structure small and efficient and allows fast random access to sub objects which gives also more flexibility to manage the content.
 
 **Example:**
 
@@ -383,14 +416,14 @@ xtype:
     # Data Structure with links instead of actual data objects
     [{]
         [5] [s] [file1]
-            [*] [s] [@] [K] (...)  # Link to object bigdata1
+            [*] [s] [@] [k] (...)  # Link to object bigdata1
         [{]
             [5] [s] [fileA]
-                [*] [s] [@] [K] (...)  # Link to object bigdata2
+                [*] [s] [@] [k] (...)  # Link to object bigdata2
             [5] [s] [fileB]
-                [*] [s] [@] [K] (...)  # Link to object bigdata3
+                [*] [s] [@] [k] (...)  # Link to object bigdata3
         [}]
-        [*] [F] [n] (1000) [x] (1000 Byte) # Invisible place holder buffer for
+        [*] [F] [N] (1000) [x] (1000 Byte) # Invisible place holder buffer for
     [}]                                    # adding more objects in future
     [8] [s] [bigdata1]   # Link target with actual data
     [8] [s] [bigdata2]   # Link target with actual data
