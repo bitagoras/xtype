@@ -69,7 +69,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <dict>       ::= "{}" | "{" <dict_items> "}" | "{" <EOF> | "{" <list_items> <EOF>
 <dict_items> ::= <element> <object> | <element> <object> <dict_items>
 <element>    ::= <type> <bin_data> | "T"  | "F" | "n"
-<type>       ::= <lenght> <type> | "S" <struct> | <bin_data>
+<type>       ::= <lenght> <type> | "S" <lenght> | <bin_data>
 <lenght>     ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" |
                  "M" <bin_data> | "N" <bin_data> | "O" <bin_data> | "P" <bin_data>
 <bin_type>   ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L" |
@@ -347,7 +347,7 @@ typedef struct {
     float average;
 } myStruct;
 
-The xtype type symbols are k, 3s, d. The byte sequence of the struct prototype would be `[j3sf]`. In a named struct definition the sequence would be `{5scountj2sid3s7saveragef}`, which is in a more readable form `{`(`5s`)"`count`": `j`, (`2s`)"`id`": `3s`, (`7s`)"`average`" :`f}`.
+The xtype type symbols are k, 3s, d. The byte sequence of the struct prototype is `[j3sf]`. In a named struct definition the sequence would be `{5scountj2sid3s7saveragef}`, which is in a more readable form `{`(`5s`)"`count`": `j`, (`2s`)"`id`": `3s`, (`7s`)"`average`" :`f}`.
 
 
 ```Awk

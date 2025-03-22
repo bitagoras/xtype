@@ -29,9 +29,9 @@
      inkscape:window-maximized="0"
      inkscape:window-y="0"
      inkscape:window-x="117"
-     inkscape:cy="654.75453"
-     inkscape:cx="300.13565"
-     inkscape:zoom="1.0461936"
+     inkscape:cy="623.16616"
+     inkscape:cx="291.30653"
+     inkscape:zoom="1.4795412"
      inkscape:snap-global="true"
      showgrid="false"
      id="namedview400"
@@ -1989,97 +1989,90 @@
      inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
      inkscape:export-xdpi="96"
      inkscape:export-ydpi="96" />
-  <g
-     transform="translate(86.876742,104.51984)"
-     id="g4946"
-     inkscape:export-filename="F:\Programmierprojekte\xtype\figures\xtype_value.png"
-     inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96">
-    <use
-       height="100%"
-       width="100%"
-       transform="translate(-49.22194,47.054352)"
-       id="use5262"
-       xlink:href="#path6605"
-       y="0"
-       x="0" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#path6605"
-       id="use5264"
-       transform="translate(-2.72604,64.207692)"
-       width="100%"
-       height="100%" />
-    <use
-       height="100%"
-       width="100%"
-       transform="translate(44.939976,81.155932)"
-       id="use5266"
-       xlink:href="#path6605"
-       y="0"
-       x="0" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.4531px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="211.94856"
-       y="459.89221"
-       id="text4933"><tspan
-         id="tspan4931"
-         x="211.94856"
-         y="459.89221"
-         style="line-height:14.4531px">T</tspan></text>
-    <text
-       id="text4939"
-       y="477.41174"
-       x="258.58942"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.4531px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="477.41174"
-         x="258.58942"
-         id="tspan4937"
-         style="line-height:14.4531px">F</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.4531px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="306.6102"
-       y="493.62756"
-       id="text4947"><tspan
-         id="tspan4945"
-         x="306.6102"
-         y="493.62756"
-         style="line-height:14.4531px">n</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="228.09448"
-       y="452.58783"
-       id="text4965"><tspan
-         id="tspan4963"
-         x="228.09448"
-         y="452.58783"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">true</tspan></text>
-    <text
-       id="text4969"
-       y="470.54916"
-       x="274.63751"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="470.54916"
-         x="274.63751"
-         id="tspan4967"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">false</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="322.93088"
-       y="487.40494"
-       id="text4973"><tspan
-         id="tspan4971"
-         x="322.93088"
-         y="487.40494"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">null / none</tspan></text>
-  </g>
+  <use
+     height="100%"
+     width="100%"
+     transform="translate(37.654802,151.57419)"
+     id="use5262"
+     xlink:href="#path6605"
+     y="0"
+     x="0" />
+  <use
+     x="0"
+     y="0"
+     xlink:href="#path6605"
+     id="use5264"
+     transform="translate(84.150702,168.72753)"
+     width="100%"
+     height="100%" />
+  <use
+     height="100%"
+     width="100%"
+     transform="translate(131.81672,185.67577)"
+     id="use5266"
+     xlink:href="#path6605"
+     y="0"
+     x="0" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.4531px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="298.82532"
+     y="564.41205"
+     id="text4933"><tspan
+       id="tspan4931"
+       x="298.82532"
+       y="564.41205"
+       style="line-height:14.4531px">T</tspan></text>
+  <text
+     id="text4939"
+     y="581.93158"
+     x="345.46616"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.4531px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"><tspan
+       y="581.93158"
+       x="345.46616"
+       id="tspan4937"
+       style="line-height:14.4531px">F</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.625px;line-height:14.4531px;font-family:'Courier New';-inkscape-font-specification:'Courier New Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="393.48694"
+     y="598.1474"
+     id="text4947"><tspan
+       id="tspan4945"
+       x="393.48694"
+       y="598.1474"
+       style="line-height:14.4531px">n</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="314.97122"
+     y="557.10767"
+     id="text4965"><tspan
+       id="tspan4963"
+       x="314.97122"
+       y="557.10767"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">true</tspan></text>
+  <text
+     id="text4969"
+     y="575.06903"
+     x="361.51425"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"><tspan
+       y="575.06903"
+       x="361.51425"
+       id="tspan4967"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">false</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="409.80762"
+     y="591.9248"
+     id="text4973"><tspan
+       id="tspan4971"
+       x="409.80762"
+       y="591.9248"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">null / none</tspan></text>
   <circle
      style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="use5061"
@@ -3023,4 +3016,14 @@
        x="321.60635"
        id="tspan6"
        style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:13.75px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif Bold Italic';fill:#d40000;stroke-width:1px">n</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.75px;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="373.71225"
+     y="554.78461"
+     id="text10"><tspan
+       id="tspan10"
+       x="373.71225"
+       y="554.78461"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:14.4531px;font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright Italic'">binary payload</tspan></text>
 </svg>
