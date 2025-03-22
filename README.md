@@ -19,7 +19,7 @@ Properties
 
 ### Features of the grammar
 
-* Basic boolean, integer, floating point data types and strings
+* Basic boolean, integer, floating point data types, strings and structs
 * Arrays, multi-dimensional arrays
 * Lists of arbitrary elements with mixed types
 * Objects or dictionaries with key/value pairs for arbitrary elements
@@ -28,7 +28,7 @@ Properties
 * All elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
 * The data elements can be parsed very fast without a stack.
 
-### Possible format extensions by user-defined footnotes (meta information)
+### Additional (possible) features by user-defined "footnotes" (meta information)
 
 * Definition of structs
 * Table of contents
@@ -69,11 +69,11 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <dict>       ::= "{}" | "{" <dict_items> "}" | "{" <EOF> | "{" <list_items> <EOF>
 <dict_items> ::= <element> <object> | <element> <object> <dict_items>
 <element>    ::= <type> <bin_data> | "T"  | "F" | "n"
-<type>       ::= <lenght> <type> | "S" <lenght> | <bin_data>
+<type>       ::= <lenght> <type> | <bin_data>
 <lenght>     ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" |
                  "M" <bin_data> | "N" <bin_data> | "O" <bin_data> | "P" <bin_data>
 <bin_type>   ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L" |
-                 "b" | "h" | "f" | "d" | "s" | "u" | "o" | "x"
+                 "b" | "h" | "f" | "d" | "s" | "u" | "S" | "x"
 
 <bin_data> is the binary data of defined size, see table with types below.
 <EOF> is the end of file as defined by the file system.
@@ -97,8 +97,8 @@ The grammar is fully defined and explained by a graphical representation. Green 
 | `d`      | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
 | `s`      | str/utf-8 | 1     | ascii / utf-8 string           | Only utf-8 is specified for 1-byte text coding|
 | `u`      | utf-16    | 2     | unicode string in utf-16       | 2-byte text coding                            |
-| `o`      | object    | 1     | object as defined in grammar   | For objects encapsulated in a byte array      |
-| `x`      | byte      | 1     | user defined data byte         | Special data formats, compressed data etc.         |
+| `S`      | struct    | 1     | Struct type (size of array)    | Definition of the struct is given as footnote |
+| `x`      | byte      | 1     | user defined data byte         | Special data formats, compressed data etc.    |
 
 The special basic data type `o` is used to enclose xtype objects in an array of bytes. This acts as additional size information for objects and helps to parse a file faster by stepping over large objects. The characters `M`, `N`, `O`, `P` indicate the same types as `I`, `J`, `K`, `L` (uint8 to uint64) but describe array lengths instead of data content.
 
@@ -119,7 +119,7 @@ xtype: [M] (uint8: 11) [s] [h] [e] [l] [l] [o] [ ] [w] [o] [r] [l] [d]
 hex:   6D          0B  73  68  65  6C  6C  6F  20  77  6F  72  6C  64
 ```
 
-In this string example the first 3 bytes represent the header of the object: the size type (m), the size (11 as 8-bit integer) and the array type (s for string). The next 11 bytes contain the text.
+In this string example the first 3 bytes represent the header of the object: the size type (M), the size (11 as 8-bit integer) and the array type (s for string). The next 11 bytes contain the text.
 
 * **Integer:**
 
@@ -129,7 +129,7 @@ In this string example the first 3 bytes represent the header of the object: the
 
 ```Awk
 xtype:
-      [j] (uint16: 1025)
+      [J] (uint16: 1025)
 hex:  6A 04 01
 ```
 
@@ -249,9 +249,9 @@ xtype:
 
 ## Overview
 
-The content of the `footnote` object gives information and hints about how to read, interpret or pre-process the data, before it is used by the application. The footnote can be a list, dict or any other data type. A parser that makes no use of the footnotes must parse the object after `[*]`, to determine its size, but can ignore its content.
+The content of the `footnote` object gives information and hints about how to read, interpret or pre-process the data, before it is used by the application. The footnote can be a list, dict or any other data type. A parser that makes no use of the footnotes must parse the object after `[*]`, to determine its size, but can ignore its content to only read the data.
 
-Information about jump positions in table of contents are given, as a convention, relative to the `*` character of the footnote. This position has to be remembered by the parser as the reference position.
+Information about jump positions in table of contents are given, as a convention, relative to the `*` character (TBC) of the footnote. This position has to be remembered by the parser as the reference position.
 
 Footnotes with several information items can be organized in lists or dicts, or multiple footnotes can be concatenated, as for example:
 
@@ -329,13 +329,13 @@ In the following example an object is tagged as invisible. This object is treate
 
 _Footnote Purpose_ | Struct definition
 :---|:---
-_Footnote type_ | Struct
+_Footnote type_ | Struct (array of type "S")
 _Footnote value_ | Sequence that contains a xtype list or dict as a prototype of the struct without any data payload in the elements.
-_Target element_ | Struct or array of struct that is described by the footnote value.
+_Target element_ | Struct (array of type "S") or array of struct that is defined by the footnote element.
 
 **Explanation:**
 
-The struct description is a xtype list or dict inside the footnote struct data. The elements of this list or dict have no data payload and consist only of the type identifiers or array lengths. When a dict is used for the struct description, the names of each field can be given.
+The struct description is a xtype list or xtype dict inside the footnote type "S" array data. The elements of this list or dict have no data payload and consist only of the type identifiers or array lengths. When a dict is used for the struct description, the names of each field can be given.
 
 **Example:**
 
@@ -352,18 +352,17 @@ The xtype type symbols are k, 3s, d. The byte sequence of the struct prototype i
 
 ```Awk
 xtype:
-[*] [S] [6]                         # Footnote with length of struct definition
+[*] [6] [S]                         # Footnote with length of struct definition
         [[] [j] [3] [s] [f] []]     # struct definition (size 2+3+4 = 9)
-[5] [S] [9] (data with size 5 x 9)  # array of 5 times this 9-byte struct type
+[5] [9] [S] (data with size 5 x 9)  # array of 5 times this 9-byte struct type
 ```
 
 ## Table of content for quick random access
 
 _Footnote Purpose_ | Table of content: pointer to objects in a list or dict
 :---|:---
-_Footnote type_ | array of unsigned integer (`i`,`j`,`k`,`l`)
+_Footnote type_ | array of unsigned integer (`I`,`J`,`K`,`L`)
 _Footnote value_ | relative byte offset to the list objects from the the footnote start `*`
-_Optional keyword_ |  `TOC`
 
 **Explanation:**
 
