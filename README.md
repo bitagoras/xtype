@@ -341,11 +341,13 @@ The struct description is a xtype list or xtype dict inside the footnote type "S
 
 The struct shall be the following C-structure:
 
+```C
 typedef struct {
     short count;
     char id[3]; // 3-byte char array
     float average;
 } myStruct;
+```
 
 The xtype type symbols are k, 3s, d. The byte sequence of the struct prototype is `[j3sf]`. In a named struct definition the sequence would be `{5scountj2sid3s7saveragef}`, which is in a more readable form `{`(`5s`)"`count`": `j`, (`2s`)"`id`": `3s`, (`7s`)"`average`" :`f}`.
 
