@@ -14,6 +14,8 @@ Basic idea
 
 The grammar tries to be minimalistic while covering all possible use cases. Missing features of the format can be supplemented by so-called _footnotes_. Similar to books, footnotes can be ignored when reading if the meaning of the content is known, but provide additional background information about the meaning or context. A footnote adds user-defined metadata to the element, allowing the application to read or understand the data in a particular way.
 
+AI generated [audio introduction to xtype (notebookLM)](https://notebooklm.google.com/notebook/462113f1-ea9b-4f1b-bbe0-cae4828c5c13/audio)
+
 Properties
 ----------
 
@@ -91,7 +93,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 | `J`, `N` | uint16    | 2     | unsigned integer 16-bit        | C-type: unsigned short int                    |
 | `K`, `O` | uint32    | 4     | unsigned integer 32-bit        | C-type: unsigned int                          |
 | `L`, `P` | uint64    | 8     | unsigned integer 64-bit        | C-type: unsigned long int                     |
-| `b`      | boolean   | 1     | boolean type                   | values: 0x00 = false or 0xFF = true           |
+| `b`      | boolean   | 1     | boolean type                   | values: false = 0x00, true = 0x01 (or 0xFF)   |
 | `h`      | float16   | 2     | half precision float 16-bit    | IEEE 754-2008 half precission                 |
 | `f`      | float32   | 4     | float 32-bit                   | IEEE 754 single precision, C-type: float      |
 | `d`      | float64   | 8     | double precision float 64-bit  | IEEE 754 double precision, C-type: double     |
@@ -260,19 +262,19 @@ Footnotes with several information items can be organized in lists or dicts, or 
 
 ## Default Footnote Meta Language Elements
 
-### File signature
+### File signature and byte order mark
 
 _Footnote Purpose_ | File signature and byte order mark
 :---|:---
-_Footnote type_ | 16-bit signed integer (`J`)
+_Footnote type_ | 16-bit signed integer (`j`)
 _Footnote value_ | 1234
 
 **Explanation:**
 
-This is a footnote at the very beginning of the file can be used to indicate the byte order (big or little endian) and can also act as the file signature with four magic bytes. The 16-bit signed integer has the defined value of 1234. An xtype reader with the wrong byte order would read the number as -11772. If no such file signature is given, xtype is specified for big endian byte order as default.
+This is a footnote at the very beginning of the file can be used to indicate the byte order (big or little endian) and can also act as the file signature with two or four magic bytes. The 16-bit signed integer has the defined value of 1234. An xtype reader with the wrong byte order would read the number as -11772. If no such file signature is given, xtype is specified for big endian byte order as default.
 
 ```Awk
-xtype: [*] [J] (1234)
+xtype: [*] [j] (1234)
 hex:  2A  4A  04 D2    # big endian (default)
 hex:  2A  4A  D2 04    # little endian
 ```
@@ -281,7 +283,25 @@ hex:  2A  4A  D2 04    # little endian
 
 ```Awk
 xtype file:
-[*] [J] (1234) (data of the file)
+[*] [j] (1234) (data of the file)
+```
+
+### Size information
+
+_Footnote Purpose_ | Size information of object
+:---|:---
+_Footnote type_ | any unsigned integer (`I`, `J`, `K`, `L`)
+_Footnote value_ | size of entire object
+
+**Explanation:**
+
+This footnote type gives the information about the size of an object. This can be used to step over large objects in a list or dict to quickly access a certain sub element. The size includes this footenote starting from the `*` symbol of this footnote to the end of the element. Footnotes that are left of this footnote are not included in the size.
+
+**Example:**
+
+```Awk
+xtype file:
+[*] [J] [[]
 ```
 
 ### Deleted object
@@ -297,11 +317,11 @@ This footnote tags an object as deleted. This is useful for big files when an ob
 
 **Example:**
 
-In the following example an object with 10000 bytes is tagged as deleted. The included footnote and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be changed to remove the whole object.
+In the following example an object with 10000 bytes is tagged as deleted. The included footnote and the `x` byte-array type definition together are 6 bytes long. The remaining bytes of the 10000 bytes are covered by the 9994 long `x` array. So, only 6 bytes have to be written to remove the whole object without the need of moving data after the element or updating any relativ pointers.
 
 ```Awk
-[*] [N]
-[n] (uint16: 9994) [x] (data with 9994 byte)
+[*] [n]
+[N] (uint16: 9994) [x] (data with 9994 byte)
 ```
 
 ### Element visibility
@@ -322,7 +342,6 @@ In the following example an object is tagged as invisible. This object is treate
 ```Awk
 [*] [F] (some object)
 ```
-
 
 ## Struct
 
