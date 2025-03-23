@@ -57,7 +57,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <p align="center"><img src="figures/xtype_type.png"></p>
 <p align="center"><img src="figures/xtype_length.png"></p>
 
-### Grammar rules in BNF (Backus-Naur form)
+### Grammar rules as text (Backus-Naur form)
 
 ```xml
 <file>       ::= <EOF> | <object> <EOF>
@@ -100,7 +100,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 | `S`      | struct    | 1     | Struct type (size of array)    | Definition of the struct is given as footnote |
 | `x`      | byte      | 1     | user defined data byte         | Special data formats, compressed data etc.    |
 
-The characters `M`, `N`, `O`, `P` indicate the same types as `I`, `J`, `K`, `L` (uint8 to uint64) but describe array lengths instead of data content. The struct type `S` expects an array of at least one dimension where the last dimension defines the number of bytes in the struct.
+The characters `M`, `N`, `O`, `P` indicate the same types as `I`, `J`, `K`, `L` (uint8 to uint64) but describe array lengths instead of data content. In arrays of the string types `s` and `u` the last dimension is expected to define the length of the string rather than an array of single characters. The struct type `S` expects an array of at least one dimension where the last dimension defines the number of bytes in the struct.
 
 Examples
 --------
