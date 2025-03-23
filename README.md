@@ -100,8 +100,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
 | `S`      | struct    | 1     | Struct type (size of array)    | Definition of the struct is given as footnote |
 | `x`      | byte      | 1     | user defined data byte         | Special data formats, compressed data etc.    |
 
-The special basic data type `o` is used to enclose xtype objects in an array of bytes. This acts as additional size information for objects and helps to parse a file faster by stepping over large objects. The characters `M`, `N`, `O`, `P` indicate the same types as `I`, `J`, `K`, `L` (uint8 to uint64) but describe array lengths instead of data content.
-
+The characters `M`, `N`, `O`, `P` indicate the same types as `I`, `J`, `K`, `L` (uint8 to uint64) but describe array lengths instead of data content. The `S` expects an array where the last dimension defines the number of bytes of the struct.
 
 Examples
 --------
