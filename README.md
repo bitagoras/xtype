@@ -78,7 +78,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
                  "b" | "h" | "f" | "d" | "s" | "u" | "S" | "x"
 
 <bin_data> is the binary data of defined size, see table with types below.
-<EOF> is the end of file as defined by the file system.
+<EOF> is the end of file. In streams this could also be defined by a zero byte.
 ```
 
 ## Types
