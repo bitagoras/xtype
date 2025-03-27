@@ -9,6 +9,27 @@ import struct
 import numpy as np
 from typing import Any, Dict, List, Tuple, Union, BinaryIO, Iterator, Optional
 
+# xtype grammar
+#--------------
+#
+# <file>       ::= <EOF> | <object> <EOF>
+# <object>     ::= <content> | <footnote> <content>
+# <footnote>   ::= "*" <content> | "*" <content> <footnote>
+# <content>    ::= <element> | <list> | <dict>
+# <list>       ::= "[]" | "[" <list_items> "]" | "[" <EOF> | "[" <list_items> <EOF>
+# <list_items> ::= <object> | <object> <list_items>
+# <dict>       ::= "{}" | "{" <dict_items> "}" | "{" <EOF> | "{" <list_items> <EOF>
+# <dict_items> ::= <element> <object> | <element> <object> <dict_items>
+# <element>    ::= <type> <bin_data> | "T"  | "F" | "n"
+# <type>       ::= <lenght> <type> | <bin_data>
+# <lenght>     ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" |
+#                  "M" <bin_data> | "N" <bin_data> | "O" <bin_data> | "P" <bin_data>
+# <bin_type>   ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L" |
+#                  "b" | "h" | "f" | "d" | "s" | "u" | "S" | "x"
+
+# <bin_data> is the binary data of defined size, according to the list of types.
+# <EOF> is the end of file. In streams this could also be defined by a zero byte.
+
 
 class XTypeFile:
     """
@@ -69,7 +90,7 @@ class XTypeFile:
         }
 
         # Grammar terminal symbols (single character markers)
-        self.grammar_terminals = set('*[]{}()ijklIJKLMNOPbhfdsuoxTFN0123456789S')
+        self.grammar_terminals = set('*[]{}TFNijklIJKLbhfdsuSxMNOP0123456789')
 
     def __enter__(self):
         """Context manager entry point."""
@@ -113,8 +134,11 @@ class XTypeFile:
 
         This method parses the file according to the xtype grammar and yields a tuple with:
         1. A string representing the symbol or type
-        2. The length as an int (if it's length information, otherwise -1)
-        3. The total size of binary data as int (or -1 if no binary data)
+        2. An integer flag indicating:
+           - 0: No length or size information
+           - 1: Length information
+           - 2: Data size information
+        3. The length or data size (0 if there's no length or size)
 
         If binary data is associated with the yielded type, the caller must call
         read_raw_data() to consume the data or the subsequent read_raw() call
@@ -124,7 +148,7 @@ class XTypeFile:
             byteorder: The byte order of multi-byte integers in the file. Defaults to 'little'.
 
         Yields:
-            Tuple[str, int, int]: (symbol/type, length_value, binary_data_size)
+            Tuple[str, int, int]: (symbol/type, flag, length_or_size)
         """
         if not self.file or self.file.closed:
             raise IOError("File is not open for reading")
@@ -151,16 +175,21 @@ class XTypeFile:
             if not char_byte:
                 break
 
-            char = char_byte.decode('ascii')
+            try:
+                char = char_byte.decode('ascii')
+            except UnicodeDecodeError:
+                # If we can't decode as ASCII, it's likely binary data that wasn't properly skipped
+                # This can happen with string arrays where the binary data contains non-ASCII characters
+                raise ValueError(f"Encountered non-ASCII character in grammar. This may indicate binary data wasn't properly skipped.")
 
             # Handle grammar terminal symbols
             if char in '[]{}TFn*':
-                yield (char, -1, -1)
+                yield (char, 0, 0)
                 continue
 
             # Handle direct length information (0-9)
             if char in '0123456789':
-                yield (char, int(char), -1)
+                yield (char, 1, int(char))
                 # Multiply this length multiplier
                 length_multiplier *= int(char)
                 continue
@@ -188,7 +217,7 @@ class XTypeFile:
                 self._pending_binary_size = 0
 
                 # Yield the length information and size
-                yield (char, value, -1)
+                yield (char, 1, value)
 
                 # Multiply to length multiplier
                 length_multiplier *= value
@@ -201,18 +230,17 @@ class XTypeFile:
 
                 # Calculate total size based on accumulated length multiplier
                 total_size = type_size * length_multiplier
-                # Reset length multiplier after using it
-                length_multiplier = 1
 
                 # Don't read the binary data yet, just note its size
                 self._pending_binary_size = int(total_size)
                 self._pending_binary_type = char
 
-                yield (char, -1, total_size)
+                yield (char, 2, total_size)
+                length_multiplier = 1  # Reset length multiplier after using it
                 continue
 
             # If we get here, we encountered an unexpected character
-            raise ValueError(f"Unexpected character in xtype file: {char}")
+            raise ValueError(f"Unexpected character in xtype file: {repr(char)}")
 
     def read_raw_data(self, max_bytes: int = None) -> bytes:
         """
@@ -358,6 +386,26 @@ class XTypeFile:
 
         # Get the type code for the array's data type
         dtype = arr.dtype
+
+        # Special handling for string arrays
+        if np.issubdtype(dtype, np.string_) or np.issubdtype(dtype, np.unicode_):
+            # For string arrays, we need to also write the string length dimension
+            # Extract the itemsize which represents the max string length
+            str_length = dtype.itemsize
+            self._write_length(str_length)
+
+            # For string arrays, use 's' type code
+            self.file.write(b's')
+
+            # Ensure the array is in C-contiguous order for efficient serialization
+            if not arr.flags.c_contiguous:
+                arr = np.ascontiguousarray(arr)
+
+            # Write the entire array memory to the file
+            self.file.write(arr.tobytes())
+
+            return
+
         if dtype not in self.type_map:
             raise TypeError(f"Unsupported NumPy dtype: {dtype}")
 
@@ -480,6 +528,7 @@ class XTypeFile:
         the output as a string where:
         - The string part is enclosed in quotation marks
         - If the string part ends with 's', the binary data is converted to a UTF-8 string with quotation marks
+          unless it's part of a multidimensional array
         - Otherwise, the bytes are converted to hexadecimal with spaces in between
         - Indentation is added based on brackets [ and ] and curly brackets { and }
         - Special bracket characters are always on their own line
@@ -506,10 +555,15 @@ class XTypeFile:
 
         # Initialize internal state
         indent_level = 0
+        # Collecting characters that don't have binary data
         accumulated_strings = []
+        # Track array dimensions to detect multidimensional arrays
+        dimensions = []
+        # Flag to indicate if we're inside an array context
+        in_array_context = False
 
         try:
-            for symbol, length_value, binary_size in self.read_raw(byteorder=byteorder):
+            for symbol, flag, length_or_size in self.read_raw(byteorder=byteorder):
                 # Handle special bracket characters
                 if symbol in '[]{}':
                     # First, if we have accumulated strings, yield them with the current indentation
@@ -522,6 +576,12 @@ class XTypeFile:
                     # For closing brackets, decrease indentation before printing
                     if symbol in ']}':
                         indent_level = max(0, indent_level - 1)
+                        # If exiting an array context, reset dimensions
+                        if symbol == ']' and in_array_context:
+                            # Only reset if we're closing the outermost array
+                            if indent_level == 0:
+                                dimensions = []
+                                in_array_context = False
 
                     # Print the bracket on its own line with proper indentation
                     yield ' ' * min(indent_level, max_indent_level) * indent_size + f'{symbol}'
@@ -529,18 +589,25 @@ class XTypeFile:
                     # For opening brackets, increase indentation after printing
                     if symbol in '[{':
                         indent_level += 1
+                        # Mark that we're entering an array context if it's a square bracket
+                        if symbol == '[':
+                            in_array_context = True
 
                     continue
 
                 # For non-bracket characters with no binary data, accumulate them
-                if binary_size == -1:
+                if flag == 0:
+                    accumulated_strings.append(symbol)
+                    continue
+                elif flag == 1:
                     # If it's a length value (0-9 or M,N,O,P with value), include it in parentheses
-                    if length_value != -1:
-                        accumulated_strings.append(f"{symbol}({length_value})" if symbol in "MNOP" else f"{symbol}")
-                    else:
-                        accumulated_strings.append(symbol)
+                    accumulated_strings.append(f"{symbol}({length_or_size})" if symbol in "MNOP" else f"{symbol}")
+                    # If we're in array context and get a length value, it could be a dimension
+                    if in_array_context and indent_level > 0:
+                        dimensions.append(length_or_size)
                     continue
 
+                # If we get here, it's a data type with binary data (flag == 2)
                 current_indent = ' ' * min(indent_level, max_indent_level) * indent_size
 
                 # Include accumulated strings if any
@@ -554,51 +621,46 @@ class XTypeFile:
                 # Format based on accumulated_str
                 if accumulated_str.endswith('s'):
                     # Get the string data and format them
-                    binary_part = self.read_raw_data() if binary_size > 0 else b''
+                    binary_part = self.read_raw_data(max_bytes=max_binary_bytes) if length_or_size > 0 else b''
+                    # Check if we're in a multidimensional array context
+                    is_multidimensional = in_array_context and len(dimensions) > 1
+
                     # For string type, convert binary to UTF-8 string with quotation marks
-                    string_value = binary_part.decode('utf-8', errors='replace')
-                    yield current_indent + f'{accumulated_str}: "{string_value}"'
+                    # only if not part of a multidimensional array
+                    try:
+                        string_value = binary_part.decode('utf-8', errors='replace')
+                        if is_multidimensional:
+                            # Treat like any other non-string array - show as hex
+                            hex_str = ' '.join(f'{b:02x}' for b in binary_part)
+                            if len(binary_part) < length_or_size:
+                                hex_str += f" ... ({length_or_size} bytes total)"
+                            yield current_indent + f'{accumulated_str}: {hex_str}'
+                        else:
+                            # Regular string display with quotation marks
+                            yield current_indent + f'{accumulated_str}: "{string_value}"'
+                    except Exception:
+                        # If decoding fails, fall back to hex representation
+                        hex_str = ' '.join(f'{b:02x}' for b in binary_part)
+                        if len(binary_part) < length_or_size:
+                            hex_str += f" ... ({length_or_size} bytes total)"
+                        yield current_indent + f'{accumulated_str}: {hex_str}'
                 else:
                     # Get the data (limited by max_binary_bytes) and format them
-                    binary_part = self.read_raw_data(max_bytes=max_binary_bytes) if binary_size > 0 else b''
+                    binary_part = self.read_raw_data(max_bytes=max_binary_bytes) if length_or_size > 0 else b''
                     # For other types, convert to space-separated hex
                     hex_str = ' '.join(f'{b:02x}' for b in binary_part)
-                    if len(binary_part) < binary_size:
-                        hex_str += f" ... ({binary_size} bytes total)"
+                    if len(binary_part) < length_or_size:
+                        hex_str += f" ... ({length_or_size} bytes total)"
                     yield current_indent + f'{accumulated_str}: {hex_str}'
-
         except Exception as e:
             # If we have any accumulated strings when an exception occurs, output them
             if accumulated_strings:
                 accumulated_str = "".join(accumulated_strings)
                 yield ' ' * min(indent_level, max_indent_level) * indent_size + f'{accumulated_str}'
-            raise e
-
-        # Handle any remaining accumulated strings at EOF
-        if accumulated_strings:
-            # Join all accumulated strings without spaces and wrap in a single pair of quotes
-            accumulated_str = "".join(accumulated_strings)
-            yield ' ' * min(indent_level, max_indent_level) * indent_size + f'{accumulated_str}:'
-
-    def _determine_data_size(self, type_code: str) -> Optional[int]:
-        """
-        Determine the size of data to read based on the type code.
-
-        Args:
-            type_code: The xtype type code
-
-        Returns:
-            Optional[int]: Size in bytes to read, or None if not a data type
-        """
-        # Single character type codes
-        if type_code in self.type_sizes:
-            return self.type_sizes[type_code]
-
-        # Length indicators
-        if type_code in 'MNOP':
-            return {'M': 1, 'N': 2, 'O': 4, 'P': 8}[type_code]
-
-        return None
+            # Get the current file position for debugging
+            current_pos = self.file.tell()
+            raise Exception(f"Error at file position {current_pos}: {str(e)}")
+            # Don't re-raise the exception to allow partial output
 
     def read(self, byteorder: str = 'little') -> Any:
         """
@@ -636,29 +698,45 @@ class XTypeFile:
             The Python object read from the file
         """
         # Get the next token
-        for symbol, length_value, binary_size in self.read_raw(byteorder):
-            # Handle special symbols first
-            if symbol == '[':
-                # List
-                return self._read_list(byteorder)
-            elif symbol == '{':
-                # Dictionary
-                return self._read_dict(byteorder)
-            elif symbol == 'T':
-                # True
-                return True
-            elif symbol == 'F':
-                # False
-                return False
-            elif symbol == 'n':
-                # None
-                return None
-            elif symbol in self.type_sizes:
-                # Basic data types
-                return self._read_element(symbol, binary_size, byteorder)
-            else:
-                # Unexpected symbol
-                raise ValueError(f"Unexpected symbol in xtype file: {symbol}")
+        for symbol, flag, length_or_size in self.read_raw(byteorder):
+            # Process the main symbol
+            return self._read_element(symbol, flag, length_or_size, byteorder)
+
+    def _read_element(self, symbol: str, flag: int, length_or_size: int, byteorder: str) -> Any:
+        """
+        Read an element based on its symbol from the file.
+
+        Args:
+            symbol: The symbol or type code read from the file
+            flag: Flag indicating length information (0: no length, 1: length info, 2: data size)
+            length_or_size: The length or data size associated with the symbol
+            byteorder: The byte order of multi-byte integers in the file
+
+        Returns:
+            The Python object read from the file
+        """
+        # Handle special symbols first
+        if symbol == '[':
+            # List
+            return self._read_list(byteorder)
+        elif symbol == '{':
+            # Dictionary
+            return self._read_dict(byteorder)
+        elif symbol == 'T':
+            # True
+            return True
+        elif symbol == 'F':
+            # False
+            return False
+        elif symbol == 'n':
+            # None
+            return None
+        elif symbol in self.type_sizes:
+            # Basic data types
+            return self._read_single_element(symbol, length_or_size, byteorder)
+        else:
+            # Unexpected symbol
+            raise ValueError(f"Unexpected symbol in xtype file: {symbol}")
 
     def _read_list(self, byteorder: str = 'little') -> List:
         """
@@ -672,49 +750,33 @@ class XTypeFile:
         """
         result = []
         dimensions = []
-        is_array = False
 
         # Parse each element until we hit a closing bracket
-        for symbol, length_value, binary_size in self.read_raw(byteorder):
+        for symbol, flag, length_or_size in self.read_raw(byteorder):
             if symbol == ']':
                 # End of list
                 break
-            elif symbol == '[':
-                # Nested list
-                result.append(self._read_list(byteorder))
-            elif symbol == '{':
-                # Nested dictionary
-                result.append(self._read_dict(byteorder))
-            elif symbol in '0123456789MNOP' and length_value != -1:
+            elif flag == 1:
                 # This could be dimension information for arrays or length information for strings/bytes
-                dimensions.append(length_value)
-            elif symbol in 'ijklIJKLbhfd':
+                dimensions.append(length_or_size)
+            elif symbol in 'ijklIJKLbhfdx':
                 # These are numeric data types that could be for NumPy arrays
                 if dimensions:
-                    # This is likely a NumPy array
-                    is_array = True
                     # Read the array data and return it directly
-                    return self._read_numpy_array(dimensions, symbol, binary_size, byteorder)
+                    return self._read_numpy_array(dimensions, symbol, length_or_size, byteorder)
                 else:
                     # Regular element without dimensions
-                    result.append(self._read_element(symbol, binary_size, byteorder))
-            elif symbol in 'sx':
-                # String or binary data - not part of a NumPy array specification
-                # Clear dimensions as they were just length information for this data
-                dimensions = []
-                result.append(self._read_element(symbol, binary_size, byteorder))
-            elif symbol == 'T':
-                result.append(True)
-            elif symbol == 'F':
-                result.append(False)
-            elif symbol == 'n':
-                result.append(None)
-            elif symbol == '*':
-                # Footnote indicator - ignore as per requirements
-                pass
+                    result.append(self._read_single_element(symbol, length_or_size, byteorder))
+            elif symbol == 's':
+                if len(dimensions) <= 1:
+                    dimensions = []
+                    result.append(self._read_single_element(symbol, length_or_size, byteorder))
+                else:
+                    result.append(self._read_numpy_array(dimensions, symbol, length_or_size, byteorder))
             else:
-                # Unexpected symbol
-                raise ValueError(f"Unexpected symbol in list: {symbol}")
+                # Use the _read_element method for special symbols only
+                result.append(self._read_element(symbol, flag, length_or_size, byteorder))
+                dimensions = []  # Reset dimensions after processing an element
 
         return result
 
@@ -733,13 +795,13 @@ class XTypeFile:
         dimensions = []
 
         # Parse each element until we hit a closing bracket
-        for symbol, length_value, binary_size in self.read_raw(byteorder):
+        for symbol, flag, length_or_size in self.read_raw(byteorder):
             if symbol == '}':
                 # End of dictionary
                 break
             elif key is None:
                 # We're reading a key, which should be a string
-                if symbol in '0123456789MNOP' and length_value != -1:
+                if flag == 1:
                     # Length prefix for string
                     continue
                 elif symbol == 's':
@@ -751,77 +813,56 @@ class XTypeFile:
                     raise ValueError(f"Unexpected key type in dictionary: {symbol}")
             else:
                 # We're reading a value
-                if symbol == '[':
-                    # Nested list
-                    result[key] = self._read_list(byteorder)
-                    # Reset key for next key-value pair
-                    key = None
-                    dimensions = []
-                elif symbol == '{':
-                    # Nested dictionary
-                    result[key] = self._read_dict(byteorder)
-                    # Reset key for next key-value pair
-                    key = None
-                    dimensions = []
-                elif symbol in '0123456789MNOP' and length_value != -1:
-                    # Length information
-                    dimensions.append(length_value)
-                elif symbol in 'ijklIJKLbhfd':
+                if flag == 1:
+                    # Length information for the value
+                    dimensions.append(length_or_size)
+                elif symbol in 'ijklIJKLbhfdx':
                     # Numeric data types
                     if dimensions:
                         # This is likely a NumPy array
-                        result[key] = self._read_numpy_array(dimensions, symbol, binary_size, byteorder)
+                        result[key] = self._read_numpy_array(dimensions, symbol, length_or_size, byteorder)
                     else:
                         # Basic data type
-                        result[key] = self._read_element(symbol, binary_size, byteorder)
-                    # Reset key for next key-value pair
+                        result[key] = self._read_single_element(symbol, length_or_size, byteorder)
+                    # Reset key and dimensions for next key-value pair
                     key = None
                     dimensions = []
-                elif symbol in 'sx':
+                elif symbol == 's':
                     # String or binary data
-                    # We don't need dimensions here, they were just length information for this data
-                    result[key] = self._read_element(symbol, binary_size, byteorder)
-                    # Reset key for next key-value pair
-                    key = None
-                    dimensions = []
-                elif symbol == 'T':
-                    result[key] = True
-                    # Reset key for next key-value pair
-                    key = None
-                    dimensions = []
-                elif symbol == 'F':
-                    result[key] = False
-                    # Reset key for next key-value pair
-                    key = None
-                    dimensions = []
-                elif symbol == 'n':
-                    result[key] = None
-                    # Reset key for next key-value pair
+                    if len(dimensions) <= 1:
+                        dimensions = []
+                        result[key] = self._read_single_element(symbol, length_or_size, byteorder)
+                    else:
+                        result[key] = self._read_numpy_array(dimensions, symbol, length_or_size, byteorder)
+                    # Reset key and dimensions for next key-value pair
                     key = None
                     dimensions = []
                 elif symbol == '*':
                     # Footnote indicator - ignore as per requirements
                     pass
                 else:
-                    # Unexpected symbol
-                    raise ValueError(f"Unexpected symbol in dictionary value: {symbol}")
+                    # Use the _read_element method for special symbols only
+                    result[key] = self._read_element(symbol, flag, length_or_size, byteorder)
+                    # Reset key and dimensions for next key-value pair
+                    key = None
+                    dimensions = []
 
         return result
 
-    def _read_element(self, type_code: str, binary_size: int, byteorder: str = 'little') -> Any:
+    def _read_single_element(self, type_code: str, length_or_size: int, byteorder: str) -> Any:
         """
         Read a basic element from the file.
 
         Args:
             type_code: The xtype type code
-            binary_size: The total size of binary data
+            length_or_size: The total size of binary data
             byteorder: The byte order of multi-byte integers in the file
 
         Returns:
             The element read from the file
         """
         # Read the binary data
-        binary_data = self.read_raw_data(binary_size)
+        binary_data = self.read_raw_data(length_or_size)
 
         # Parse based on type code
         if type_code == 'b':
@@ -830,23 +871,23 @@ class XTypeFile:
         elif type_code in 'ijkl':
             # Signed integers
             if type_code == 'i':
-                return int.from_bytes(binary_data, byteorder='big', signed=True)
+                return int.from_bytes(binary_data, byteorder=byteorder, signed=True)
             elif type_code == 'j':
-                return int.from_bytes(binary_data, byteorder='big', signed=True)
+                return int.from_bytes(binary_data, byteorder=byteorder, signed=True)
             elif type_code == 'k':
-                return int.from_bytes(binary_data, byteorder='big', signed=True)
+                return int.from_bytes(binary_data, byteorder=byteorder, signed=True)
             elif type_code == 'l':
-                return int.from_bytes(binary_data, byteorder='big', signed=True)
+                return int.from_bytes(binary_data, byteorder=byteorder, signed=True)
         elif type_code in 'IJKL':
             # Unsigned integers
             if type_code == 'I':
-                return int.from_bytes(binary_data, byteorder='big', signed=False)
+                return int.from_bytes(binary_data, byteorder=byteorder, signed=False)
             elif type_code == 'J':
-                return int.from_bytes(binary_data, byteorder='big', signed=False)
+                return int.from_bytes(binary_data, byteorder=byteorder, signed=False)
             elif type_code == 'K':
-                return int.from_bytes(binary_data, byteorder='big', signed=False)
+                return int.from_bytes(binary_data, byteorder=byteorder, signed=False)
             elif type_code == 'L':
-                return int.from_bytes(binary_data, byteorder='big', signed=False)
+                return int.from_bytes(binary_data, byteorder=byteorder, signed=False)
         elif type_code in 'hfd':
             # Floating point
             if type_code == 'h':
@@ -868,21 +909,56 @@ class XTypeFile:
             # Unsupported type
             raise ValueError(f"Unsupported type code: {type_code}")
 
-    def _read_numpy_array(self, dimensions: List[int], type_code: str, binary_size: int, byteorder: str = 'little') -> np.ndarray:
+    def _read_numpy_array(self, dimensions: List[int], type_code: str, length_or_size: int, byteorder: str = 'little') -> np.ndarray:
         """
         Read a NumPy array from the file.
 
         Args:
             dimensions: The dimensions of the array
             type_code: The xtype type code
-            binary_size: The total size of binary data
+            length_or_size: The total size of binary data
             byteorder: The byte order of multi-byte integers in the file
 
         Returns:
             np.ndarray: The NumPy array read from the file
         """
         # Read the binary data
-        binary_data = self.read_raw_data(binary_size)
+        binary_data = self.read_raw_data(length_or_size)
+
+        # Special handling for string arrays
+        if type_code == 's':
+            # For 1D arrays, return a Python string
+            if len(dimensions) == 1:
+                # Decode the binary data as UTF-8 and return as a string
+                return binary_data.decode('utf-8')
+            else:
+                # For multidimensional arrays, the last dimension is the string length
+                string_length = dimensions[-1]
+                array_dims = dimensions[:-1]
+
+                # Calculate total number of strings
+                total_strings = 1
+                for dim in array_dims:
+                    total_strings *= dim
+
+                # Create a numpy array of fixed-length strings
+                string_array = np.empty(array_dims, dtype=f'S{string_length}')
+
+                # Fill the array with the strings from binary_data
+                flat_array = string_array.reshape(-1)
+
+                for i in range(total_strings):
+                    start = i * string_length
+                    end = start + string_length
+                    if start < len(binary_data):
+                        # Get the string data, ensuring we don't go past the end of binary_data
+                        string_data = binary_data[start:min(end, len(binary_data))]
+                        # Pad with zeros if needed
+                        if len(string_data) < string_length:
+                            string_data = string_data.ljust(string_length, b'\x00')
+                        flat_array[i] = string_data
+
+                return string_array.reshape(array_dims)
 
         # Map xtype type codes to NumPy dtypes
         dtype_map = {
@@ -892,6 +968,7 @@ class XTypeFile:
             'k': np.int32,
             'l': np.int64,
             'I': np.uint8,
+            'x': np.uint8,
             'J': np.uint16,
             'K': np.uint32,
             'L': np.uint64,
@@ -903,7 +980,7 @@ class XTypeFile:
         # Get the NumPy dtype
         if type_code not in dtype_map:
             raise ValueError(f"Unsupported NumPy type: {type_code}")
-        
+
         dtype = dtype_map[type_code]
 
         # Calculate total number of elements
@@ -916,21 +993,105 @@ class XTypeFile:
             # Handle boolean arrays specially (0x00 for False, anything else for True)
             flat_array = np.frombuffer(binary_data, dtype=np.uint8)
             flat_array = flat_array != 0
-        elif type_code in 'ijkl':
+        elif type_code in 'jklJKLhfd':
             # Signed integers (need to be byteswapped because xtype uses big-endian)
             flat_array = np.frombuffer(binary_data, dtype=dtype)
             flat_array = flat_array.byteswap()
-        elif type_code in 'IJKL':
-            # Unsigned integers (need to be byteswapped because xtype uses big-endian)
-            flat_array = np.frombuffer(binary_data, dtype=dtype)
-            flat_array = flat_array.byteswap()
-        elif type_code in 'hfd':
+        elif type_code in 'iIx':
             # Floating point (need to be byteswapped because xtype uses big-endian)
             flat_array = np.frombuffer(binary_data, dtype=dtype)
-            flat_array = flat_array.byteswap()
         else:
             # Unsupported type
             raise ValueError(f"Unsupported NumPy type: {type_code}")
 
         # Reshape the array to the specified dimensions
         return flat_array.reshape(dimensions)
+
+    def _determine_data_size(self, type_code: str) -> Optional[int]:
+        """
+        Determine the size of data to read based on the type code.
+
+        Args:
+            type_code: The xtype type code
+
+        Returns:
+            Optional[int]: Size in bytes to read, or None if not a data type
+        """
+        # Single character type codes
+        if type_code in self.type_sizes:
+            return self.type_sizes[type_code]
+
+        # Length indicators
+        if type_code in 'MNOP':
+            return {'M': 1, 'N': 2, 'O': 4, 'P': 8}[type_code]
+
+        return None
+
+    def _read_dict(self, byteorder: str = 'little') -> Dict:
+        """
+        Read a dictionary from the file.
+
+        Args:
+            byteorder: The byte order of multi-byte integers in the file.
+
+        Returns:
+            Dict: The dictionary read from the file
+        """
+        result = {}
+        key = None
+        dimensions = []
+
+        # Parse each element until we hit a closing bracket
+        for symbol, flag, length_or_size in self.read_raw(byteorder):
+            if symbol == '}':
+                # End of dictionary
+                break
+            elif key is None:
+                # We're reading a key, which should be a string
+                if flag == 1:
+                    # Length prefix for string
+                    continue
+                elif symbol == 's':
+                    # String key
+                    key_binary = self.read_raw_data()
+                    key = key_binary.decode('utf-8')
+                else:
+                    # Unexpected symbol for key
+                    raise ValueError(f"Unexpected key type in dictionary: {symbol}")
+            else:
+                # We're reading a value
+                if flag == 1:
+                    # Length information for the value
+                    dimensions.append(length_or_size)
+                elif symbol in 'ijklIJKLbhfdx':
+                    # Numeric data types
+                    if dimensions:
+                        # This is likely a NumPy array
+                        result[key] = self._read_numpy_array(dimensions, symbol, length_or_size, byteorder)
+                    else:
+                        # Basic data type
+                        result[key] = self._read_single_element(symbol, length_or_size, byteorder)
+                    # Reset key and dimensions for next key-value pair
+                    key = None
+                    dimensions = []
+                elif symbol == 's':
+                    # String or binary data
+                    if len(dimensions) <= 1:
+                        dimensions = []
+                        result[key] = self._read_single_element(symbol, length_or_size, byteorder)
+                    else:
+                        result[key] = self._read_numpy_array(dimensions, symbol, length_or_size, byteorder)
+                    # Reset key and dimensions for next key-value pair
+                    key = None
+                    dimensions = []
+                elif symbol == '*':
+                    # Footnote indicator - ignore as per requirements
+                    pass
+                else:
+                    # Use the _read_element method for special symbols only
+                    result[key] = self._read_element(symbol, flag, length_or_size, byteorder)
+                    # Reset key and dimensions for next key-value pair
+                    key = None
+                    dimensions = []
+
+        return result

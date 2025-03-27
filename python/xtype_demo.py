@@ -28,7 +28,10 @@ test_data = {
     "basic_data_types": [True, False, None, [7, 7.7]],
     "binary_data": b"Binary data example",
     "array_data": np.array([[[1, 2, 3], [4, 5, 6]]], dtype=np.int32),
-    "mixed_array": np.array([1.5, 2.5, 3.5], dtype=np.float64)
+    "mixed_array": np.array([1.5, 2.5, 3.5], dtype=np.float64),
+    # 2D string array example (2x3 array with fixed-length strings of 8 characters)
+    "string_array_2d": np.array([["apple", "banana", "cherry"],
+                                ["orange", "grape", "lemon"]], dtype="S8")
 }
 
 # Write data to file
