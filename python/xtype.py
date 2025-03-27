@@ -697,19 +697,19 @@ class XTypeFile:
         Returns:
             The Python object read from the file
         """
-        # Get the next token
-        for symbol, flag, length_or_size in self.read_raw(byteorder):
-            # Process the main symbol
-            return self._read_element(symbol, flag, length_or_size, byteorder)
+        # Get the next logical element
+        symbol, dimensions, size = self._read_step(byteorder)
+        # Process the symbol
+        return self._read_element(symbol, dimensions, size, byteorder)
 
-    def _read_element(self, symbol: str, flag: int, length_or_size: int, byteorder: str) -> Any:
+    def _read_element(self, symbol: str, dimensions: List[int], size: int, byteorder: str) -> Any:
         """
         Read an element based on its symbol from the file.
 
         Args:
             symbol: The symbol or type code read from the file
-            flag: Flag indicating length information (0: no length, 1: length info, 2: data size)
-            length_or_size: The length or data size associated with the symbol
+            dimensions: List of dimensions for array types (empty for scalar values)
+            size: The size of binary data in bytes (0 for grammar symbols)
             byteorder: The byte order of multi-byte integers in the file
 
         Returns:
@@ -732,137 +732,31 @@ class XTypeFile:
             # None
             return None
         elif symbol in self.type_sizes:
-            # Basic data types
-            return self._read_single_element(symbol, length_or_size, byteorder)
+            # Check if this is an array type or a single element
+            if dimensions:
+                # This is an array type
+                return self._read_numpy_array(dimensions, symbol, size, byteorder)
+            else:
+                # This is a single element
+                return self._read_single_element(symbol, size, byteorder)
         else:
             # Unexpected symbol
             raise ValueError(f"Unexpected symbol in xtype file: {symbol}")
 
-    def _read_list(self, byteorder: str = 'little') -> List:
-        """
-        Read a list from the file.
-
-        Args:
-            byteorder: The byte order of multi-byte integers in the file.
-
-        Returns:
-            List: The list read from the file
-        """
-        result = []
-        dimensions = []
-
-        # Parse each element until we hit a closing bracket
-        for symbol, flag, length_or_size in self.read_raw(byteorder):
-            if symbol == ']':
-                # End of list
-                break
-            elif flag == 1:
-                # This could be dimension information for arrays or length information for strings/bytes
-                dimensions.append(length_or_size)
-            elif symbol in 'ijklIJKLbhfdx':
-                # These are numeric data types that could be for NumPy arrays
-                if dimensions:
-                    # Read the array data and return it directly
-                    return self._read_numpy_array(dimensions, symbol, length_or_size, byteorder)
-                else:
-                    # Regular element without dimensions
-                    result.append(self._read_single_element(symbol, length_or_size, byteorder))
-            elif symbol == 's':
-                if len(dimensions) <= 1:
-                    dimensions = []
-                    result.append(self._read_single_element(symbol, length_or_size, byteorder))
-                else:
-                    result.append(self._read_numpy_array(dimensions, symbol, length_or_size, byteorder))
-            else:
-                # Use the _read_element method for special symbols only
-                result.append(self._read_element(symbol, flag, length_or_size, byteorder))
-                dimensions = []  # Reset dimensions after processing an element
-
-        return result
-
-    def _read_dict(self, byteorder: str = 'little') -> Dict:
-        """
-        Read a dictionary from the file.
-
-        Args:
-            byteorder: The byte order of multi-byte integers in the file.
-
-        Returns:
-            Dict: The dictionary read from the file
-        """
-        result = {}
-        key = None
-        dimensions = []
-
-        # Parse each element until we hit a closing bracket
-        for symbol, flag, length_or_size in self.read_raw(byteorder):
-            if symbol == '}':
-                # End of dictionary
-                break
-            elif key is None:
-                # We're reading a key, which should be a string
-                if flag == 1:
-                    # Length prefix for string
-                    continue
-                elif symbol == 's':
-                    # String key
-                    key_binary = self.read_raw_data()
-                    key = key_binary.decode('utf-8')
-                else:
-                    # Unexpected symbol for key
-                    raise ValueError(f"Unexpected key type in dictionary: {symbol}")
-            else:
-                # We're reading a value
-                if flag == 1:
-                    # Length information for the value
-                    dimensions.append(length_or_size)
-                elif symbol in 'ijklIJKLbhfdx':
-                    # Numeric data types
-                    if dimensions:
-                        # This is likely a NumPy array
-                        result[key] = self._read_numpy_array(dimensions, symbol, length_or_size, byteorder)
-                    else:
-                        # Basic data type
-                        result[key] = self._read_single_element(symbol, length_or_size, byteorder)
-                    # Reset key and dimensions for next key-value pair
-                    key = None
-                    dimensions = []
-                elif symbol == 's':
-                    # String or binary data
-                    if len(dimensions) <= 1:
-                        dimensions = []
-                        result[key] = self._read_single_element(symbol, length_or_size, byteorder)
-                    else:
-                        result[key] = self._read_numpy_array(dimensions, symbol, length_or_size, byteorder)
-                    # Reset key and dimensions for next key-value pair
-                    key = None
-                    dimensions = []
-                elif symbol == '*':
-                    # Footnote indicator - ignore as per requirements
-                    pass
-                else:
-                    # Use the _read_element method for special symbols only
-                    result[key] = self._read_element(symbol, flag, length_or_size, byteorder)
-                    # Reset key and dimensions for next key-value pair
-                    key = None
-                    dimensions = []
-
-        return result
-
-    def _read_single_element(self, type_code: str, length_or_size: int, byteorder: str) -> Any:
+    def _read_single_element(self, type_code: str, size: int, byteorder: str) -> Any:
         """
         Read a basic element from the file.
 
         Args:
             type_code: The xtype type code
-            length_or_size: The total size of binary data
+            size: The total size of binary data in bytes
             byteorder: The byte order of multi-byte integers in the file
 
         Returns:
             The element read from the file
         """
         # Read the binary data
-        binary_data = self.read_raw_data(length_or_size)
+        binary_data = self.read_raw_data(size)
 
         # Parse based on type code
         if type_code == 'b':
@@ -909,21 +803,169 @@ class XTypeFile:
             # Unsupported type
             raise ValueError(f"Unsupported type code: {type_code}")
 
-    def _read_numpy_array(self, dimensions: List[int], type_code: str, length_or_size: int, byteorder: str = 'little') -> np.ndarray:
+    def _read_list(self, byteorder: str = 'little') -> List:
+        """
+        Read a list from the file.
+
+        Args:
+            byteorder: The byte order of multi-byte integers in the file.
+
+        Returns:
+            List: The list read from the file
+        """
+        result = []
+
+        # Parse each element until we hit a closing bracket
+        while True:
+            symbol, dimensions, size = self._read_step(byteorder)
+
+            if symbol == ']':
+                # End of list
+                break
+            elif symbol in self.type_sizes:
+                # Data type
+                if dimensions:
+                    # Array type
+                    result.append(self._read_numpy_array(dimensions, symbol, size, byteorder))
+                else:
+                    # Basic element
+                    result.append(self._read_single_element(symbol, size, byteorder))
+            else:
+                # Special symbol or container
+                result.append(self._read_element(symbol, dimensions, size, byteorder))
+
+        return result
+
+    def _read_dict(self, byteorder: str = 'little') -> Dict:
+        """
+        Read a dictionary from the file.
+
+        Args:
+            byteorder: The byte order of multi-byte integers in the file.
+
+        Returns:
+            Dict: The dictionary read from the file
+        """
+        result = {}
+
+        # Parse key-value pairs until we hit a closing brace
+        while True:
+            # Read the key
+            symbol, dimensions, size = self._read_step(byteorder)
+
+            if symbol == '}':
+                # End of dictionary
+                break
+
+            # We're reading a key, which should be a string
+            if symbol == 's':
+                # String key
+                key_binary = self.read_raw_data(size)
+                key = key_binary.decode('utf-8')
+            elif symbol == 'u':
+                # String key
+                key_binary = self.read_raw_data(size)
+                key = key_binary.decode('utf-16')
+            elif symbol in 'ijklIJKL':
+                if dimensions:
+                    # Int array type
+                    intArray = self._read_numpy_array(dimensions, symbol, size, byteorder)
+                    key = self._convert_to_deep_tuple(intArray.tolist())
+                else:
+                    # Int element
+                    key = int(self._read_single_element(symbol, size, byteorder))
+            elif symbol in 'hfd':
+                if dimensions:
+                    # Float array type
+                    intArray = self._read_numpy_array(dimensions, symbol, size, byteorder)
+                    key = self._convert_to_deep_tuple(intArray.tolist())
+                else:
+                    # Float element
+                    key = float(self._read_single_element(symbol, size, byteorder))
+            else:
+                # Unexpected symbol for key
+                raise ValueError(f"Unexpected key type in dictionary: {symbol}")
+
+            # Read the value
+            symbol, dimensions, size = self._read_step(byteorder)
+
+            # We're reading a value
+            if symbol in self.type_sizes:
+                # Data type
+                if dimensions and (symbol not in 'sx' or len(dimensions) > 1):
+                    # Array type
+                    result[key] = self._read_numpy_array(dimensions, symbol, size, byteorder)
+                else:
+                    # Basic element
+                    result[key] = self._read_single_element(symbol, size, byteorder)
+            else:
+                # Special symbol or container
+                result[key] = self._read_element(symbol, dimensions, size, byteorder)
+
+        return result
+
+    def _read_step(self, byteorder: str = 'little') -> Tuple[str, List[int], int]:
+        """
+        Read a single elementary part from the xtype file.
+
+        This method reads the xtype file using read_raw and returns elementary parts.
+        The elements could be single symbols ([]{}TFn*), scalar types or array types.
+        The function does not read the binary payload data. This is done by calling
+        read_raw_data().
+
+        Args:
+            byteorder: The byte order of multi-byte integers in the file. Defaults to 'little'.
+
+        Returns:
+            Tuple[str, List[int], int]: A tuple containing:
+                - symbol: String representing the type or grammar symbol
+                - dimensions: List of dimensions (empty for scalar values)
+                - size: Size to be read in bytes (0 for grammar symbols without binary data)
+        """
+        if not self.file or self.file.closed:
+            raise IOError("File is not open for reading")
+
+        if self.mode != 'r':
+            raise IOError("File is not open in read mode")
+
+        # Store length values (dimensions) for array types
+        dimensions = []
+
+        # Process raw elements until we find a complete logical element
+        for symbol, flag, length_or_size in self.read_raw(byteorder=byteorder):
+            # Case 1: Grammar terminals (single symbols)
+            if symbol in '[]{}TFn*':
+                return symbol, [], 0
+
+            # Case 2: Length information (0-9, M, N, O, P)
+            elif flag == 1:
+                # Store dimension for array types
+                dimensions.append(length_or_size)
+                continue
+
+            # Case 3: Data types with binary data
+            elif flag == 2:
+                # Return the data type with collected dimensions and size
+                return symbol, dimensions, length_or_size
+
+        # If we reach here, we've reached the end of the file
+        return '', [], 0
+
+    def _read_numpy_array(self, dimensions: List[int], type_code: str, size: int, byteorder: str = 'little') -> np.ndarray:
         """
         Read a NumPy array from the file.
 
         Args:
             dimensions: The dimensions of the array
             type_code: The xtype type code
-            length_or_size: The total size of binary data
+            size: The total size of binary data in bytes
             byteorder: The byte order of multi-byte integers in the file
 
         Returns:
             np.ndarray: The NumPy array read from the file
         """
         # Read the binary data
-        binary_data = self.read_raw_data(length_or_size)
+        binary_data = self.read_raw_data(size)
 
         # Special handling for string arrays
         if type_code == 's':
@@ -1027,71 +1069,16 @@ class XTypeFile:
 
         return None
 
-    def _read_dict(self, byteorder: str = 'little') -> Dict:
+    def _convert_to_deep_tuple(self, lst: List) -> Tuple:
         """
-        Read a dictionary from the file.
+        Convert a list to a deep tuple.
 
         Args:
-            byteorder: The byte order of multi-byte integers in the file.
+            lst: The list to convert
 
         Returns:
-            Dict: The dictionary read from the file
+            Tuple: The deep tuple
         """
-        result = {}
-        key = None
-        dimensions = []
-
-        # Parse each element until we hit a closing bracket
-        for symbol, flag, length_or_size in self.read_raw(byteorder):
-            if symbol == '}':
-                # End of dictionary
-                break
-            elif key is None:
-                # We're reading a key, which should be a string
-                if flag == 1:
-                    # Length prefix for string
-                    continue
-                elif symbol == 's':
-                    # String key
-                    key_binary = self.read_raw_data()
-                    key = key_binary.decode('utf-8')
-                else:
-                    # Unexpected symbol for key
-                    raise ValueError(f"Unexpected key type in dictionary: {symbol}")
-            else:
-                # We're reading a value
-                if flag == 1:
-                    # Length information for the value
-                    dimensions.append(length_or_size)
-                elif symbol in 'ijklIJKLbhfdx':
-                    # Numeric data types
-                    if dimensions:
-                        # This is likely a NumPy array
-                        result[key] = self._read_numpy_array(dimensions, symbol, length_or_size, byteorder)
-                    else:
-                        # Basic data type
-                        result[key] = self._read_single_element(symbol, length_or_size, byteorder)
-                    # Reset key and dimensions for next key-value pair
-                    key = None
-                    dimensions = []
-                elif symbol == 's':
-                    # String or binary data
-                    if len(dimensions) <= 1:
-                        dimensions = []
-                        result[key] = self._read_single_element(symbol, length_or_size, byteorder)
-                    else:
-                        result[key] = self._read_numpy_array(dimensions, symbol, length_or_size, byteorder)
-                    # Reset key and dimensions for next key-value pair
-                    key = None
-                    dimensions = []
-                elif symbol == '*':
-                    # Footnote indicator - ignore as per requirements
-                    pass
-                else:
-                    # Use the _read_element method for special symbols only
-                    result[key] = self._read_element(symbol, flag, length_or_size, byteorder)
-                    # Reset key and dimensions for next key-value pair
-                    key = None
-                    dimensions = []
-
-        return result
+        if not isinstance(lst, list):
+            return lst
+        return tuple(self._convert_to_deep_tuple(i) for i in lst)
