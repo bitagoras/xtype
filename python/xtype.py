@@ -9,6 +9,8 @@ import struct
 import numpy as np
 from typing import Any, Dict, List, Tuple, Union, BinaryIO, Iterator, Optional
 
+DEFAULT_BYTE_ORDER = 'big'
+
 # xtype grammar
 #--------------
 #
@@ -30,7 +32,6 @@ from typing import Any, Dict, List, Tuple, Union, BinaryIO, Iterator, Optional
 # <bin_data> is the binary data of defined size, according to the list of types.
 # <EOF> is the end of file. In streams this could also be defined by a zero byte.
 
-
 class XTypeFile:
     """
     A class for reading and writing Python data structures to files using the xtype binary format.
@@ -41,7 +42,7 @@ class XTypeFile:
     - NumPy arrays: 1D, 2D, and higher-dimensional arrays with various data types
     """
 
-    def __init__(self, filename: str, mode: str = 'w'):
+    def __init__(self, filename: str, mode: str = 'r'):
         """
         Initialize an XTypeFile object.
 
@@ -52,6 +53,122 @@ class XTypeFile:
         self.filename = filename
         self.mode = mode
         self.file = None
+
+        # Reader and writer instances (initialized in open())
+        self.reader = None
+        self.writer = None
+
+    def __enter__(self):
+        """Context manager entry point."""
+        self.open()
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Context manager exit point."""
+        self.close()
+
+    def open(self):
+        """Open the file for reading or writing."""
+        if self.mode == 'w':
+            self.file = open(self.filename, 'wb')
+            self.writer = XTypeFileWriter(self.file)
+        elif self.mode == 'r':
+            self.file = open(self.filename, 'rb')
+            self.reader = XTypeFileReader(self.file)
+        else:
+            raise ValueError(f"Unsupported mode: {self.mode}")
+
+    def close(self):
+        """Close the file."""
+        if self.file and not self.file.closed:
+            self.file.close()
+
+    def write(self, data: Any):
+        """
+        Write a Python object to the file in xtype format.
+
+        Args:
+            data: The Python object to serialize (can be a primitive type,
+                 list, dict, or numpy array)
+        """
+        if not self.file or self.file.closed:
+            raise IOError("File is not open for writing")
+
+        if self.mode != 'w':
+            raise IOError("File is not open in write mode")
+
+        self.writer._write_object(data)
+
+    def read(self, byteorder: str = 'auto') -> Any:
+        """
+        Read an xtype file and convert it to a Python object.
+
+        Args:
+            byteorder: The byte order of multi-byte integers in the file.
+                       'big', 'little' or 'auto'. Defaults to 'auto'.
+
+        Returns:
+            Any: The Python object read from the file
+        """
+        if not self.file or self.file.closed:
+            raise IOError("File is not open for reading")
+
+        if self.mode != 'r':
+            raise IOError("File is not open in read mode")
+
+        # Set byte order
+        if byteorder in ('little', 'big'):
+            self.reader.byteorder = byteorder
+
+        # Reset the file position to the beginning
+        self.file.seek(0)
+
+        # Start recursive parsing
+        return self.reader._read_object()
+
+    def read_debug(self, indent_size: int = 2, max_indent_level: int = 10, byteorder: str = 'auto', max_binary_bytes: int = 15) -> Iterator[str]:
+        """
+        Iterator to read raw data from an xtype file and convert each output to a formatted string.
+
+        This is a convenience method that delegates to the reader's read_debug method.
+        """
+        if not self.file or self.file.closed:
+            raise IOError("File is not open for reading")
+
+        if self.mode != 'r':
+            raise IOError("File is not open in read mode")
+
+        # Reset the file position to the beginning
+        self.file.seek(0)
+
+        return self.reader.read_debug(indent_size, max_indent_level, byteorder, max_binary_bytes)
+
+
+class XTypeFileWriter:
+    """
+    A class for writing Python data structures to files using the xtype binary format.
+    """
+
+    # Default byteorder is big-endian ('>') as used in all struct.pack calls
+    byteorder = DEFAULT_BYTE_ORDER
+
+    # Struct format character for byteorder
+    _struct_byteorder_format = {
+        'little': '<',
+        'big': '>'
+    }
+
+    def __init__(self, file: BinaryIO, byteorder: str = 'auto'):
+        """
+        Initialize an XTypeFileWriter object.
+
+        Args:
+            file: The file object to write to
+        """
+        self.file = file
+
+        if byteorder in ('little', 'big'):
+            self.byteorder = byteorder
 
         # Type mapping between Python/NumPy types and xtype format types
         self.type_map = {
@@ -76,216 +193,6 @@ class XTypeFile:
             np.dtype('float32'): 'f',
             np.dtype('float64'): 'd',
         }
-
-        # Size in bytes for each type
-        self.type_sizes = {
-            'i': 1, 'j': 2, 'k': 4, 'l': 8,  # signed ints
-            'I': 1, 'J': 2, 'K': 4, 'L': 8,  # unsigned ints
-            'b': 1,  # boolean
-            'h': 2, 'f': 4, 'd': 8,  # floating point
-            's': 1,  # string (utf-8)
-            'u': 2,  # utf-16
-            'S': 1,  # struct type as array of bytes
-            'x': 1,  # other byte array
-        }
-
-        # Grammar terminal symbols (single character markers)
-        self.grammar_terminals = set('*[]{}TFNijklIJKLbhfdsuSxMNOP0123456789')
-
-    def __enter__(self):
-        """Context manager entry point."""
-        self.open()
-        return self
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        """Context manager exit point."""
-        self.close()
-
-    def open(self):
-        """Open the file for reading or writing."""
-        if self.mode == 'w':
-            self.file = open(self.filename, 'wb')
-        elif self.mode == 'r':
-            self.file = open(self.filename, 'rb')
-        else:
-            raise ValueError(f"Unsupported mode: {self.mode}")
-
-    def close(self):
-        """Close the file."""
-        if self.file and not self.file.closed:
-            self.file.close()
-
-    def write(self, data: Any):
-        """
-        Write a Python object to the file in xtype format.
-
-        Args:
-            data: The Python object to serialize (can be a primitive type,
-                 list, dict, or numpy array)
-        """
-        if not self.file or self.file.closed:
-            raise IOError("File is not open for writing")
-
-        self._write_object(data)
-
-    def read_raw(self, byteorder: str = 'little') -> Iterator[Tuple[str, int, int]]:
-        """
-        Iterator to read type information from an xtype file without consuming binary data.
-
-        This method parses the file according to the xtype grammar and yields a tuple with:
-        1. A string representing the symbol or type
-        2. An integer flag indicating:
-           - 0: No length or size information
-           - 1: Length information
-           - 2: Data size information
-        3. The length or data size (0 if there's no length or size)
-
-        If binary data is associated with the yielded type, the caller must call
-        read_raw_data() to consume the data or the subsequent read_raw() call
-        will skip over it automatically.
-
-        Args:
-            byteorder: The byte order of multi-byte integers in the file. Defaults to 'little'.
-
-        Yields:
-            Tuple[str, int, int]: (symbol/type, flag, length_or_size)
-        """
-        if not self.file or self.file.closed:
-            raise IOError("File is not open for reading")
-
-        if self.mode != 'r':
-            raise IOError("File is not open in read mode")
-
-        # State tracking for binary data
-        self._pending_binary_size = 0
-
-        # Track accumulated length multipliers for arrays
-        length_multiplier = 1
-
-        while True:
-            # Skip any pending binary data from previous call if not consumed
-            if self._pending_binary_size > 0:
-                self.file.seek(self._pending_binary_size, 1)  # Seek relative to current position
-                self._pending_binary_size = 0
-
-            # Read one byte
-            char_byte = self.file.read(1)
-
-            # Check for EOF
-            if not char_byte:
-                break
-
-            try:
-                char = char_byte.decode('ascii')
-            except UnicodeDecodeError:
-                # If we can't decode as ASCII, it's likely binary data that wasn't properly skipped
-                # This can happen with string arrays where the binary data contains non-ASCII characters
-                raise ValueError(f"Encountered non-ASCII character in grammar. This may indicate binary data wasn't properly skipped.")
-
-            # Handle grammar terminal symbols
-            if char in '[]{}TFn*':
-                yield (char, 0, 0)
-                continue
-
-            # Handle direct length information (0-9)
-            if char in '0123456789':
-                yield (char, 1, int(char))
-                # Multiply this length multiplier
-                length_multiplier *= int(char)
-                continue
-
-            # Handle length information (M, N, O, P)
-            if char in 'MNOP':
-                size = {'M': 1, 'N': 2, 'O': 4, 'P': 8}[char]
-                # binary_position = self.file.tell()
-                binary_data = self.file.read(size)
-
-                if len(binary_data) < size:
-                    raise ValueError(f"Unexpected end of file when reading length of type {char}")
-
-                # Convert binary to integer value based on type
-                if char == 'M':  # uint8
-                    value = binary_data[0]
-                elif char == 'N':  # uint16
-                    value = int.from_bytes(binary_data, byteorder=byteorder, signed=False)
-                elif char == 'O':  # uint32
-                    value = int.from_bytes(binary_data, byteorder=byteorder, signed=False)
-                elif char == 'P':  # uint64
-                    value = int.from_bytes(binary_data, byteorder=byteorder, signed=False)
-
-                # Set pending binary size to 0 since we already consumed the binary data
-                self._pending_binary_size = 0
-
-                # Yield the length information and size
-                yield (char, 1, value)
-
-                # Multiply to length multiplier
-                length_multiplier *= value
-                continue
-
-            # Handle data types
-            if char in self.type_sizes:
-                # For actual data types, calculate the total data size
-                type_size = self.type_sizes[char]
-
-                # Calculate total size based on accumulated length multiplier
-                total_size = type_size * length_multiplier
-
-                # Don't read the binary data yet, just note its size
-                self._pending_binary_size = int(total_size)
-                self._pending_binary_type = char
-
-                yield (char, 2, total_size)
-                length_multiplier = 1  # Reset length multiplier after using it
-                continue
-
-            # If we get here, we encountered an unexpected character
-            raise ValueError(f"Unexpected character in xtype file: {repr(char)}")
-
-    def read_raw_data(self, max_bytes: int = None) -> bytes:
-        """
-        Read the binary data that corresponds to the last type yielded by read_raw().
-
-        This method must be called after read_raw() yields a type with associated
-        binary data. If not called, the next read_raw() call will skip over the
-        binary data automatically.
-
-        Args:
-            max_bytes: Maximum number of bytes to read. If None or greater than
-                      remaining bytes, all remaining bytes are read. If less than
-                      the total pending bytes, subsequent calls to read_raw_data
-                      can read the remaining bytes, or they will be skipped by
-                      the next read_raw() call.
-
-        Returns:
-            bytes: The binary data corresponding to the last type (up to max_bytes)
-
-        Raises:
-            ValueError: If there is no pending binary data to read
-        """
-        if not self.file or self.file.closed:
-            raise IOError("File is not open for reading")
-
-        if self.mode != 'r':
-            raise IOError("File is not open in read mode")
-
-        if self._pending_binary_size <= 0:
-            raise ValueError("No pending binary data to read. Call read_raw() first.")
-
-        # Determine how many bytes to read
-        bytes_to_read = self._pending_binary_size
-        if max_bytes is not None and max_bytes < bytes_to_read:
-            bytes_to_read = max_bytes
-
-        # Read the binary data
-        binary_data = self.file.read(bytes_to_read)
-        if len(binary_data) < bytes_to_read:
-            raise ValueError(f"Unexpected end of file when reading data of type {self._pending_binary_type}")
-
-        # Update the pending binary size
-        self._pending_binary_size -= bytes_to_read
-
-        return binary_data
 
     def _write_object(self, obj: Any):
         """
@@ -358,7 +265,8 @@ class XTypeFile:
             self._write_int_value(value, type_code)
         elif isinstance(value, float):
             self.file.write(b'd')
-            self.file.write(struct.pack('>d', value))
+            struct_format = self._struct_byteorder_format.get(self.byteorder, '>')
+            self.file.write(struct.pack(f'{struct_format}d', value))
         elif isinstance(value, str):
             # Write string with length prefix
             encoded = value.encode('utf-8')
@@ -425,19 +333,19 @@ class XTypeFile:
             if type_code in ('i', 'I'):  # uint8, int8
                 self.file.write(arr.tobytes())
             elif type_code in ('j', 'J'):  # uint16, int16
-                self.file.write(arr.astype(dtype).byteswap('>').tobytes())
+                self.file.write(arr.astype(dtype).byteswap(self.byteorder == 'big').tobytes())
             elif type_code in ('k', 'K'):  # uint32, int32
-                self.file.write(arr.astype(dtype).byteswap('>').tobytes())
+                self.file.write(arr.astype(dtype).byteswap(self.byteorder == 'big').tobytes())
             elif type_code in ('l', 'L'):  # uint64, int64
-                self.file.write(arr.astype(dtype).byteswap('>').tobytes())
+                self.file.write(arr.astype(dtype).byteswap(self.byteorder == 'big').tobytes())
         elif np.issubdtype(dtype, np.floating):
             # Handle floating point types
             if type_code == 'h':  # float16
-                self.file.write(arr.astype(np.float16).byteswap('>').tobytes())
+                self.file.write(arr.astype(np.float16).byteswap(self.byteorder == 'big').tobytes())
             elif type_code == 'f':  # float32
-                self.file.write(arr.astype(np.float32).byteswap('>').tobytes())
+                self.file.write(arr.astype(np.float32).byteswap(self.byteorder == 'big').tobytes())
             elif type_code == 'd':  # float64
-                self.file.write(arr.astype(np.float64).byteswap('>').tobytes())
+                self.file.write(arr.astype(np.float64).byteswap(self.byteorder == 'big').tobytes())
 
     def _select_int_type(self, value: int) -> str:
         """
@@ -476,22 +384,23 @@ class XTypeFile:
             value: The integer value
             type_code: The xtype type code
         """
+        struct_format = self._struct_byteorder_format.get(self.byteorder, '>')
         if type_code == 'I':
-            self.file.write(struct.pack('>B', value))
+            self.file.write(struct.pack(f'{struct_format}B', value))
         elif type_code == 'J':
-            self.file.write(struct.pack('>H', value))
+            self.file.write(struct.pack(f'{struct_format}H', value))
         elif type_code == 'K':
-            self.file.write(struct.pack('>I', value))
+            self.file.write(struct.pack(f'{struct_format}I', value))
         elif type_code == 'L':
-            self.file.write(struct.pack('>Q', value))
+            self.file.write(struct.pack(f'{struct_format}Q', value))
         elif type_code == 'i':
-            self.file.write(struct.pack('>b', value))
+            self.file.write(struct.pack(f'{struct_format}b', value))
         elif type_code == 'j':
-            self.file.write(struct.pack('>h', value))
+            self.file.write(struct.pack(f'{struct_format}h', value))
         elif type_code == 'k':
-            self.file.write(struct.pack('>i', value))
+            self.file.write(struct.pack(f'{struct_format}i', value))
         elif type_code == 'l':
-            self.file.write(struct.pack('>q', value))
+            self.file.write(struct.pack(f'{struct_format}q', value))
 
     def _write_length(self, length: int):
         """
@@ -500,31 +409,102 @@ class XTypeFile:
         Args:
             length: The length to write
         """
+        struct_format = self._struct_byteorder_format.get(self.byteorder, '>')
         if length <= 9:
             # Single-digit lengths are written as ASCII characters '0' through '9'
             self.file.write(str(length).encode())
         elif length <= 0xFF:
             # uint8 length
             self.file.write(b'M')
-            self.file.write(struct.pack('>B', length))
+            self.file.write(struct.pack(f'{struct_format}B', length))
         elif length <= 0xFFFF:
             # uint16 length
             self.file.write(b'N')
-            self.file.write(struct.pack('>H', length))
+            self.file.write(struct.pack(f'{struct_format}H', length))
         elif length <= 0xFFFFFFFF:
             # uint32 length
             self.file.write(b'O')
-            self.file.write(struct.pack('>I', length))
+            self.file.write(struct.pack(f'{struct_format}I', length))
         else:
             # uint64 length
             self.file.write(b'P')
-            self.file.write(struct.pack('>Q', length))
+            self.file.write(struct.pack(f'{struct_format}Q', length))
 
-    def read_debug(self, indent_size: int = 2, max_indent_level: int = 10, byteorder: str = 'little', max_binary_bytes: int = 15) -> Iterator[str]:
+
+class XTypeFileReader:
+    """
+    A class for reading Python data structures from files using the xtype binary format.
+    """
+
+    # Default byteorder is big-endian as used in all read methods
+    byteorder = DEFAULT_BYTE_ORDER
+
+    # Struct format character for byteorder
+    _struct_byteorder_format = {
+        'little': '<',
+        'big': '>'
+    }
+
+    def __init__(self, file: BinaryIO):
+        """
+        Initialize an XTypeFileReader object.
+
+        Args:
+            file: The file object to read from
+            type_sizes: Dictionary mapping type codes to their sizes in bytes
+            grammar_terminals: Set of grammar terminal symbols
+        """
+        self.file = file
+        self._pending_binary_size = 0
+        self._pending_binary_type = None
+
+        # Size in bytes for each type
+        self.type_sizes = {
+            'i': 1, 'j': 2, 'k': 4, 'l': 8,  # signed ints
+            'I': 1, 'J': 2, 'K': 4, 'L': 8,  # unsigned ints
+            'b': 1,  # boolean
+            'h': 2, 'f': 4, 'd': 8,  # floating point
+            's': 1,  # string (utf-8)
+            'u': 2,  # utf-16
+            'S': 1,  # struct type as array of bytes
+            'x': 1,  # other byte array
+        }
+
+        # Grammar terminal symbols (single character markers)
+        self.grammar_terminals = set('*[]{}TFNijklIJKLbhfdsuSxMNOP0123456789')
+
+    def read(self, byteorder: str = 'auto') -> Any:
+        """
+        Read an xtype file and convert it to a Python object.
+
+        This method is the counterpart to the write method. It reads the xtype file
+        and returns a Python object that corresponds to what was written.
+
+        Args:
+            byteorder: The byte order of multi-byte integers in the file.
+                       'big', 'little' or 'auto'. Defaults to 'auto'.
+
+        Returns:
+            Any: The Python object read from the file
+        """
+        if not self.file or self.file.closed:
+            raise IOError("File is not open for reading")
+
+        # Set byte order
+        if byteorder in ('little', 'big'):
+            self.byteorder = byteorder
+
+        # Reset the file position to the beginning
+        self.file.seek(0)
+
+        # Start recursive parsing
+        return self._read_object()
+
+    def read_debug(self, indent_size: int = 2, max_indent_level: int = 10, byteorder: str = 'auto', max_binary_bytes: int = 15) -> Iterator[str]:
         """
         Iterator to read raw data from an xtype file and convert each output to a formatted string.
 
-        This method uses read_raw and read_raw_data to parse the xtype file and formats
+        This method uses read_raw and _read_raw_data to parse the xtype file and formats
         the output as a string where:
         - The string part is enclosed in quotation marks
         - If the string part ends with 's', the binary data is converted to a UTF-8 string with quotation marks
@@ -538,7 +518,8 @@ class XTypeFile:
         Args:
             indent_size: Number of spaces per indentation level (default: 2)
             max_indent_level: Maximum indentation level (default: 10)
-            byteorder: Byte order for integer values (default: 'little')
+            byteorder: The byte order of multi-byte integers in the file.
+                       'big', 'little' or 'auto'. Defaults to 'auto'.
             max_binary_bytes: Maximum number of binary bytes to read (default: 10)
 
         Yields:
@@ -547,8 +528,10 @@ class XTypeFile:
         if not self.file or self.file.closed:
             raise IOError("File is not open for reading")
 
-        if self.mode != 'r':
-            raise IOError("File is not open in read mode")
+
+        # Set byte order
+        if byteorder in ('little', 'big'):
+            self.byteorder = byteorder
 
         # Reset the file position at the start
         self.file.seek(0)
@@ -563,7 +546,7 @@ class XTypeFile:
         in_array_context = False
 
         try:
-            for symbol, flag, length_or_size in self.read_raw(byteorder=byteorder):
+            for symbol, flag, length_or_size in self._read_raw():
                 # Handle special bracket characters
                 if symbol in '[]{}':
                     # First, if we have accumulated strings, yield them with the current indentation
@@ -621,7 +604,7 @@ class XTypeFile:
                 # Format based on accumulated_str
                 if accumulated_str.endswith('s'):
                     # Get the string data and format them
-                    binary_part = self.read_raw_data(max_bytes=max_binary_bytes) if length_or_size > 0 else b''
+                    binary_part = self._read_raw_data(max_bytes=max_binary_bytes) if length_or_size > 0 else b''
                     # Check if we're in a multidimensional array context
                     is_multidimensional = in_array_context and len(dimensions) > 1
 
@@ -646,7 +629,7 @@ class XTypeFile:
                         yield current_indent + f'{accumulated_str}: {hex_str}'
                 else:
                     # Get the data (limited by max_binary_bytes) and format them
-                    binary_part = self.read_raw_data(max_bytes=max_binary_bytes) if length_or_size > 0 else b''
+                    binary_part = self._read_raw_data(max_bytes=max_binary_bytes) if length_or_size > 0 else b''
                     # For other types, convert to space-separated hex
                     hex_str = ' '.join(f'{b:02x}' for b in binary_part)
                     if len(binary_part) < length_or_size:
@@ -662,47 +645,127 @@ class XTypeFile:
             raise Exception(f"Error at file position {current_pos}: {str(e)}")
             # Don't re-raise the exception to allow partial output
 
-    def read(self, byteorder: str = 'little') -> Any:
+    def _read_raw(self) -> Iterator[Tuple[str, int, int]]:
         """
-        Read an xtype file and convert it to a Python object.
+        Iterator to read type information from an xtype file without consuming binary data.
 
-        This method is the counterpart to the write method. It reads the xtype file
-        and returns a Python object that corresponds to what was written.
+        This method parses the file according to the xtype grammar and yields a tuple with:
+        1. A string representing the symbol or type
+        2. An integer flag indicating:
+           - 0: No length or size information
+           - 1: Length information
+           - 2: Data size information
+        3. The length or data size (0 if there's no length or size)
 
-        Args:
-            byteorder: The byte order of multi-byte integers in the file. Defaults to 'little'.
+        If binary data is associated with the yielded type, the caller must call
+        _read_raw_data() to consume the data or the subsequent _read_raw() call
+        will skip over it automatically.
 
-        Returns:
-            Any: The Python object read from the file
+        Yields:
+            Tuple[str, int, int]: (symbol/type, flag, length_or_size)
         """
         if not self.file or self.file.closed:
             raise IOError("File is not open for reading")
 
-        if self.mode != 'r':
-            raise IOError("File is not open in read mode")
+        # State tracking for binary data
+        self._pending_binary_size = 0
 
-        # Reset the file position to the beginning
-        self.file.seek(0)
+        # Track accumulated length multipliers for arrays
+        length_multiplier = 1
 
-        # Start recursive parsing
-        return self._read_object(byteorder)
+        while True:
+            # Skip any pending binary data from previous call if not consumed
+            if self._pending_binary_size > 0:
+                self.file.seek(self._pending_binary_size, 1)  # Seek relative to current position
+                self._pending_binary_size = 0
 
-    def _read_object(self, byteorder: str = 'little') -> Any:
+            # Read one byte
+            char_byte = self.file.read(1)
+
+            # Check for EOF
+            if not char_byte:
+                break
+
+            try:
+                char = char_byte.decode('ascii')
+            except UnicodeDecodeError:
+                # If we can't decode as ASCII, it's likely binary data that wasn't properly skipped
+                # This can happen with string arrays where the binary data contains non-ASCII characters
+                raise ValueError(f"Encountered non-ASCII character in grammar. This may indicate binary data wasn't properly skipped.")
+
+            # Handle grammar terminal symbols
+            if char in '[]{}TFn*':
+                yield (char, 0, 0)
+                continue
+
+            # Handle direct length information (0-9)
+            if char in '0123456789':
+                yield (char, 1, int(char))
+                # Multiply this length multiplier
+                length_multiplier *= int(char)
+                continue
+
+            # Handle length information (M, N, O, P)
+            if char in 'MNOP':
+                size = {'M': 1, 'N': 2, 'O': 4, 'P': 8}[char]
+                # binary_position = self.file.tell()
+                binary_data = self.file.read(size)
+
+                if len(binary_data) < size:
+                    raise ValueError(f"Unexpected end of file when reading length of type {char}")
+
+                # Convert binary to integer value based on type
+                if char == 'M':  # uint8
+                    value = binary_data[0]
+                elif char == 'N':  # uint16
+                    value = int.from_bytes(binary_data, byteorder=self.byteorder, signed=False)
+                elif char == 'O':  # uint32
+                    value = int.from_bytes(binary_data, byteorder=self.byteorder, signed=False)
+                elif char == 'P':  # uint64
+                    value = int.from_bytes(binary_data, byteorder=self.byteorder, signed=False)
+
+                # Set pending binary size to 0 since we already consumed the binary data
+                self._pending_binary_size = 0
+
+                # Yield the length information and size
+                yield (char, 1, value)
+
+                # Multiply to length multiplier
+                length_multiplier *= value
+                continue
+
+            # Handle data types
+            if char in self.type_sizes:
+                # For actual data types, calculate the total data size
+                type_size = self.type_sizes[char]
+
+                # Calculate total size based on accumulated length multiplier
+                total_size = type_size * length_multiplier
+
+                # Don't read the binary data yet, just note its size
+                self._pending_binary_size = int(total_size)
+                self._pending_binary_type = char
+
+                yield (char, 2, total_size)
+                length_multiplier = 1  # Reset length multiplier after using it
+                continue
+
+            # If we get here, we encountered an unexpected character
+            raise ValueError(f"Unexpected character in xtype file: {repr(char)}")
+
+    def _read_object(self) -> Any:
         """
         Read an object from the file.
-
-        Args:
-            byteorder: The byte order of multi-byte integers in the file.
 
         Returns:
             The Python object read from the file
         """
-        # Get the next logical element
-        symbol, dimensions, size = self._read_step(byteorder)
-        # Process the symbol
-        return self._read_element(symbol, dimensions, size, byteorder)
+        # Read the next step from the file
+        symbol, dimensions, size = self._read_step()
 
-    def _read_element(self, symbol: str, dimensions: List[int], size: int, byteorder: str) -> Any:
+        return self._read_element(symbol, dimensions, size)
+
+    def _read_element(self, symbol: str, dimensions: List[int], size: int) -> Any:
         """
         Read an element based on its symbol from the file.
 
@@ -710,7 +773,6 @@ class XTypeFile:
             symbol: The symbol or type code read from the file
             dimensions: List of dimensions for array types (empty for scalar values)
             size: The size of binary data in bytes (0 for grammar symbols)
-            byteorder: The byte order of multi-byte integers in the file
 
         Returns:
             The Python object read from the file
@@ -718,10 +780,10 @@ class XTypeFile:
         # Handle special symbols first
         if symbol == '[':
             # List
-            return self._read_list(byteorder)
+            return self._read_list()
         elif symbol == '{':
             # Dictionary
-            return self._read_dict(byteorder)
+            return self._read_dict()
         elif symbol == 'T':
             # True
             return True
@@ -735,28 +797,27 @@ class XTypeFile:
             # Check if this is an array type or a single element
             if dimensions:
                 # This is an array type
-                return self._read_numpy_array(dimensions, symbol, size, byteorder)
+                return self._read_numpy_array(dimensions, symbol, size)
             else:
                 # This is a single element
-                return self._read_single_element(symbol, size, byteorder)
+                return self._read_single_element(symbol, size)
         else:
             # Unexpected symbol
             raise ValueError(f"Unexpected symbol in xtype file: {symbol}")
 
-    def _read_single_element(self, type_code: str, size: int, byteorder: str) -> Any:
+    def _read_single_element(self, type_code: str, size: int) -> Any:
         """
         Read a basic element from the file.
 
         Args:
             type_code: The xtype type code
             size: The total size of binary data in bytes
-            byteorder: The byte order of multi-byte integers in the file
 
         Returns:
             The element read from the file
         """
         # Read the binary data
-        binary_data = self.read_raw_data(size)
+        binary_data = self._read_raw_data(size)
 
         # Parse based on type code
         if type_code == 'b':
@@ -765,34 +826,35 @@ class XTypeFile:
         elif type_code in 'ijkl':
             # Signed integers
             if type_code == 'i':
-                return int.from_bytes(binary_data, byteorder=byteorder, signed=True)
+                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=True)
             elif type_code == 'j':
-                return int.from_bytes(binary_data, byteorder=byteorder, signed=True)
+                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=True)
             elif type_code == 'k':
-                return int.from_bytes(binary_data, byteorder=byteorder, signed=True)
+                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=True)
             elif type_code == 'l':
-                return int.from_bytes(binary_data, byteorder=byteorder, signed=True)
+                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=True)
         elif type_code in 'IJKL':
             # Unsigned integers
             if type_code == 'I':
-                return int.from_bytes(binary_data, byteorder=byteorder, signed=False)
+                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=False)
             elif type_code == 'J':
-                return int.from_bytes(binary_data, byteorder=byteorder, signed=False)
+                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=False)
             elif type_code == 'K':
-                return int.from_bytes(binary_data, byteorder=byteorder, signed=False)
+                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=False)
             elif type_code == 'L':
-                return int.from_bytes(binary_data, byteorder=byteorder, signed=False)
+                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=False)
         elif type_code in 'hfd':
             # Floating point
+            struct_format = self._struct_byteorder_format.get(self.byteorder, '<')
             if type_code == 'h':
                 # float16
-                return struct.unpack('>e', binary_data)[0]
+                return struct.unpack(f'{struct_format}e', binary_data)[0]
             elif type_code == 'f':
                 # float32
-                return struct.unpack('>f', binary_data)[0]
+                return struct.unpack(f'{struct_format}f', binary_data)[0]
             elif type_code == 'd':
                 # float64
-                return struct.unpack('>d', binary_data)[0]
+                return struct.unpack(f'{struct_format}d', binary_data)[0]
         elif type_code == 's':
             # String
             return binary_data.decode('utf-8')
@@ -803,12 +865,9 @@ class XTypeFile:
             # Unsupported type
             raise ValueError(f"Unsupported type code: {type_code}")
 
-    def _read_list(self, byteorder: str = 'little') -> List:
+    def _read_list(self) -> List:
         """
         Read a list from the file.
-
-        Args:
-            byteorder: The byte order of multi-byte integers in the file.
 
         Returns:
             List: The list read from the file
@@ -817,7 +876,7 @@ class XTypeFile:
 
         # Parse each element until we hit a closing bracket
         while True:
-            symbol, dimensions, size = self._read_step(byteorder)
+            symbol, dimensions, size = self._read_step()
 
             if symbol == ']':
                 # End of list
@@ -826,22 +885,19 @@ class XTypeFile:
                 # Data type
                 if dimensions:
                     # Array type
-                    result.append(self._read_numpy_array(dimensions, symbol, size, byteorder))
+                    result.append(self._read_numpy_array(dimensions, symbol, size))
                 else:
                     # Basic element
-                    result.append(self._read_single_element(symbol, size, byteorder))
+                    result.append(self._read_single_element(symbol, size))
             else:
                 # Special symbol or container
-                result.append(self._read_element(symbol, dimensions, size, byteorder))
+                result.append(self._read_element(symbol, dimensions, size))
 
         return result
 
-    def _read_dict(self, byteorder: str = 'little') -> Dict:
+    def _read_dict(self) -> Dict:
         """
         Read a dictionary from the file.
-
-        Args:
-            byteorder: The byte order of multi-byte integers in the file.
 
         Returns:
             Dict: The dictionary read from the file
@@ -851,7 +907,7 @@ class XTypeFile:
         # Parse key-value pairs until we hit a closing brace
         while True:
             # Read the key
-            symbol, dimensions, size = self._read_step(byteorder)
+            symbol, dimensions, size = self._read_step()
 
             if symbol == '}':
                 # End of dictionary
@@ -860,61 +916,58 @@ class XTypeFile:
             # We're reading a key, which should be a string
             if symbol == 's':
                 # String key
-                key_binary = self.read_raw_data(size)
+                key_binary = self._read_raw_data(size)
                 key = key_binary.decode('utf-8')
             elif symbol == 'u':
                 # String key
-                key_binary = self.read_raw_data(size)
+                key_binary = self._read_raw_data(size)
                 key = key_binary.decode('utf-16')
             elif symbol in 'ijklIJKL':
                 if dimensions:
                     # Int array type
-                    intArray = self._read_numpy_array(dimensions, symbol, size, byteorder)
+                    intArray = self._read_numpy_array(dimensions, symbol, size)
                     key = self._convert_to_deep_tuple(intArray.tolist())
                 else:
                     # Int element
-                    key = int(self._read_single_element(symbol, size, byteorder))
+                    key = int(self._read_single_element(symbol, size))
             elif symbol in 'hfd':
                 if dimensions:
                     # Float array type
-                    intArray = self._read_numpy_array(dimensions, symbol, size, byteorder)
+                    intArray = self._read_numpy_array(dimensions, symbol, size)
                     key = self._convert_to_deep_tuple(intArray.tolist())
                 else:
                     # Float element
-                    key = float(self._read_single_element(symbol, size, byteorder))
+                    key = float(self._read_single_element(symbol, size))
             else:
                 # Unexpected symbol for key
                 raise ValueError(f"Unexpected key type in dictionary: {symbol}")
 
             # Read the value
-            symbol, dimensions, size = self._read_step(byteorder)
+            symbol, dimensions, size = self._read_step()
 
             # We're reading a value
             if symbol in self.type_sizes:
                 # Data type
                 if dimensions and (symbol not in 'sx' or len(dimensions) > 1):
                     # Array type
-                    result[key] = self._read_numpy_array(dimensions, symbol, size, byteorder)
+                    result[key] = self._read_numpy_array(dimensions, symbol, size)
                 else:
                     # Basic element
-                    result[key] = self._read_single_element(symbol, size, byteorder)
+                    result[key] = self._read_single_element(symbol, size)
             else:
                 # Special symbol or container
-                result[key] = self._read_element(symbol, dimensions, size, byteorder)
+                result[key] = self._read_element(symbol, dimensions, size)
 
         return result
 
-    def _read_step(self, byteorder: str = 'little') -> Tuple[str, List[int], int]:
+    def _read_step(self) -> Tuple[str, List[int], int]:
         """
         Read a single elementary part from the xtype file.
 
         This method reads the xtype file using read_raw and returns elementary parts.
         The elements could be single symbols ([]{}TFn*), scalar types or array types.
         The function does not read the binary payload data. This is done by calling
-        read_raw_data().
-
-        Args:
-            byteorder: The byte order of multi-byte integers in the file. Defaults to 'little'.
+        _read_raw_data().
 
         Returns:
             Tuple[str, List[int], int]: A tuple containing:
@@ -925,14 +978,11 @@ class XTypeFile:
         if not self.file or self.file.closed:
             raise IOError("File is not open for reading")
 
-        if self.mode != 'r':
-            raise IOError("File is not open in read mode")
-
         # Store length values (dimensions) for array types
         dimensions = []
 
         # Process raw elements until we find a complete logical element
-        for symbol, flag, length_or_size in self.read_raw(byteorder=byteorder):
+        for symbol, flag, length_or_size in self._read_raw():
             # Case 1: Grammar terminals (single symbols)
             if symbol in '[]{}TFn*':
                 return symbol, [], 0
@@ -951,7 +1001,7 @@ class XTypeFile:
         # If we reach here, we've reached the end of the file
         return '', [], 0
 
-    def _read_numpy_array(self, dimensions: List[int], type_code: str, size: int, byteorder: str = 'little') -> np.ndarray:
+    def _read_numpy_array(self, dimensions: List[int], type_code: str, size: int) -> np.ndarray:
         """
         Read a NumPy array from the file.
 
@@ -959,13 +1009,12 @@ class XTypeFile:
             dimensions: The dimensions of the array
             type_code: The xtype type code
             size: The total size of binary data in bytes
-            byteorder: The byte order of multi-byte integers in the file
 
         Returns:
             np.ndarray: The NumPy array read from the file
         """
         # Read the binary data
-        binary_data = self.read_raw_data(size)
+        binary_data = self._read_raw_data(size)
 
         # Special handling for string arrays
         if type_code == 's':
@@ -1049,26 +1098,6 @@ class XTypeFile:
         # Reshape the array to the specified dimensions
         return flat_array.reshape(dimensions)
 
-    def _determine_data_size(self, type_code: str) -> Optional[int]:
-        """
-        Determine the size of data to read based on the type code.
-
-        Args:
-            type_code: The xtype type code
-
-        Returns:
-            Optional[int]: Size in bytes to read, or None if not a data type
-        """
-        # Single character type codes
-        if type_code in self.type_sizes:
-            return self.type_sizes[type_code]
-
-        # Length indicators
-        if type_code in 'MNOP':
-            return {'M': 1, 'N': 2, 'O': 4, 'P': 8}[type_code]
-
-        return None
-
     def _convert_to_deep_tuple(self, lst: List) -> Tuple:
         """
         Convert a list to a deep tuple.
@@ -1082,3 +1111,45 @@ class XTypeFile:
         if not isinstance(lst, list):
             return lst
         return tuple(self._convert_to_deep_tuple(i) for i in lst)
+
+    def _read_raw_data(self, max_bytes: int = None) -> bytes:
+        """
+        Read the binary data that corresponds to the last type yielded by _read_raw().
+
+        This method must be called after _read_raw() yields a type with associated
+        binary data. If not called, the next _read_raw() call will skip over the
+        binary data automatically.
+
+        Args:
+            max_bytes: Maximum number of bytes to read. If None or greater than
+                      remaining bytes, all remaining bytes are read. If less than
+                      the total pending bytes, subsequent calls to _read_raw_data
+                      can read the remaining bytes, or they will be skipped by
+                      the next _read_raw() call.
+
+        Returns:
+            bytes: The binary data corresponding to the last type (up to max_bytes)
+
+        Raises:
+            ValueError: If there is no pending binary data to read
+        """
+        if not self.file or self.file.closed:
+            raise IOError("File is not open for reading")
+
+        if self._pending_binary_size <= 0:
+            raise ValueError("No pending binary data to read. Call _read_raw() first.")
+
+        # Determine how many bytes to read
+        bytes_to_read = self._pending_binary_size
+        if max_bytes is not None and max_bytes < bytes_to_read:
+            bytes_to_read = max_bytes
+
+        # Read the binary data
+        binary_data = self.file.read(bytes_to_read)
+        if len(binary_data) < bytes_to_read:
+            raise ValueError(f"Unexpected end of file when reading data of type {self._pending_binary_type}")
+
+        # Update the pending binary size
+        self._pending_binary_size -= bytes_to_read
+
+        return binary_data
