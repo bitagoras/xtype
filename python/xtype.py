@@ -257,8 +257,7 @@ class XTypeFileWriter:
         if value is None:
             self.file.write(b'n')
         elif isinstance(value, bool):
-            self.file.write(b'b')
-            self.file.write(b'\xff' if value else b'\x00')
+            self.file.write(b'T' if value else b'F')
         elif isinstance(value, int):
             type_code = self._select_int_type(value)
             self.file.write(type_code.encode())
@@ -753,6 +752,47 @@ class XTypeFileReader:
             # If we get here, we encountered an unexpected character
             raise ValueError(f"Unexpected character in xtype file: {repr(char)}")
 
+    def _read_step(self) -> Tuple[str, List[int], int]:
+        """
+        Read a single elementary part from the xtype file.
+
+        This method reads the xtype file using read_raw and returns elementary parts.
+        The elements could be single symbols ([]{}TFn*), scalar types or array types.
+        The function does not read the binary payload data. This is done by calling
+        _read_raw_data().
+
+        Returns:
+            Tuple[str, List[int], int]: A tuple containing:
+                - symbol: String representing the type or grammar symbol
+                - dimensions: List of dimensions (empty for scalar values)
+                - size: Size to be read in bytes (0 for grammar symbols without binary data)
+        """
+        if not self.file or self.file.closed:
+            raise IOError("File is not open for reading")
+
+        # Store length values (dimensions) for array types
+        dimensions = []
+
+        # Process raw elements until we find a complete logical element
+        for symbol, flag, length_or_size in self._read_raw():
+            # Case 1: Grammar terminals (single symbols)
+            if symbol in '[]{}TFn*':
+                return symbol, [], 0
+
+            # Case 2: Length information (0-9, M, N, O, P)
+            elif flag == 1:
+                # Store dimension for array types
+                dimensions.append(length_or_size)
+                continue
+
+            # Case 3: Data types with binary data
+            elif flag == 2:
+                # Return the data type with collected dimensions and size
+                return symbol, dimensions, length_or_size
+
+        # If we reach here, we've reached the end of the file
+        return '', [], 0
+
     def _read_object(self) -> Any:
         """
         Read an object from the file.
@@ -959,47 +999,6 @@ class XTypeFileReader:
                 result[key] = self._read_element(symbol, dimensions, size)
 
         return result
-
-    def _read_step(self) -> Tuple[str, List[int], int]:
-        """
-        Read a single elementary part from the xtype file.
-
-        This method reads the xtype file using read_raw and returns elementary parts.
-        The elements could be single symbols ([]{}TFn*), scalar types or array types.
-        The function does not read the binary payload data. This is done by calling
-        _read_raw_data().
-
-        Returns:
-            Tuple[str, List[int], int]: A tuple containing:
-                - symbol: String representing the type or grammar symbol
-                - dimensions: List of dimensions (empty for scalar values)
-                - size: Size to be read in bytes (0 for grammar symbols without binary data)
-        """
-        if not self.file or self.file.closed:
-            raise IOError("File is not open for reading")
-
-        # Store length values (dimensions) for array types
-        dimensions = []
-
-        # Process raw elements until we find a complete logical element
-        for symbol, flag, length_or_size in self._read_raw():
-            # Case 1: Grammar terminals (single symbols)
-            if symbol in '[]{}TFn*':
-                return symbol, [], 0
-
-            # Case 2: Length information (0-9, M, N, O, P)
-            elif flag == 1:
-                # Store dimension for array types
-                dimensions.append(length_or_size)
-                continue
-
-            # Case 3: Data types with binary data
-            elif flag == 2:
-                # Return the data type with collected dimensions and size
-                return symbol, dimensions, length_or_size
-
-        # If we reach here, we've reached the end of the file
-        return '', [], 0
 
     def _read_numpy_array(self, dimensions: List[int], type_code: str, size: int) -> np.ndarray:
         """
