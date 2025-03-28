@@ -7,7 +7,7 @@ Overview
 
 xtype is a universal binary notation language with a self-explanatory syntax for the exchange and storage of hierarchically structured data. It is intended to be a binary equivalent to text formats such as [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations in efficiency. xtype is also suitable for representing typical C and Python data structures, and provides a lightweight grammar alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage, inspired by the simplicity of [UBJSON](https://github.com/ubjson/universal-binary-json).
 
-There is currently no xtype programming library, editor or reader.
+The first test library for reading and writing Python structures is available at [xtype-python](https://github.com/bitagoras/xtype-python).
 
 Basic idea
 ----------
@@ -78,7 +78,7 @@ The grammar is fully defined and explained by a graphical representation. Green 
                  "b" | "h" | "f" | "d" | "s" | "u" | "S" | "x"
 
 <bin_data> is the binary data of defined size, see table with types below.
-<EOF> is the end of file as defined by the file system.
+<EOF> is the end of file. In streams this could also be defined by a zero byte.
 ```
 
 ## Types
@@ -295,7 +295,7 @@ _Footnote value_ | size of entire object
 
 **Explanation:**
 
-This footnote type gives the information about the size of an object. This can be used to step over large objects in a list or dict to quickly access a certain sub element. The size includes this footenote starting from the `*` symbol of this footnote to the end of the element. Footnotes that are left of this footnote are not included in the size.
+This footnote type gives the information about the size of an object. This can be used to step over large objects in a list or dict to quickly access a certain sub element. The size excludes this and all previous footnotes. When the size information is used to skip this object, the size gives the number of bytes to be irgnored.
 
 **Example:**
 
