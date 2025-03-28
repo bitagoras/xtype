@@ -11,27 +11,6 @@ from typing import Any, Dict, List, Tuple, Union, BinaryIO, Iterator, Optional
 
 DEFAULT_BYTE_ORDER = 'big'
 
-# xtype grammar
-#--------------
-#
-# <file>       ::= <EOF> | <object> <EOF>
-# <object>     ::= <content> | <footnote> <content>
-# <footnote>   ::= "*" <content> | "*" <content> <footnote>
-# <content>    ::= <element> | <list> | <dict>
-# <list>       ::= "[]" | "[" <list_items> "]" | "[" <EOF> | "[" <list_items> <EOF>
-# <list_items> ::= <object> | <object> <list_items>
-# <dict>       ::= "{}" | "{" <dict_items> "}" | "{" <EOF> | "{" <list_items> <EOF>
-# <dict_items> ::= <element> <object> | <element> <object> <dict_items>
-# <element>    ::= <type> <bin_data> | "T"  | "F" | "n"
-# <type>       ::= <lenght> <type> | <bin_data>
-# <lenght>     ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" |
-#                  "M" <bin_data> | "N" <bin_data> | "O" <bin_data> | "P" <bin_data>
-# <bin_type>   ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L" |
-#                  "b" | "h" | "f" | "d" | "s" | "u" | "S" | "x"
-
-# <bin_data> is the binary data of defined size, according to the list of types.
-# <EOF> is the end of file. In streams this could also be defined by a zero byte.
-
 class XTypeFile:
     """
     A class for reading and writing Python data structures to files using the xtype binary format.
@@ -97,6 +76,7 @@ class XTypeFile:
         if self.mode != 'w':
             raise IOError("File is not open in write mode")
 
+        self.writer._write_bom()
         self.writer._write_object(data)
 
     def read(self, byteorder: str = 'auto') -> Any:
@@ -124,7 +104,7 @@ class XTypeFile:
         self.file.seek(0)
 
         # Start recursive parsing
-        return self.reader._read_object()
+        return self.reader.read()
 
     def read_debug(self, indent_size: int = 2, max_indent_level: int = 10, byteorder: str = 'auto', max_binary_bytes: int = 15) -> Iterator[str]:
         """
@@ -193,6 +173,21 @@ class XTypeFileWriter:
             np.dtype('float32'): 'f',
             np.dtype('float64'): 'd',
         }
+
+    def _write_bom(self):
+        """
+        Write a byte order mark (BOM) to the file.
+
+        The BOM is a 16-bit signed integer with the value 1234. It is used to indicate the byte order of
+        multi-byte integers in the file.
+
+        The BOM is written as a 16-bit signed integer in big-endian byte order. The 16-bit signed integer
+        has the defined value of 1234. An xtype reader with the wrong byte order would read the number as
+        -11772. If no such file signature is given, xtype is specified for big endian byte order as
+        default.
+        """
+        self.file.write(b'*J')
+        self._write_int_value(1234, 'J')
 
     def _write_object(self, obj: Any):
         """
@@ -470,7 +465,7 @@ class XTypeFileReader:
         }
 
         # Grammar terminal symbols (single character markers)
-        self.grammar_terminals = set('*[]{}TFNijklIJKLbhfdsuSxMNOP0123456789')
+        self.grammar_terminals = set('*[]{}TFnijklIJKLbhfdsuSxMNOP0123456789')
 
     def read(self, byteorder: str = 'auto') -> Any:
         """
@@ -495,6 +490,10 @@ class XTypeFileReader:
 
         # Reset the file position to the beginning
         self.file.seek(0)
+
+        # If byteorder is 'auto', try to detect it from the BOM
+        if byteorder == 'auto':
+            self._read_bom()
 
         # Start recursive parsing
         return self._read_object()
@@ -800,8 +799,15 @@ class XTypeFileReader:
         Returns:
             The Python object read from the file
         """
-        # Read the next step from the file
-        symbol, dimensions, size = self._read_step()
+
+        isFootnote = True
+        while isFootnote:
+            # Read the next step from the file
+            symbol, dimensions, size = self._read_step()
+            if symbol == '*':
+                symbol, dimensions, size = self._read_step()
+            else:
+                isFootnote = False
 
         return self._read_element(symbol, dimensions, size)
 
@@ -1152,3 +1158,37 @@ class XTypeFileReader:
         self._pending_binary_size -= bytes_to_read
 
         return binary_data
+
+    def _read_bom(self):
+        """
+        Read the byte order mark (BOM) and adjust the byteorder if needed.
+
+        The BOM is a 16-bit signed integer with the value 1234 written in big-endian byte order.
+        If read with the wrong byte order, it would appear as -11772.
+
+        This method checks for the BOM and switches the byteorder from big to little or vice versa
+        if the BOM indicates a different byte order than the current setting.
+
+        The file position is reset to the beginning after reading the BOM.
+        """
+        # Save the current position
+        current_pos = self.file.tell()
+
+        # Read the first two characters
+        marker = self.file.read(2)
+
+        # Check if the marker is '*J' which indicates a BOM follows
+        if marker == b'*J':
+            # Read the 2-byte integer using the current byteorder
+            format_char = self._struct_byteorder_format[self.byteorder]
+            bom_value = struct.unpack(f'{format_char}h', self.file.read(2))[0]
+
+            # If the value is -11772, we need to switch the byteorder
+            if bom_value == -11772:
+                self.byteorder = 'little' if self.byteorder == 'big' else 'big'
+            elif bom_value != 1234:
+                # If it's neither 1234 nor -11772, it's not a valid BOM
+                pass  # Keep the default byteorder
+        else:
+            # Reset the file position to the beginning
+            self.file.seek(current_pos)
