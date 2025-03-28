@@ -871,24 +871,10 @@ class XTypeFileReader:
             return binary_data[0] != 0
         elif type_code in 'ijkl':
             # Signed integers
-            if type_code == 'i':
-                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=True)
-            elif type_code == 'j':
-                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=True)
-            elif type_code == 'k':
-                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=True)
-            elif type_code == 'l':
-                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=True)
+            return int.from_bytes(binary_data, byteorder=self.byteorder, signed=True)
         elif type_code in 'IJKL':
             # Unsigned integers
-            if type_code == 'I':
-                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=False)
-            elif type_code == 'J':
-                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=False)
-            elif type_code == 'K':
-                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=False)
-            elif type_code == 'L':
-                return int.from_bytes(binary_data, byteorder=self.byteorder, signed=False)
+            return int.from_bytes(binary_data, byteorder=self.byteorder, signed=False)
         elif type_code in 'hfd':
             # Floating point
             struct_format = self._struct_byteorder_format.get(self.byteorder, '<')
