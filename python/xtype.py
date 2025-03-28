@@ -1,9 +1,17 @@
 """
-XType - A Python implementation of the xtype binary format
+xtype - Universal Binary Notation Language for Data Exchange
 
-This module provides functionality for serializing Python data structures to the xtype binary format,
-a universal binary notation language designed for efficient data exchange and storage.
+A Python implementation for serializing and deserializing data structures
+using the xtype binary format, optimized for efficient data exchange and storage.
+
+Copyright (c) 2025 Bitagoras
+License: MIT
+
+Project: https://github.com/bitagoras/xtype
+Version: 0.1.0
 """
+
+__version__ = "0.1.0"
 
 import struct
 import numpy as np
@@ -186,8 +194,8 @@ class XTypeFileWriter:
         -11772. If no such file signature is given, xtype is specified for big endian byte order as
         default.
         """
-        self.file.write(b'*J')
-        self._write_int_value(1234, 'J')
+        self.file.write(b'*j')
+        self._write_int_value(1234, 'j')
 
     def _write_object(self, obj: Any):
         """
@@ -508,7 +516,7 @@ class XTypeFileReader:
         - If the string part ends with 's', the binary data is converted to a UTF-8 string with quotation marks
           unless it's part of a multidimensional array
         - Otherwise, the bytes are converted to hexadecimal with spaces in between
-        - Indentation is added based on brackets [ and ] and curly brackets { and }
+        - Indentation is added based on brackets [ and ] and braces { and }
         - Special bracket characters are always on their own line
         - String parts with empty binary data are gathered with a single pair of quotation marks
         - Length values are included in parentheses when present
@@ -1164,7 +1172,7 @@ class XTypeFileReader:
         marker = self.file.read(2)
 
         # Check if the marker is '*J' which indicates a BOM follows
-        if marker == b'*J':
+        if marker == b'*j':
             # Read the 2-byte integer using the current byteorder
             format_char = self._struct_byteorder_format[self.byteorder]
             bom_value = struct.unpack(f'{format_char}h', self.file.read(2))[0]
