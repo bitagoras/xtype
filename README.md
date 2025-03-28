@@ -7,7 +7,7 @@ Overview
 
 xtype is a universal binary notation language with a self-explanatory syntax for the exchange and storage of hierarchically structured data. It is intended to be a binary equivalent to text formats such as [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations in efficiency. xtype is also suitable for representing typical C and Python data structures, and provides a lightweight grammar alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage, inspired by the simplicity of [UBJSON](https://github.com/ubjson/universal-binary-json).
 
-A full library for xtype does not exist yet. A first test implementation for Python can be found here: [python/xtype.py](python/xtype.py).
+The first test library for reading and writing Python structures is available at [xtype-python](https://github.com/bitagoras/xtype-python).
 
 Basic idea
 ----------
