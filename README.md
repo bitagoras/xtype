@@ -156,7 +156,7 @@ json:
 
 ```Awk
 xtype:
-[[] [k] (int32: 7) (uint8: 5) [s] [seven] [d] (float64: 7.77) []]
+[[] [k] (int32: 7) [5] [s] [seven] [d] (float64: 7.77) []]
 ```
 
 * **Struct with integer, string and float:**
