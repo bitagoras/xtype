@@ -30,16 +30,19 @@ Properties
 * All elements start with printable ASCII characters and have a defined end, which makes it suitable for protocols of data streams.
 * The data elements can be parsed very fast without a stack.
 
-### Additional (possible) features by user-defined "footnotes" (meta information)
+### Additional features by "footnotes" (meta information)
 
 * Definition of structs
 * Table of contents
 * Fast random access to sub-elements in big files
 * Fast deletion and addition of elements in big files
-* Chunk data mode for efficient writing and reading of big files
-* Checksums for integrity checks
-* Date and time notation formats
+
+### More user-defined "footnotes" could be added
+
 * Notation of physical units
+* Checksums for integrity checks
+* Chunk data mode for efficient writing and reading of big files
+* Date and time notation formats
 * Values and arrays with complex numbers
 * Elements with data compression
 
