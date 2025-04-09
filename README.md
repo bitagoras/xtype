@@ -74,8 +74,8 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <dict>       ::= "{}" | "{" <dict_items> "}" | "{" <EOF> | "{" <list_items> <EOF>
 <dict_items> ::= <element> <object> | <element> <object> <dict_items>
 <element>    ::= <type> <bin_data> | "T"  | "F" | "n"
-<type>       ::= <lenght> <type> | <bin_data>
-<lenght>     ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" |
+<type>       ::= <length> <type> | <bin_data>
+<length>     ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" |
                  "M" <bin_data> | "N" <bin_data> | "O" <bin_data> | "P" <bin_data>
 <bin_type>   ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L" |
                  "b" | "h" | "f" | "d" | "s" | "u" | "S" | "x"
@@ -222,7 +222,7 @@ xtype:
 [}]
 ```
 
-* **4 x 3 table of doubles with named colums "lon", "lat", "h":**
+* **4 x 3 table of doubles with named columns "lon", "lat", "h":**
 
 ```json5
 json:
@@ -298,7 +298,7 @@ _Footnote value_ | size of entire object
 
 **Explanation:**
 
-This footnote type gives the information about the size of an object. This can be used to step over large objects in a list or dict to quickly access a certain sub element. The size excludes this and all previous footnotes. When the size information is used to skip this object, the size gives the number of bytes to be irgnored.
+This footnote type gives the information about the size of an object. This can be used to step over large objects in a list or dict to quickly access a certain sub element. The size excludes this and all previous footnotes. When the size information is used to skip this object, the size gives the number of bytes to be ignored.
 
 **Example:**
 
