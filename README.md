@@ -7,7 +7,7 @@ Overview
 
 xtype is a universal binary notation language with a self-explanatory syntax for the exchange and storage of hierarchically structured data. It is intended to be a binary equivalent to text formats such as [XML](https://www.w3.org/XML/) or [JSON](http://www.json.org/) without their limitations in efficiency. xtype is also suitable for representing typical C and Python data structures, and provides a lightweight grammar alternative to [HDF5](https://www.hdfgroup.org/solutions/hdf5/) for scientific data storage, inspired by the simplicity of [UBJSON](https://github.com/ubjson/universal-binary-json).
 
-The first test library for reading and writing Python structures is available at [xtype-python](https://github.com/bitagoras/xtype-python).
+A first basic library for reading and writing Python structures is available at [xtype-python](https://github.com/bitagoras/xtype-python).
 
 Basic idea
 ----------
@@ -80,8 +80,8 @@ The grammar is fully defined and explained by a graphical representation. Green 
 <bin_type>   ::= "i" | "j" | "k" | "l" | "I" | "J" | "K" | "L" |
                  "b" | "h" | "f" | "d" | "s" | "u" | "S" | "x"
 
-<bin_data> is the binary data of defined size, see table with types below.
-<EOF> is the end of file. In streams this could also be defined by a zero byte.
+<bin_data> represents the actual binary data of the specified size for the given type.
+<EOF> marks the end of file. In streaming applications, this could be represented by a zero byte.
 ```
 
 ## Types
